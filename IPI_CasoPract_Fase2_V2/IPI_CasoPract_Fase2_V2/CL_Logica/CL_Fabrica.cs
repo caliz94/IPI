@@ -19,5 +19,11 @@ namespace CL_Logica
             tabla = OFabrica.Mostrar();
             return tabla;
         }
+
+
+        public void InsertarFabrica(string nombre, int codArticulo, string descripcionArticulo, int existencias, string telefono)
+        {
+            OFabrica.InsertarFabrica(nombre, Convert.ToInt32(codArticulo), descripcionArticulo, Convert.ToInt32(existencias), telefono);
+        }
     }
 }

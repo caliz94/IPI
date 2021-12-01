@@ -11,11 +11,11 @@ using CL_Logica;
 
 namespace CP_Presentacion.Form_Fabrica
 {
-    public partial class ActualizarFabrica : Form
+    public partial class CP_MostrarFabrica : Form
     {
         CL_Fabrica OFabrica = new CL_Fabrica();
 
-        public ActualizarFabrica()
+        public CP_MostrarFabrica()
         {
             InitializeComponent();
         }
@@ -27,14 +27,14 @@ namespace CP_Presentacion.Form_Fabrica
         }
 
         //Singlenton
-        private static ActualizarFabrica _Abrir;
+        private static CP_MostrarFabrica _Abrir;
 
-        public static ActualizarFabrica Abrir
+        public static CP_MostrarFabrica Abrir
         {
             get
             {
                 if (_Abrir == null)
-                    _Abrir = new ActualizarFabrica();
+                    _Abrir = new CP_MostrarFabrica();
                 return _Abrir;
             }
         }

@@ -1,6 +1,6 @@
 ﻿namespace CP_Presentacion.Form_Fabrica
 {
-    partial class ActualizarFabrica
+    partial class CP_MostrarFabrica
     {
         /// <summary>
         /// Required designer variable.

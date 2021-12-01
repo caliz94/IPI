@@ -107,17 +107,17 @@
     <Compile Include="Form_Direcciones\Admin_Direcion.Designer.cs">
       <DependentUpon>Admin_Direcion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Fabrica\ActualizarFabrica.cs">
+    <Compile Include="Form_Fabrica\CP_MostrarFabrica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Fabrica\ActualizarFabrica.Designer.cs">
-      <DependentUpon>ActualizarFabrica.cs</DependentUpon>
+    <Compile Include="Form_Fabrica\CP_MostrarFabrica.Designer.cs">
+      <DependentUpon>CP_MostrarFabrica.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Fabrica\NuevaFabrica.cs">
+    <Compile Include="Form_Fabrica\CP_NuevaFabrica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Fabrica\NuevaFabrica.Designer.cs">
-      <DependentUpon>NuevaFabrica.cs</DependentUpon>
+    <Compile Include="Form_Fabrica\CP_NuevaFabrica.Designer.cs">
+      <DependentUpon>CP_NuevaFabrica.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu_Inicio.cs">
       <SubType>Form</SubType>
@@ -154,11 +154,11 @@
     <EmbeddedResource Include="Form_Direcciones\Admin_Direcion.resx">
       <DependentUpon>Admin_Direcion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Fabrica\ActualizarFabrica.resx">
-      <DependentUpon>ActualizarFabrica.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Fabrica\CP_MostrarFabrica.resx">
+      <DependentUpon>CP_MostrarFabrica.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Fabrica\NuevaFabrica.resx">
-      <DependentUpon>NuevaFabrica.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Fabrica\CP_NuevaFabrica.resx">
+      <DependentUpon>CP_NuevaFabrica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu_Inicio.resx">
       <DependentUpon>Menu_Inicio.cs</DependentUpon>

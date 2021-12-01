@@ -132,7 +132,7 @@ namespace CP_Presentacion
 
         private void btnMostrarFabrica_Click(object sender, EventArgs e)
         {
-            Form_Fabrica.ActualizarFabrica abrirform = Form_Fabrica.ActualizarFabrica.Abrir;
+            Form_Fabrica.CP_MostrarFabrica abrirform = Form_Fabrica.CP_MostrarFabrica.Abrir;
             abrirform.TopLevel = false;
             this.pnl_cont.Controls.Add(abrirform);
 
@@ -184,7 +184,7 @@ namespace CP_Presentacion
 
         private void btn_nuev_prov_Click(object sender, EventArgs e)
         {
-            Form_Fabrica.NuevaFabrica abrirform = Form_Fabrica.NuevaFabrica.Abrir;
+            Form_Fabrica.CP_NuevaFabrica abrirform = Form_Fabrica.CP_NuevaFabrica.Abrir;
             abrirform.TopLevel = false;
             this.pnl_cont.Controls.Add(abrirform);
 
