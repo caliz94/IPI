@@ -1,95 +1,156 @@
-USE master
-GO
+--USE master
+--GO
 
-IF DB_ID('IPICASOPRACTICO') IS NOT NULL
-BEGIN
-	DROP DATABASE IPICASOPRACTICO
-END
+--IF DB_ID('IPICASOPRACTICO') IS NOT NULL
+--BEGIN
+--	DROP DATABASE IPICASOPRACTICO
+--END
 
-CREATE DATABASE IPICASOPRACTICO
-GO
+--CREATE DATABASE IPICASOPRACTICO
+--GO
 
-USE IPICASOPRACTICO
-GO
+--USE IPICASOPRACTICO
+--GO
 
-CREATE TABLE Cliente
-(
-	IdCliente INT PRIMARY KEY,
-	NombreCliente VARCHAR(100) NOT NULL,
-	Saldo MONEY NOT NULL,
-	LimiteCredito MONEY CHECK(LimiteCredito <= 3000000) NOT NULL,
-	Descuento MONEY NOT NULL,
-	Activo BIT not null
-)
-GO
+--CREATE TABLE Cliente
+--(
+--	IdCliente INT PRIMARY KEY,
+--	NombreCliente VARCHAR(100) NOT NULL,
+--	Saldo MONEY NOT NULL,
+--	LimiteCredito MONEY CHECK(LimiteCredito <= 3000000) NOT NULL,
+--	Descuento MONEY NOT NULL,
+--	Activo BIT not null
+--)
+--GO
 
-CREATE TABLE Direcciones
-(
-	IdDireccion INT PRIMARY KEY NOT NULL,
-	IdCliente INT FOREIGN KEY REFERENCES dbo.Cliente(IdCliente) NOT NULL,
-	Calle VARCHAR(25) NOT NULL,
-	Barrio VARCHAR(80) NOT NULL,
-	Distrito VARCHAR(250) NOT NULL,
-	Activo BIT NOT NULL
-)
-GO
+--CREATE TABLE Direcciones
+--(
+--	IdDireccion INT PRIMARY KEY NOT NULL,
+--	IdCliente INT FOREIGN KEY REFERENCES dbo.Cliente(IdCliente) NOT NULL,
+--	Calle VARCHAR(25) NOT NULL,
+--	Barrio VARCHAR(80) NOT NULL,
+--	Distrito VARCHAR(250) NOT NULL,
+--	Activo BIT NOT NULL
+--)
+--GO
 
 
-CREATE TABLE Fabrica
-(
-  IdFabrica INT PRIMARY KEY,
-  NombreFabrica VARCHAR(50) NOT NULL,
-  --CodArticulo INT UNIQUE NOT NULL,
-  --Descripcion_Articulo VARCHAR(250) NOT NULL,
-  --Existencias INT NOT NULL,
-  Telefono VARCHAR(13) NOT NULL,
-  Activo BIT NOT NULL
-)
-GO
+--CREATE TABLE Fabrica
+--(
+--  IdFabrica INT PRIMARY KEY,
+--  NombreFabrica VARCHAR(50) NOT NULL,
+--  --CodArticulo INT UNIQUE NOT NULL,
+--  --Descripcion_Articulo VARCHAR(250) NOT NULL,
+--  --Existencias INT NOT NULL,
+--  Telefono VARCHAR(13) NOT NULL,
+--  Activo BIT NOT NULL
+--)
+--GO
 
-CREATE TABLE Articulo
-(
-	IdArticulo INT PRIMARY KEY,
-	--CodArticulo INT UNIQUE FOREIGN KEY REFERENCES Fabrica(CodArticulo) NOT NULL,
-	Descripción_Articulo VARCHAR(250) NOT NULL,
-	Existencias INT NOT NULL,
-	PrecioUnitario MONEY NOT NULL,
-	IdFabrica INT FOREIGN KEY REFERENCES dbo.Fabrica(IdFabrica) NOT NULL,
-	ArticulosProvistos INT NOT NULL,
-	NoFabricasAlternativas INT NOT NULL
-)
-GO
+--CREATE TABLE Articulo
+--(
+--	IdArticulo INT PRIMARY KEY,
+--	--CodArticulo INT UNIQUE FOREIGN KEY REFERENCES Fabrica(CodArticulo) NOT NULL,
+--	Descripción_Articulo VARCHAR(250) NOT NULL,
+--	Existencias INT NOT NULL,
+--	PrecioUnitario MONEY NOT NULL,
+--	IdFabrica INT FOREIGN KEY REFERENCES dbo.Fabrica(IdFabrica) NOT NULL,
+--	ArticulosProvistos INT NOT NULL,
+--	NoFabricasAlternativas INT NOT NULL
+--)
+--GO
 
-CREATE TABLE Pedido
-(
-	IdPedido INT PRIMARY KEY,
-    IdCliente INT FOREIGN KEY REFERENCES dbo.Cliente(IdCliente) NOT NULL,
-	IdDireccion INT FOREIGN KEY REFERENCES dbo.Direcciones(IdDireccion) NOT NULL,
-	FechaPedido TIMESTAMP NOT NULL
-)
-GO
+--CREATE TABLE Pedido
+--(
+--	IdPedido INT PRIMARY KEY,
+--    IdCliente INT FOREIGN KEY REFERENCES dbo.Cliente(IdCliente) NOT NULL,
+--	IdDireccion INT FOREIGN KEY REFERENCES dbo.Direcciones(IdDireccion) NOT NULL,
+--	FechaPedido TIMESTAMP NOT NULL
+--)
+--GO
 
-CREATE TABLE Detalle_Pedido
-(
-	IdArticulo INT FOREIGN KEY REFERENCES dbo.Articulo(IdArticulo),
-    IdPedido INT FOREIGN KEY REFERENCES dbo.Pedido(IdPedido),
-	Cantidad INT NOT NULL,
-	Fabrica INT FOREIGN KEY REFERENCES dbo.Fabrica(IdFabrica) NOT NULL
-	PRIMARY KEY(IdArticulo,IdPedido)
-)
-GO
+--CREATE TABLE Detalle_Pedido
+--(
+--	IdArticulo INT FOREIGN KEY REFERENCES dbo.Articulo(IdArticulo),
+--    IdPedido INT FOREIGN KEY REFERENCES dbo.Pedido(IdPedido),
+--	Cantidad INT NOT NULL,
+--	Fabrica INT FOREIGN KEY REFERENCES dbo.Fabrica(IdFabrica) NOT NULL
+--	PRIMARY KEY(IdArticulo,IdPedido)
+--)
+--GO
 
 
 --PROCEDIMIENTOS ALMACENADOS
 --***************************************** FABRICAS**********************************************************************
-CREATE PROCEDURE sp_mostrarFabricas
--- WITH ENCRYPTION, RECOMPILE, EXECUTE AS CALLER|SELF|OWNER| 'user_name'
+ALTER PROCEDURE sp_mostrarFabricas
 AS
 BEGIN
-    SELECT * FROM dbo.Fabrica WHERE Activo = 1
+    SELECT * FROM dbo.Fabrica 
 END
 GO
 
+CREATE PROCEDURE sp_mostrarFabricasActivas
+AS
+BEGIN
+	SELECT * FROM Fabrica WHERE Activo = 1
+END
+GO
+
+CREATE PROCEDURE sp_mostrarFabricasInactivos
+AS
+BEGIN
+	SELECT * FROM Fabrica WHERE Activo = 0
+END
+GO
+
+CREATE PROCEDURE sp_eliminarFabrica
+(
+@IdFabrica INT
+)
+AS
+BEGIN
+	UPDATE dbo.Fabrica
+	SET Activo = 0
+	WHERE IdFabrica = @IdFabrica
+END
+GO
+
+CREATE PROCEDURE sp_actualizarCliente
+(
+@IdFabrica INT,
+@NombreFabrica VARCHAR(50),
+@Telefono VARCHAR(13),
+@Activo BIT
+)
+AS
+BEGIN
+	UPDATE dbo.Fabrica
+	SET NombreFabrica = @NombreFabrica, Telefono = @Telefono, Activo = @Activo
+	WHERE IdFabrica = @IdFabrica
+END
+GO
+
+ALTER PROCEDURE sp_nuevaFabrica
+(
+	@NombreFabrica VARCHAR(50),
+	@Telefono VARCHAR(13)
+)
+AS
+BEGIN
+	DECLARE @IdFabrica INT
+	SELECT @IdFabrica = (SELECT ISNULL(MAX(IdFabrica),0)+1 FROM Fabrica)
+
+	INSERT INTO dbo.Fabrica (IdFabrica, NombreFabrica, Telefono, Activo)
+	VALUES
+	(   
+		@IdFabrica, -- IdCliente - INT
+		@NombreFabrica,   -- NombreCliente - varchar(120)
+		@Telefono, -- Saldo - money
+		1
+	)
+END
+
+EXEC sp_nuevaFabrica 'CURACAO', '22685303'
 
 
 --*******************************************CLIENTES**********************************************************************
@@ -169,7 +230,7 @@ BEGIN
 END
 
 
-EXEC dbo.SP_NuevoCliente @NombreCliente = 'Perla del Socorro Jarquin Mendoza',    -- varchar(25)
+EXEC dbo.SP_NuevoCliente @NombreCliente = 'Andres Josias Castro Gutierrez',    -- varchar(25)
                         @Saldo = '10000',   -- varchar(80)
                         @LimiteCredito = '30000',  -- varchar(250)
 						@Descuento = '300'  -- varchar(250)
@@ -194,6 +255,7 @@ END
 
 select * from Cliente
 SELECT * FROM Direcciones
+SELECT * FROM Fabrica
 
 EXEC dbo.sp_direcciones @idcliente = 1, -- int
                         @calle = 'Vida Nueva',    -- varchar(25)
