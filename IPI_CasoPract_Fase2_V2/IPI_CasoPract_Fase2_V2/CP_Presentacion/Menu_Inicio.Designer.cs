@@ -36,7 +36,6 @@ namespace CP_Presentacion
             this.btn_nuevo_cliente = new FontAwesome.Sharp.IconButton();
             this.btn_act_cliente = new FontAwesome.Sharp.IconButton();
             this.btn_mostrar_clientes = new FontAwesome.Sharp.IconButton();
-            this.btn_elimin_cliente = new FontAwesome.Sharp.IconButton();
             this.pnl_fun_btn_Provider = new System.Windows.Forms.Panel();
             this.btn_nuev_prov = new FontAwesome.Sharp.IconButton();
             this.btn_act_pro = new FontAwesome.Sharp.IconButton();
@@ -89,10 +88,9 @@ namespace CP_Presentacion
             this.pnl_fun_btn_client.Controls.Add(this.btn_nuevo_cliente);
             this.pnl_fun_btn_client.Controls.Add(this.btn_act_cliente);
             this.pnl_fun_btn_client.Controls.Add(this.btn_mostrar_clientes);
-            this.pnl_fun_btn_client.Controls.Add(this.btn_elimin_cliente);
             this.pnl_fun_btn_client.Location = new System.Drawing.Point(156, 161);
             this.pnl_fun_btn_client.Name = "pnl_fun_btn_client";
-            this.pnl_fun_btn_client.Size = new System.Drawing.Size(184, 369);
+            this.pnl_fun_btn_client.Size = new System.Drawing.Size(184, 299);
             this.pnl_fun_btn_client.TabIndex = 5;
             // 
             // iconButton1
@@ -107,7 +105,7 @@ namespace CP_Presentacion
             this.iconButton1.IconColor = System.Drawing.Color.CadetBlue;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(12, 288);
+            this.iconButton1.Location = new System.Drawing.Point(15, 223);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(158, 65);
             this.iconButton1.TabIndex = 4;
@@ -169,7 +167,7 @@ namespace CP_Presentacion
             this.btn_mostrar_clientes.IconColor = System.Drawing.Color.CadetBlue;
             this.btn_mostrar_clientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_mostrar_clientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_mostrar_clientes.Location = new System.Drawing.Point(12, 217);
+            this.btn_mostrar_clientes.Location = new System.Drawing.Point(15, 149);
             this.btn_mostrar_clientes.Name = "btn_mostrar_clientes";
             this.btn_mostrar_clientes.Size = new System.Drawing.Size(158, 65);
             this.btn_mostrar_clientes.TabIndex = 3;
@@ -177,27 +175,6 @@ namespace CP_Presentacion
             this.btn_mostrar_clientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_mostrar_clientes.UseVisualStyleBackColor = true;
             this.btn_mostrar_clientes.Click += new System.EventHandler(this.btn_mostrar_clientes_Click);
-            // 
-            // btn_elimin_cliente
-            // 
-            this.btn_elimin_cliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_elimin_cliente.FlatAppearance.BorderSize = 0;
-            this.btn_elimin_cliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btn_elimin_cliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_elimin_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_elimin_cliente.ForeColor = System.Drawing.Color.Peru;
-            this.btn_elimin_cliente.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.btn_elimin_cliente.IconColor = System.Drawing.Color.CadetBlue;
-            this.btn_elimin_cliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_elimin_cliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_elimin_cliente.Location = new System.Drawing.Point(12, 149);
-            this.btn_elimin_cliente.Name = "btn_elimin_cliente";
-            this.btn_elimin_cliente.Size = new System.Drawing.Size(158, 63);
-            this.btn_elimin_cliente.TabIndex = 2;
-            this.btn_elimin_cliente.Text = "Eliminar Cliente";
-            this.btn_elimin_cliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_elimin_cliente.UseVisualStyleBackColor = true;
-            this.btn_elimin_cliente.Click += new System.EventHandler(this.btn_elimin_cliente_Click);
             // 
             // pnl_fun_btn_Provider
             // 
@@ -501,7 +478,6 @@ namespace CP_Presentacion
         private System.Windows.Forms.Panel pnl_cont;
         private System.Windows.Forms.Panel pnl_izq;
         private FontAwesome.Sharp.IconButton btn_mostrar_clientes;
-        private FontAwesome.Sharp.IconButton btn_elimin_cliente;
         private FontAwesome.Sharp.IconButton btn_act_cliente;
         private System.Windows.Forms.Panel pnl_inf;
         private System.Windows.Forms.Label label1;

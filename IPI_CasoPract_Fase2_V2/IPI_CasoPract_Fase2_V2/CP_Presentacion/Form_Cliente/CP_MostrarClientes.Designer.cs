@@ -31,40 +31,108 @@ namespace CP_Presentacion.Form_Cliente
         {
             this.dgv_mostar_clientes = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_actico = new System.Windows.Forms.Button();
+            this.btn_todos = new System.Windows.Forms.Button();
+            this.btn_inactivo = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_mostar_clientes)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgv_mostar_clientes
             // 
             this.dgv_mostar_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_mostar_clientes.Location = new System.Drawing.Point(28, 56);
+            this.dgv_mostar_clientes.Location = new System.Drawing.Point(78, 96);
             this.dgv_mostar_clientes.Name = "dgv_mostar_clientes";
-            this.dgv_mostar_clientes.Size = new System.Drawing.Size(563, 294);
+            this.dgv_mostar_clientes.Size = new System.Drawing.Size(552, 260);
             this.dgv_mostar_clientes.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(34, 18);
+            this.label1.Location = new System.Drawing.Point(19, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Clientes";
+            // 
+            // btn_actico
+            // 
+            this.btn_actico.Location = new System.Drawing.Point(24, 57);
+            this.btn_actico.Name = "btn_actico";
+            this.btn_actico.Size = new System.Drawing.Size(75, 23);
+            this.btn_actico.TabIndex = 2;
+            this.btn_actico.Text = "Activos";
+            this.btn_actico.UseVisualStyleBackColor = true;
+            this.btn_actico.Click += new System.EventHandler(this.btn_actico_Click);
+            // 
+            // btn_todos
+            // 
+            this.btn_todos.Location = new System.Drawing.Point(207, 57);
+            this.btn_todos.Name = "btn_todos";
+            this.btn_todos.Size = new System.Drawing.Size(75, 23);
+            this.btn_todos.TabIndex = 3;
+            this.btn_todos.Text = "Todos";
+            this.btn_todos.UseVisualStyleBackColor = true;
+            this.btn_todos.Click += new System.EventHandler(this.btn_todos_Click);
+            // 
+            // btn_inactivo
+            // 
+            this.btn_inactivo.Location = new System.Drawing.Point(116, 57);
+            this.btn_inactivo.Name = "btn_inactivo";
+            this.btn_inactivo.Size = new System.Drawing.Size(75, 23);
+            this.btn_inactivo.TabIndex = 4;
+            this.btn_inactivo.Text = "Inactivos";
+            this.btn_inactivo.UseVisualStyleBackColor = true;
+            this.btn_inactivo.Click += new System.EventHandler(this.btn_inactivo_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.btn_inactivo);
+            this.panel1.Controls.Add(this.btn_actico);
+            this.panel1.Controls.Add(this.btn_todos);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(630, 96);
+            this.panel1.TabIndex = 5;
+            // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 356);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(630, 28);
+            this.panel2.TabIndex = 6;
+            // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(0, 96);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(78, 260);
+            this.panel3.TabIndex = 7;
             // 
             // CP_MostrarClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(630, 384);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgv_mostar_clientes);
             this.Name = "CP_MostrarClientes";
             this.Text = "CP_MostrarClientes";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CP_MostrarClientes_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_mostar_clientes)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -72,5 +140,11 @@ namespace CP_Presentacion.Form_Cliente
 
         private System.Windows.Forms.DataGridView dgv_mostar_clientes;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_actico;
+        private System.Windows.Forms.Button btn_todos;
+        private System.Windows.Forms.Button btn_inactivo;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
     }
 }

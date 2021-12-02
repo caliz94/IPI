@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CL_Logica;
 
 namespace CP_Presentacion.Form_Cliente
 {
@@ -32,6 +33,23 @@ namespace CP_Presentacion.Form_Cliente
         private void CP_MostrarClientes_FormClosed(object sender, FormClosedEventArgs e)
         {
             _Abrir = null;
+        }
+        private CL_Clientes clientes_cl = new CL_Clientes();
+        //clientes activos
+        private void btn_actico_Click(object sender, EventArgs e)
+        {
+            dgv_mostar_clientes.DataSource = clientes_cl.clientes_activos();
+        }
+
+        //clientes inactivos
+        private void btn_inactivo_Click(object sender, EventArgs e)
+        {
+            dgv_mostar_clientes.DataSource = clientes_cl.clientes_inactivos();
+        }
+        //clientes activos
+        private void btn_todos_Click(object sender, EventArgs e)
+        {
+            dgv_mostar_clientes.DataSource = clientes_cl.mostrarclientes();
         }
     }
 }
