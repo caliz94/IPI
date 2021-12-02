@@ -16,7 +16,7 @@ namespace CD_Datos
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
 
-
+        #region Mostrar Fabricas
         public DataTable Mostrar()
         {
             tabla.Clear();
@@ -54,7 +54,9 @@ namespace CD_Datos
             Conexion.cerrarcadena();
             return tabla;
         }
+        #endregion
 
+        #region Nueva Fabrica
         public void InsertarFabrica(string nombre, string telefono)
         {
             comando.Connection = Conexion.abrircadena();
@@ -65,6 +67,19 @@ namespace CD_Datos
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             Conexion.cerrarcadena();
+        }
+        #endregion
+
+        public DataTable CargarComboFabrica()
+        {
+            //tabla.Clear();
+            comando.Connection = Conexion.abrircadena();
+            comando.CommandText = "sp_cargarComboFabrica";
+            comando.CommandType = CommandType.StoredProcedure;
+            leerdata = comando.ExecuteReader();
+            tabla.Load(leerdata);
+            Conexion.cerrarcadena();
+            return tabla;
         }
     }
 }

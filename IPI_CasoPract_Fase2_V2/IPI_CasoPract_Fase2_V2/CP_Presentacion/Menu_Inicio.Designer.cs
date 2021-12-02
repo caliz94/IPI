@@ -270,6 +270,7 @@ namespace CP_Presentacion
             this.bnt_elim_prov.Text = "Eliminar Proveedor";
             this.bnt_elim_prov.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bnt_elim_prov.UseVisualStyleBackColor = true;
+            this.bnt_elim_prov.Click += new System.EventHandler(this.bnt_elim_prov_Click);
             // 
             // btnProveedores
             // 

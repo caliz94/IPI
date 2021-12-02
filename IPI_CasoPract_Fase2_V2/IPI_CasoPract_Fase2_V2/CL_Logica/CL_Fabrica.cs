@@ -39,5 +39,13 @@ namespace CL_Logica
         {
             OFabrica.InsertarFabrica(nombre, telefono);
         }
+
+
+        public DataTable CargarComboFabrica()
+        {
+            DataTable tabla = new DataTable();
+            tabla = OFabrica.CargarComboFabrica();
+            return tabla;
+        }
     }
 }

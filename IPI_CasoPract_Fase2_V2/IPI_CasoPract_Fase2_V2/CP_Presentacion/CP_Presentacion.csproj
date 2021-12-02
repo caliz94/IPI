@@ -107,6 +107,12 @@
     <Compile Include="Form_Direcciones\Admin_Direcion.Designer.cs">
       <DependentUpon>Admin_Direcion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Fabrica\CP_EliminarFabrica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Fabrica\CP_EliminarFabrica.Designer.cs">
+      <DependentUpon>CP_EliminarFabrica.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Fabrica\CP_MostrarFabrica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Direcciones\Admin_Direcion.resx">
       <DependentUpon>Admin_Direcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Fabrica\CP_EliminarFabrica.resx">
+      <DependentUpon>CP_EliminarFabrica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Fabrica\CP_MostrarFabrica.resx">
       <DependentUpon>CP_MostrarFabrica.cs</DependentUpon>

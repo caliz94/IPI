@@ -191,5 +191,15 @@ namespace CP_Presentacion
             this.pnl_cont.Tag = abrirform;
             abrirform.Show();
         }
+
+        private void bnt_elim_prov_Click(object sender, EventArgs e)
+        {
+            Form_Fabrica.CP_EliminarFabrica abrirform = Form_Fabrica.CP_EliminarFabrica.Abrir;
+            abrirform.TopLevel = false;
+            this.pnl_cont.Controls.Add(abrirform);
+
+            this.pnl_cont.Tag = abrirform;
+            abrirform.Show();
+        }
     }
 }
