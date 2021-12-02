@@ -39,7 +39,34 @@ namespace CP_Presentacion.Form_Cliente
 
         private void btn_nuevo_cliente_Click(object sender, EventArgs e)
         {
-            nuevo_cliente_cl.nuevo_cliente(txt_cliente.Text, txt_Saldo.Text,txt_LimiteCredito.Text,txt_Descuento.Text,Convert.ToInt32(txt_Activo.Text));
+            try
+            {
+                if (txt_cliente.Text == string.Empty)
+                {
+                    errorProvider1.SetError(txt_cliente, "CAMPO OBLIGATORIO");
+                }
+                else if (txt_Saldo.Text == string.Empty)
+                {
+                    errorProvider1.SetError(txt_Saldo, "CAMPO OBLIGATORIO");
+                }
+                else if (txt_LimiteCredito.Text == string.Empty)
+                {
+                    errorProvider1.SetError(txt_LimiteCredito, "CAMPO OBLIGATORIO");
+                }
+                else if (txt_Descuento.Text == string.Empty)
+                {
+                    errorProvider1.SetError(txt_Descuento, "CAMPO OBLIGATORIO");
+                }
+                else
+                {
+                    nuevo_cliente_cl.nuevo_cliente(txt_cliente.Text, txt_Saldo.Text, txt_LimiteCredito.Text, txt_Descuento.Text);
+                    MessageBox.Show("EL CLIENTE " + txt_cliente.Text + "FUE AGREGADO EXITOSAMENTE");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("OCURRIO UN ERROR");
+            }
         }
     }
 }
