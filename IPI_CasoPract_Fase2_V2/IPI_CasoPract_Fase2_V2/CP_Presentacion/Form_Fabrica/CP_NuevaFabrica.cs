@@ -30,23 +30,37 @@ namespace CP_Presentacion.Form_Fabrica
             }
         }
 
+
+        private void NuevaFabrica_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _Abrir = null;
+        }
+
         private void btnGuardarFabrica_Click(object sender, EventArgs e)
         {
             try
             {
-                Ofabrica.InsertarFabrica(tboxNombreFabrica.Text, Convert.ToInt32(tboxCodArticulo.Text), tboxDescripcion.Text, Convert.ToInt32(numExistencia.Value), tboxTelefono.Text);
-                MessageBox.Show("Proveedor Creado Exitosamente");
+                if (tboxNombreFabrica.Text == string.Empty)
+                {
+                    errorProvider1.SetError(tboxNombreFabrica, "CAMPO OBLIGATORIO");
+                }
+                else if (tboxTelefono.Text == string.Empty)
+                {
+                    errorProvider1.SetError(tboxTelefono, "CAMPO OBLIGATORIO");
+                }
+                else
+                {
+                    Ofabrica.InsertarFabrica(tboxNombreFabrica.Text, tboxTelefono.Text);
+                    MessageBox.Show("Proveedor Creado Exitosamente");
+                    tboxNombreFabrica.Text = string.Empty;
+                    tboxTelefono.Text = string.Empty;
+                    this.Close();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("No se pudo crear NUEVO PROVEEDOR. Error: " + ex);
             }
-        }
-
-
-        private void NuevaFabrica_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            _Abrir = null;
         }
     }
 }

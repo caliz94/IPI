@@ -27,17 +27,15 @@ namespace CD_Datos
             return tabla;
         }
 
-        public void InsertarFabrica(string nombre, int codArticulo, string descripcionArticulo, int existencias, string telefono)
+        public void InsertarFabrica(string nombre, string telefono)
         {
             comando.Connection = Conexion.abrircadena();
-            comando.CommandText = "sp_InsertarFabrica";
+            comando.CommandText = "sp_nuevaFabrica";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@NombreFabrica", nombre);
-            comando.Parameters.AddWithValue("@CodArticulo", codArticulo);
-            comando.Parameters.AddWithValue("@Descripcion_Articulo", descripcionArticulo);
-            comando.Parameters.AddWithValue("@Existencias", existencias);
             comando.Parameters.AddWithValue("@Telefono", telefono);
             comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
             Conexion.cerrarcadena();
         }
     }

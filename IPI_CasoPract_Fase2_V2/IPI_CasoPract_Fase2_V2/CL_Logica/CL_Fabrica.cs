@@ -21,9 +21,9 @@ namespace CL_Logica
         }
 
 
-        public void InsertarFabrica(string nombre, int codArticulo, string descripcionArticulo, int existencias, string telefono)
+        public void InsertarFabrica(string nombre, string telefono)
         {
-            OFabrica.InsertarFabrica(nombre, Convert.ToInt32(codArticulo), descripcionArticulo, Convert.ToInt32(existencias), telefono);
+            OFabrica.InsertarFabrica(nombre, telefono);
         }
     }
 }
