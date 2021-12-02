@@ -16,10 +16,38 @@ namespace CD_Datos
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
 
+
         public DataTable Mostrar()
         {
+            tabla.Clear();
             comando.Connection = Conexion.abrircadena();
             comando.CommandText = "sp_mostrarFabricas";
+            comando.CommandType = CommandType.StoredProcedure;
+            leerdata = comando.ExecuteReader();
+            tabla.Load(leerdata);
+            Conexion.cerrarcadena();
+            return tabla;
+        }
+
+
+        public DataTable MostrarFabActivas()
+        {
+            tabla.Clear();
+            comando.Connection = Conexion.abrircadena();
+            comando.CommandText = "sp_mostrarFabricasActivas";
+            comando.CommandType = CommandType.StoredProcedure;
+            leerdata = comando.ExecuteReader();
+            tabla.Load(leerdata);
+            Conexion.cerrarcadena();
+            return tabla;
+        }
+
+
+        public DataTable MostrarFabInactivas()
+        {
+            tabla.Clear();
+            comando.Connection = Conexion.abrircadena();
+            comando.CommandText = "sp_mostrarFabricasInactivos";
             comando.CommandType = CommandType.StoredProcedure;
             leerdata = comando.ExecuteReader();
             tabla.Load(leerdata);

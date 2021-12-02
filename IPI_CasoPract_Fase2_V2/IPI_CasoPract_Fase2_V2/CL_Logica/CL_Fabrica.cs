@@ -20,6 +20,20 @@ namespace CL_Logica
             return tabla;
         }
 
+        public DataTable MostrarFabricasAct()
+        {
+            DataTable tabla = new DataTable();
+            tabla = OFabrica.MostrarFabActivas();
+            return tabla;
+        }
+
+        public DataTable MostrarFabricasInac()
+        {
+            DataTable tabla = new DataTable();
+            tabla = OFabrica.MostrarFabInactivas();
+            return tabla;
+        }
+
 
         public void InsertarFabrica(string nombre, string telefono)
         {

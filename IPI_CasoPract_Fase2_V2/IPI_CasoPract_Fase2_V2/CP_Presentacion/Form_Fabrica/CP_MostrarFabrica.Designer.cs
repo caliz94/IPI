@@ -30,8 +30,8 @@
         {
             this.dgvFabrica = new System.Windows.Forms.DataGridView();
             this.btnActualizar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnFabricaInactiva = new System.Windows.Forms.Button();
+            this.btnFabricaActiva = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFabrica)).BeginInit();
             this.SuspendLayout();
@@ -60,24 +60,27 @@
             this.btnActualizar.TabIndex = 1;
             this.btnActualizar.Text = "Fabricas";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
-            // button1
+            // btnFabricaInactiva
             // 
-            this.button1.Location = new System.Drawing.Point(640, 9);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 57);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Fabricas\r\nInactivas";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnFabricaInactiva.Location = new System.Drawing.Point(640, 9);
+            this.btnFabricaInactiva.Name = "btnFabricaInactiva";
+            this.btnFabricaInactiva.Size = new System.Drawing.Size(148, 57);
+            this.btnFabricaInactiva.TabIndex = 2;
+            this.btnFabricaInactiva.Text = "Fabricas\r\nInactivas";
+            this.btnFabricaInactiva.UseVisualStyleBackColor = true;
+            this.btnFabricaInactiva.Click += new System.EventHandler(this.btnFabricaInactiva_Click);
             // 
-            // button2
+            // btnFabricaActiva
             // 
-            this.button2.Location = new System.Drawing.Point(486, 9);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(148, 57);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Fabricas\r\nActivas";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnFabricaActiva.Location = new System.Drawing.Point(486, 9);
+            this.btnFabricaActiva.Name = "btnFabricaActiva";
+            this.btnFabricaActiva.Size = new System.Drawing.Size(148, 57);
+            this.btnFabricaActiva.TabIndex = 3;
+            this.btnFabricaActiva.Text = "Fabricas\r\nActivas";
+            this.btnFabricaActiva.UseVisualStyleBackColor = true;
+            this.btnFabricaActiva.Click += new System.EventHandler(this.btnFabricaActiva_Click);
             // 
             // label1
             // 
@@ -95,8 +98,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnFabricaActiva);
+            this.Controls.Add(this.btnFabricaInactiva);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.dgvFabrica);
             this.Name = "CP_MostrarFabrica";
@@ -113,8 +116,8 @@
 
         private System.Windows.Forms.DataGridView dgvFabrica;
         private System.Windows.Forms.Button btnActualizar;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnFabricaInactiva;
+        private System.Windows.Forms.Button btnFabricaActiva;
         private System.Windows.Forms.Label label1;
     }
 }

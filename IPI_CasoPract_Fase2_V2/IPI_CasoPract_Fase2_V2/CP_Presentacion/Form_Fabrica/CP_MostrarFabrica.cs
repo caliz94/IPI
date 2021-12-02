@@ -26,6 +26,16 @@ namespace CP_Presentacion.Form_Fabrica
             dgvFabrica.DataSource = OFabrica.MostrarFabricas();
         }
 
+        private void MostrarFabricasAct()
+        {
+            dgvFabrica.DataSource = OFabrica.MostrarFabricasAct();
+        }
+
+        private void MostrarFabricasInac()
+        {
+            dgvFabrica.DataSource = OFabrica.MostrarFabricasInac();
+        }
+
         //Singlenton
         private static CP_MostrarFabrica _Abrir;
 
@@ -53,6 +63,19 @@ namespace CP_Presentacion.Form_Fabrica
             MostrarFabricas();
         }
 
-        
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            MostrarFabricas();
+        }
+
+        private void btnFabricaActiva_Click(object sender, EventArgs e)
+        {
+            MostrarFabricasAct();
+        }
+
+        private void btnFabricaInactiva_Click(object sender, EventArgs e)
+        {
+            MostrarFabricasInac();
+        }
     }
 }
