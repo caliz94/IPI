@@ -34,33 +34,22 @@ namespace CP_Presentacion.Form_Cliente
         {
             _Abrir = null;
         }
+
+
         #endregion
 
-        //private void Actualizar_cliente_FormClosed(object sender, FormClosedEventArgs e)
-        //{
-        //    _Abrir = null;
-        //}
 
-        //private void Actualizar_cliente_Load(object sender, EventArgs e)
-        //{
-
-
-        //}
-
-        //private void iconButton1_Click(object sender, EventArgs e)
-        //{
-        //    if (checkBox1.CheckState == CheckState.Checked)
-        //    {
-        //        txt_Activo.Text = "1";
-        //    }
-        //    else
-        //    {
-        //        txt_Activo.Text = "0";
-        //    }
-
-
-        //}
-
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            if (chk_Estado.CheckState == CheckState.Checked)
+            {
+                chk_Estado.Tag = "1";
+            }
+            else
+            {
+                chk_Estado.Tag = "0";
+            }
+        }
 
     }
 }

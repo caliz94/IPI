@@ -60,7 +60,7 @@ namespace CP_Presentacion.Form_Cliente
                 else
                 {
                     nuevo_cliente_cl.nuevo_cliente(txt_cliente.Text, txt_Saldo.Text, txt_LimiteCredito.Text, txt_Descuento.Text);
-                    MessageBox.Show("EL CLIENTE " + txt_cliente.Text + "FUE AGREGADO EXITOSAMENTE");
+                    MessageBox.Show("EL CLIENTE \"" + txt_cliente.Text.ToUpper() + "\" FUE AGREGADO EXITOSAMENTE");
                 }
             }
             catch (Exception)

@@ -40,6 +40,7 @@ namespace CP_Presentacion.Form_Cliente
             this.label6 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.chk_Estado = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // txt_Descuento
@@ -54,12 +55,12 @@ namespace CP_Presentacion.Form_Cliente
             // 
             this.label2.AutoSize = true;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Bodoni Bd BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateBlue;
             this.label2.Location = new System.Drawing.Point(51, 129);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label2.Size = new System.Drawing.Size(48, 19);
+            this.label2.Size = new System.Drawing.Size(50, 20);
             this.label2.TabIndex = 16;
             this.label2.Text = "Saldo";
             // 
@@ -75,12 +76,12 @@ namespace CP_Presentacion.Form_Cliente
             // 
             this.label3.AutoSize = true;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("Bodoni Bd BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateBlue;
             this.label3.Location = new System.Drawing.Point(51, 174);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label3.Size = new System.Drawing.Size(133, 19);
+            this.label3.Size = new System.Drawing.Size(128, 20);
             this.label3.TabIndex = 17;
             this.label3.Text = "Limite de Credito";
             // 
@@ -96,12 +97,12 @@ namespace CP_Presentacion.Form_Cliente
             // 
             this.label4.AutoSize = true;
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Font = new System.Drawing.Font("Bodoni Bd BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkSlateBlue;
             this.label4.Location = new System.Drawing.Point(51, 219);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label4.Size = new System.Drawing.Size(83, 19);
+            this.label4.Size = new System.Drawing.Size(87, 20);
             this.label4.TabIndex = 18;
             this.label4.Text = "Descuento";
             // 
@@ -109,12 +110,12 @@ namespace CP_Presentacion.Form_Cliente
             // 
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Bodoni Bd BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateBlue;
             this.label1.Location = new System.Drawing.Point(51, 84);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label1.Size = new System.Drawing.Size(58, 19);
+            this.label1.Size = new System.Drawing.Size(58, 20);
             this.label1.TabIndex = 22;
             this.label1.Text = "Cliente";
             // 
@@ -130,12 +131,12 @@ namespace CP_Presentacion.Form_Cliente
             // 
             this.label6.AutoSize = true;
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label6.Font = new System.Drawing.Font("Bodoni Bd BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkSlateBlue;
             this.label6.Location = new System.Drawing.Point(51, 39);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label6.Size = new System.Drawing.Size(142, 19);
+            this.label6.Size = new System.Drawing.Size(140, 20);
             this.label6.TabIndex = 37;
             this.label6.Text = "Numero de Cliente";
             // 
@@ -153,18 +154,32 @@ namespace CP_Presentacion.Form_Cliente
             this.iconButton1.IconColor = System.Drawing.Color.DarkCyan;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 60;
-            this.iconButton1.Location = new System.Drawing.Point(51, 285);
+            this.iconButton1.Location = new System.Drawing.Point(51, 323);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.iconButton1.Size = new System.Drawing.Size(156, 79);
             this.iconButton1.TabIndex = 20;
             this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
+            // chk_Estado
+            // 
+            this.chk_Estado.AutoSize = true;
+            this.chk_Estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_Estado.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.chk_Estado.Location = new System.Drawing.Point(55, 279);
+            this.chk_Estado.Name = "chk_Estado";
+            this.chk_Estado.Size = new System.Drawing.Size(62, 17);
+            this.chk_Estado.TabIndex = 39;
+            this.chk_Estado.Text = "Activo";
+            this.chk_Estado.UseVisualStyleBackColor = true;
             // 
             // Actualizar_cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(272, 399);
+            this.ClientSize = new System.Drawing.Size(272, 420);
+            this.Controls.Add(this.chk_Estado);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
@@ -197,5 +212,6 @@ namespace CP_Presentacion.Form_Cliente
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox2;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.CheckBox chk_Estado;
     }
 }

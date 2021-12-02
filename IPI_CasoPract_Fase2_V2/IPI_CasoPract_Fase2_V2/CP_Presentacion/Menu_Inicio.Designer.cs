@@ -31,6 +31,12 @@ namespace CP_Presentacion
         {
             this.pnl_cont = new System.Windows.Forms.Panel();
             this.pnl_izq = new System.Windows.Forms.Panel();
+            this.pnl_fun_btn_client = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btn_nuevo_cliente = new FontAwesome.Sharp.IconButton();
+            this.btn_act_cliente = new FontAwesome.Sharp.IconButton();
+            this.btn_mostrar_clientes = new FontAwesome.Sharp.IconButton();
+            this.btn_elimin_cliente = new FontAwesome.Sharp.IconButton();
             this.pnl_fun_btn_Provider = new System.Windows.Forms.Panel();
             this.btn_nuev_prov = new FontAwesome.Sharp.IconButton();
             this.btn_act_pro = new FontAwesome.Sharp.IconButton();
@@ -43,19 +49,13 @@ namespace CP_Presentacion
             this.btn_mostr_Articulo = new FontAwesome.Sharp.IconButton();
             this.btn_elim_Articulo = new FontAwesome.Sharp.IconButton();
             this.btnAdministrarArticulos = new FontAwesome.Sharp.IconButton();
-            this.pnl_fun_btn_client = new System.Windows.Forms.Panel();
-            this.btn_nuevo_cliente = new FontAwesome.Sharp.IconButton();
-            this.btn_act_cliente = new FontAwesome.Sharp.IconButton();
-            this.btn_mostrar_clientes = new FontAwesome.Sharp.IconButton();
-            this.btn_elimin_cliente = new FontAwesome.Sharp.IconButton();
             this.btn_AministrarClientes = new FontAwesome.Sharp.IconButton();
             this.pnl_inf = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.pnl_izq.SuspendLayout();
+            this.pnl_fun_btn_client.SuspendLayout();
             this.pnl_fun_btn_Provider.SuspendLayout();
             this.pnl_fun_btn_Article.SuspendLayout();
-            this.pnl_fun_btn_client.SuspendLayout();
             this.pnl_inf.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,6 +82,122 @@ namespace CP_Presentacion
             this.pnl_izq.Name = "pnl_izq";
             this.pnl_izq.Size = new System.Drawing.Size(353, 551);
             this.pnl_izq.TabIndex = 3;
+            // 
+            // pnl_fun_btn_client
+            // 
+            this.pnl_fun_btn_client.Controls.Add(this.iconButton1);
+            this.pnl_fun_btn_client.Controls.Add(this.btn_nuevo_cliente);
+            this.pnl_fun_btn_client.Controls.Add(this.btn_act_cliente);
+            this.pnl_fun_btn_client.Controls.Add(this.btn_mostrar_clientes);
+            this.pnl_fun_btn_client.Controls.Add(this.btn_elimin_cliente);
+            this.pnl_fun_btn_client.Location = new System.Drawing.Point(156, 161);
+            this.pnl_fun_btn_client.Name = "pnl_fun_btn_client";
+            this.pnl_fun_btn_client.Size = new System.Drawing.Size(184, 369);
+            this.pnl_fun_btn_client.TabIndex = 5;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.Color.Peru;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Waze;
+            this.iconButton1.IconColor = System.Drawing.Color.CadetBlue;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(12, 288);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(158, 65);
+            this.iconButton1.TabIndex = 4;
+            this.iconButton1.Text = "Admin Direciones";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            // 
+            // btn_nuevo_cliente
+            // 
+            this.btn_nuevo_cliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_nuevo_cliente.FlatAppearance.BorderSize = 0;
+            this.btn_nuevo_cliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btn_nuevo_cliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_nuevo_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_nuevo_cliente.ForeColor = System.Drawing.Color.Peru;
+            this.btn_nuevo_cliente.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btn_nuevo_cliente.IconColor = System.Drawing.Color.CadetBlue;
+            this.btn_nuevo_cliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_nuevo_cliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_nuevo_cliente.Location = new System.Drawing.Point(12, 13);
+            this.btn_nuevo_cliente.Name = "btn_nuevo_cliente";
+            this.btn_nuevo_cliente.Size = new System.Drawing.Size(158, 56);
+            this.btn_nuevo_cliente.TabIndex = 0;
+            this.btn_nuevo_cliente.Text = "Nuevo Cliente";
+            this.btn_nuevo_cliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_nuevo_cliente.UseVisualStyleBackColor = true;
+            this.btn_nuevo_cliente.Click += new System.EventHandler(this.btn_nuevo_cliente_Click);
+            // 
+            // btn_act_cliente
+            // 
+            this.btn_act_cliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_act_cliente.FlatAppearance.BorderSize = 0;
+            this.btn_act_cliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btn_act_cliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_act_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_act_cliente.ForeColor = System.Drawing.Color.Peru;
+            this.btn_act_cliente.IconChar = FontAwesome.Sharp.IconChar.Retweet;
+            this.btn_act_cliente.IconColor = System.Drawing.Color.CadetBlue;
+            this.btn_act_cliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_act_cliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_act_cliente.Location = new System.Drawing.Point(12, 75);
+            this.btn_act_cliente.Name = "btn_act_cliente";
+            this.btn_act_cliente.Size = new System.Drawing.Size(158, 68);
+            this.btn_act_cliente.TabIndex = 1;
+            this.btn_act_cliente.Text = "Actualizar Cliente";
+            this.btn_act_cliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_act_cliente.UseVisualStyleBackColor = true;
+            this.btn_act_cliente.Click += new System.EventHandler(this.btn_act_cliente_Click);
+            // 
+            // btn_mostrar_clientes
+            // 
+            this.btn_mostrar_clientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_mostrar_clientes.FlatAppearance.BorderSize = 0;
+            this.btn_mostrar_clientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btn_mostrar_clientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_mostrar_clientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_mostrar_clientes.ForeColor = System.Drawing.Color.Peru;
+            this.btn_mostrar_clientes.IconChar = FontAwesome.Sharp.IconChar.UserClock;
+            this.btn_mostrar_clientes.IconColor = System.Drawing.Color.CadetBlue;
+            this.btn_mostrar_clientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_mostrar_clientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_mostrar_clientes.Location = new System.Drawing.Point(12, 217);
+            this.btn_mostrar_clientes.Name = "btn_mostrar_clientes";
+            this.btn_mostrar_clientes.Size = new System.Drawing.Size(158, 65);
+            this.btn_mostrar_clientes.TabIndex = 3;
+            this.btn_mostrar_clientes.Text = "Mostrar Clientes";
+            this.btn_mostrar_clientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_mostrar_clientes.UseVisualStyleBackColor = true;
+            this.btn_mostrar_clientes.Click += new System.EventHandler(this.btn_mostrar_clientes_Click);
+            // 
+            // btn_elimin_cliente
+            // 
+            this.btn_elimin_cliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_elimin_cliente.FlatAppearance.BorderSize = 0;
+            this.btn_elimin_cliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btn_elimin_cliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_elimin_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_elimin_cliente.ForeColor = System.Drawing.Color.Peru;
+            this.btn_elimin_cliente.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btn_elimin_cliente.IconColor = System.Drawing.Color.CadetBlue;
+            this.btn_elimin_cliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_elimin_cliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_elimin_cliente.Location = new System.Drawing.Point(12, 149);
+            this.btn_elimin_cliente.Name = "btn_elimin_cliente";
+            this.btn_elimin_cliente.Size = new System.Drawing.Size(158, 63);
+            this.btn_elimin_cliente.TabIndex = 2;
+            this.btn_elimin_cliente.Text = "Eliminar Cliente";
+            this.btn_elimin_cliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_elimin_cliente.UseVisualStyleBackColor = true;
+            this.btn_elimin_cliente.Click += new System.EventHandler(this.btn_elimin_cliente_Click);
             // 
             // pnl_fun_btn_Provider
             // 
@@ -315,102 +431,6 @@ namespace CP_Presentacion
             this.btnAdministrarArticulos.UseVisualStyleBackColor = true;
             this.btnAdministrarArticulos.Click += new System.EventHandler(this.btnAdministrarArticulos_Click);
             // 
-            // pnl_fun_btn_client
-            // 
-            this.pnl_fun_btn_client.Controls.Add(this.iconButton1);
-            this.pnl_fun_btn_client.Controls.Add(this.btn_nuevo_cliente);
-            this.pnl_fun_btn_client.Controls.Add(this.btn_act_cliente);
-            this.pnl_fun_btn_client.Controls.Add(this.btn_mostrar_clientes);
-            this.pnl_fun_btn_client.Controls.Add(this.btn_elimin_cliente);
-            this.pnl_fun_btn_client.Location = new System.Drawing.Point(145, 170);
-            this.pnl_fun_btn_client.Name = "pnl_fun_btn_client";
-            this.pnl_fun_btn_client.Size = new System.Drawing.Size(184, 369);
-            this.pnl_fun_btn_client.TabIndex = 5;
-            // 
-            // btn_nuevo_cliente
-            // 
-            this.btn_nuevo_cliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_nuevo_cliente.FlatAppearance.BorderSize = 0;
-            this.btn_nuevo_cliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btn_nuevo_cliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_nuevo_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_nuevo_cliente.ForeColor = System.Drawing.Color.Peru;
-            this.btn_nuevo_cliente.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btn_nuevo_cliente.IconColor = System.Drawing.Color.CadetBlue;
-            this.btn_nuevo_cliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_nuevo_cliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_nuevo_cliente.Location = new System.Drawing.Point(12, 13);
-            this.btn_nuevo_cliente.Name = "btn_nuevo_cliente";
-            this.btn_nuevo_cliente.Size = new System.Drawing.Size(158, 56);
-            this.btn_nuevo_cliente.TabIndex = 0;
-            this.btn_nuevo_cliente.Text = "Nuevo Cliente";
-            this.btn_nuevo_cliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_nuevo_cliente.UseVisualStyleBackColor = true;
-            this.btn_nuevo_cliente.Click += new System.EventHandler(this.btn_nuevo_cliente_Click);
-            // 
-            // btn_act_cliente
-            // 
-            this.btn_act_cliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_act_cliente.FlatAppearance.BorderSize = 0;
-            this.btn_act_cliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btn_act_cliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_act_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_act_cliente.ForeColor = System.Drawing.Color.Peru;
-            this.btn_act_cliente.IconChar = FontAwesome.Sharp.IconChar.Retweet;
-            this.btn_act_cliente.IconColor = System.Drawing.Color.CadetBlue;
-            this.btn_act_cliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_act_cliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_act_cliente.Location = new System.Drawing.Point(12, 75);
-            this.btn_act_cliente.Name = "btn_act_cliente";
-            this.btn_act_cliente.Size = new System.Drawing.Size(158, 68);
-            this.btn_act_cliente.TabIndex = 1;
-            this.btn_act_cliente.Text = "Actualizar Cliente";
-            this.btn_act_cliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_act_cliente.UseVisualStyleBackColor = true;
-            this.btn_act_cliente.Click += new System.EventHandler(this.btn_act_cliente_Click);
-            // 
-            // btn_mostrar_clientes
-            // 
-            this.btn_mostrar_clientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_mostrar_clientes.FlatAppearance.BorderSize = 0;
-            this.btn_mostrar_clientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btn_mostrar_clientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_mostrar_clientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_mostrar_clientes.ForeColor = System.Drawing.Color.Peru;
-            this.btn_mostrar_clientes.IconChar = FontAwesome.Sharp.IconChar.UserClock;
-            this.btn_mostrar_clientes.IconColor = System.Drawing.Color.CadetBlue;
-            this.btn_mostrar_clientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_mostrar_clientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_mostrar_clientes.Location = new System.Drawing.Point(12, 217);
-            this.btn_mostrar_clientes.Name = "btn_mostrar_clientes";
-            this.btn_mostrar_clientes.Size = new System.Drawing.Size(158, 65);
-            this.btn_mostrar_clientes.TabIndex = 3;
-            this.btn_mostrar_clientes.Text = "Mostrar Clientes";
-            this.btn_mostrar_clientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_mostrar_clientes.UseVisualStyleBackColor = true;
-            this.btn_mostrar_clientes.Click += new System.EventHandler(this.btn_mostrar_clientes_Click);
-            // 
-            // btn_elimin_cliente
-            // 
-            this.btn_elimin_cliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_elimin_cliente.FlatAppearance.BorderSize = 0;
-            this.btn_elimin_cliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btn_elimin_cliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_elimin_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_elimin_cliente.ForeColor = System.Drawing.Color.Peru;
-            this.btn_elimin_cliente.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.btn_elimin_cliente.IconColor = System.Drawing.Color.CadetBlue;
-            this.btn_elimin_cliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_elimin_cliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_elimin_cliente.Location = new System.Drawing.Point(12, 149);
-            this.btn_elimin_cliente.Name = "btn_elimin_cliente";
-            this.btn_elimin_cliente.Size = new System.Drawing.Size(158, 63);
-            this.btn_elimin_cliente.TabIndex = 2;
-            this.btn_elimin_cliente.Text = "Eliminar Cliente";
-            this.btn_elimin_cliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_elimin_cliente.UseVisualStyleBackColor = true;
-            this.btn_elimin_cliente.Click += new System.EventHandler(this.btn_elimin_cliente_Click);
-            // 
             // btn_AministrarClientes
             // 
             this.btn_AministrarClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -455,26 +475,6 @@ namespace CP_Presentacion
             this.label1.Text = "Elaborado por Alex Martinez y Danny Caliz";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // iconButton1
-            // 
-            this.iconButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.Peru;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Waze;
-            this.iconButton1.IconColor = System.Drawing.Color.CadetBlue;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(12, 288);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(158, 65);
-            this.iconButton1.TabIndex = 4;
-            this.iconButton1.Text = "Admin Direciones";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            // 
             // Menu_Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -488,9 +488,9 @@ namespace CP_Presentacion
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Menu_Inicio_Load);
             this.pnl_izq.ResumeLayout(false);
+            this.pnl_fun_btn_client.ResumeLayout(false);
             this.pnl_fun_btn_Provider.ResumeLayout(false);
             this.pnl_fun_btn_Article.ResumeLayout(false);
-            this.pnl_fun_btn_client.ResumeLayout(false);
             this.pnl_inf.ResumeLayout(false);
             this.ResumeLayout(false);
 
