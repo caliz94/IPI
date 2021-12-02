@@ -17,7 +17,7 @@ namespace CD_Datos
 
 
         //Metodo Nuevo Cliente
-        public void nuevo_cliente(string NombreCliente, string Saldo, string LimiteCredito, string Descuento, int Activo)
+        public void nuevo_cliente(string NombreCliente, string Saldo, string LimiteCredito, string Descuento)
         {
             cmd.Connection = Conexion.abrircadena();
             cmd.CommandText = "sp_nuevoCliente";

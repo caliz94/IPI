@@ -14,10 +14,49 @@ namespace CL_Logica
     {
         private CD_Clientes clientes_cd = new CD_Clientes();
 
-        public void nuevo_cliente(string NombreCliente, string Saldo, string LimiteCredito, string Descuento, int Activo)
+
+        // Crear nuevo cliente
+        public void nuevo_cliente(string NombreCliente, string Saldo, string LimiteCredito, string Descuento)
         {
-            clientes_cd.nuevo_cliente(NombreCliente, Saldo, LimiteCredito, Descuento, Activo);
+            clientes_cd.nuevo_cliente(NombreCliente, Saldo, LimiteCredito, Descuento);
         }
-            
+
+
+        // Actualizar Cliente
+        public void act_cliente(int IdCliente, string NombreCliente, string Saldo, string Limite, string Descuento, int activo)
+        {
+            clientes_cd.act_cliente(IdCliente, NombreCliente, Saldo, Limite, Descuento, activo);
+        }
+
+
+        // Eliminar Clientes
+        public void eliminar_cliente(int IdCliente)
+        {
+            clientes_cd.del_client(IdCliente);
+        }
+
+
+        // Mostrar Clientes Activos
+        public DataTable clientes_activos()
+        {
+            DataTable tabla = new DataTable();
+            tabla = clientes_cd.ClientesActivos();
+            return tabla;
+        }
+
+        // Mostrar Clientes Inactivos
+        public DataTable clientes_inactivos()
+        {
+            DataTable tabla = new DataTable();
+            tabla = clientes_cd.ClientesInactivos();
+            return tabla;
+        }
+        //mostarr cliente activos
+        public DataTable mostrarclientes()
+        {
+            DataTable tabla = new DataTable();
+            tabla = clientes_cd.MostrarClientes();
+            return tabla;
+        }
     }
 }
