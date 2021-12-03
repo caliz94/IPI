@@ -36,6 +36,10 @@
     <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.5.15.4\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
+    <Reference Include="FontAwesome.Sharp.Pro, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.Pro.5.15.4\lib\net472\FontAwesome.Sharp.Pro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />

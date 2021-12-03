@@ -30,7 +30,7 @@ namespace CP_Presentacion.Form_Cliente
         private void InitializeComponent()
         {
             this.dgv_mostar_clientes = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_grid = new System.Windows.Forms.Label();
             this.btn_actico = new System.Windows.Forms.Button();
             this.btn_todos = new System.Windows.Forms.Button();
             this.btn_inactivo = new System.Windows.Forms.Button();
@@ -39,6 +39,7 @@ namespace CP_Presentacion.Form_Cliente
             this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_mostar_clientes)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgv_mostar_clientes
@@ -49,19 +50,18 @@ namespace CP_Presentacion.Form_Cliente
             this.dgv_mostar_clientes.Size = new System.Drawing.Size(552, 260);
             this.dgv_mostar_clientes.TabIndex = 0;
             // 
-            // label1
+            // label_grid
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Clientes";
+            this.label_grid.AutoSize = true;
+            this.label_grid.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_grid.Location = new System.Drawing.Point(39, 34);
+            this.label_grid.Name = "label_grid";
+            this.label_grid.Size = new System.Drawing.Size(0, 25);
+            this.label_grid.TabIndex = 1;
             // 
             // btn_actico
             // 
-            this.btn_actico.Location = new System.Drawing.Point(24, 57);
+            this.btn_actico.Location = new System.Drawing.Point(24, 19);
             this.btn_actico.Name = "btn_actico";
             this.btn_actico.Size = new System.Drawing.Size(75, 23);
             this.btn_actico.TabIndex = 2;
@@ -71,7 +71,7 @@ namespace CP_Presentacion.Form_Cliente
             // 
             // btn_todos
             // 
-            this.btn_todos.Location = new System.Drawing.Point(207, 57);
+            this.btn_todos.Location = new System.Drawing.Point(24, 102);
             this.btn_todos.Name = "btn_todos";
             this.btn_todos.Size = new System.Drawing.Size(75, 23);
             this.btn_todos.TabIndex = 3;
@@ -81,7 +81,7 @@ namespace CP_Presentacion.Form_Cliente
             // 
             // btn_inactivo
             // 
-            this.btn_inactivo.Location = new System.Drawing.Point(116, 57);
+            this.btn_inactivo.Location = new System.Drawing.Point(23, 58);
             this.btn_inactivo.Name = "btn_inactivo";
             this.btn_inactivo.Size = new System.Drawing.Size(75, 23);
             this.btn_inactivo.TabIndex = 4;
@@ -91,10 +91,7 @@ namespace CP_Presentacion.Form_Cliente
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btn_inactivo);
-            this.panel1.Controls.Add(this.btn_actico);
-            this.panel1.Controls.Add(this.btn_todos);
+            this.panel1.Controls.Add(this.label_grid);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -111,10 +108,13 @@ namespace CP_Presentacion.Form_Cliente
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btn_actico);
+            this.panel3.Controls.Add(this.btn_todos);
+            this.panel3.Controls.Add(this.btn_inactivo);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 96);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(78, 260);
+            this.panel3.Size = new System.Drawing.Size(119, 260);
             this.panel3.TabIndex = 7;
             // 
             // CP_MostrarClientes
@@ -132,6 +132,7 @@ namespace CP_Presentacion.Form_Cliente
             ((System.ComponentModel.ISupportInitialize)(this.dgv_mostar_clientes)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -139,7 +140,7 @@ namespace CP_Presentacion.Form_Cliente
         #endregion
 
         private System.Windows.Forms.DataGridView dgv_mostar_clientes;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_grid;
         private System.Windows.Forms.Button btn_actico;
         private System.Windows.Forms.Button btn_todos;
         private System.Windows.Forms.Button btn_inactivo;

@@ -260,13 +260,18 @@ END
 GO
 
 
---select * from Cliente
---SELECT * FROM Direcciones
---SELECT * FROM Fabrica
-
---EXEC dbo.sp_direcciones @idcliente = 1, -- int
---                        @calle = 'Vida Nueva',    -- varchar(25)
---                        @barrio = 'La cruz',   -- varchar(80)
---                        @distrito = 'II'  -- varchar(250)
-						
---						GO
+--mostrar clientes para agregar dire4cciones----
+CREATE PROCEDURE sp_clientesActivos_direcio
+AS
+BEGIN
+	SELECT IdCliente,NombreCliente FROM Cliente WHERE Activo = 1
+END
+GO
+--mostrar direciones del cliente
+create proc sp_direciones_cliente
+(
+@idcliente int
+)
+as
+select IdDireccion,Calle,Barrio,Distrito from Direcciones where IdCliente=@idcliente and  Activo = 1
+go

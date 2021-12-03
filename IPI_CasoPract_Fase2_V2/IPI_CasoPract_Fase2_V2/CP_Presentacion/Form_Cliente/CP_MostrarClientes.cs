@@ -38,17 +38,20 @@ namespace CP_Presentacion.Form_Cliente
         //clientes activos
         private void btn_actico_Click(object sender, EventArgs e)
         {
+            label_grid.Text = "Clientes Activos";
             dgv_mostar_clientes.DataSource = clientes_cl.clientes_activos();
         }
 
         //clientes inactivos
         private void btn_inactivo_Click(object sender, EventArgs e)
         {
+            label_grid.Text = "Clientes Inactivos";
             dgv_mostar_clientes.DataSource = clientes_cl.clientes_inactivos();
         }
         //clientes activos
         private void btn_todos_Click(object sender, EventArgs e)
         {
+            label_grid.Text = "Clientes Activos e Inactivos";
             dgv_mostar_clientes.DataSource = clientes_cl.mostrarclientes();
         }
     }
