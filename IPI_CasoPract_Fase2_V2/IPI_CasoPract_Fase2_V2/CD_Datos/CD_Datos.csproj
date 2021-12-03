@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CD_Articulos.cs" />
     <Compile Include="CD_Clientes.cs" />
     <Compile Include="CD_Conexion.cs" />
     <Compile Include="CD_Direcciones.cs" />

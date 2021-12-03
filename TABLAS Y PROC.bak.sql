@@ -291,3 +291,41 @@ Barrio = @Barrio,
 Distrito =@Distrito
 where  IdDireccion = @IdDireccion
 go
+--***********************************************articulos*******************************************************************
+
+--nuevo articulo
+create proc sp_nuevo_articulo
+(
+@IdArticulo INT ,
+@Descripción_Articulo VARCHAR(250),
+@Existencias INT,
+@PrecioUnitario MONEY,
+@IdFabrica INT,
+@ArticulosProvistos INT,
+@NoFabricasAlternativas INT
+)as
+insert into Articulo values(@IdArticulo,@Descripción_Articulo,@Existencias,@PrecioUnitario,@IdFabrica,@ArticulosProvistos,@NoFabricasAlternativas)
+go
+
+--actualizar articulo
+create proc sp_actualizar_articulo
+(
+@IdArticulo INT ,
+@Descripción_Articulo VARCHAR(250),
+@Existencias INT,
+@PrecioUnitario MONEY,
+@IdFabrica INT,
+@ArticulosProvistos INT,
+@NoFabricasAlternativas INT
+)as
+update Articulo 
+set 
+Descripción_Articulo= @Descripción_Articulo,
+Existencias=@Existencias,
+PrecioUnitario=@PrecioUnitario,
+IdFabrica=@IdFabrica,
+ArticulosProvistos=@ArticulosProvistos,
+NoFabricasAlternativas=@NoFabricasAlternativas
+where IdArticulo = @IdArticulo
+go
+
