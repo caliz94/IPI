@@ -65,13 +65,16 @@ namespace CP_Presentacion.Form_Direcciones
             // 
             // dgv_clientes
             // 
+            this.dgv_clientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_clientes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_clientes.Location = new System.Drawing.Point(0, 28);
             this.dgv_clientes.Name = "dgv_clientes";
+            this.dgv_clientes.ReadOnly = true;
+            this.dgv_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_clientes.Size = new System.Drawing.Size(200, 422);
             this.dgv_clientes.TabIndex = 0;
-            this.dgv_clientes.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_clientes_CellMouseDoubleClick);
+            this.dgv_clientes.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_clientes_CellContentDoubleClick);
             // 
             // pnl_izq
             // 

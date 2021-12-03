@@ -189,6 +189,15 @@ namespace CP_Presentacion.Form_Direcciones
 
         }
 
+        private void dgv_clientes_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btn_NuevDire.Enabled = true;
+            btn_editar.Enabled = true;
+            
 
+            txt_NumeroCliente.Text = dgv_clientes.CurrentRow.Cells["IdCliente"].Value.ToString();
+            txt_nombre_cliente.Text = dgv_clientes.CurrentRow.Cells["NombreCliente"].Value.ToString();
+            
+        }
     }
 }

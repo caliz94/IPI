@@ -296,7 +296,6 @@ go
 --nuevo articulo
 create proc sp_nuevo_articulo
 (
-@IdArticulo INT ,
 @Descripción_Articulo VARCHAR(250),
 @Existencias INT,
 @PrecioUnitario MONEY,
@@ -304,7 +303,12 @@ create proc sp_nuevo_articulo
 @ArticulosProvistos INT,
 @NoFabricasAlternativas INT
 )as
-insert into Articulo values(@IdArticulo,@Descripción_Articulo,@Existencias,@PrecioUnitario,@IdFabrica,@ArticulosProvistos,@NoFabricasAlternativas)
+BEGIN
+	DECLARE @IdArticulo INT
+	SELECT @IdArticulo = ISNULL(MAX(IdArticulo),0)+1 FROM Articulo
+	select @IdArticulo
+	insert into Articulo values(@IdArticulo,@Descripción_Articulo,@Existencias,@PrecioUnitario,@IdFabrica,@ArticulosProvistos,@NoFabricasAlternativas)
+END
 go
 
 --actualizar articulo
