@@ -68,5 +68,10 @@ namespace CP_Presentacion.Form_Cliente
                 MessageBox.Show("OCURRIO UN ERROR");
             }
         }
+
+        private void CP_NuevoCliente_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

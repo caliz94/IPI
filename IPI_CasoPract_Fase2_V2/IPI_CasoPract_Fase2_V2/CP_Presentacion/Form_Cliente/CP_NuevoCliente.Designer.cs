@@ -164,6 +164,7 @@ namespace CP_Presentacion.Form_Cliente
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "CP_NuevoCliente";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CP_NuevoCliente_FormClosed);
+            this.Load += new System.EventHandler(this.CP_NuevoCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

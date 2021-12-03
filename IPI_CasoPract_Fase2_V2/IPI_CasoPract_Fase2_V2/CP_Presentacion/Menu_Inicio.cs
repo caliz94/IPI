@@ -226,7 +226,16 @@ namespace CP_Presentacion
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            this.pnl_izq.Size = new System.Drawing.Size(353, 551);
+
+            Form_Direcciones.Admin_Direcion abrirform = Form_Direcciones.Admin_Direcion.Abrir;
+            abrirform.TopLevel = false;
+            this.pnl_cont.Controls.Add(abrirform);
+
+            abrirform.StartPosition = FormStartPosition.CenterScreen;
+            this.pnl_cont.Tag = abrirform;
+            abrirform.Show();
+            this.pnl_izq.Size = new System.Drawing.Size(158, 551);
+            
         }
 
         private void btn_act_pro_Click(object sender, EventArgs e)
