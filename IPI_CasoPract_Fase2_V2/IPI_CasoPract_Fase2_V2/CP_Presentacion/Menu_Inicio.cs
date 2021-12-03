@@ -27,7 +27,8 @@ namespace CP_Presentacion
             Form_Cliente.CP_NuevoCliente abrirform = Form_Cliente.CP_NuevoCliente.Abrir;
             abrirform.TopLevel = false;
             this.pnl_cont.Controls.Add(abrirform);
-           
+
+            this.pnl_izq.Size = new System.Drawing.Size(158, 551);
             this.pnl_cont.Tag = abrirform;
             abrirform.Show();
         }
@@ -37,8 +38,9 @@ namespace CP_Presentacion
             Form_Cliente.Actualizar_cliente abrirform = Form_Cliente.Actualizar_cliente.Abrir;
             abrirform.TopLevel = false;
             this.pnl_cont.Controls.Add(abrirform);
-           
-          
+            this.pnl_izq.Size = new System.Drawing.Size(158, 551);
+
+
             this.pnl_cont.Tag = abrirform;
             abrirform.Show();
         }
@@ -63,12 +65,14 @@ namespace CP_Presentacion
             abrirform.StartPosition = FormStartPosition.CenterScreen;
             this.pnl_cont.Tag = abrirform;
             abrirform.Show();
+            this.pnl_izq.Size = new System.Drawing.Size(158, 551);
         }
 
         
 
         private void Menu_Inicio_Load(object sender, EventArgs e)
         {
+            this.pnl_izq.Size = new System.Drawing.Size(158, 551);
             pnl_fun_btn_client.Visible = false;
             pnl_fun_btn_Provider.Visible = false;
             pnl_fun_btn_Article.Visible = false;
@@ -85,9 +89,11 @@ namespace CP_Presentacion
                 stateArticle = false;
                 pnl_fun_btn_client.Visible = false;
                 stateclient = false;
+                this.pnl_izq.Size = new System.Drawing.Size(353, 551);
             }
             else
             {
+                this.pnl_izq.Size = new System.Drawing.Size(158, 551);
                 pnl_fun_btn_Provider.Visible = false;
                 stateProvider = false;
             }
@@ -103,9 +109,11 @@ namespace CP_Presentacion
                 stateclient = false;
                 pnl_fun_btn_Provider.Visible = false;
                 stateProvider = false;
+                this.pnl_izq.Size = new System.Drawing.Size(353, 551);
             }
             else
             {
+                this.pnl_izq.Size = new System.Drawing.Size(158, 551);
                 pnl_fun_btn_Article.Visible = false;
                 stateArticle = false;
             }
@@ -121,9 +129,11 @@ namespace CP_Presentacion
                 stateArticle = false;
                 pnl_fun_btn_Provider.Visible = false;
                 stateProvider = false;
+                this.pnl_izq.Size = new System.Drawing.Size(353, 551);
             }
             else
             {
+                this.pnl_izq.Size = new System.Drawing.Size(158, 551);
                 pnl_fun_btn_client.Visible = false;
                 stateclient = false;
             }
@@ -135,6 +145,7 @@ namespace CP_Presentacion
             Form_Fabrica.CP_MostrarFabrica abrirform = Form_Fabrica.CP_MostrarFabrica.Abrir;
             abrirform.TopLevel = false;
             this.pnl_cont.Controls.Add(abrirform);
+            this.pnl_izq.Size = new System.Drawing.Size(158, 551);
 
 
             abrirform.StartPosition = FormStartPosition.CenterScreen;
@@ -150,6 +161,8 @@ namespace CP_Presentacion
 
             this.pnl_cont.Tag = abrirform;
             abrirform.Show();
+
+            this.pnl_izq.Size = new System.Drawing.Size(158, 551);
         }
 
         private void btn_actu_Articulo_Click(object sender, EventArgs e)
@@ -160,6 +173,8 @@ namespace CP_Presentacion
 
             this.pnl_cont.Tag = abrirform;
             abrirform.Show();
+
+            this.pnl_izq.Size = new System.Drawing.Size(158, 551);
         }
 
         private void btn_elim_Articulo_Click(object sender, EventArgs e)
@@ -170,6 +185,7 @@ namespace CP_Presentacion
 
             this.pnl_cont.Tag = abrirform;
             abrirform.Show();
+            this.pnl_izq.Size = new System.Drawing.Size(158, 551);
         }
 
         private void btn_mostr_Articulo_Click(object sender, EventArgs e)
@@ -180,6 +196,8 @@ namespace CP_Presentacion
 
             this.pnl_cont.Tag = abrirform;
             abrirform.Show();
+
+            this.pnl_izq.Size = new System.Drawing.Size(158, 551);
         }
 
         private void btn_nuev_prov_Click(object sender, EventArgs e)
@@ -190,6 +208,8 @@ namespace CP_Presentacion
 
             this.pnl_cont.Tag = abrirform;
             abrirform.Show();
+
+            this.pnl_izq.Size = new System.Drawing.Size(158, 551);
         }
 
         private void bnt_elim_prov_Click(object sender, EventArgs e)
@@ -200,6 +220,19 @@ namespace CP_Presentacion
 
             this.pnl_cont.Tag = abrirform;
             abrirform.Show();
+
+            this.pnl_izq.Size = new System.Drawing.Size(158, 551);
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            this.pnl_izq.Size = new System.Drawing.Size(353, 551);
+        }
+
+        private void btn_act_pro_Click(object sender, EventArgs e)
+        {
+            this.pnl_izq.Size = new System.Drawing.Size(158, 551);
+
         }
     }
 }

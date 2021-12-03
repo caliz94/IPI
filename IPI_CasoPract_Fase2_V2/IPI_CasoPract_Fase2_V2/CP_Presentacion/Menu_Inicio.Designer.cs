@@ -62,9 +62,9 @@ namespace CP_Presentacion
             // 
             this.pnl_cont.BackColor = System.Drawing.SystemColors.ControlDark;
             this.pnl_cont.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_cont.Location = new System.Drawing.Point(353, 0);
+            this.pnl_cont.Location = new System.Drawing.Point(400, 0);
             this.pnl_cont.Name = "pnl_cont";
-            this.pnl_cont.Size = new System.Drawing.Size(447, 551);
+            this.pnl_cont.Size = new System.Drawing.Size(400, 551);
             this.pnl_cont.TabIndex = 5;
             // 
             // pnl_izq
@@ -79,7 +79,7 @@ namespace CP_Presentacion
             this.pnl_izq.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl_izq.Location = new System.Drawing.Point(0, 0);
             this.pnl_izq.Name = "pnl_izq";
-            this.pnl_izq.Size = new System.Drawing.Size(353, 551);
+            this.pnl_izq.Size = new System.Drawing.Size(400, 551);
             this.pnl_izq.TabIndex = 3;
             // 
             // pnl_fun_btn_client
@@ -88,7 +88,7 @@ namespace CP_Presentacion
             this.pnl_fun_btn_client.Controls.Add(this.btn_nuevo_cliente);
             this.pnl_fun_btn_client.Controls.Add(this.btn_act_cliente);
             this.pnl_fun_btn_client.Controls.Add(this.btn_mostrar_clientes);
-            this.pnl_fun_btn_client.Location = new System.Drawing.Point(156, 161);
+            this.pnl_fun_btn_client.Location = new System.Drawing.Point(160, 151);
             this.pnl_fun_btn_client.Name = "pnl_fun_btn_client";
             this.pnl_fun_btn_client.Size = new System.Drawing.Size(184, 299);
             this.pnl_fun_btn_client.TabIndex = 5;
@@ -112,6 +112,7 @@ namespace CP_Presentacion
             this.iconButton1.Text = "Admin Direciones";
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // btn_nuevo_cliente
             // 
@@ -182,7 +183,7 @@ namespace CP_Presentacion
             this.pnl_fun_btn_Provider.Controls.Add(this.btn_act_pro);
             this.pnl_fun_btn_Provider.Controls.Add(this.btnMostrarFabrica);
             this.pnl_fun_btn_Provider.Controls.Add(this.bnt_elim_prov);
-            this.pnl_fun_btn_Provider.Location = new System.Drawing.Point(153, 164);
+            this.pnl_fun_btn_Provider.Location = new System.Drawing.Point(163, 148);
             this.pnl_fun_btn_Provider.Name = "pnl_fun_btn_Provider";
             this.pnl_fun_btn_Provider.Size = new System.Drawing.Size(184, 282);
             this.pnl_fun_btn_Provider.TabIndex = 7;
@@ -228,6 +229,7 @@ namespace CP_Presentacion
             this.btn_act_pro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_act_pro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_act_pro.UseVisualStyleBackColor = true;
+            this.btn_act_pro.Click += new System.EventHandler(this.btn_act_pro_Click);
             // 
             // btnMostrarFabrica
             // 
@@ -299,7 +301,7 @@ namespace CP_Presentacion
             this.pnl_fun_btn_Article.Controls.Add(this.btn_actu_Articulo);
             this.pnl_fun_btn_Article.Controls.Add(this.btn_mostr_Articulo);
             this.pnl_fun_btn_Article.Controls.Add(this.btn_elim_Articulo);
-            this.pnl_fun_btn_Article.Location = new System.Drawing.Point(159, 167);
+            this.pnl_fun_btn_Article.Location = new System.Drawing.Point(166, 145);
             this.pnl_fun_btn_Article.Name = "pnl_fun_btn_Article";
             this.pnl_fun_btn_Article.Size = new System.Drawing.Size(184, 282);
             this.pnl_fun_btn_Article.TabIndex = 6;
