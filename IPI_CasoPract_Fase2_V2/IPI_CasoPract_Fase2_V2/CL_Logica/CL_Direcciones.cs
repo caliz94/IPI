@@ -19,12 +19,13 @@ namespace CL_Logica
             tabla = Direcciones_CD.cliente_direc();
             return tabla;
         }
-        public DataTable DirecionesCliente(int idcliente)
-        {
-            DataTable tabla = new DataTable();
-           tabla= Direcciones_CD.DirecciionesDelCliente(idcliente);
-            return tabla;
-        }
+        //public DataTable DirecionesCliente(int idcliente)
+        //{
+        //    DataTable tabla = new DataTable();
+        //   tabla= Direcciones_CD.DirecciionesDelCliente(idcliente);
+            
+        //    return tabla;
+        //}
         // Crear nuevo direccion
         public void nueva_direccion( int IdCliente, string Calle, string Barrio, string Distrito)
         {

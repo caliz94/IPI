@@ -27,19 +27,7 @@ namespace CD_Datos
             return table;
         }
 
-        public DataTable DirecciionesDelCliente(int idcliente)
-        {
-           
-            cmd.Connection = conex_cd.abrircadena();
-            cmd.CommandText = "sp_direciones_cliente";
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@idcliente",idcliente);
-            leer = cmd.ExecuteReader();
 
-            table.Load(leer);
-            conex_cd.cerrarcadena();
-            return table;
-        }
 
         //nueva direccion
         public void nuevo_Direcion(int IdCliente,string Calle,string Barrio,string Distrito)
@@ -48,7 +36,7 @@ namespace CD_Datos
             cmd.Connection = conex_cd.abrircadena();
             cmd.CommandText = "sp_direcciones";
             cmd.CommandType = CommandType.StoredProcedure;
-            //cmd.Parameters.AddWithValue("@IdDireccion", IdDireccion);
+       
             cmd.Parameters.AddWithValue("@IdCliente", IdCliente);
             cmd.Parameters.AddWithValue("@Calle", Calle);
             cmd.Parameters.AddWithValue("@Barrio", Barrio);
