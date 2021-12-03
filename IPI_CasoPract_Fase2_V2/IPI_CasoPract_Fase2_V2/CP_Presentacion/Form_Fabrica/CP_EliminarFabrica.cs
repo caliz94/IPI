@@ -49,8 +49,27 @@ namespace CP_Presentacion.Form_Fabrica
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            string indice = cboxNombreFabrica.SelectedValue.ToString();
-            OFabrica.EliminarFabrica(Convert.ToInt32(indice));
+            try
+            {
+                if (cboxNombreFabrica.SelectedIndex == -1)
+                {
+                    errorProvider1.SetError(cboxNombreFabrica, "CAMPO OBLIGATORIO");
+                }
+                else
+                {
+                    string indice = cboxNombreFabrica.SelectedValue.ToString();
+                    OFabrica.EliminarFabrica(Convert.ToInt32(indice));
+                    MessageBox.Show("Proveedor Eliminado Exitosamente.");
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo Eliminar la Fabrica. Error: " + ex.Message);
+            }
+
+
+            
         }
     }
 }
