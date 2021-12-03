@@ -27,7 +27,19 @@ namespace CD_Datos
             tabla.Load(leerdata);
             Conexion.cerrarcadena();
             return tabla;
+        }
 
+
+        public DataTable MostrarCamposFabricas()
+        {
+            tabla.Clear();
+            comando.Connection = Conexion.abrircadena();
+            comando.CommandText = "sp_mostrarCamposFabricas";
+            comando.CommandType = CommandType.StoredProcedure;
+            leerdata = comando.ExecuteReader();
+            tabla.Load(leerdata);
+            Conexion.cerrarcadena();
+            return tabla;
         }
 
 

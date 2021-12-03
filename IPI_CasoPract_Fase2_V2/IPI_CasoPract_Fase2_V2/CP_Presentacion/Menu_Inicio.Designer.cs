@@ -183,7 +183,7 @@ namespace CP_Presentacion
             this.pnl_fun_btn_Provider.Controls.Add(this.btn_act_pro);
             this.pnl_fun_btn_Provider.Controls.Add(this.btnMostrarFabrica);
             this.pnl_fun_btn_Provider.Controls.Add(this.bnt_elim_prov);
-            this.pnl_fun_btn_Provider.Location = new System.Drawing.Point(163, 148);
+            this.pnl_fun_btn_Provider.Location = new System.Drawing.Point(163, 145);
             this.pnl_fun_btn_Provider.Name = "pnl_fun_btn_Provider";
             this.pnl_fun_btn_Provider.Size = new System.Drawing.Size(184, 282);
             this.pnl_fun_btn_Provider.TabIndex = 7;

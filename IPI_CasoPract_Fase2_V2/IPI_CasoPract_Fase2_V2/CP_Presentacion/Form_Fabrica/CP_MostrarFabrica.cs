@@ -53,9 +53,6 @@ namespace CP_Presentacion.Form_Fabrica
         {
             _Abrir = null;
         }
-
-
-
         #endregion
 
         private void ActualizarFabrica_Load(object sender, EventArgs e)

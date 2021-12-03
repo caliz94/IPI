@@ -20,6 +20,15 @@ namespace CL_Logica
             return tabla;
         }
 
+
+        public DataTable MostrarCamposFabricas()
+        {
+            DataTable tabla = new DataTable();
+            tabla = OFabrica.MostrarCamposFabricas();
+            return tabla;
+        }
+
+
         public DataTable MostrarFabricasAct()
         {
             DataTable tabla = new DataTable();

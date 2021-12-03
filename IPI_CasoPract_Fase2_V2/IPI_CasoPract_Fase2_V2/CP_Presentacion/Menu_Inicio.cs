@@ -240,6 +240,13 @@ namespace CP_Presentacion
 
         private void btn_act_pro_Click(object sender, EventArgs e)
         {
+            Form_Fabrica.CP_ActualizarFabrica abrirform = Form_Fabrica.CP_ActualizarFabrica.Abrir;
+            abrirform.TopLevel = false;
+            this.pnl_cont.Controls.Add(abrirform);
+
+            abrirform.StartPosition = FormStartPosition.CenterScreen;
+            this.pnl_cont.Tag = abrirform;
+            abrirform.Show();
             this.pnl_izq.Size = new System.Drawing.Size(158, 551);
 
         }
