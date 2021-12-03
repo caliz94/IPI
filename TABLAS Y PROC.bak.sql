@@ -150,6 +150,12 @@ END
 GO
 --EXEC sp_nuevaFabrica 'CURACAO', '22685303'
 
+CREATE PROCEDURE [dbo].[sp_cargarComboFabrica]
+AS
+BEGIN
+	SELECT IdFabrica, NombreFabrica FROM Fabrica WHERE Activo = 1
+END
+
 
 --*******************************************CLIENTES**********************************************************************
 CREATE PROCEDURE sp_mostrarClientes
