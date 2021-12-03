@@ -47,7 +47,6 @@ namespace CP_Presentacion.Form_Direcciones
             this.label6 = new System.Windows.Forms.Label();
             this.btn_editar = new FontAwesome.Sharp.IconButton();
             this.btn_guardar = new FontAwesome.Sharp.IconButton();
-            this.btn_eliminar = new FontAwesome.Sharp.IconButton();
             this.btn_NuevDire = new FontAwesome.Sharp.IconButton();
             this.pnl_Ctrls = new System.Windows.Forms.Panel();
             this.btn_cancelar = new FontAwesome.Sharp.IconButton();
@@ -72,7 +71,6 @@ namespace CP_Presentacion.Form_Direcciones
             this.dgv_clientes.Name = "dgv_clientes";
             this.dgv_clientes.Size = new System.Drawing.Size(200, 422);
             this.dgv_clientes.TabIndex = 0;
-            this.dgv_clientes.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_clientes_CellContentDoubleClick);
             // 
             // pnl_izq
             // 
@@ -227,19 +225,6 @@ namespace CP_Presentacion.Form_Direcciones
             this.btn_guardar.UseVisualStyleBackColor = true;
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
-            // btn_eliminar
-            // 
-            this.btn_eliminar.Enabled = false;
-            this.btn_eliminar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btn_eliminar.IconColor = System.Drawing.Color.Black;
-            this.btn_eliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_eliminar.Location = new System.Drawing.Point(220, 161);
-            this.btn_eliminar.Name = "btn_eliminar";
-            this.btn_eliminar.Size = new System.Drawing.Size(118, 23);
-            this.btn_eliminar.TabIndex = 18;
-            this.btn_eliminar.Text = "Eliminar";
-            this.btn_eliminar.UseVisualStyleBackColor = true;
-            // 
             // btn_NuevDire
             // 
             this.btn_NuevDire.Enabled = false;
@@ -348,7 +333,6 @@ namespace CP_Presentacion.Form_Direcciones
             this.Controls.Add(this.pnl_der);
             this.Controls.Add(this.pnl_Ctrls);
             this.Controls.Add(this.btn_NuevDire);
-            this.Controls.Add(this.btn_eliminar);
             this.Controls.Add(this.btn_editar);
             this.Controls.Add(this.pnl_izq);
             this.Name = "Admin_Direcion";
@@ -384,7 +368,6 @@ namespace CP_Presentacion.Form_Direcciones
         private System.Windows.Forms.Label label6;
         private FontAwesome.Sharp.IconButton btn_editar;
         private FontAwesome.Sharp.IconButton btn_guardar;
-        private FontAwesome.Sharp.IconButton btn_eliminar;
         private FontAwesome.Sharp.IconButton btn_NuevDire;
         private System.Windows.Forms.Panel pnl_Ctrls;
         private System.Windows.Forms.Panel pnl_der;

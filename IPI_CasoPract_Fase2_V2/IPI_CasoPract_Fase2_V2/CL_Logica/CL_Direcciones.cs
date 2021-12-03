@@ -26,11 +26,17 @@ namespace CL_Logica
             
         //    return tabla;
         //}
+
+
         // Crear nuevo direccion
         public void nueva_direccion( int IdCliente, string Calle, string Barrio, string Distrito)
         {
             Direcciones_CD.nuevo_Direcion(IdCliente,  Calle,  Barrio,  Distrito);
         }
-
+        // actualizar direccion
+        public void actualizar_direc(int IdDireccion, string Calle, string Barrio, string Distrito)
+        {
+            Direcciones_CD.actualizar_Direcion(IdDireccion, Calle, Barrio, Distrito);
+        }
     }
 }

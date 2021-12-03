@@ -91,22 +91,17 @@ namespace CP_Presentacion.Form_Direcciones
             MostrarClientes();
         }
 
-        private void dgv_clientes_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            btn_NuevDire.Enabled = true;
-            btn_editar.Enabled = true;
-            btn_eliminar.Enabled = true;
-
-            txt_NumeroCliente.Text = dgv_clientes.CurrentRow.Cells["IdCliente"].Value.ToString();
-            txt_nombre_cliente.Text = dgv_clientes.CurrentRow.Cells["NombreCliente"].Value.ToString();
-         
-        }
+     
 
         private void nuevadireci()
         {
             Direcciones_cl.nueva_direccion(Convert.ToInt32(txt_NumeroCliente.Text), txt_Calle.Text, txt_Barrio.Text, txt_Distrito.Text);
         }
 
+        private void actualizar()
+        {
+            Direcciones_cl.actualizar_direc(Convert.ToInt32(txt_numero_direccion.Text), txt_Calle.Text, txt_Barrio.Text, txt_Distrito.Text);
+        }
         private void btn_NuevDire_Click(object sender, EventArgs e)
         {
             try
@@ -140,7 +135,7 @@ namespace CP_Presentacion.Form_Direcciones
                 {
                     dgv_clientes.Enabled = true;
                     btn_editar.Enabled = false;
-                    btn_eliminar.Enabled = false;
+                    
                 }
                 if (txt_Calle.Text == string.Empty)
                 {
@@ -163,7 +158,8 @@ namespace CP_Presentacion.Form_Direcciones
             }
             else
             {
-                MessageBox.Show("hacer nmetodo para modificar direccion");
+                actualizar();
+                MessageBox.Show("cambios realizados");
             }
 
 

@@ -44,5 +44,23 @@ namespace CD_Datos
             cmd.ExecuteNonQuery();            
             conex_cd.cerrarcadena();
         }
+
+
+
+        //actualizar direccion
+        public void actualizar_Direcion(int IdDireccion, string Calle, string Barrio, string Distrito)
+        {
+            table.Clear();
+            cmd.Connection = conex_cd.abrircadena();
+            cmd.CommandText = "sp_actual_direcc";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@IdDireccion", IdDireccion);
+            cmd.Parameters.AddWithValue("@Calle", Calle);
+            cmd.Parameters.AddWithValue("@Barrio", Barrio);
+            cmd.Parameters.AddWithValue("@Distrito", Distrito);
+            cmd.ExecuteNonQuery();
+            conex_cd.cerrarcadena();
+        }
     }
 }
