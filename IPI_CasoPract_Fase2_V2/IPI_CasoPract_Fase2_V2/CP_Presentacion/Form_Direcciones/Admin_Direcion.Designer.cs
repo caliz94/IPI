@@ -71,6 +71,7 @@ namespace CP_Presentacion.Form_Direcciones
             this.dgv_clientes.Name = "dgv_clientes";
             this.dgv_clientes.Size = new System.Drawing.Size(200, 422);
             this.dgv_clientes.TabIndex = 0;
+            this.dgv_clientes.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_clientes_CellMouseDoubleClick);
             // 
             // pnl_izq
             // 
