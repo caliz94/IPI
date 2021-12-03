@@ -275,3 +275,19 @@ create proc sp_direciones_cliente
 as
 select IdDireccion,Calle,Barrio,Distrito from Direcciones where IdCliente=@idcliente and  Activo = 1
 go
+
+--actualizar direccion
+create proc sp_actual_direcc
+(
+@IdDireccion int,
+@calle varchar(100),
+@Barrio varchar(100),
+@Distrito varchar(100)
+)as
+update Direcciones
+set
+Calle = @calle,
+Barrio = @Barrio,
+Distrito =@Distrito
+where  IdDireccion = @IdDireccion
+go
