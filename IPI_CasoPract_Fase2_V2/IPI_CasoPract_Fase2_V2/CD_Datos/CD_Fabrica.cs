@@ -27,6 +27,7 @@ namespace CD_Datos
             tabla.Load(leerdata);
             Conexion.cerrarcadena();
             return tabla;
+
         }
 
 

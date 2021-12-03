@@ -68,6 +68,8 @@ namespace CD_Datos
         DataTable tabla = new DataTable();
         public DataTable MostrarClientes()
         {
+
+            tabla.Clear();
             cmd.Connection = Conexion.abrircadena();
             cmd.CommandText = "sp_mostrarClientes";
             cmd.CommandType = CommandType.StoredProcedure;
@@ -81,6 +83,8 @@ namespace CD_Datos
         //Mostrar Clientes Inactivos
         public DataTable ClientesInactivos()
         {
+
+            tabla.Clear();
             cmd.Connection = Conexion.abrircadena();
             cmd.CommandText = "sp_mostrarClientesInactivos";
             cmd.CommandType = CommandType.StoredProcedure;
@@ -90,9 +94,10 @@ namespace CD_Datos
             return tabla;
         }
         //mostrar clientes activos     
-
+        //alex
         public DataTable ClientesActivos()
         {
+            tabla.Clear();
             cmd.Connection = Conexion.abrircadena();
             cmd.CommandText = "sp_mostrarClientesActivos";
             cmd.CommandType = CommandType.StoredProcedure;

@@ -130,7 +130,7 @@ namespace CP_Presentacion
             this.btn_nuevo_cliente.Name = "btn_nuevo_cliente";
             this.btn_nuevo_cliente.Size = new System.Drawing.Size(158, 56);
             this.btn_nuevo_cliente.TabIndex = 0;
-            this.btn_nuevo_cliente.Text = "Nuevo PAISA";
+            this.btn_nuevo_cliente.Text = "Nuevo Cliente";
             this.btn_nuevo_cliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_nuevo_cliente.UseVisualStyleBackColor = true;
             this.btn_nuevo_cliente.Click += new System.EventHandler(this.btn_nuevo_cliente_Click);
