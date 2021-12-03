@@ -1,102 +1,109 @@
-USE master
-GO
+--USE master
+--GO
 
-IF DB_ID('IPICASOPRACTICO') IS NOT NULL
-BEGIN
-	DROP DATABASE IPICASOPRACTICO
-END
+--IF DB_ID('IPICASOPRACTICO') IS NOT NULL
+--BEGIN
+--	DROP DATABASE IPICASOPRACTICO
+--END
 
-CREATE DATABASE IPICASOPRACTICO
-GO
+--CREATE DATABASE IPICASOPRACTICO
+--GO
 
 USE IPICASOPRACTICO
 GO
 
-CREATE TABLE Cliente
-(
-	IdCliente INT PRIMARY KEY,
-	NombreCliente VARCHAR(100) NOT NULL,
-	Saldo MONEY NOT NULL,
-	LimiteCredito MONEY CHECK(LimiteCredito <= 3000000) NOT NULL,
-	Descuento MONEY NOT NULL,
-	Activo BIT not null
-)
-GO
+--CREATE TABLE Cliente
+--(
+--	IdCliente INT PRIMARY KEY,
+--	NombreCliente VARCHAR(100) NOT NULL,
+--	Saldo MONEY NOT NULL,
+--	LimiteCredito MONEY CHECK(LimiteCredito <= 3000000) NOT NULL,
+--	Descuento MONEY NOT NULL,
+--	Activo BIT not null
+--)
+--GO
 
-CREATE TABLE Direcciones
-(
-	IdDireccion INT PRIMARY KEY NOT NULL,
-	IdCliente INT FOREIGN KEY REFERENCES dbo.Cliente(IdCliente) NOT NULL,
-	Calle VARCHAR(25) NOT NULL,
-	Barrio VARCHAR(80) NOT NULL,
-	Distrito VARCHAR(250) NOT NULL,
-	Activo BIT NOT NULL
-)
-GO
+--CREATE TABLE Direcciones
+--(
+--	IdDireccion INT PRIMARY KEY NOT NULL,
+--	IdCliente INT FOREIGN KEY REFERENCES dbo.Cliente(IdCliente) NOT NULL,
+--	Calle VARCHAR(25) NOT NULL,
+--	Barrio VARCHAR(80) NOT NULL,
+--	Distrito VARCHAR(250) NOT NULL,
+--	Activo BIT NOT NULL
+--)
+--GO
 
 
-CREATE TABLE Fabrica
-(
-  IdFabrica INT PRIMARY KEY,
-  NombreFabrica VARCHAR(50) NOT NULL,
-  Telefono VARCHAR(13) NOT NULL,
-  Activo BIT NOT NULL
-)
-GO
+--CREATE TABLE Fabrica
+--(
+--  IdFabrica INT PRIMARY KEY,
+--  NombreFabrica VARCHAR(50) NOT NULL,
+--  Telefono VARCHAR(13) NOT NULL,
+--  Activo BIT NOT NULL
+--)
+--GO
 
-CREATE TABLE Articulo
-(
-	IdArticulo INT PRIMARY KEY,
-	Descripción_Articulo VARCHAR(250) NOT NULL,
-	Existencias INT NOT NULL,
-	PrecioUnitario MONEY NOT NULL,
-	IdFabrica INT FOREIGN KEY REFERENCES dbo.Fabrica(IdFabrica) NOT NULL,
-	ArticulosProvistos INT NOT NULL,
-	NoFabricasAlternativas INT NOT NULL
-)
-GO
+--CREATE TABLE Articulo
+--(
+--	IdArticulo INT PRIMARY KEY,
+--	Descripción_Articulo VARCHAR(250) NOT NULL,
+--	Existencias INT NOT NULL,
+--	PrecioUnitario MONEY NOT NULL,
+--	IdFabrica INT FOREIGN KEY REFERENCES dbo.Fabrica(IdFabrica) NOT NULL,
+--	ArticulosProvistos INT NOT NULL,
+--	NoFabricasAlternativas INT NOT NULL
+--)
+--GO
 
-CREATE TABLE Pedido
-(
-	IdPedido INT PRIMARY KEY,
-    IdCliente INT FOREIGN KEY REFERENCES dbo.Cliente(IdCliente) NOT NULL,
-	IdDireccion INT FOREIGN KEY REFERENCES dbo.Direcciones(IdDireccion) NOT NULL,
-	FechaPedido DATETIME NOT NULL,
-	Activo BIT NOT NULL
-)
-GO
+--CREATE TABLE Pedido
+--(
+--	IdPedido INT PRIMARY KEY,
+--    IdCliente INT FOREIGN KEY REFERENCES dbo.Cliente(IdCliente) NOT NULL,
+--	IdDireccion INT FOREIGN KEY REFERENCES dbo.Direcciones(IdDireccion) NOT NULL,
+--	FechaPedido DATETIME NOT NULL,
+--	Activo BIT NOT NULL
+--)
+--GO
 
-CREATE TABLE Detalle_Pedido
-(
-	IdArticulo INT FOREIGN KEY REFERENCES dbo.Articulo(IdArticulo),
-    IdPedido INT FOREIGN KEY REFERENCES dbo.Pedido(IdPedido),
-	Cantidad INT NOT NULL,
-	Fabrica INT FOREIGN KEY REFERENCES dbo.Fabrica(IdFabrica) NOT NULL
-	PRIMARY KEY(IdArticulo,IdPedido)
-)
-GO
+--CREATE TABLE Detalle_Pedido
+--(
+--	IdArticulo INT FOREIGN KEY REFERENCES dbo.Articulo(IdArticulo),
+--    IdPedido INT FOREIGN KEY REFERENCES dbo.Pedido(IdPedido),
+--	Cantidad INT NOT NULL,
+--	Fabrica INT FOREIGN KEY REFERENCES dbo.Fabrica(IdFabrica) NOT NULL
+--	PRIMARY KEY(IdArticulo,IdPedido)
+--)
+--GO
 
 
 --PROCEDIMIENTOS ALMACENADOS
 --***************************************** FABRICAS**********************************************************************
-CREATE PROCEDURE sp_mostrarFabricas
+CREATE PROCEDURE sp_mostrarCamposFabricas
 AS
 BEGIN
-    SELECT * FROM dbo.Fabrica 
+    SELECT IdFabrica, NombreFabrica, Telefono, Activo FROM dbo.Fabrica 
 END
 GO
 
-CREATE PROCEDURE sp_mostrarFabricasActivas
+ALTER PROCEDURE sp_mostrarFabricas
 AS
 BEGIN
-	SELECT * FROM Fabrica WHERE Activo = 1
+    SELECT IdFabrica, NombreFabrica, Telefono FROM dbo.Fabrica 
 END
 GO
 
-CREATE PROCEDURE sp_mostrarFabricasInactivos
+ALTER PROCEDURE sp_mostrarFabricasActivas
 AS
 BEGIN
-	SELECT * FROM Fabrica WHERE Activo = 0
+	SELECT IdFabrica, NombreFabrica, Telefono FROM Fabrica WHERE Activo = 1
+END
+GO
+
+ALTER PROCEDURE sp_mostrarFabricasInactivos
+AS
+BEGIN
+	SELECT IdFabrica, NombreFabrica, Telefono FROM Fabrica WHERE Activo = 0
 END
 GO
 
@@ -146,17 +153,16 @@ BEGIN
 		1
 	)
 END
-
 GO
 --EXEC sp_nuevaFabrica 'CURACAO', '22685303'
 
-CREATE PROCEDURE [dbo].[sp_cargarComboFabrica]
+
+ALTER PROCEDURE sp_cargarComboFabrica
 AS
 BEGIN
-	SELECT IdFabrica, NombreFabrica FROM Fabrica WHERE Activo = 1
+	SELECT IdFabrica, 'Id - '+str(IdFabrica) + ' - ' + NombreFabrica AS [NombreFabrica] FROM Fabrica WHERE Activo = 1
 END
 
-go
 --*******************************************CLIENTES**********************************************************************
 CREATE PROCEDURE sp_mostrarClientes
 AS
@@ -241,7 +247,7 @@ GO
 --						GO
 
 --***************************************DIRECCIONES*****************************************
-CREATE PROCEDURE sp_direcciones
+ALTER PROCEDURE sp_direcciones
 (
 	@idcliente INT,
 	@calle VARCHAR(25),
@@ -261,40 +267,44 @@ GO
 
 
 --mostrar clientes para agregar dire4cciones----
-CREATE PROCEDURE sp_clientesActivos_direcio
+ALTER PROCEDURE sp_clientesActivos_direcio
 AS
 BEGIN
-	SELECT IdCliente,NombreCliente FROM Cliente WHERE Activo = 1
+	SELECT IdCliente, NombreCliente FROM Cliente WHERE Activo = 1
 END
 GO
 --mostrar direciones del cliente
-create proc sp_direciones_cliente
+ALTER procEDURE sp_direciones_cliente
 (
 @idcliente int
 )
 as
-select IdDireccion,Calle,Barrio,Distrito from Direcciones where IdCliente=@idcliente and  Activo = 1
+BEGIN
+	select IdDireccion,Calle,Barrio,Distrito from Direcciones where IdCliente=@idcliente and  Activo = 1
+END
 go
 
 --actualizar direccion
-create proc sp_actual_direcc
+ALTER PROCEDURE sp_actual_direcc
 (
-@IdDireccion int,
-@calle varchar(100),
-@Barrio varchar(100),
-@Distrito varchar(100)
-)as
-update Direcciones
-set
-Calle = @calle,
-Barrio = @Barrio,
-Distrito =@Distrito
-where  IdDireccion = @IdDireccion
-go
+@IdDireccion INT,
+@calle VARCHAR(100),
+@Barrio VARCHAR(100),
+@Distrito VARCHAR(100)
+)
+AS
+BEGIN
+	UPDATE Direcciones
+	SET Calle = @calle,
+		Barrio = @Barrio,
+		Distrito =@Distrito
+	WHERE IdDireccion = @IdDireccion
+END
+GO
 --***********************************************articulos*******************************************************************
 
 --nuevo articulo
-create proc sp_nuevo_articulo
+ALTER PROCEDURE sp_nuevo_articulo
 (
 @Descripción_Articulo VARCHAR(250),
 @Existencias INT,
@@ -302,17 +312,18 @@ create proc sp_nuevo_articulo
 @IdFabrica INT,
 @ArticulosProvistos INT,
 @NoFabricasAlternativas INT
-)as
+)
+AS
 BEGIN
 	DECLARE @IdArticulo INT
 	SELECT @IdArticulo = ISNULL(MAX(IdArticulo),0)+1 FROM Articulo
-	select @IdArticulo
-	insert into Articulo values(@IdArticulo,@Descripción_Articulo,@Existencias,@PrecioUnitario,@IdFabrica,@ArticulosProvistos,@NoFabricasAlternativas)
+	INSERT INTO Articulo VALUES(@IdArticulo,@Descripción_Articulo,@Existencias,@PrecioUnitario,@IdFabrica,@ArticulosProvistos,@NoFabricasAlternativas)
 END
-go
+GO
 
 --actualizar articulo
-create proc sp_actualizar_articulo
+
+ALTER PROCEDURE sp_actualizar_articulo
 (
 @IdArticulo INT ,
 @Descripción_Articulo VARCHAR(250),
@@ -321,15 +332,18 @@ create proc sp_actualizar_articulo
 @IdFabrica INT,
 @ArticulosProvistos INT,
 @NoFabricasAlternativas INT
-)as
-update Articulo 
-set 
-Descripción_Articulo= @Descripción_Articulo,
-Existencias=@Existencias,
-PrecioUnitario=@PrecioUnitario,
-IdFabrica=@IdFabrica,
-ArticulosProvistos=@ArticulosProvistos,
-NoFabricasAlternativas=@NoFabricasAlternativas
-where IdArticulo = @IdArticulo
-go
+)
+AS
+BEGIN
+	UPDATE Articulo 
+	SET 
+			Descripción_Articulo = @Descripción_Articulo,
+			Existencias = @Existencias,
+			PrecioUnitario = @PrecioUnitario,
+			IdFabrica = @IdFabrica,
+			ArticulosProvistos = @ArticulosProvistos,
+			NoFabricasAlternativas = @NoFabricasAlternativas
+	WHERE IdArticulo = @IdArticulo
+END
+GO
 
