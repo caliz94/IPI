@@ -46,5 +46,11 @@ namespace CP_Presentacion.Form_Fabrica
         {
             _Abrir = null;
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            string indice = cboxNombreFabrica.SelectedValue.ToString();
+            OFabrica.EliminarFabrica(Convert.ToInt32(indice));
+        }
     }
 }

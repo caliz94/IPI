@@ -47,5 +47,11 @@ namespace CL_Logica
             tabla = OFabrica.CargarComboFabrica();
             return tabla;
         }
+
+
+        public void EliminarFabrica(int IdFabrica)
+        {
+            OFabrica.EliminarFabrica(IdFabrica);
+        }
     }
 }

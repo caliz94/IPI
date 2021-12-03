@@ -81,6 +81,7 @@
             this.btnEliminar.Text = "Eliminar Fabrica";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // CP_EliminarFabrica
             // 

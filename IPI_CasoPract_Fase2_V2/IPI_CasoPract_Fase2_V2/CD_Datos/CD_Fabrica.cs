@@ -82,5 +82,16 @@ namespace CD_Datos
             Conexion.cerrarcadena();
             return tabla;
         }
+
+        public void EliminarFabrica(int IdFabrica)
+        {
+            comando.Connection = Conexion.abrircadena();
+            comando.CommandText = "sp_eliminarFabrica";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@IdFabrica", IdFabrica);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            Conexion.cerrarcadena();
+        }
     }
 }
