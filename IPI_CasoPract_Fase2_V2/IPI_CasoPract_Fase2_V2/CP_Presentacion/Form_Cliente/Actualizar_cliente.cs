@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CL_Logica;
 
 namespace CP_Presentacion.Form_Cliente
 {
@@ -38,6 +39,12 @@ namespace CP_Presentacion.Form_Cliente
 
         #endregion
 
+        CL_Clientes clientes_cl = new CL_Clientes();
+
+        private void actualizar()
+        {
+            clientes_cl.act_cliente(Convert.ToInt32(txt_idcliente.Text),txt_nombrecliente.Text,txt_Saldo.Text,txt_LimiteCredito.Text,txt_Descuento.Text,Convert.ToByte(chk_Estado.Tag));
+        }
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
@@ -49,6 +56,9 @@ namespace CP_Presentacion.Form_Cliente
             {
                 chk_Estado.Tag = "0";
             }
+
+            actualizar();
+
         }
 
     }

@@ -41,7 +41,7 @@ namespace CD_Datos
             cmd.Parameters.AddWithValue("@IdCliente", IdCliente);
             cmd.Parameters.AddWithValue("@NombreCliente", NombreCliente);
             cmd.Parameters.AddWithValue("@Saldo", Saldo);
-            cmd.Parameters.AddWithValue("@@Limite", @Limite);
+            cmd.Parameters.AddWithValue("@Limite", @Limite);
             cmd.Parameters.AddWithValue("@Descuento", Descuento);
             cmd.Parameters.AddWithValue("@activo", activo);
             cmd.ExecuteNonQuery();

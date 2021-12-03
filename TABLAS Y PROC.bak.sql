@@ -156,7 +156,7 @@ BEGIN
 	SELECT IdFabrica, NombreFabrica FROM Fabrica WHERE Activo = 1
 END
 
-
+go
 --*******************************************CLIENTES**********************************************************************
 CREATE PROCEDURE sp_mostrarClientes
 AS

@@ -36,9 +36,9 @@ namespace CP_Presentacion.Form_Cliente
             this.txt_LimiteCredito = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_nombrecliente = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_idcliente = new System.Windows.Forms.TextBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.chk_Estado = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
@@ -119,13 +119,13 @@ namespace CP_Presentacion.Form_Cliente
             this.label1.TabIndex = 22;
             this.label1.Text = "Cliente";
             // 
-            // textBox1
+            // txt_nombrecliente
             // 
-            this.textBox1.Location = new System.Drawing.Point(51, 106);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox1.Size = new System.Drawing.Size(156, 20);
-            this.textBox1.TabIndex = 21;
+            this.txt_nombrecliente.Location = new System.Drawing.Point(51, 106);
+            this.txt_nombrecliente.Name = "txt_nombrecliente";
+            this.txt_nombrecliente.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_nombrecliente.Size = new System.Drawing.Size(156, 20);
+            this.txt_nombrecliente.TabIndex = 21;
             // 
             // label6
             // 
@@ -140,13 +140,13 @@ namespace CP_Presentacion.Form_Cliente
             this.label6.TabIndex = 37;
             this.label6.Text = "Numero de Cliente";
             // 
-            // textBox2
+            // txt_idcliente
             // 
-            this.textBox2.Location = new System.Drawing.Point(51, 61);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox2.Size = new System.Drawing.Size(156, 20);
-            this.textBox2.TabIndex = 36;
+            this.txt_idcliente.Location = new System.Drawing.Point(51, 61);
+            this.txt_idcliente.Name = "txt_idcliente";
+            this.txt_idcliente.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_idcliente.Size = new System.Drawing.Size(156, 20);
+            this.txt_idcliente.TabIndex = 36;
             // 
             // iconButton1
             // 
@@ -181,9 +181,9 @@ namespace CP_Presentacion.Form_Cliente
             this.ClientSize = new System.Drawing.Size(272, 420);
             this.Controls.Add(this.chk_Estado);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txt_idcliente);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_nombrecliente);
             this.Controls.Add(this.txt_Descuento);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.label2);
@@ -208,9 +208,9 @@ namespace CP_Presentacion.Form_Cliente
         private System.Windows.Forms.TextBox txt_LimiteCredito;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_nombrecliente;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_idcliente;
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.CheckBox chk_Estado;
     }
