@@ -170,8 +170,6 @@ CREATE PROCEDURE sp_buscaFabricaxId
 )
 AS
 BEGIN
---DECLARE @IdFabrica INT
---SET @IdFabrica = 1
 	SELECT * FROM Fabrica WHERE IdFabrica LIKE ((CAST(@IdFabrica AS VARCHAR(20)))+'%')
 END
 GO
@@ -323,7 +321,7 @@ BEGIN
 	UPDATE Direcciones
 	SET Calle = @calle,
 		Barrio = @Barrio,
-		Distrito =@Distrito
+		Distrito = @Distrito
 	WHERE IdDireccion = @IdDireccion
 END
 GO
