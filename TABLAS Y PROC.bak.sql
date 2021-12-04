@@ -371,3 +371,16 @@ BEGIN
 END
 GO
 
+--mostrar articulos
+create proc sp_mostrar_artic
+as
+select a.IdArticulo,a.Descripción_Articulo,a.Existencias,a.PrecioUnitario,f.NombreFabrica,a.ArticulosProvistos,
+a.NoFabricasAlternativas from Articulo as a inner join Fabrica as f on a.IdFabrica = f.IdFabrica
+go
+
+--eliminar articulo
+create proc sp_eliminar_articulo
+@idArticulo int
+as
+delete from Articulo where IdArticulo = @idArticulo
+go
