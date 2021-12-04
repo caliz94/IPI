@@ -45,9 +45,10 @@ namespace CP_Presentacion.Form_Cliente
             // dgv_mostar_clientes
             // 
             this.dgv_mostar_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_mostar_clientes.Location = new System.Drawing.Point(78, 96);
+            this.dgv_mostar_clientes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_mostar_clientes.Location = new System.Drawing.Point(119, 96);
             this.dgv_mostar_clientes.Name = "dgv_mostar_clientes";
-            this.dgv_mostar_clientes.Size = new System.Drawing.Size(552, 260);
+            this.dgv_mostar_clientes.Size = new System.Drawing.Size(511, 260);
             this.dgv_mostar_clientes.TabIndex = 0;
             // 
             // label_grid
@@ -122,10 +123,10 @@ namespace CP_Presentacion.Form_Cliente
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(630, 384);
+            this.Controls.Add(this.dgv_mostar_clientes);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dgv_mostar_clientes);
             this.Name = "CP_MostrarClientes";
             this.Text = "CP_MostrarClientes";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CP_MostrarClientes_FormClosed);

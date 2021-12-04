@@ -57,9 +57,56 @@ namespace CP_Presentacion.Form_Cliente
                 chk_Estado.Tag = "0";
             }
 
-            actualizar();
+            if (txt_idcliente.Text==string.Empty)
+            {
+                errorProvider1.SetError(txt_idcliente,"Selecione un clinte del DataGrid");
+            }
+            else if (txt_nombrecliente.Text==string.Empty)
+            {
+                errorProvider1.SetError(txt_idcliente, "");
+                errorProvider1.SetError(txt_nombrecliente, "CAMPO OBLIGATORIO");
+            }
+            else if (txt_Saldo.Text == string.Empty)
+            {
+          
+                errorProvider1.SetError(txt_Saldo, "CAMPO OBLIGATORIO");
+                errorProvider1.SetError(txt_nombrecliente, "");
+            }
+            else if (txt_LimiteCredito.Text == string.Empty)
+            {
+                errorProvider1.SetError(txt_LimiteCredito, "CAMPO OBLIGATORIO");
+                errorProvider1.SetError(txt_Saldo, "");
+               
+            }
+            else if (txt_Descuento.Text == string.Empty)
+            {
+                errorProvider1.SetError(txt_LimiteCredito, "");
+                errorProvider1.SetError(txt_Descuento, "CAMPO OBLIGATORIO");
+            }
+            else
+            {
+                errorProvider1.SetError(txt_Descuento, " ");
+                actualizar();              
+                MessageBox.Show("el cliente ha sido actualizado exitosamente");
+         
+            }
 
         }
 
+        private void Actualizar_cliente_Load(object sender, EventArgs e)
+        {
+            dgv_mostar_clientes.DataSource = clientes_cl.clientes_activos(); 
+        }
+
+        private void dgv_mostar_clientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_idcliente.Text = dgv_mostar_clientes.CurrentRow.Cells["IdCliente"].Value.ToString();
+            txt_nombrecliente.Enabled = true;
+            txt_Saldo.Enabled = true;
+            txt_LimiteCredito.Enabled = true;
+            txt_Descuento.Enabled = true;
+            chk_Estado.Enabled = true;
+            iconButton1.Enabled = true;
+        }
     }
 }

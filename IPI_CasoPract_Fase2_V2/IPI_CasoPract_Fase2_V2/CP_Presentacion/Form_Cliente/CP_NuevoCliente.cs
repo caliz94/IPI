@@ -61,6 +61,10 @@ namespace CP_Presentacion.Form_Cliente
                 {
                     nuevo_cliente_cl.nuevo_cliente(txt_cliente.Text, txt_Saldo.Text, txt_LimiteCredito.Text, txt_Descuento.Text);
                     MessageBox.Show("EL CLIENTE \"" + txt_cliente.Text.ToUpper() + "\" FUE AGREGADO EXITOSAMENTE");
+                    txt_cliente.Clear();
+                    txt_Descuento.Clear();
+                    txt_LimiteCredito.Clear();
+                    txt_Saldo.Clear();
                 }
             }
             catch (Exception ex)
