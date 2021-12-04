@@ -35,5 +35,10 @@ namespace CP_Presentacion.Form_Cliente
         {
             _Abrir = null;
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
