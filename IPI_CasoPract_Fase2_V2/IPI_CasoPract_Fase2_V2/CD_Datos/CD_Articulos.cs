@@ -12,12 +12,30 @@ namespace CD_Datos
     public  class CD_Articulos
     {
         private CD_Conexion Conexion = new CD_Conexion();
+
+        SqlDataReader leer;
+        DataTable tabla = new DataTable();
         SqlCommand cmd = new SqlCommand();
+
+        //cargar grid de articulos
+        public DataTable Mostrar_articulos()
+        {
+            cmd.Connection = Conexion.abrircadena();
+            cmd.CommandText = "sp_mostrar_artic";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.ExecuteReader();
+            tabla.Load(leer);            
+            Conexion.cerrarcadena();
+            return tabla;
+        }
+
+
+
         //Metodo Nuevo articulos
         public void nuevo_artic(string Descripción_Articulo,int Existencias,Double PrecioUnitario,int IdFabrica,int ArticulosProvistos,int NoFabricasAlternativa)
         {
             cmd.Connection = Conexion.abrircadena();
-            cmd.CommandText = "sp_nuevoCliente";
+            cmd.CommandText = "sp_nuevo_articulo";
             cmd.CommandType = CommandType.StoredProcedure;
             
             cmd.Parameters.AddWithValue("@Descripción_Articulo", Descripción_Articulo);
@@ -36,7 +54,7 @@ namespace CD_Datos
         public void edit_artic(int IdArticulo, string Descripción_Articulo, int Existencias, Double PrecioUnitario, int IdFabrica, int ArticulosProvistos, int NoFabricasAlternativa)
         {
             cmd.Connection = Conexion.abrircadena();
-            cmd.CommandText = "sp_nuevoCliente";
+            cmd.CommandText = "sp_actualizar_articulo";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@IdArticulo", IdArticulo);
             cmd.Parameters.AddWithValue("@Descripción_Articulo", Descripción_Articulo);
@@ -50,6 +68,19 @@ namespace CD_Datos
             Conexion.cerrarcadena();
         }
 
+        //Metodo eliminar articulos
+        public void eliminar_articulo(int IdArticulo)
+        {
+            cmd.Connection = Conexion.abrircadena();
+            cmd.CommandText = "sp_eliminar_articulo";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@IdArticulo", IdArticulo);
+          
+            cmd.ExecuteNonQuery();
+            cmd.Parameters.Clear();
+            Conexion.cerrarcadena();
+        }
 
     }
 }

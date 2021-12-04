@@ -34,10 +34,24 @@ namespace CP_Presentacion.Form_Articulos
         }
 
         CL_Articulos articulos_cl = new CL_Articulos();
+        private string id_articulo = null;
+        private bool editar = false;
 
+
+        //cargar articulos en el grid
+        private void MostrarArticulos()
+        {           
+            dgv_articulos.DataSource = articulos_cl.Mostrar_articulos();
+        }
         private void btn_guardar_Click(object sender, EventArgs e)
         {
             //    articulos_cl.NuevoArticulo(txt_desc.Text,t);
+            MostrarArticulos();
+        }
+
+        private void CP_NuevoArticulo_Load(object sender, EventArgs e)
+        {
+            MostrarArticulos();
         }
     }
 }
