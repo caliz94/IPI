@@ -29,6 +29,33 @@ namespace CD_Datos
             return tabla;
         }
 
+        public DataTable BuscaFabricaxId(int IdFabrica)
+        {
+            tabla.Clear();
+            comando.Connection = Conexion.abrircadena();
+            comando.CommandText = "sp_buscaFabricaxId";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@IdFabrica", Convert.ToInt32(IdFabrica));
+            leerdata = comando.ExecuteReader();
+            tabla.Load(leerdata);
+            comando.Parameters.Clear();
+            Conexion.cerrarcadena();
+            return tabla;
+        }
+
+        public DataTable BuscaFabricaxNombre(string Nombre)
+        {
+            tabla.Clear();
+            comando.Connection = Conexion.abrircadena();
+            comando.CommandText = "sp_buscaFabricaxNombre";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@Nombre", Nombre);
+            leerdata = comando.ExecuteReader();
+            tabla.Load(leerdata);
+            comando.Parameters.Clear();
+            Conexion.cerrarcadena();
+            return tabla;
+        }
 
         public DataTable MostrarCamposFabricas()
         {

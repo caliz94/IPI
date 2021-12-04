@@ -20,6 +20,20 @@ namespace CL_Logica
             return tabla;
         }
 
+        public DataTable BuscarFabricaxId(int IdFabrica)
+        {
+            DataTable tabla = new DataTable();
+            tabla = OFabrica.BuscaFabricaxId(IdFabrica);
+            return tabla;
+        }
+
+        public DataTable BuscaFabricaxNombre(string Nombre)
+        {
+            DataTable tabla = new DataTable();
+            tabla = OFabrica.BuscaFabricaxNombre(Nombre);
+            return tabla;
+        }
+
 
         public DataTable MostrarCamposFabricas()
         {

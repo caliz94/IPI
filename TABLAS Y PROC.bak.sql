@@ -162,6 +162,32 @@ AS
 BEGIN
 	SELECT IdFabrica, 'Id - '+str(IdFabrica) + ' - ' + NombreFabrica AS [NombreFabrica] FROM Fabrica WHERE Activo = 1
 END
+GO
+
+CREATE PROCEDURE sp_buscaFabricaxId
+(
+@IdFabrica INT
+)
+AS
+BEGIN
+--DECLARE @IdFabrica INT
+--SET @IdFabrica = 1
+	SELECT * FROM Fabrica WHERE IdFabrica LIKE ((CAST(@IdFabrica AS VARCHAR(20)))+'%')
+END
+GO
+
+
+CREATE PROCEDURE sp_buscaFabricaxNombre
+(
+@Nombre VARCHAR(50)
+)
+AS
+BEGIN
+--DECLARE @IdFabrica INT
+--SET @IdFabrica = 1
+	SELECT * FROM Fabrica WHERE NombreFabrica LIKE ('%'+@Nombre+'%')
+END
+GO
 
 --*******************************************CLIENTES**********************************************************************
 CREATE PROCEDURE sp_mostrarClientes

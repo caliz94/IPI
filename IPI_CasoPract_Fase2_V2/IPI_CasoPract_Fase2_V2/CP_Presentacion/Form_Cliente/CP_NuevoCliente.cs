@@ -63,9 +63,10 @@ namespace CP_Presentacion.Form_Cliente
                     MessageBox.Show("EL CLIENTE \"" + txt_cliente.Text.ToUpper() + "\" FUE AGREGADO EXITOSAMENTE");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("OCURRIO UN ERROR");
+                MessageBox.Show("OCURRIO UN ERROR: " + ex.Message);
+                this.Close();
             }
         }
 

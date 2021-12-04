@@ -46,6 +46,7 @@ namespace CP_Presentacion.Form_Fabrica
             dgvProveedores.DataSource = OFabrica.MostrarCamposFabricas();
         }
 
+
         private void CP_ActualizarFabrica_Load(object sender, EventArgs e)
         {
             MostrarFabricas();
@@ -82,6 +83,34 @@ namespace CP_Presentacion.Form_Fabrica
             else
             {
                 chkBuscaId.Checked = true;
+            }
+        }
+
+
+        private void tboxIdFabrica_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                int estado = Convert.ToInt32(tboxIdFabrica.Text);
+                dgvProveedores.DataSource = OFabrica.BuscarFabricaxId(estado);
+                tboxNombreFabrica.Text = string.Empty;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void tboxNombreFabrica_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                dgvProveedores.DataSource = OFabrica.BuscaFabricaxNombre(tboxNombreFabrica.Text);
+                tboxIdFabrica.Text = string.Empty;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
     }
