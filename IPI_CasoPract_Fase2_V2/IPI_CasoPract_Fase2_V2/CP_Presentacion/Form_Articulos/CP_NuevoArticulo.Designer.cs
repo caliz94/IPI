@@ -42,7 +42,7 @@ namespace CP_Presentacion.Form_Articulos
             // 
             // txt_art_rec
             // 
-            this.txt_art_rec.Location = new System.Drawing.Point(23, 148);
+            this.txt_art_rec.Location = new System.Drawing.Point(29, 220);
             this.txt_art_rec.Name = "txt_art_rec";
             this.txt_art_rec.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_art_rec.Size = new System.Drawing.Size(156, 20);
@@ -55,7 +55,7 @@ namespace CP_Presentacion.Form_Articulos
             this.btn_guardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_guardar.IconSize = 60;
             this.btn_guardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_guardar.Location = new System.Drawing.Point(27, 249);
+            this.btn_guardar.Location = new System.Drawing.Point(33, 321);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btn_guardar.Size = new System.Drawing.Size(156, 64);
@@ -69,7 +69,7 @@ namespace CP_Presentacion.Form_Articulos
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Bodoni Bd BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label2.Location = new System.Drawing.Point(23, 38);
+            this.label2.Location = new System.Drawing.Point(29, 110);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label2.Size = new System.Drawing.Size(93, 19);
@@ -78,7 +78,7 @@ namespace CP_Presentacion.Form_Articulos
             // 
             // txt_desc
             // 
-            this.txt_desc.Location = new System.Drawing.Point(23, 60);
+            this.txt_desc.Location = new System.Drawing.Point(29, 132);
             this.txt_desc.Name = "txt_desc";
             this.txt_desc.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_desc.Size = new System.Drawing.Size(156, 20);
@@ -90,7 +90,7 @@ namespace CP_Presentacion.Form_Articulos
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Bodoni Bd BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label3.Location = new System.Drawing.Point(23, 81);
+            this.label3.Location = new System.Drawing.Point(29, 153);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label3.Size = new System.Drawing.Size(147, 19);
@@ -103,7 +103,7 @@ namespace CP_Presentacion.Form_Articulos
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Bodoni Bd BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label5.Location = new System.Drawing.Point(23, 171);
+            this.label5.Location = new System.Drawing.Point(29, 243);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label5.Size = new System.Drawing.Size(157, 19);
@@ -112,7 +112,7 @@ namespace CP_Presentacion.Form_Articulos
             // 
             // txt_fab_rec
             // 
-            this.txt_fab_rec.Location = new System.Drawing.Point(23, 193);
+            this.txt_fab_rec.Location = new System.Drawing.Point(29, 265);
             this.txt_fab_rec.Name = "txt_fab_rec";
             this.txt_fab_rec.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_fab_rec.Size = new System.Drawing.Size(156, 20);
@@ -120,7 +120,7 @@ namespace CP_Presentacion.Form_Articulos
             // 
             // txt_nom_fab
             // 
-            this.txt_nom_fab.Location = new System.Drawing.Point(23, 103);
+            this.txt_nom_fab.Location = new System.Drawing.Point(29, 175);
             this.txt_nom_fab.Name = "txt_nom_fab";
             this.txt_nom_fab.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_nom_fab.Size = new System.Drawing.Size(156, 20);
@@ -132,7 +132,7 @@ namespace CP_Presentacion.Form_Articulos
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label4.Font = new System.Drawing.Font("Bodoni Bd BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label4.Location = new System.Drawing.Point(23, 126);
+            this.label4.Location = new System.Drawing.Point(29, 198);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label4.Size = new System.Drawing.Size(145, 19);
@@ -143,7 +143,7 @@ namespace CP_Presentacion.Form_Articulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(225, 335);
+            this.ClientSize = new System.Drawing.Size(225, 424);
             this.Controls.Add(this.txt_art_rec);
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.label2);
