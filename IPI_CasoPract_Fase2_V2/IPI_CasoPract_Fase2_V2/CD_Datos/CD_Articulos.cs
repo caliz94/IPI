@@ -20,13 +20,14 @@ namespace CD_Datos
         //cargar grid de articulos
         public DataTable Mostrar_articulos()
         {
+            tabla.Clear();
             cmd.Connection = Conexion.abrircadena();
             cmd.CommandText = "sp_mostrar_artic";
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.ExecuteReader();
+            leer = cmd.ExecuteReader();
             tabla.Load(leer);            
             Conexion.cerrarcadena();
-            return tabla;
+            return tabla; 
         }
 
 
