@@ -372,10 +372,19 @@ END
 GO
 
 --mostrar articulos
-create proc sp_mostrar_artic
+ALTER proc sp_mostrar_artic
 as
-select a.IdArticulo,a.Descripción_Articulo,a.Existencias,a.PrecioUnitario,f.NombreFabrica,a.ArticulosProvistos,
-a.NoFabricasAlternativas from Articulo as a inner join Fabrica as f on a.IdFabrica = f.IdFabrica
+BEGIN
+	select	a.IdArticulo,
+			a.Descripción_Articulo,
+			a.Existencias,
+			a.PrecioUnitario,
+			f.NombreFabrica,
+			a.ArticulosProvistos,
+			a.NoFabricasAlternativas 
+	from Articulo as a inner join Fabrica as f on a.IdFabrica = f.IdFabrica
+	
+END
 go
 
 --eliminar articulo
