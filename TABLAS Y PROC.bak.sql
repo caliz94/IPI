@@ -347,7 +347,7 @@ GO
 
 --actualizar articulo
 
-ALTER PROCEDURE sp_actualizar_articulo
+CREATE PROCEDURE sp_actualizar_articulo
 (
 @IdArticulo INT ,
 @Descripción_Articulo VARCHAR(250),
@@ -372,7 +372,7 @@ END
 GO
 
 --mostrar articulos
-ALTER proc sp_mostrar_artic
+CREATE proc sp_mostrar_artic
 as
 BEGIN
 	select	a.IdArticulo,
