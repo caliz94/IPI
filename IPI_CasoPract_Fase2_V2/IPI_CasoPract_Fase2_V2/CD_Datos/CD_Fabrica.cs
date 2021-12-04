@@ -110,6 +110,7 @@ namespace CD_Datos
         }
         #endregion
 
+        #region Cargar ComboBox
         public DataTable CargarComboFabrica()
         {
             //tabla.Clear();
@@ -121,7 +122,9 @@ namespace CD_Datos
             Conexion.cerrarcadena();
             return tabla;
         }
+        #endregion
 
+        #region Eliminar Fabrica
         public void EliminarFabrica(int IdFabrica)
         {
             comando.Connection = Conexion.abrircadena();
@@ -132,5 +135,22 @@ namespace CD_Datos
             comando.Parameters.Clear();
             Conexion.cerrarcadena();
         }
+        #endregion
+
+        #region Actualizar Fabrica
+        public void ActualizarFabrica(int IdFabrica, string NombreFabrica, string Telefono, byte Activo)
+        {
+            comando.Connection = Conexion.abrircadena();
+            comando.CommandText = "sp_actualizarFabrica";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@IdFabrica", IdFabrica);
+            comando.Parameters.AddWithValue("@NombreFabrica", NombreFabrica);
+            comando.Parameters.AddWithValue("@Telefono", Telefono);
+            comando.Parameters.AddWithValue("@Activo", Activo);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            Conexion.cerrarcadena();
+        }
+        #endregion
     }
 }

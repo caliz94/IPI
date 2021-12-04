@@ -41,6 +41,17 @@ namespace CP_Presentacion.Form_Fabrica
         
         #endregion FinSinglenton
 
+        private void LimpiarControles()
+        {
+            tboxIdFabrica.Text = string.Empty;
+            tboxNombreFabrica.Text = string.Empty;
+            tboxTelefono.Text = string.Empty;
+            chk_Estado.Checked = false;
+            btnGuardar.Enabled = false;
+            btnActualizarCliente.Enabled = false;
+            btnCancelar.Enabled = true;
+        }
+
         private void MostrarFabricas()
         {
             dgvProveedores.DataSource = OFabrica.MostrarCamposFabricas();
@@ -55,19 +66,29 @@ namespace CP_Presentacion.Form_Fabrica
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            MostrarFabricas();
+            LimpiarControles();
+            pnlBusqueda.Enabled = true;
+            chkBuscaId.Checked = true;
+            tboxIdFabrica.Enabled = true;
+            tboxNombreFabrica.Enabled = false;
+            tboxTelefono.Enabled = false;
+            chk_Estado.Enabled = false;
+            //this.Close();
         }
 
         private void chkBuscaId_CheckedChanged(object sender, EventArgs e)
         {
             if (chkBuscaId.Checked == true)
             {
+                LimpiarControles();
                 chkBuscaNombre.Checked = false;
                 tboxIdFabrica.Enabled = true;
                 tboxNombreFabrica.Enabled = false;
             }
             else
             {
+                LimpiarControles();
                 chkBuscaNombre.Checked = true;
                 tboxIdFabrica.Enabled = false;
                 tboxNombreFabrica.Enabled = true;
@@ -78,10 +99,12 @@ namespace CP_Presentacion.Form_Fabrica
         {
             if (chkBuscaNombre.Checked == true)
             {
+                LimpiarControles();
                 chkBuscaId.Checked = false;
             }
             else
             {
+                LimpiarControles();
                 chkBuscaId.Checked = true;
             }
         }
@@ -91,9 +114,7 @@ namespace CP_Presentacion.Form_Fabrica
         {
             try
             {
-                int estado = Convert.ToInt32(tboxIdFabrica.Text);
-                dgvProveedores.DataSource = OFabrica.BuscarFabricaxId(estado);
-                tboxNombreFabrica.Text = string.Empty;
+                dgvProveedores.DataSource = OFabrica.BuscarFabricaxId(Convert.ToInt32(tboxIdFabrica.Text));
             }
             catch (Exception ex)
             {
@@ -106,11 +127,48 @@ namespace CP_Presentacion.Form_Fabrica
             try
             {
                 dgvProveedores.DataSource = OFabrica.BuscaFabricaxNombre(tboxNombreFabrica.Text);
-                tboxIdFabrica.Text = string.Empty;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void dgvProveedores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tboxIdFabrica.Text = dgvProveedores.CurrentRow.Cells["IdFabrica"].Value.ToString();
+            tboxNombreFabrica.Text = dgvProveedores.CurrentRow.Cells["NombreFabrica"].Value.ToString();
+            tboxTelefono.Text = dgvProveedores.CurrentRow.Cells["Telefono"].Value.ToString();
+            chk_Estado.Checked = Convert.ToBoolean(dgvProveedores.CurrentRow.Cells["Activo"].Value);
+            btnActualizarCliente.Enabled = true;
+            btnActualizarCliente.ForeColor = Color.Yellow;
+        }
+
+        private void btnActualizarCliente_Click(object sender, EventArgs e)
+        {
+            btnActualizarCliente.Enabled = false;
+            btnCancelar.Enabled = true;
+            btnGuardar.Enabled = true;
+            tboxIdFabrica.Enabled = false;
+            tboxNombreFabrica.Enabled = true;
+            tboxTelefono.Enabled = true;
+            chk_Estado.Enabled = true;
+            pnlBusqueda.Enabled = false;
+            btnActualizarCliente.ForeColor = Color.Navy;
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OFabrica.ActualizarFabrica(Convert.ToInt32(tboxIdFabrica.Text), tboxNombreFabrica.Text, tboxTelefono.Text, Convert.ToByte(chk_Estado.Checked));
+                MessageBox.Show("Proveedor Actualizado Exitosamente.");
+                dgvProveedores.DataSource = OFabrica.BuscaFabricaxNombre(tboxNombreFabrica.Text);
+                LimpiarControles();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo Eliminar la Fabrica. Error: " + ex.Message);
             }
         }
     }

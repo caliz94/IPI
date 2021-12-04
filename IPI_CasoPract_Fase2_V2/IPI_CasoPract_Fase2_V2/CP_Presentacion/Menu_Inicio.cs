@@ -248,7 +248,6 @@ namespace CP_Presentacion
             this.pnl_cont.Tag = abrirform;
             abrirform.Show();
             this.pnl_izq.Size = new System.Drawing.Size(158, 551);
-
         }
     }
 }

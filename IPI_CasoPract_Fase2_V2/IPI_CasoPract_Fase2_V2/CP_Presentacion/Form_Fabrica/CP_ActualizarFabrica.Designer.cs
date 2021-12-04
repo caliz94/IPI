@@ -193,6 +193,7 @@
             this.dgvProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProveedores.Size = new System.Drawing.Size(776, 220);
             this.dgvProveedores.TabIndex = 11;
+            this.dgvProveedores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProveedores_CellDoubleClick);
             // 
             // btnActualizarCliente
             // 
@@ -211,10 +212,11 @@
             this.btnActualizarCliente.Name = "btnActualizarCliente";
             this.btnActualizarCliente.Size = new System.Drawing.Size(135, 68);
             this.btnActualizarCliente.TabIndex = 13;
-            this.btnActualizarCliente.Text = "ACTUALIZAR\r\nCLIENTE";
+            this.btnActualizarCliente.Text = "ACTUALIZAR";
             this.btnActualizarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnActualizarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnActualizarCliente.UseVisualStyleBackColor = false;
+            this.btnActualizarCliente.Click += new System.EventHandler(this.btnActualizarCliente_Click);
             // 
             // btnGuardar
             // 
@@ -237,6 +239,7 @@
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 

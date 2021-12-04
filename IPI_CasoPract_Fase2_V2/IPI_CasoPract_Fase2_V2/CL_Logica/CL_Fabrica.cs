@@ -76,5 +76,10 @@ namespace CL_Logica
         {
             OFabrica.EliminarFabrica(IdFabrica);
         }
+
+        public void ActualizarFabrica(int IdFabrica, string NombreFabrica, string Telefono, byte Activo)
+        {
+            OFabrica.ActualizarFabrica(IdFabrica, NombreFabrica, Telefono, Activo);
+        }
     }
 }
