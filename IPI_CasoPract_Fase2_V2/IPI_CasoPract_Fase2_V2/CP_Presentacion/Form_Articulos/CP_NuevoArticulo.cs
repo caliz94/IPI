@@ -27,7 +27,7 @@ namespace CP_Presentacion.Form_Articulos
             }
         }
 
-     
+     //klklkl
         private void CP_NuevoArticulo_FormClosed(object sender, FormClosedEventArgs e)
         {
             _Abrir = null;

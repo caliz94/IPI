@@ -152,7 +152,7 @@ namespace CP_Presentacion.Form_Articulos
             this.dgv_articulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_articulos.Location = new System.Drawing.Point(238, 12);
             this.dgv_articulos.Name = "dgv_articulos";
-            this.dgv_articulos.Size = new System.Drawing.Size(240, 400);
+            this.dgv_articulos.Size = new System.Drawing.Size(406, 400);
             this.dgv_articulos.TabIndex = 23;
             // 
             // txt_art_provistos
@@ -223,7 +223,7 @@ namespace CP_Presentacion.Form_Articulos
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(454, 424);
+            this.ClientSize = new System.Drawing.Size(656, 516);
             this.Controls.Add(this.txt_art_provistos);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
