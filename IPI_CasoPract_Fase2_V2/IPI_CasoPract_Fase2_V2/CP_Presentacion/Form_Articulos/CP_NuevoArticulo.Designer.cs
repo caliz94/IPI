@@ -45,8 +45,8 @@ namespace CP_Presentacion.Form_Articulos
             this.txt_fab_altern = new System.Windows.Forms.TextBox();
             this.txt_fabr = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.btn_eliminar = new FontAwesome.Sharp.IconButton();
+            this.btn_editar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_articulos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -221,35 +221,37 @@ namespace CP_Presentacion.Form_Articulos
             this.label7.TabIndex = 28;
             this.label7.Text = "Articulos Provistos";
             // 
-            // iconButton1
+            // btn_eliminar
             // 
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
-            this.iconButton1.IconColor = System.Drawing.Color.DarkCyan;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 60;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.iconButton1.Location = new System.Drawing.Point(425, 418);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.iconButton1.Size = new System.Drawing.Size(182, 64);
-            this.iconButton1.TabIndex = 30;
-            this.iconButton1.Text = "ELIMINAR";
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.btn_eliminar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.btn_eliminar.IconColor = System.Drawing.Color.DarkCyan;
+            this.btn_eliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_eliminar.IconSize = 60;
+            this.btn_eliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_eliminar.Location = new System.Drawing.Point(425, 418);
+            this.btn_eliminar.Name = "btn_eliminar";
+            this.btn_eliminar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btn_eliminar.Size = new System.Drawing.Size(182, 64);
+            this.btn_eliminar.TabIndex = 30;
+            this.btn_eliminar.Text = "ELIMINAR";
+            this.btn_eliminar.UseVisualStyleBackColor = true;
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
-            // iconButton2
+            // btn_editar
             // 
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
-            this.iconButton2.IconColor = System.Drawing.Color.DarkCyan;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 60;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.iconButton2.Location = new System.Drawing.Point(237, 418);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.iconButton2.Size = new System.Drawing.Size(182, 64);
-            this.iconButton2.TabIndex = 31;
-            this.iconButton2.Text = "EDITAR";
-            this.iconButton2.UseVisualStyleBackColor = true;
+            this.btn_editar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.btn_editar.IconColor = System.Drawing.Color.DarkCyan;
+            this.btn_editar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_editar.IconSize = 60;
+            this.btn_editar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_editar.Location = new System.Drawing.Point(237, 418);
+            this.btn_editar.Name = "btn_editar";
+            this.btn_editar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btn_editar.Size = new System.Drawing.Size(182, 64);
+            this.btn_editar.TabIndex = 31;
+            this.btn_editar.Text = "EDITAR";
+            this.btn_editar.UseVisualStyleBackColor = true;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
             // 
             // CP_NuevoArticulo
             // 
@@ -257,8 +259,8 @@ namespace CP_Presentacion.Form_Articulos
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(656, 505);
-            this.Controls.Add(this.iconButton2);
-            this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.btn_editar);
+            this.Controls.Add(this.btn_eliminar);
             this.Controls.Add(this.txt_art_provistos);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
@@ -303,7 +305,7 @@ namespace CP_Presentacion.Form_Articulos
         private System.Windows.Forms.TextBox txt_fab_altern;
         private System.Windows.Forms.TextBox txt_fabr;
         private System.Windows.Forms.Label label7;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton btn_eliminar;
+        private FontAwesome.Sharp.IconButton btn_editar;
     }
 }

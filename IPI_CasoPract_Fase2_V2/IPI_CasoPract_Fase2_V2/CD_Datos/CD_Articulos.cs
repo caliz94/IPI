@@ -59,18 +59,19 @@ namespace CD_Datos
 
 
         //Metodo Nuevo articulos
-        public void nuevo_artic(string Descripción_Articulo,int Existencias,Double PrecioUnitario,int IdFabrica,int ArticulosProvistos,int NoFabricasAlternativa)
+        public void nuevo_artic(/*int @IdArticulo,*/string Descripción_Articulo,int Existencias,Double PrecioUnitario,int IdFabrica,int ArticulosProvistos,int NoFabricasAlternativa)
         {
             cmd.Connection = Conexion.abrircadena();
             cmd.CommandText = "sp_nuevo_articulo";
             cmd.CommandType = CommandType.StoredProcedure;
-            
+
+            //cmd.Parameters.AddWithValue("@IdArticulo", @IdArticulo);
             cmd.Parameters.AddWithValue("@Descripción_Articulo", Descripción_Articulo);
             cmd.Parameters.AddWithValue("@Existencias", Existencias);
             cmd.Parameters.AddWithValue("@PrecioUnitario", PrecioUnitario);
             cmd.Parameters.AddWithValue("@IdFabrica", IdFabrica);
             cmd.Parameters.AddWithValue("@ArticulosProvistos", ArticulosProvistos);
-            cmd.Parameters.AddWithValue("@NoFabricasAlternativa", NoFabricasAlternativa);
+            cmd.Parameters.AddWithValue("@NoFabricasAlternativas", NoFabricasAlternativa);
          
             cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();

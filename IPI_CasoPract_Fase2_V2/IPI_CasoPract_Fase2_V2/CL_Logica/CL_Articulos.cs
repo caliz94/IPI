@@ -20,9 +20,9 @@ namespace CL_Logica
             return tabla;
         }
         //nuevo articulo
-        public void NuevoArticulo(string Descripción_Articulo, int Existencias, Double PrecioUnitario, int IdFabrica, int ArticulosProvistos, int NoFabricasAlternativa)
+        public void NuevoArticulo(/*int IdArticulo,*/string Descripción_Articulo, int Existencias, Double PrecioUnitario, int IdFabrica, int ArticulosProvistos, int NoFabricasAlternativa)
         {
-            articulos_cd.nuevo_artic( Descripción_Articulo, Existencias, PrecioUnitario, IdFabrica, ArticulosProvistos, NoFabricasAlternativa);
+            articulos_cd.nuevo_artic(/*IdArticulo,*/ Descripción_Articulo, Existencias, PrecioUnitario, IdFabrica, ArticulosProvistos, NoFabricasAlternativa);
         }
         //actualizar articulo
 
