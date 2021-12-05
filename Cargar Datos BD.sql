@@ -20,6 +20,14 @@ EXEC dbo.sp_nuevo_articulo	@Descripción_Articulo	=	'COLGATE PALMOLIVE', --VARCHA
 							@NoFabricasAlternativas =	0	--INT
 						GO
 
+EXEC dbo.sp_nuevo_articulo	@Descripción_Articulo	=	'PLAYSTATION V', --VARCHAR(250),
+							@Existencias			=	0,	--INT,
+							@PrecioUnitario			=	300,	--MONEY,
+							@IdFabrica				=	1,	--INT,
+							@ArticulosProvistos		=	100,--INT,
+							@NoFabricasAlternativas =	0	--INT
+						GO
+
 EXEC dbo.sp_nuevo_articulo	@Descripción_Articulo	=	'MONITOR DELL STATUS 01', --VARCHAR(250),
 							@Existencias			=	100,	--INT,
 							@PrecioUnitario			=	30,	--MONEY,
@@ -86,3 +94,7 @@ EXEC dbo.sp_direcciones @idcliente	= 1,
 						@distrito	= 'La Calle'	--VARCHAR(250)
 						GO
 
+
+
+-- SELECT * FROM Articulo
+--select * from Fabrica

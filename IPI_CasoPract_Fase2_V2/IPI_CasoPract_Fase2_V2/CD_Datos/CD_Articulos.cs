@@ -30,7 +30,7 @@ namespace CD_Datos
             return tabla;
         }
 
-        public int ObtenerExistencias(int IdArticulo)
+        public int CargarExistencias(int IdArticulo)
         {
             int existencia;
             cmd.Connection = Conexion.abrircadena();
@@ -38,10 +38,26 @@ namespace CD_Datos
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@IdArticulo", IdArticulo);
             existencia = cmd.ExecuteNonQuery();
-            //cmd.Parameters.Clear();
+            cmd.Parameters.Clear();
             Conexion.cerrarcadena();
             return existencia;
         }
+
+        //SqlDataReader existencia;
+        //public DataTable CargarExistencias(int IdArticulo)
+        //{
+        //    //int existencia;
+        //    tabla.Clear();
+        //    cmd.Connection = Conexion.abrircadena();
+        //    cmd.CommandText = "sp_validarExistenciaArticulo";
+        //    cmd.CommandType = CommandType.StoredProcedure;
+        //    cmd.Parameters.AddWithValue("@IdArticulo", IdArticulo);
+        //    existencia = cmd.ExecuteReader();
+        //    tabla.Load(existencia);
+        //    //cmd.Parameters.Clear();
+        //    Conexion.cerrarcadena();
+        //    return tabla;
+        //}
 
         //cargar grid de articulos
         public DataTable Mostrar_articulos()

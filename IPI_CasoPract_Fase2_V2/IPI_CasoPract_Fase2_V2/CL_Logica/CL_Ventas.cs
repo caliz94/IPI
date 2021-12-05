@@ -27,12 +27,19 @@ namespace CL_Logica
             return tabla;
         }
 
+        //public DataTable ObtenerExistenciaArticulos(int IdArticulo)
+        //{
+        //    DataTable existencia = new DataTable();
+        //    existencia = OArticulo.CargarExistencias(IdArticulo);
+        //    return existencia;
+        //}
+
+
         public int ObtenerExistenciaArticulos(int IdArticulo)
         {
             int existencia;
-            existencia = OArticulo.ObtenerExistencias(IdArticulo);
+            existencia = OArticulo.CargarExistencias(IdArticulo);
             return existencia;
         }
-
     }
 }

@@ -92,7 +92,7 @@
             this.cboxNombreProducto.Name = "cboxNombreProducto";
             this.cboxNombreProducto.Size = new System.Drawing.Size(288, 21);
             this.cboxNombreProducto.TabIndex = 14;
-            this.cboxNombreProducto.SelectedValueChanged += new System.EventHandler(this.cboxNombreProducto_SelectedIndexChanged);
+            this.cboxNombreProducto.SelectionChangeCommitted += new System.EventHandler(this.cboxNombreProducto_SelectionChangeCommitted);
             // 
             // label3
             // 
@@ -103,6 +103,7 @@
             this.label3.Size = new System.Drawing.Size(105, 20);
             this.label3.TabIndex = 16;
             this.label3.Text = "Existencias:";
+            this.label3.Visible = false;
             // 
             // tboxExistencias
             // 
@@ -111,12 +112,13 @@
             this.tboxExistencias.ReadOnly = true;
             this.tboxExistencias.Size = new System.Drawing.Size(49, 20);
             this.tboxExistencias.TabIndex = 17;
+            this.tboxExistencias.Visible = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(236, 99);
+            this.label4.Location = new System.Drawing.Point(310, 98);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 20);
             this.label4.TabIndex = 18;
@@ -124,7 +126,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(327, 99);
+            this.numericUpDown1.Location = new System.Drawing.Point(401, 98);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(41, 20);
             this.numericUpDown1.TabIndex = 19;

@@ -26,27 +26,29 @@ namespace CP_Presentacion.Form_Ventas
             cboxNombreCliente.SelectedIndex = -1;
             cboxNombreCliente.ValueMember = "IdCliente";
         }
-
+        
         private void CargarComboProducto()
         {
             cboxNombreProducto.DataSource = OVentas.CargarComboProductos();
-            cboxNombreProducto.DisplayMember = "Descripción_Articulo";
+            cboxNombreProducto.DisplayMember = "NombreArticulo";
             cboxNombreProducto.SelectedIndex = -1;
             cboxNombreProducto.ValueMember = "IdArticulo";
         }
 
+        int idarticulo;
         private void ObtenerExistenciaArticulos()
         {
-            //try
-            //{
-            //    int indice = Convert.ToInt32(cboxNombreProducto.SelectedValue.ToString());
-            //    tboxExistencias.Text = Convert.ToString(OVentas.ObtenerExistenciaArticulos(indice));
+            try
+            {
+                //int indice = Convert.ToInt32(cboxNombreProducto.SelectedValue.ToString());
+                idarticulo = Convert.ToInt32(cboxNombreProducto.SelectedValue.ToString());
+                tboxExistencias.Text = Convert.ToString(OVentas.ObtenerExistenciaArticulos(idarticulo));
 
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("No se pudo Obtener la Existencias de los Articulos. Error: " + ex.Message);
-            //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo Obtener la Existencias de los Articulos. Error: " + ex.Message);
+            }
         }
         #endregion
 
@@ -56,8 +58,12 @@ namespace CP_Presentacion.Form_Ventas
             CargarComboProducto();
         }
 
-        private void cboxNombreProducto_SelectedIndexChanged(object sender, EventArgs e)
+
+        
+
+        private void cboxNombreProducto_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            
             ObtenerExistenciaArticulos();
         }
     }

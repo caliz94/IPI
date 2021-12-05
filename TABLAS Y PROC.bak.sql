@@ -410,20 +410,25 @@ END
 GO
 
 
-CREATE PROCEDURE sp_cargarComboArticulo
+ALTER PROCEDURE sp_cargarComboArticulo
 AS
 BEGIN
 	SELECT IdArticulo, str(IdArticulo) + ' - ' + Descripción_Articulo AS [NombreArticulo] 
-	FROM Articulo
+	FROM Articulo WHERE Existencias > 0
 END
 GO
 
 
-CREATE PROCEDURE sp_validarExistenciaArticulo
-(
-@IdArticulo INT
-)
-AS
-BEGIN
-	SELECT Existencias FROM Articulo WHERE IdArticulo = @IdArticulo
-END
+--ALTER PROCEDURE sp_validarExistenciaArticulo
+--(
+--@IdArticulo INT
+--)
+--AS
+--BEGIN
+--	--SELECT A.Existencias FROM Articulo AS A INNER JOIN Fabrica AS F ON A.IdFabrica = F.IdFabrica WHERE IdArticulo = @IdArticulo
+--	SELECT IdCliente FROM Cliente WHERE IdCliente = @IdArticulo
+--END
+
+--DECLARE @cantidad INT
+--EXEC sp_validarExistenciaArticulo 1, @cantidad OUTPUT
+--SELECT @cantidad
