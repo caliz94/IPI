@@ -17,6 +17,32 @@ namespace CD_Datos
         DataTable tabla = new DataTable();
         SqlCommand cmd = new SqlCommand();
 
+        // Cargar Combo Articulos
+        public DataTable CargarComboArticulos()
+        {
+            tabla.Clear();
+            cmd.Connection = Conexion.abrircadena();
+            cmd.CommandText = "sp_cargarComboArticulo";
+            cmd.CommandType = CommandType.StoredProcedure;
+            leer = cmd.ExecuteReader();
+            tabla.Load(leer);
+            Conexion.cerrarcadena();
+            return tabla;
+        }
+
+        public int ObtenerExistencias(int IdArticulo)
+        {
+            int existencia;
+            cmd.Connection = Conexion.abrircadena();
+            cmd.CommandText = "sp_validarExistenciaArticulo";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@IdArticulo", IdArticulo);
+            existencia = cmd.ExecuteNonQuery();
+            cmd.Parameters.Clear();
+            Conexion.cerrarcadena();
+            return existencia;
+        }
+
         //cargar grid de articulos
         public DataTable Mostrar_articulos()
         {

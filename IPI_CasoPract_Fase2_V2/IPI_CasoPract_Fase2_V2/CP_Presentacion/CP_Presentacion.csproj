@@ -135,6 +135,12 @@
     <Compile Include="Form_Fabrica\CP_NuevaFabrica.Designer.cs">
       <DependentUpon>CP_NuevaFabrica.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Ventas\CP_NuevaVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Ventas\CP_NuevaVenta.Designer.cs">
+      <DependentUpon>CP_NuevaVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu_Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Fabrica\CP_NuevaFabrica.resx">
       <DependentUpon>CP_NuevaFabrica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Ventas\CP_NuevaVenta.resx">
+      <DependentUpon>CP_NuevaVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu_Inicio.resx">
       <DependentUpon>Menu_Inicio.cs</DependentUpon>

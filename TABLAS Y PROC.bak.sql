@@ -393,3 +393,35 @@ create proc sp_eliminar_articulo
 as
 delete from Articulo where IdArticulo = @idArticulo
 go
+
+
+-- PROCEDIMIENTO VENTAS
+
+ALTER PROCEDURE sp_cargarComboCliente
+AS
+BEGIN
+	SELECT IdCliente, str(IdCliente) + ' - ' + NombreCliente AS [NombreCliente] 
+	FROM Cliente WHERE Activo = 1
+END
+GO
+
+
+CREATE PROCEDURE sp_cargarComboArticulo
+AS
+BEGIN
+	SELECT IdArticulo,str(IdArticulo) + ' - ' + Descripción_Articulo AS [NombreArticulo] 
+	FROM Articulo
+END
+GO
+
+
+SELECT * FROM Articulo
+
+CREATE PROCEDURE sp_validarExistenciaArticulo
+(
+@IdArticulo INT
+)
+AS
+BEGIN
+	SELECT Existencias FROM Articulo WHERE IdArticulo = @IdArticulo
+END

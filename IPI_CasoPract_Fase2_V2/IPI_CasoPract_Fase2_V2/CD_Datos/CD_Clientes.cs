@@ -12,9 +12,9 @@ namespace CD_Datos
     {
         private CD_Conexion Conexion = new CD_Conexion();
 
-
+        SqlDataReader read;
         SqlCommand cmd = new SqlCommand();
-
+        DataTable table = new DataTable();
 
         //Metodo Nuevo Cliente
         public void nuevo_cliente(string NombreCliente, string Saldo, string LimiteCredito, string Descuento)
@@ -106,5 +106,20 @@ namespace CD_Datos
             Conexion.cerrarcadena();
             return tabla;
         }
+
+
+        // Cargar Combo Cliente
+        public DataTable CargarComboClientes()
+        {
+            tabla.Clear();
+            cmd.Connection = Conexion.abrircadena();
+            cmd.CommandText = "sp_cargarComboCliente";
+            cmd.CommandType = CommandType.StoredProcedure;
+            leerdata = cmd.ExecuteReader();
+            tabla.Load(leerdata);
+            Conexion.cerrarcadena();
+            return tabla;
+        }
+
     }
 }
