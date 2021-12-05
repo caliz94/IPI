@@ -16,12 +16,23 @@ namespace CP_Presentacion
         {
             InitializeComponent();
         }
+
+        private void Menu_Inicio_Load(object sender, EventArgs e)
+        {
+            this.pnl_izq.Size = new System.Drawing.Size(158, 551);
+            pnl_fun_btn_client.Visible = false;
+            pnl_fun_btn_Provedor.Visible = false;
+            pnl_fun_btn_Artic.Visible = false;
+            pnl_venta.Visible = false;
+        }
+
         //Variables de Control de Estado para paneles
         bool stateclient = false;
         bool stateArticle = false;
         bool stateProvider = false;
+        bool stateVentas = false;
 
-
+        //botones del panel de cliente
         private void btn_nuevo_cliente_Click(object sender, EventArgs e)
         {
             Form_Cliente.CP_NuevoCliente abrirform = Form_Cliente.CP_NuevoCliente.Abrir;
@@ -70,32 +81,31 @@ namespace CP_Presentacion
 
         
 
-        private void Menu_Inicio_Load(object sender, EventArgs e)
-        {
-            this.pnl_izq.Size = new System.Drawing.Size(158, 551);
-            pnl_fun_btn_client.Visible = false;
-            pnl_fun_btn_Provider.Visible = false;
-            pnl_fun_btn_Article.Visible = false;
-        }
+      
 
         #region Visualización de Sub-Menus
         private void btnProveedores_Click(object sender, EventArgs e)
         {
             if (stateProvider == false)
             {
-                pnl_fun_btn_Provider.Visible = true;
-                stateProvider = true;
-                pnl_fun_btn_Article.Visible = false;
-                stateArticle = false;
+                pnl_fun_btn_Provedor.Visible = true;
                 pnl_fun_btn_client.Visible = false;
+                pnl_fun_btn_Artic.Visible = false;
+                pnl_venta.Visible = false;
+
+                stateProvider = true;
+                stateArticle = false;
                 stateclient = false;
+                stateVentas = false;
+
                 this.pnl_izq.Size = new System.Drawing.Size(353, 551);
             }
             else
-            {
-                this.pnl_izq.Size = new System.Drawing.Size(158, 551);
-                pnl_fun_btn_Provider.Visible = false;
+            {               
+                pnl_fun_btn_Provedor.Visible = false;
                 stateProvider = false;
+
+                this.pnl_izq.Size = new System.Drawing.Size(158, 551);
             }
         }
 
@@ -103,19 +113,24 @@ namespace CP_Presentacion
         {
             if (stateArticle == false)
             {
-                pnl_fun_btn_Article.Visible = true;
-                stateArticle = true;
+                pnl_fun_btn_Artic.Visible = true;
+                pnl_fun_btn_Provedor.Visible = false;
+                pnl_venta.Visible = false;
                 pnl_fun_btn_client.Visible = false;
+
                 stateclient = false;
-                pnl_fun_btn_Provider.Visible = false;
+                stateArticle = true;
                 stateProvider = false;
+                stateVentas = false;
+                               
                 this.pnl_izq.Size = new System.Drawing.Size(353, 551);
             }
             else
             {
-                this.pnl_izq.Size = new System.Drawing.Size(158, 551);
-                pnl_fun_btn_Article.Visible = false;
+                pnl_fun_btn_Artic.Visible = false;
                 stateArticle = false;
+
+                this.pnl_izq.Size = new System.Drawing.Size(158, 551);              
             }
         }
 
@@ -123,19 +138,24 @@ namespace CP_Presentacion
         {
             if (stateclient == false)
             {
+                pnl_fun_btn_Provedor.Visible = false;
                 pnl_fun_btn_client.Visible = true;
-                stateclient = true;
-                pnl_fun_btn_Article.Visible = false;
-                stateArticle = false;
-                pnl_fun_btn_Provider.Visible = false;
+                pnl_fun_btn_Artic.Visible = false;
+                pnl_venta.Visible = false;
+
                 stateProvider = false;
+                stateArticle = false;
+                stateclient = true;
+                stateVentas = false;
+
                 this.pnl_izq.Size = new System.Drawing.Size(353, 551);
             }
             else
             {
-                this.pnl_izq.Size = new System.Drawing.Size(158, 551);
                 pnl_fun_btn_client.Visible = false;
                 stateclient = false;
+
+                this.pnl_izq.Size = new System.Drawing.Size(158, 551);
             }
         }
         #endregion
@@ -248,6 +268,31 @@ namespace CP_Presentacion
             this.pnl_cont.Tag = abrirform;
             abrirform.Show();
             this.pnl_izq.Size = new System.Drawing.Size(158, 551);
+        }
+
+        private void btnMenuVentas_Click(object sender, EventArgs e)
+        {
+            if (stateVentas == false)
+            {
+                pnl_venta.Visible = true;
+                pnl_fun_btn_Provedor.Visible = false;
+                pnl_fun_btn_Artic.Visible = false;
+                pnl_fun_btn_client.Visible = false;
+                
+                stateVentas = true;
+                stateArticle = false;
+                stateclient = false;
+                stateProvider = false;
+                            
+                this.pnl_izq.Size = new System.Drawing.Size(353, 551);
+            }
+            else
+            {
+                pnl_venta.Visible = false;
+                stateVentas = false;
+
+                this.pnl_izq.Size = new System.Drawing.Size(158, 551);               
+            }
         }
     }
 }
