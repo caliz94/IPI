@@ -1,80 +1,80 @@
---USE master
---GO
+USE master
+GO
 
---IF DB_ID('IPICASOPRACTICO') IS NOT NULL
---BEGIN
---	DROP DATABASE IPICASOPRACTICO
---END
+IF DB_ID('IPICASOPRACTICO') IS NOT NULL
+BEGIN
+	DROP DATABASE IPICASOPRACTICO
+END
 
---CREATE DATABASE IPICASOPRACTICO
---GO
+CREATE DATABASE IPICASOPRACTICO
+GO
 
 USE IPICASOPRACTICO
 GO
 
---CREATE TABLE Cliente
---(
---	IdCliente INT PRIMARY KEY,
---	NombreCliente VARCHAR(100) NOT NULL,
---	Saldo MONEY NOT NULL,
---	LimiteCredito MONEY CHECK(LimiteCredito <= 3000000) NOT NULL,
---	Descuento MONEY NOT NULL,
---	Activo BIT not null
---)
---GO
+CREATE TABLE Cliente
+(
+	IdCliente INT PRIMARY KEY,
+	NombreCliente VARCHAR(100) NOT NULL,
+	Saldo MONEY NOT NULL,
+	LimiteCredito MONEY CHECK(LimiteCredito <= 3000000) NOT NULL,
+	Descuento MONEY NOT NULL,
+	Activo BIT not null
+)
+GO
 
---CREATE TABLE Direcciones
---(
---	IdDireccion INT PRIMARY KEY NOT NULL,
---	IdCliente INT FOREIGN KEY REFERENCES dbo.Cliente(IdCliente) NOT NULL,
---	Calle VARCHAR(25) NOT NULL,
---	Barrio VARCHAR(80) NOT NULL,
---	Distrito VARCHAR(250) NOT NULL,
---	Activo BIT NOT NULL
---)
---GO
+CREATE TABLE Direcciones
+(
+	IdDireccion INT PRIMARY KEY NOT NULL,
+	IdCliente INT FOREIGN KEY REFERENCES dbo.Cliente(IdCliente) NOT NULL,
+	Calle VARCHAR(25) NOT NULL,
+	Barrio VARCHAR(80) NOT NULL,
+	Distrito VARCHAR(250) NOT NULL,
+	Activo BIT NOT NULL
+)
+GO
 
 
---CREATE TABLE Fabrica
---(
---  IdFabrica INT PRIMARY KEY,
---  NombreFabrica VARCHAR(50) NOT NULL,
---  Telefono VARCHAR(13) NOT NULL,
---  Activo BIT NOT NULL
---)
---GO
+CREATE TABLE Fabrica
+(
+  IdFabrica INT PRIMARY KEY,
+  NombreFabrica VARCHAR(50) NOT NULL,
+  Telefono VARCHAR(13) NOT NULL,
+  Activo BIT NOT NULL
+)
+GO
 
---CREATE TABLE Articulo
---(
---	IdArticulo INT PRIMARY KEY,
---	Descripción_Articulo VARCHAR(250) NOT NULL,
---	Existencias INT NOT NULL,
---	PrecioUnitario MONEY NOT NULL,
---	IdFabrica INT FOREIGN KEY REFERENCES dbo.Fabrica(IdFabrica) NOT NULL,
---	ArticulosProvistos INT NOT NULL,
---	NoFabricasAlternativas INT NOT NULL
---)
---GO
+CREATE TABLE Articulo
+(
+	IdArticulo INT PRIMARY KEY,
+	Descripción_Articulo VARCHAR(250) NOT NULL,
+	Existencias INT NOT NULL,
+	PrecioUnitario MONEY NOT NULL,
+	IdFabrica INT FOREIGN KEY REFERENCES dbo.Fabrica(IdFabrica) NOT NULL,
+	ArticulosProvistos INT NOT NULL,
+	NoFabricasAlternativas INT NOT NULL
+)
+GO
 
---CREATE TABLE Pedido
---(
---	IdPedido INT PRIMARY KEY,
---    IdCliente INT FOREIGN KEY REFERENCES dbo.Cliente(IdCliente) NOT NULL,
---	IdDireccion INT FOREIGN KEY REFERENCES dbo.Direcciones(IdDireccion) NOT NULL,
---	FechaPedido DATETIME NOT NULL,
---	Activo BIT NOT NULL
---)
---GO
+CREATE TABLE Pedido
+(
+	IdPedido INT PRIMARY KEY,
+    IdCliente INT FOREIGN KEY REFERENCES dbo.Cliente(IdCliente) NOT NULL,
+	IdDireccion INT FOREIGN KEY REFERENCES dbo.Direcciones(IdDireccion) NOT NULL,
+	FechaPedido DATETIME NOT NULL,
+	Activo BIT NOT NULL
+)
+GO
 
---CREATE TABLE Detalle_Pedido
---(
---	IdArticulo INT FOREIGN KEY REFERENCES dbo.Articulo(IdArticulo),
---    IdPedido INT FOREIGN KEY REFERENCES dbo.Pedido(IdPedido),
---	Cantidad INT NOT NULL,
---	Fabrica INT FOREIGN KEY REFERENCES dbo.Fabrica(IdFabrica) NOT NULL
---	PRIMARY KEY(IdArticulo,IdPedido)
---)
---GO
+CREATE TABLE Detalle_Pedido
+(
+	IdArticulo INT FOREIGN KEY REFERENCES dbo.Articulo(IdArticulo),
+    IdPedido INT FOREIGN KEY REFERENCES dbo.Pedido(IdPedido),
+	Cantidad INT NOT NULL,
+	Fabrica INT FOREIGN KEY REFERENCES dbo.Fabrica(IdFabrica) NOT NULL
+	PRIMARY KEY(IdArticulo,IdPedido)
+)
+GO
 
 
 --PROCEDIMIENTOS ALMACENADOS
@@ -86,21 +86,21 @@ BEGIN
 END
 GO
 
-ALTER PROCEDURE sp_mostrarFabricas
+CREATE PROCEDURE sp_mostrarFabricas
 AS
 BEGIN
     SELECT IdFabrica, NombreFabrica, Telefono FROM dbo.Fabrica 
 END
 GO
 
-ALTER PROCEDURE sp_mostrarFabricasActivas
+CREATE PROCEDURE sp_mostrarFabricasActivas
 AS
 BEGIN
 	SELECT IdFabrica, NombreFabrica, Telefono FROM Fabrica WHERE Activo = 1
 END
 GO
 
-ALTER PROCEDURE sp_mostrarFabricasInactivos
+CREATE PROCEDURE sp_mostrarFabricasInactivos
 AS
 BEGIN
 	SELECT IdFabrica, NombreFabrica, Telefono FROM Fabrica WHERE Activo = 0
@@ -154,15 +154,15 @@ BEGIN
 	)
 END
 GO
---EXEC sp_nuevaFabrica 'CURACAO', '22685303'
 
 
-ALTER PROCEDURE sp_cargarComboFabrica
+CREATE PROCEDURE sp_cargarComboFabrica
 AS
 BEGIN
 	SELECT IdFabrica, 'Id - '+str(IdFabrica) + ' - ' + NombreFabrica AS [NombreFabrica] FROM Fabrica WHERE Activo = 1
 END
 GO
+
 
 CREATE PROCEDURE sp_buscaFabricaxId
 (
@@ -187,6 +187,7 @@ BEGIN
 END
 GO
 
+
 --*******************************************CLIENTES**********************************************************************
 CREATE PROCEDURE sp_mostrarClientes
 AS
@@ -195,6 +196,7 @@ BEGIN
 END
 GO
 
+
 CREATE PROCEDURE sp_mostrarClientesActivos
 AS
 BEGIN
@@ -202,12 +204,14 @@ BEGIN
 END
 GO
 
+
 CREATE PROCEDURE sp_mostrarClientesInactivos
 AS
 BEGIN
 	SELECT * FROM Cliente WHERE Activo = 0
 END
 GO
+
 
 CREATE PROCEDURE sp_eliminarCliente
 (
@@ -220,6 +224,7 @@ BEGIN
 	WHERE IdCliente = @IdCliente
 END
 GO
+
 
 CREATE PROCEDURE sp_ActualizarCliente
 (
@@ -264,14 +269,10 @@ BEGIN
 END
 GO
 
---EXEC dbo.SP_NuevoCliente @NombreCliente = 'Andres Josias Castro Gutierrez',    -- varchar(25)
---                        @Saldo = '10000',   -- varchar(80)
---                        @LimiteCredito = '30000',  -- varchar(250)
---						@Descuento = '300'  -- varchar(250)
---						GO
+
 
 --***************************************DIRECCIONES*****************************************
-ALTER PROCEDURE sp_direcciones
+CREATE PROCEDURE sp_direcciones
 (
 	@idcliente INT,
 	@calle VARCHAR(25),
@@ -291,14 +292,16 @@ GO
 
 
 --mostrar clientes para agregar dire4cciones----
-ALTER PROCEDURE sp_clientesActivos_direcio
+CREATE PROCEDURE sp_clientesActivos_direcio
 AS
 BEGIN
 	SELECT IdCliente, NombreCliente FROM Cliente WHERE Activo = 1
 END
 GO
+
+
 --mostrar direciones del cliente
-ALTER procEDURE sp_direciones_cliente
+CREATE PROCEDURE sp_direciones_cliente
 (
 @idcliente int
 )
@@ -309,12 +312,12 @@ END
 go
 
 --actualizar direccion
-ALTER PROCEDURE sp_actual_direcc
+CREATE PROCEDURE sp_actual_direcc
 (
-@IdDireccion INT,
-@calle VARCHAR(100),
-@Barrio VARCHAR(100),
-@Distrito VARCHAR(100)
+	@IdDireccion INT,
+	@calle VARCHAR(100),
+	@Barrio VARCHAR(100),
+	@Distrito VARCHAR(100)
 )
 AS
 BEGIN
@@ -328,7 +331,7 @@ GO
 --***********************************************articulos*******************************************************************
 
 --nuevo articulo
-ALTER PROCEDURE sp_nuevo_articulo
+CREATE PROCEDURE sp_nuevo_articulo
 (
 @Descripción_Articulo VARCHAR(250),
 @Existencias INT,
@@ -383,7 +386,6 @@ BEGIN
 			a.ArticulosProvistos,
 			a.NoFabricasAlternativas 
 	from Articulo as a inner join Fabrica as f on a.IdFabrica = f.IdFabrica
-	
 END
 go
 
@@ -391,13 +393,15 @@ go
 create proc sp_eliminar_articulo
 @idArticulo int
 as
-delete from Articulo where IdArticulo = @idArticulo
+BEGIN
+	delete from Articulo where IdArticulo = @idArticulo
+END
 go
 
 
 -- PROCEDIMIENTO VENTAS
 
-ALTER PROCEDURE sp_cargarComboCliente
+CREATE PROCEDURE sp_cargarComboCliente
 AS
 BEGIN
 	SELECT IdCliente, str(IdCliente) + ' - ' + NombreCliente AS [NombreCliente] 
@@ -414,8 +418,6 @@ BEGIN
 END
 GO
 
-
-SELECT * FROM Articulo
 
 CREATE PROCEDURE sp_validarExistenciaArticulo
 (
