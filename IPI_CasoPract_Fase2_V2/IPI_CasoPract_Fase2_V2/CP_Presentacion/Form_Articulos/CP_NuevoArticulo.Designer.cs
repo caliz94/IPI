@@ -45,6 +45,8 @@ namespace CP_Presentacion.Form_Articulos
             this.txt_fab_altern = new System.Windows.Forms.TextBox();
             this.txt_fabr = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_articulos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +70,7 @@ namespace CP_Presentacion.Form_Articulos
             this.btn_guardar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btn_guardar.Size = new System.Drawing.Size(182, 64);
             this.btn_guardar.TabIndex = 22;
+            this.btn_guardar.Text = "GUARDAR";
             this.btn_guardar.UseVisualStyleBackColor = true;
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
@@ -218,12 +221,44 @@ namespace CP_Presentacion.Form_Articulos
             this.label7.TabIndex = 28;
             this.label7.Text = "Articulos Provistos";
             // 
+            // iconButton1
+            // 
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.iconButton1.IconColor = System.Drawing.Color.DarkCyan;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 60;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.iconButton1.Location = new System.Drawing.Point(425, 418);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.iconButton1.Size = new System.Drawing.Size(182, 64);
+            this.iconButton1.TabIndex = 30;
+            this.iconButton1.Text = "ELIMINAR";
+            this.iconButton1.UseVisualStyleBackColor = true;
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.iconButton2.IconColor = System.Drawing.Color.DarkCyan;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.IconSize = 60;
+            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.iconButton2.Location = new System.Drawing.Point(237, 418);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.iconButton2.Size = new System.Drawing.Size(182, 64);
+            this.iconButton2.TabIndex = 31;
+            this.iconButton2.Text = "EDITAR";
+            this.iconButton2.UseVisualStyleBackColor = true;
+            // 
             // CP_NuevoArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(656, 516);
+            this.ClientSize = new System.Drawing.Size(656, 505);
+            this.Controls.Add(this.iconButton2);
+            this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.txt_art_provistos);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
@@ -242,6 +277,7 @@ namespace CP_Presentacion.Form_Articulos
             this.Controls.Add(this.Existencias);
             this.Name = "CP_NuevoArticulo";
             this.Text = "Articulos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CP_NuevoArticulo_FormClosed);
             this.Load += new System.EventHandler(this.CP_NuevoArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_articulos)).EndInit();
@@ -267,5 +303,7 @@ namespace CP_Presentacion.Form_Articulos
         private System.Windows.Forms.TextBox txt_fab_altern;
         private System.Windows.Forms.TextBox txt_fabr;
         private System.Windows.Forms.Label label7;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton iconButton2;
     }
 }

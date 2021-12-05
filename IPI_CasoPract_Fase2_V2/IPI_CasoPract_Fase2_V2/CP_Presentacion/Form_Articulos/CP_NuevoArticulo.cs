@@ -43,15 +43,58 @@ namespace CP_Presentacion.Form_Articulos
         {           
             dgv_articulos.DataSource = articulos_cl.Mostrar_articulos();
         }
-        private void btn_guardar_Click(object sender, EventArgs e)
-        {
-            //    articulos_cl.NuevoArticulo(txt_desc.Text,t);
-            MostrarArticulos();
-        }
-
         private void CP_NuevoArticulo_Load(object sender, EventArgs e)
         {
             MostrarArticulos();
         }
+
+        private void limpiarcontroles()
+        {
+            txt_art_provistos.Clear();
+            txt_cod_artic.Clear();
+            txt_descrip.Clear();
+            txt_existe.Clear();
+            txt_fabr.Clear();
+            txt_fab_altern.Clear();
+            txt_prec_uni.Clear();
+        }
+        private void btn_guardar_Click(object sender, EventArgs e)
+        {
+            //nuevo
+            if (editar == false)
+            {
+                try
+                {
+                    articulos_cl.NuevoArticulo(txt_descrip.Text,Convert.ToInt32( txt_existe.Text),Convert.ToDouble(txt_prec_uni.Text),Convert.ToInt32( txt_fabr.Text),Convert.ToInt32( txt_art_provistos.Text),Convert.ToInt32( txt_fab_altern.Text));
+                    MessageBox.Show("El articulo Se Agrego Correctamente");
+                    MostrarArticulos();
+                    limpiarcontroles();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ocurrio Un Error y No Se Agrego El Articulo");
+                }
+            }
+
+            //editar
+            if (editar== true)
+            {
+                try
+                {
+                    articulos_cl.EditarArticulo(Convert.ToInt32(txt_cod_artic.Text),txt_descrip.Text, Convert.ToInt32(txt_existe.Text), Convert.ToDouble(txt_prec_uni.Text), Convert.ToInt32(txt_fabr.Text), Convert.ToInt32(txt_art_provistos.Text), Convert.ToInt32(txt_fab_altern.Text));
+                    MessageBox.Show("El articulo "+txt_descrip.Text+" Se Modifico Correctamente");
+                    MostrarArticulos();
+                    limpiarcontroles();
+                    editar = false;
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Ocurrio Un Error y No Se Modifico El Articulo");
+                }
+            }
+        }
+
+       
     }
 }
