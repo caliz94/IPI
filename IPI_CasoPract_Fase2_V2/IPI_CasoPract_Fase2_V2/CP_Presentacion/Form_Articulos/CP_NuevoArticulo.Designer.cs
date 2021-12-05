@@ -45,6 +45,8 @@ namespace CP_Presentacion.Form_Articulos
             this.txt_fab_altern = new System.Windows.Forms.TextBox();
             this.txt_fabr = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.btn_eliminar = new FontAwesome.Sharp.IconButton();
+            this.btn_editar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_articulos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +70,7 @@ namespace CP_Presentacion.Form_Articulos
             this.btn_guardar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btn_guardar.Size = new System.Drawing.Size(182, 64);
             this.btn_guardar.TabIndex = 22;
+            this.btn_guardar.Text = "GUARDAR";
             this.btn_guardar.UseVisualStyleBackColor = true;
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
@@ -218,12 +221,46 @@ namespace CP_Presentacion.Form_Articulos
             this.label7.TabIndex = 28;
             this.label7.Text = "Articulos Provistos";
             // 
+            // btn_eliminar
+            // 
+            this.btn_eliminar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.btn_eliminar.IconColor = System.Drawing.Color.DarkCyan;
+            this.btn_eliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_eliminar.IconSize = 60;
+            this.btn_eliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_eliminar.Location = new System.Drawing.Point(425, 418);
+            this.btn_eliminar.Name = "btn_eliminar";
+            this.btn_eliminar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btn_eliminar.Size = new System.Drawing.Size(182, 64);
+            this.btn_eliminar.TabIndex = 30;
+            this.btn_eliminar.Text = "ELIMINAR";
+            this.btn_eliminar.UseVisualStyleBackColor = true;
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
+            // 
+            // btn_editar
+            // 
+            this.btn_editar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.btn_editar.IconColor = System.Drawing.Color.DarkCyan;
+            this.btn_editar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_editar.IconSize = 60;
+            this.btn_editar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_editar.Location = new System.Drawing.Point(237, 418);
+            this.btn_editar.Name = "btn_editar";
+            this.btn_editar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btn_editar.Size = new System.Drawing.Size(182, 64);
+            this.btn_editar.TabIndex = 31;
+            this.btn_editar.Text = "EDITAR";
+            this.btn_editar.UseVisualStyleBackColor = true;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
+            // 
             // CP_NuevoArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(656, 516);
+            this.ClientSize = new System.Drawing.Size(656, 505);
+            this.Controls.Add(this.btn_editar);
+            this.Controls.Add(this.btn_eliminar);
             this.Controls.Add(this.txt_art_provistos);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
@@ -242,6 +279,7 @@ namespace CP_Presentacion.Form_Articulos
             this.Controls.Add(this.Existencias);
             this.Name = "CP_NuevoArticulo";
             this.Text = "Articulos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CP_NuevoArticulo_FormClosed);
             this.Load += new System.EventHandler(this.CP_NuevoArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_articulos)).EndInit();
@@ -267,5 +305,7 @@ namespace CP_Presentacion.Form_Articulos
         private System.Windows.Forms.TextBox txt_fab_altern;
         private System.Windows.Forms.TextBox txt_fabr;
         private System.Windows.Forms.Label label7;
+        private FontAwesome.Sharp.IconButton btn_eliminar;
+        private FontAwesome.Sharp.IconButton btn_editar;
     }
 }
