@@ -161,8 +161,9 @@ namespace CP_Presentacion.Form_Cliente
             this.Controls.Add(this.txt_LimiteCredito);
             this.Controls.Add(this.label4);
             this.Name = "CP_NuevoCliente";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CP_NuevoCliente";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CP_NuevoCliente_FormClosed);
             this.Load += new System.EventHandler(this.CP_NuevoCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
