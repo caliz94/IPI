@@ -38,7 +38,7 @@ namespace CD_Datos
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@IdArticulo", IdArticulo);
             existencia = cmd.ExecuteNonQuery();
-            cmd.Parameters.Clear();
+            //cmd.Parameters.Clear();
             Conexion.cerrarcadena();
             return existencia;
         }

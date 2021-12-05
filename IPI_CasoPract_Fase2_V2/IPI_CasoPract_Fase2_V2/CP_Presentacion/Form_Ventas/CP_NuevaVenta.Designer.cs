@@ -92,7 +92,7 @@
             this.cboxNombreProducto.Name = "cboxNombreProducto";
             this.cboxNombreProducto.Size = new System.Drawing.Size(288, 21);
             this.cboxNombreProducto.TabIndex = 14;
-            this.cboxNombreProducto.SelectedIndexChanged += new System.EventHandler(this.cboxNombreProducto_SelectedIndexChanged);
+            this.cboxNombreProducto.SelectedValueChanged += new System.EventHandler(this.cboxNombreProducto_SelectedIndexChanged);
             // 
             // label3
             // 

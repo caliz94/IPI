@@ -30,8 +30,8 @@ namespace CP_Presentacion.Form_Ventas
         private void CargarComboProducto()
         {
             cboxNombreProducto.DataSource = OVentas.CargarComboProductos();
-            cboxNombreProducto.DisplayMember = "NombreArticulo";
-            //cboxNombreProducto.SelectedIndex = -1;
+            cboxNombreProducto.DisplayMember = "Descripción_Articulo";
+            cboxNombreProducto.SelectedIndex = -1;
             cboxNombreProducto.ValueMember = "IdArticulo";
         }
 
@@ -39,9 +39,9 @@ namespace CP_Presentacion.Form_Ventas
         {
             //try
             //{
-            //    int indice = Convert.ToInt32(cboxNombreProducto.SelectedIndex.ToString());
+            //    int indice = Convert.ToInt32(cboxNombreProducto.SelectedValue.ToString());
             //    tboxExistencias.Text = Convert.ToString(OVentas.ObtenerExistenciaArticulos(indice));
-                
+
             //}
             //catch (Exception ex)
             //{

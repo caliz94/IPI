@@ -409,7 +409,7 @@ GO
 CREATE PROCEDURE sp_cargarComboArticulo
 AS
 BEGIN
-	SELECT IdArticulo,str(IdArticulo) + ' - ' + Descripción_Articulo AS [NombreArticulo] 
+	SELECT IdArticulo, str(IdArticulo) + ' - ' + Descripción_Articulo AS [NombreArticulo] 
 	FROM Articulo
 END
 GO
