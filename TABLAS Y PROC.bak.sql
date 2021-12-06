@@ -159,10 +159,11 @@ GO
 CREATE PROCEDURE sp_cargarComboFabrica
 AS
 BEGIN
-	SELECT IdFabrica, 'Id - '+str(IdFabrica) + ' - ' + NombreFabrica AS [NombreFabrica] FROM Fabrica WHERE Activo = 1
+	SELECT IdFabrica, 'Id - '+str(IdFabrica) + '- ' + NombreFabrica AS [NombreFabrica] FROM Fabrica WHERE Activo = 1
 END
 GO
 
+	QUE ERROR TE DA?
 
 CREATE PROCEDURE sp_buscaFabricaxId
 (
@@ -407,8 +408,8 @@ BEGIN
 	SELECT IdCliente, str(IdCliente) + ' - ' + NombreCliente AS [NombreCliente] 
 	FROM Cliente WHERE Activo = 1
 END
-GO
 
+go
 
 create PROCEDURE sp_cargarComboArticulo
 AS
@@ -432,3 +433,4 @@ GO
 --DECLARE @cantidad INT
 --EXEC sp_validarExistenciaArticulo 1, @cantidad OUTPUT
 --SELECT @cantidad
+
