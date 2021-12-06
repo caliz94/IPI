@@ -586,6 +586,7 @@ namespace CP_Presentacion
             this.Controls.Add(this.pnl_izq);
             this.Controls.Add(this.pnl_inf);
             this.Name = "Menu_Inicio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu_Inicio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Menu_Inicio_Load);

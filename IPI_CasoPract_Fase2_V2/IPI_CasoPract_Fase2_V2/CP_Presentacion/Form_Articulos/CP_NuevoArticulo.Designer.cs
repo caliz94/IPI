@@ -166,7 +166,7 @@ namespace CP_Presentacion.Form_Articulos
             this.dgv_articulos.Name = "dgv_articulos";
             this.dgv_articulos.ReadOnly = true;
             this.dgv_articulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_articulos.Size = new System.Drawing.Size(624, 405);
+            this.dgv_articulos.Size = new System.Drawing.Size(1010, 649);
             this.dgv_articulos.TabIndex = 23;
             // 
             // txt_art_provistos
@@ -284,7 +284,7 @@ namespace CP_Presentacion.Form_Articulos
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(311, 505);
+            this.panel1.Size = new System.Drawing.Size(311, 749);
             this.panel1.TabIndex = 32;
             // 
             // panel2
@@ -292,9 +292,9 @@ namespace CP_Presentacion.Form_Articulos
             this.panel2.Controls.Add(this.btn_editar);
             this.panel2.Controls.Add(this.btn_eliminar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(311, 405);
+            this.panel2.Location = new System.Drawing.Point(311, 649);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(624, 100);
+            this.panel2.Size = new System.Drawing.Size(1010, 100);
             this.panel2.TabIndex = 33;
             // 
             // panel3
@@ -303,15 +303,15 @@ namespace CP_Presentacion.Form_Articulos
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(311, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(624, 405);
+            this.panel3.Size = new System.Drawing.Size(1010, 649);
             this.panel3.TabIndex = 34;
             // 
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(935, 0);
+            this.panel4.Location = new System.Drawing.Point(1321, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(49, 505);
+            this.panel4.Size = new System.Drawing.Size(49, 749);
             this.panel4.TabIndex = 35;
             // 
             // CP_NuevoArticulo
@@ -319,12 +319,13 @@ namespace CP_Presentacion.Form_Articulos
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(984, 505);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Name = "CP_NuevoArticulo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Articulos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CP_NuevoArticulo_FormClosed);
