@@ -41,5 +41,13 @@ namespace CL_Logica
             existencia = OArticulo.CargarExistencias(IdArticulo);
             return existencia;
         }
+
+
+        public float ObtenerPrecioArticulos(int IdArticulo)
+        {
+            float existencia;
+            existencia = OArticulo.CargarPrecios(IdArticulo);
+            return existencia;
+        }
     }
 }
