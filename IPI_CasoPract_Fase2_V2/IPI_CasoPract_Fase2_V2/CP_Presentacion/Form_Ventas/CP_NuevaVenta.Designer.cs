@@ -38,7 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tboxPrecio = new System.Windows.Forms.TextBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
@@ -139,13 +139,13 @@
             this.label5.TabIndex = 20;
             this.label5.Text = "Precio:";
             // 
-            // textBox2
+            // tboxPrecio
             // 
-            this.textBox2.Location = new System.Drawing.Point(542, 98);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 21;
+            this.tboxPrecio.Location = new System.Drawing.Point(542, 98);
+            this.tboxPrecio.Name = "tboxPrecio";
+            this.tboxPrecio.ReadOnly = true;
+            this.tboxPrecio.Size = new System.Drawing.Size(100, 20);
+            this.tboxPrecio.TabIndex = 21;
             // 
             // iconButton1
             // 
@@ -220,7 +220,7 @@
             this.Controls.Add(this.btnActualizarCliente);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.iconButton1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tboxPrecio);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label4);
@@ -253,7 +253,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tboxPrecio;
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private FontAwesome.Sharp.IconButton btnCancelar;

@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace CD_Datos
 {
-    public  class CD_Articulos
+    public class CD_Articulos
     {
         private CD_Conexion Conexion = new CD_Conexion();
 
@@ -39,11 +39,26 @@ namespace CD_Datos
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@IdArticulo", IdArticulo);
             //existencia = cmd.ExecuteNonQuery();
-            
+
             return (int)cmd.ExecuteScalar();
-            
+
             Conexion.cerrarcadena();
-            
+
+        }
+        public float CargarPrecios(int IdArticulo)
+        {
+            cmd.Parameters.Clear();
+            //int existencia;
+            cmd.Connection = Conexion.abrircadena();
+            cmd.CommandText = "sp_validarPrecioArticulo";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@IdArticulo", IdArticulo);
+            //existencia = cmd.ExecuteNonQuery();
+
+            return (int)(decimal)cmd.ExecuteScalar();
+
+            Conexion.cerrarcadena();
+
         }
 
         //SqlDataReader existencia;

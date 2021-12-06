@@ -51,6 +51,20 @@ namespace CP_Presentacion.Form_Ventas
                 MessageBox.Show("No se pudo Obtener la Existencias de los Articulos. Error: " + ex.Message);
             }
         }
+        private void ObtenerPrecioArticulos()
+        {
+            try
+            {
+                //int indice = Convert.ToInt32(cboxNombreProducto.SelectedValue.ToString());
+                idarticulo = Convert.ToInt32(cboxNombreProducto.SelectedValue.ToString());
+                tboxPrecio.Text = Convert.ToString(OVentas.ObtenerPrecioArticulos(idarticulo));
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo Obtener la Existencias de los Articulos. Error: " + ex.Message);
+            }
+        }
         #endregion
 
         private void CP_NuevaVenta_Load(object sender, EventArgs e)
@@ -63,6 +77,7 @@ namespace CP_Presentacion.Form_Ventas
         private void cboxNombreProducto_Leave(object sender, EventArgs e)
         {
             ObtenerExistenciaArticulos();
+            ObtenerPrecioArticulos();
         }
     }
 }
