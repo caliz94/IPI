@@ -74,7 +74,7 @@ namespace CP_Presentacion.Form_Direcciones
             this.dgv_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_clientes.Size = new System.Drawing.Size(200, 422);
             this.dgv_clientes.TabIndex = 0;
-            this.dgv_clientes.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_clientes_CellContentDoubleClick);
+            this.dgv_clientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_clientes_CellClick);
             // 
             // pnl_izq
             // 
@@ -203,7 +203,6 @@ namespace CP_Presentacion.Form_Direcciones
             // 
             // btn_editar
             // 
-            this.btn_editar.Enabled = false;
             this.btn_editar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btn_editar.IconColor = System.Drawing.Color.Black;
             this.btn_editar.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -231,7 +230,6 @@ namespace CP_Presentacion.Form_Direcciones
             // 
             // btn_NuevDire
             // 
-            this.btn_NuevDire.Enabled = false;
             this.btn_NuevDire.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btn_NuevDire.IconColor = System.Drawing.Color.Black;
             this.btn_NuevDire.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -276,6 +274,7 @@ namespace CP_Presentacion.Form_Direcciones
             this.btn_cancelar.TabIndex = 18;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // pnl_der
             // 
@@ -289,10 +288,13 @@ namespace CP_Presentacion.Form_Direcciones
             // 
             // dgv_direciones
             // 
+            this.dgv_direciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_direciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_direciones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_direciones.Location = new System.Drawing.Point(0, 28);
             this.dgv_direciones.Name = "dgv_direciones";
+            this.dgv_direciones.ReadOnly = true;
+            this.dgv_direciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_direciones.Size = new System.Drawing.Size(291, 422);
             this.dgv_direciones.TabIndex = 23;
             this.dgv_direciones.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_direciones_CellMouseDoubleClick);
@@ -324,7 +326,7 @@ namespace CP_Presentacion.Form_Direcciones
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(385, 69);
             this.label9.TabIndex = 23;
-            this.label9.Text = "DOBLE CLICK PARA SELECIONAR EL CLIENTE QUE DESEA ADMINISTAR";
+            this.label9.Text = "SELECIONAR EL CLIENTE QUE DESEA ADMINISTAR";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Admin_Direcion
@@ -340,7 +342,9 @@ namespace CP_Presentacion.Form_Direcciones
             this.Controls.Add(this.btn_editar);
             this.Controls.Add(this.pnl_izq);
             this.Name = "Admin_Direcion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Admin_Direcion";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Admin_Direcion_FormClosed);
             this.Load += new System.EventHandler(this.Admin_Direcion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).EndInit();

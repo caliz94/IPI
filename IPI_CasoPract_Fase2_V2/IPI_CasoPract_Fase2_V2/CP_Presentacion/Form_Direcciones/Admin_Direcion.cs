@@ -45,12 +45,29 @@ namespace CP_Presentacion.Form_Direcciones
 
         private void btn_editar_Click(object sender, EventArgs e)
         {
-            if (txt_numero_direccion.Text == string.Empty)
+            try
             {
-                errorProvider1.SetError(txt_numero_direccion,"Con doble clik selecione la direccion que desea actualizar");
-            }
+                cargar_direc();
+                dgv_direciones.Columns["@iddireccion"].Visible = false;
+                if (txt_numero_direccion.Text == string.Empty)
+                {
+                    errorProvider1.SetError(txt_numero_direccion, " selecione la direccion que desea actualizar");
+                }
+                else
+                {
+                    errorProvider1.SetError(txt_numero_direccion, "");
+                    btn_cancelar.Enabled = true;
+                    btn_guardar.Enabled = true;
+                    cargar_direc();
+                }
 
-            cargar_direc();
+            }
+            catch (Exception)
+            {
+                errorProvider1.SetError(txt_numero_direccion, " selecione la direccion que desea actualizar");
+
+            }
+               
         }
 
         private SqlConnection cadena = new SqlConnection("server=.;database=IPICASOPRACTICO;integrated security= true");
@@ -89,6 +106,7 @@ namespace CP_Presentacion.Form_Direcciones
         private void Admin_Direcion_Load(object sender, EventArgs e)
         {
             MostrarClientes();
+            dgv_clientes.Columns["IdCliente"].Visible = false;
         }
 
      
@@ -153,12 +171,16 @@ namespace CP_Presentacion.Form_Direcciones
                 else
                 {
                     nuevadireci();
-                    MessageBox.Show("Se Agrego Nueva Direccion Al Cliente " + txt_NumeroCliente.Text, txt_nombre_cliente.Text);
+                    MessageBox.Show("Se Agrego Nueva Direccion Al Cliente " +  txt_nombre_cliente.Text);
+                    LimpiarControles();
                 }
             }
             else
             {
                 actualizar();
+                MostrarClientes();
+                dgv_clientes.Columns["IdCliente"].Visible = false;
+
                 MessageBox.Show("cambios realizados");
             }
 
@@ -189,15 +211,38 @@ namespace CP_Presentacion.Form_Direcciones
 
         }
 
-        private void dgv_clientes_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dgv_clientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             btn_NuevDire.Enabled = true;
             btn_editar.Enabled = true;
-            
+
 
             txt_NumeroCliente.Text = dgv_clientes.CurrentRow.Cells["IdCliente"].Value.ToString();
             txt_nombre_cliente.Text = dgv_clientes.CurrentRow.Cells["NombreCliente"].Value.ToString();
-            
+        }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            LimpiarControles();
+        }
+
+        public void LimpiarControles()
+        {
+            txt_Barrio.Clear();
+            txt_Calle.Clear();
+            txt_Distrito.Clear();
+            txt_nombre_cliente.Clear();
+            txt_NumeroCliente.Clear();
+            txt_numero_direccion.Clear();
+            txt_Barrio.Enabled=false;
+            txt_Calle.Enabled=false;
+            txt_Distrito.Enabled=false;
+
+
+
+            btn_cancelar.Enabled = false;
+            btn_guardar.Enabled = false;
         }
     }
 }
