@@ -48,7 +48,7 @@ namespace CP_Presentacion.Form_Direcciones
             try
             {
                 cargar_direc();
-                dgv_direciones.Columns["@iddireccion"].Visible = false;
+                dgv_direciones.Columns["@IdDireccion"].Visible = false;
                 if (txt_numero_direccion.Text == string.Empty)
                 {
                     errorProvider1.SetError(txt_numero_direccion, " selecione la direccion que desea actualizar");
@@ -194,23 +194,6 @@ namespace CP_Presentacion.Form_Direcciones
             _Abrir = null;
         }
 
-        private void dgv_direciones_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            txt_numero_direccion.Text = dgv_direciones.CurrentRow.Cells["IdDireccion"].Value.ToString();
-            txt_Calle.Text = dgv_direciones.CurrentRow.Cells["Calle"].Value.ToString();
-            txt_Barrio.Text = dgv_direciones.CurrentRow.Cells["Barrio"].Value.ToString();
-            txt_Distrito.Text = dgv_direciones.CurrentRow.Cells["Distrito"].Value.ToString();
-            errorProvider1.SetError(txt_Distrito, "");
-
-            txt_Calle.Enabled = true;
-            txt_Barrio.Enabled = true;
-            txt_Distrito.Enabled = true;
-
-            btn_cancelar.Enabled = true;
-            btn_guardar.Enabled = true;
-
-        }
-
         private void dgv_clientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -243,6 +226,31 @@ namespace CP_Presentacion.Form_Direcciones
 
             btn_cancelar.Enabled = false;
             btn_guardar.Enabled = false;
+        }
+
+        private void dgv_direciones_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                txt_numero_direccion.Text = dgv_direciones.CurrentRow.Cells["IdDireccion"].Value.ToString();
+                txt_Calle.Text = dgv_direciones.CurrentRow.Cells["Calle"].Value.ToString();
+                txt_Barrio.Text = dgv_direciones.CurrentRow.Cells["Barrio"].Value.ToString();
+                txt_Distrito.Text = dgv_direciones.CurrentRow.Cells["Distrito"].Value.ToString();
+                errorProvider1.SetError(txt_Distrito, "");
+
+                txt_Calle.Enabled = true;
+                txt_Barrio.Enabled = true;
+                txt_Distrito.Enabled = true;
+
+                btn_cancelar.Enabled = true;
+                btn_guardar.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("ocurrio un error "+ex);
+            }
+
         }
     }
 }

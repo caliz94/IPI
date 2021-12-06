@@ -297,7 +297,7 @@ namespace CP_Presentacion.Form_Direcciones
             this.dgv_direciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_direciones.Size = new System.Drawing.Size(291, 422);
             this.dgv_direciones.TabIndex = 23;
-            this.dgv_direciones.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_direciones_CellMouseDoubleClick);
+            this.dgv_direciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_direciones_CellClick);
             // 
             // label7
             // 
