@@ -73,5 +73,7 @@ namespace CP_Presentacion.Form_Cliente
                 this.Close();
             }
         }
+
+        
     }
 }

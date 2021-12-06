@@ -43,6 +43,7 @@ namespace CP_Presentacion.Form_Cliente
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label6 = new System.Windows.Forms.Label();
+            this.cbx_fabrica = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -167,11 +168,20 @@ namespace CP_Presentacion.Form_Cliente
             this.label6.TabIndex = 16;
             this.label6.Text = "Ingrese Los Datos Personales Del Nuevo Cliente";
             // 
+            // cbx_fabrica
+            // 
+            this.cbx_fabrica.FormattingEnabled = true;
+            this.cbx_fabrica.Location = new System.Drawing.Point(75, 342);
+            this.cbx_fabrica.Name = "cbx_fabrica";
+            this.cbx_fabrica.Size = new System.Drawing.Size(121, 21);
+            this.cbx_fabrica.TabIndex = 17;
+            // 
             // CP_NuevoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(749, 425);
+            this.Controls.Add(this.cbx_fabrica);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.label1);
@@ -188,9 +198,6 @@ namespace CP_Presentacion.Form_Cliente
             this.Text = "CP_NuevoCliente";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CP_NuevoCliente_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -208,5 +215,6 @@ namespace CP_Presentacion.Form_Cliente
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.ComboBox cbx_fabrica;
     }
 }

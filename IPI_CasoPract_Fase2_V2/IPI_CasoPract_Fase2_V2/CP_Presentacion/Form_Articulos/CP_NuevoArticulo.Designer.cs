@@ -51,6 +51,7 @@ namespace CP_Presentacion.Form_Articulos
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.cbx_fabrica = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_articulos)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -266,6 +267,7 @@ namespace CP_Presentacion.Form_Articulos
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cbx_fabrica);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.Existencias);
             this.panel1.Controls.Add(this.txt_descrip);
@@ -286,6 +288,7 @@ namespace CP_Presentacion.Form_Articulos
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(311, 749);
             this.panel1.TabIndex = 32;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel2
             // 
@@ -313,6 +316,14 @@ namespace CP_Presentacion.Form_Articulos
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(49, 749);
             this.panel4.TabIndex = 35;
+            // 
+            // cbx_fabrica
+            // 
+            this.cbx_fabrica.FormattingEnabled = true;
+            this.cbx_fabrica.Location = new System.Drawing.Point(50, 24);
+            this.cbx_fabrica.Name = "cbx_fabrica";
+            this.cbx_fabrica.Size = new System.Drawing.Size(121, 21);
+            this.cbx_fabrica.TabIndex = 30;
             // 
             // CP_NuevoArticulo
             // 
@@ -362,5 +373,6 @@ namespace CP_Presentacion.Form_Articulos
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.ComboBox cbx_fabrica;
     }
 }

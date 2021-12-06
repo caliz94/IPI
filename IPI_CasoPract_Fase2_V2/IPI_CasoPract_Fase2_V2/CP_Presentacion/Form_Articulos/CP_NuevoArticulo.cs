@@ -44,7 +44,8 @@ namespace CP_Presentacion.Form_Articulos
             dgv_articulos.DataSource = articulos_cl.Mostrar_articulos();
         }
         private void CP_NuevoArticulo_Load(object sender, EventArgs e)
-        {
+        {      
+            cbx_fabrica.DataSource = articulos_cl.CargarComboFabrica();      
             MostrarArticulos();
         }
 
@@ -122,6 +123,11 @@ namespace CP_Presentacion.Form_Articulos
             }
             else
                 MessageBox.Show("Seleccione un articulo");
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

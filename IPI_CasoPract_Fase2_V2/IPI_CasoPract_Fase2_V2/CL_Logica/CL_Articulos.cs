@@ -36,5 +36,12 @@ namespace CL_Logica
         {
             articulos_cd.eliminar_articulo(Convert.ToInt32(IdArticulo));
         }
+
+        public DataTable CargarComboFabrica()
+        {
+            DataTable tabla = new DataTable();
+            tabla = articulos_cd.CargarComboFabrica();
+            return tabla;
+        }
     }
 }

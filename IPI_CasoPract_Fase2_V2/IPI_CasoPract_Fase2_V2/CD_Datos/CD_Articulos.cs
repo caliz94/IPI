@@ -126,5 +126,16 @@ namespace CD_Datos
             Conexion.cerrarcadena();
         }
 
+        public DataTable CargarComboFabrica()
+        {
+            //tabla.Clear();
+            cmd.Connection = Conexion.abrircadena();
+            cmd.CommandText = "sp_cargarComboFabrica";
+            cmd.CommandType = CommandType.StoredProcedure;
+            leer = cmd.ExecuteReader();
+            tabla.Load(leer);
+            Conexion.cerrarcadena();
+            return tabla;
+        }
     }
 }
