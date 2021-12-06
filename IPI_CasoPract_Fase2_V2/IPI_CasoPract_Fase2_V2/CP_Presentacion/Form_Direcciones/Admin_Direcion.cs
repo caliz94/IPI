@@ -36,7 +36,8 @@ namespace CP_Presentacion.Form_Direcciones
         CL_Direcciones Direcciones_cl = new CL_Direcciones();
         private void MostrarClientes()
         {
-            dgv_clientes.DataSource = Direcciones_cl.clientes_activos();
+            CL_Direcciones direc_cl = new CL_Direcciones();
+            dgv_clientes.DataSource = direc_cl.clientes_activos();
         }
         //private void MostrarDireciones()
         //{
@@ -128,7 +129,12 @@ namespace CP_Presentacion.Form_Direcciones
                 txt_Barrio.Enabled = true;
                 txt_Distrito.Enabled = true;
 
+                txt_numero_direccion.Clear();
+                txt_Calle.Clear();
+                txt_Barrio.Clear();
+                txt_Distrito.Clear();
 
+                errorProvider1.SetError(txt_numero_direccion,"");
                 btn_cancelar.Enabled = true;
                 btn_guardar.Enabled = true;               
             }
@@ -141,52 +147,51 @@ namespace CP_Presentacion.Form_Direcciones
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-
-            if (txt_numero_direccion.Text == string.Empty )
+            try
             {
-
-                if (txt_NumeroCliente.Text == string.Empty)
+                if (txt_numero_direccion.Text == string.Empty)
                 {
-                    errorProvider1.SetError(txt_NumeroCliente, "Selcionar Cliente Con Doble clik");
+
+                    if (txt_NumeroCliente.Text == string.Empty)
+                    {
+                        errorProvider1.SetError(txt_NumeroCliente, "Selcionar Cliente Con Doble clik");
+                    }
+                    else
+                    {
+                        dgv_clientes.Enabled = true;
+                    }
+                    if (txt_Calle.Text == string.Empty)
+                    {
+                        errorProvider1.SetError(txt_Calle, "Campo Obligatorio");
+                    }
+                    else if (txt_Barrio.Text == string.Empty)
+                    {
+                        errorProvider1.SetError(txt_Barrio, "Campo Obligatorio");
+                    }
+                    else if (txt_Distrito.Text == string.Empty)
+                    {
+                        errorProvider1.SetError(txt_Distrito, "Campo Obligatorio");
+                    }
+
+                    else
+                    {
+                        nuevadireci();
+                        MessageBox.Show("Se Agrego Nueva Direccion Al Cliente " + txt_nombre_cliente.Text);
+                        LimpiarControles();                                                            
+                    }
                 }
                 else
                 {
-                    dgv_clientes.Enabled = true;
-                    btn_editar.Enabled = false;
-                    
-                }
-                if (txt_Calle.Text == string.Empty)
-                {
-                    errorProvider1.SetError(txt_Calle, "Campo Obligatorio");
-                }
-                else if (txt_Barrio.Text == string.Empty)
-                {
-                    errorProvider1.SetError(txt_Barrio, "Campo Obligatorio");
-                }
-                else if (txt_Distrito.Text == string.Empty)
-                {
-                    errorProvider1.SetError(txt_Distrito, "Campo Obligatorio");
-                }
-
-                else
-                {
-                    nuevadireci();
-                    MessageBox.Show("Se Agrego Nueva Direccion Al Cliente " +  txt_nombre_cliente.Text);
-                    LimpiarControles();
+                    actualizar();
+                    MostrarClientes();
+                    dgv_clientes.Columns["IdCliente"].Visible = false;                    
                 }
             }
-            else
+            catch (Exception ex)
             {
-                actualizar();
-                MostrarClientes();
-                dgv_clientes.Columns["IdCliente"].Visible = false;
 
-                MessageBox.Show("cambios realizados");
+                MessageBox.Show("Ocurrio Un Error"+ ex);
             }
-
-
-
-
         }
 
         private void Admin_Direcion_FormClosed(object sender, FormClosedEventArgs e)
