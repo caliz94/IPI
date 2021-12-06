@@ -410,7 +410,7 @@ END
 GO
 
 
-ALTER PROCEDURE sp_cargarComboArticulo
+create PROCEDURE sp_cargarComboArticulo
 AS
 BEGIN
 	SELECT IdArticulo, str(IdArticulo) + ' - ' + Descripción_Articulo AS [NombreArticulo] 
