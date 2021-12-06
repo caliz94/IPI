@@ -48,7 +48,7 @@ namespace CP_Presentacion.Form_Cliente
             this.dgv_mostar_clientes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_mostar_clientes.Location = new System.Drawing.Point(119, 96);
             this.dgv_mostar_clientes.Name = "dgv_mostar_clientes";
-            this.dgv_mostar_clientes.Size = new System.Drawing.Size(511, 260);
+            this.dgv_mostar_clientes.Size = new System.Drawing.Size(545, 260);
             this.dgv_mostar_clientes.TabIndex = 0;
             // 
             // label_grid
@@ -96,7 +96,7 @@ namespace CP_Presentacion.Form_Cliente
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(630, 96);
+            this.panel1.Size = new System.Drawing.Size(664, 96);
             this.panel1.TabIndex = 5;
             // 
             // panel2
@@ -104,7 +104,7 @@ namespace CP_Presentacion.Form_Cliente
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 356);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(630, 28);
+            this.panel2.Size = new System.Drawing.Size(664, 28);
             this.panel2.TabIndex = 6;
             // 
             // panel3
@@ -122,7 +122,7 @@ namespace CP_Presentacion.Form_Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(630, 384);
+            this.ClientSize = new System.Drawing.Size(664, 384);
             this.Controls.Add(this.dgv_mostar_clientes);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);

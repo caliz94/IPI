@@ -41,12 +41,14 @@ namespace CP_Presentacion.Form_Cliente
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_Saldo
             // 
-            this.txt_Saldo.Location = new System.Drawing.Point(34, 126);
+            this.txt_Saldo.Location = new System.Drawing.Point(120, 160);
             this.txt_Saldo.Name = "txt_Saldo";
             this.txt_Saldo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_Saldo.Size = new System.Drawing.Size(156, 20);
@@ -54,7 +56,7 @@ namespace CP_Presentacion.Form_Cliente
             // 
             // txt_LimiteCredito
             // 
-            this.txt_LimiteCredito.Location = new System.Drawing.Point(34, 169);
+            this.txt_LimiteCredito.Location = new System.Drawing.Point(120, 203);
             this.txt_LimiteCredito.Name = "txt_LimiteCredito";
             this.txt_LimiteCredito.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_LimiteCredito.Size = new System.Drawing.Size(156, 20);
@@ -62,7 +64,7 @@ namespace CP_Presentacion.Form_Cliente
             // 
             // txt_Descuento
             // 
-            this.txt_Descuento.Location = new System.Drawing.Point(34, 214);
+            this.txt_Descuento.Location = new System.Drawing.Point(120, 248);
             this.txt_Descuento.Name = "txt_Descuento";
             this.txt_Descuento.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_Descuento.Size = new System.Drawing.Size(156, 20);
@@ -72,12 +74,12 @@ namespace CP_Presentacion.Form_Cliente
             // 
             this.label2.AutoSize = true;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Bodoni Bd BT", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label2.Location = new System.Drawing.Point(34, 104);
+            this.label2.Location = new System.Drawing.Point(120, 138);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label2.Size = new System.Drawing.Size(50, 20);
+            this.label2.Size = new System.Drawing.Size(55, 22);
             this.label2.TabIndex = 7;
             this.label2.Text = "Saldo";
             // 
@@ -85,12 +87,12 @@ namespace CP_Presentacion.Form_Cliente
             // 
             this.label3.AutoSize = true;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Bodoni Bd BT", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label3.Location = new System.Drawing.Point(34, 147);
+            this.label3.Location = new System.Drawing.Point(120, 181);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label3.Size = new System.Drawing.Size(128, 20);
+            this.label3.Size = new System.Drawing.Size(156, 22);
             this.label3.TabIndex = 8;
             this.label3.Text = "Limite de Credito";
             // 
@@ -98,12 +100,12 @@ namespace CP_Presentacion.Form_Cliente
             // 
             this.label4.AutoSize = true;
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Bodoni Bd BT", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label4.Location = new System.Drawing.Point(34, 192);
+            this.label4.Location = new System.Drawing.Point(120, 226);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label4.Size = new System.Drawing.Size(87, 20);
+            this.label4.Size = new System.Drawing.Size(95, 22);
             this.label4.TabIndex = 9;
             this.label4.Text = "Descuento";
             // 
@@ -113,7 +115,7 @@ namespace CP_Presentacion.Form_Cliente
             this.btn_nuevo_cliente.IconColor = System.Drawing.Color.DarkCyan;
             this.btn_nuevo_cliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_nuevo_cliente.IconSize = 40;
-            this.btn_nuevo_cliente.Location = new System.Drawing.Point(34, 285);
+            this.btn_nuevo_cliente.Location = new System.Drawing.Point(120, 285);
             this.btn_nuevo_cliente.Name = "btn_nuevo_cliente";
             this.btn_nuevo_cliente.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btn_nuevo_cliente.Size = new System.Drawing.Size(156, 46);
@@ -123,7 +125,7 @@ namespace CP_Presentacion.Form_Cliente
             // 
             // txt_cliente
             // 
-            this.txt_cliente.Location = new System.Drawing.Point(34, 81);
+            this.txt_cliente.Location = new System.Drawing.Point(120, 115);
             this.txt_cliente.Name = "txt_cliente";
             this.txt_cliente.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_cliente.Size = new System.Drawing.Size(156, 20);
@@ -133,12 +135,12 @@ namespace CP_Presentacion.Form_Cliente
             // 
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Bodoni Bd BT", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label1.Location = new System.Drawing.Point(34, 59);
+            this.label1.Location = new System.Drawing.Point(120, 93);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label1.Size = new System.Drawing.Size(58, 20);
+            this.label1.Size = new System.Drawing.Size(67, 22);
             this.label1.TabIndex = 13;
             this.label1.Text = "Cliente";
             // 
@@ -146,11 +148,32 @@ namespace CP_Presentacion.Form_Cliente
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(466, 181);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label6.Font = new System.Drawing.Font("Bodoni Bd BT", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label6.Location = new System.Drawing.Point(116, 35);
+            this.label6.Name = "label6";
+            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label6.Size = new System.Drawing.Size(404, 22);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Ingrese Los Datos Personales Del Nuevo Cliente";
+            // 
             // CP_NuevoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(226, 411);
+            this.ClientSize = new System.Drawing.Size(749, 425);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_cliente);
             this.Controls.Add(this.txt_Descuento);
@@ -165,7 +188,6 @@ namespace CP_Presentacion.Form_Cliente
             this.Text = "CP_NuevoCliente";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CP_NuevoCliente_FormClosed);
-            this.Load += new System.EventHandler(this.CP_NuevoCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -184,5 +206,7 @@ namespace CP_Presentacion.Form_Cliente
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }
