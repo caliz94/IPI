@@ -47,12 +47,19 @@ namespace CP_Presentacion.Form_Articulos
             this.label7 = new System.Windows.Forms.Label();
             this.btn_eliminar = new FontAwesome.Sharp.IconButton();
             this.btn_editar = new FontAwesome.Sharp.IconButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_articulos)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_existe
             // 
-            this.txt_existe.Location = new System.Drawing.Point(31, 121);
+            this.txt_existe.Location = new System.Drawing.Point(46, 177);
             this.txt_existe.Name = "txt_existe";
             this.txt_existe.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_existe.Size = new System.Drawing.Size(182, 20);
@@ -65,7 +72,7 @@ namespace CP_Presentacion.Form_Articulos
             this.btn_guardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_guardar.IconSize = 60;
             this.btn_guardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_guardar.Location = new System.Drawing.Point(31, 348);
+            this.btn_guardar.Location = new System.Drawing.Point(46, 404);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btn_guardar.Size = new System.Drawing.Size(182, 64);
@@ -80,7 +87,7 @@ namespace CP_Presentacion.Form_Articulos
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Bodoni Bd BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label2.Location = new System.Drawing.Point(31, 11);
+            this.label2.Location = new System.Drawing.Point(46, 67);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label2.Size = new System.Drawing.Size(100, 19);
@@ -89,7 +96,7 @@ namespace CP_Presentacion.Form_Articulos
             // 
             // txt_cod_artic
             // 
-            this.txt_cod_artic.Location = new System.Drawing.Point(31, 33);
+            this.txt_cod_artic.Location = new System.Drawing.Point(46, 89);
             this.txt_cod_artic.Name = "txt_cod_artic";
             this.txt_cod_artic.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_cod_artic.Size = new System.Drawing.Size(182, 20);
@@ -101,7 +108,7 @@ namespace CP_Presentacion.Form_Articulos
             this.Descripcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Descripcion.Font = new System.Drawing.Font("Bodoni Bd BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Descripcion.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.Descripcion.Location = new System.Drawing.Point(31, 54);
+            this.Descripcion.Location = new System.Drawing.Point(46, 110);
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Descripcion.Size = new System.Drawing.Size(93, 19);
@@ -114,7 +121,7 @@ namespace CP_Presentacion.Form_Articulos
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Bodoni Bd BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label5.Location = new System.Drawing.Point(31, 144);
+            this.label5.Location = new System.Drawing.Point(46, 200);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label5.Size = new System.Drawing.Size(118, 19);
@@ -123,7 +130,7 @@ namespace CP_Presentacion.Form_Articulos
             // 
             // txt_prec_uni
             // 
-            this.txt_prec_uni.Location = new System.Drawing.Point(31, 166);
+            this.txt_prec_uni.Location = new System.Drawing.Point(46, 222);
             this.txt_prec_uni.Name = "txt_prec_uni";
             this.txt_prec_uni.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_prec_uni.Size = new System.Drawing.Size(182, 20);
@@ -131,7 +138,7 @@ namespace CP_Presentacion.Form_Articulos
             // 
             // txt_descrip
             // 
-            this.txt_descrip.Location = new System.Drawing.Point(31, 76);
+            this.txt_descrip.Location = new System.Drawing.Point(46, 132);
             this.txt_descrip.Name = "txt_descrip";
             this.txt_descrip.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_descrip.Size = new System.Drawing.Size(182, 20);
@@ -143,7 +150,7 @@ namespace CP_Presentacion.Form_Articulos
             this.Existencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Existencias.Font = new System.Drawing.Font("Bodoni Bd BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Existencias.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.Existencias.Location = new System.Drawing.Point(31, 99);
+            this.Existencias.Location = new System.Drawing.Point(46, 155);
             this.Existencias.Name = "Existencias";
             this.Existencias.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Existencias.Size = new System.Drawing.Size(87, 19);
@@ -152,15 +159,19 @@ namespace CP_Presentacion.Form_Articulos
             // 
             // dgv_articulos
             // 
+            this.dgv_articulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_articulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_articulos.Location = new System.Drawing.Point(238, 12);
+            this.dgv_articulos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_articulos.Location = new System.Drawing.Point(0, 0);
             this.dgv_articulos.Name = "dgv_articulos";
-            this.dgv_articulos.Size = new System.Drawing.Size(406, 400);
+            this.dgv_articulos.ReadOnly = true;
+            this.dgv_articulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_articulos.Size = new System.Drawing.Size(624, 405);
             this.dgv_articulos.TabIndex = 23;
             // 
             // txt_art_provistos
             // 
-            this.txt_art_provistos.Location = new System.Drawing.Point(31, 256);
+            this.txt_art_provistos.Location = new System.Drawing.Point(46, 312);
             this.txt_art_provistos.Name = "txt_art_provistos";
             this.txt_art_provistos.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_art_provistos.Size = new System.Drawing.Size(182, 20);
@@ -172,7 +183,7 @@ namespace CP_Presentacion.Form_Articulos
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Bodoni Bd BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label1.Location = new System.Drawing.Point(31, 189);
+            this.label1.Location = new System.Drawing.Point(46, 245);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label1.Size = new System.Drawing.Size(63, 19);
@@ -185,7 +196,7 @@ namespace CP_Presentacion.Form_Articulos
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label6.Font = new System.Drawing.Font("Bodoni Bd BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label6.Location = new System.Drawing.Point(31, 279);
+            this.label6.Location = new System.Drawing.Point(46, 335);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label6.Size = new System.Drawing.Size(182, 19);
@@ -194,7 +205,7 @@ namespace CP_Presentacion.Form_Articulos
             // 
             // txt_fab_altern
             // 
-            this.txt_fab_altern.Location = new System.Drawing.Point(31, 301);
+            this.txt_fab_altern.Location = new System.Drawing.Point(46, 357);
             this.txt_fab_altern.Name = "txt_fab_altern";
             this.txt_fab_altern.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_fab_altern.Size = new System.Drawing.Size(182, 20);
@@ -202,7 +213,7 @@ namespace CP_Presentacion.Form_Articulos
             // 
             // txt_fabr
             // 
-            this.txt_fabr.Location = new System.Drawing.Point(31, 211);
+            this.txt_fabr.Location = new System.Drawing.Point(46, 267);
             this.txt_fabr.Name = "txt_fabr";
             this.txt_fabr.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_fabr.Size = new System.Drawing.Size(182, 20);
@@ -214,7 +225,7 @@ namespace CP_Presentacion.Form_Articulos
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label7.Font = new System.Drawing.Font("Bodoni Bd BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label7.Location = new System.Drawing.Point(31, 234);
+            this.label7.Location = new System.Drawing.Point(46, 290);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label7.Size = new System.Drawing.Size(142, 19);
@@ -228,7 +239,7 @@ namespace CP_Presentacion.Form_Articulos
             this.btn_eliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_eliminar.IconSize = 60;
             this.btn_eliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_eliminar.Location = new System.Drawing.Point(425, 418);
+            this.btn_eliminar.Location = new System.Drawing.Point(337, 24);
             this.btn_eliminar.Name = "btn_eliminar";
             this.btn_eliminar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btn_eliminar.Size = new System.Drawing.Size(182, 64);
@@ -244,7 +255,7 @@ namespace CP_Presentacion.Form_Articulos
             this.btn_editar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_editar.IconSize = 60;
             this.btn_editar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_editar.Location = new System.Drawing.Point(237, 418);
+            this.btn_editar.Location = new System.Drawing.Point(149, 24);
             this.btn_editar.Name = "btn_editar";
             this.btn_editar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btn_editar.Size = new System.Drawing.Size(182, 64);
@@ -253,38 +264,77 @@ namespace CP_Presentacion.Form_Articulos
             this.btn_editar.UseVisualStyleBackColor = true;
             this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.Existencias);
+            this.panel1.Controls.Add(this.txt_descrip);
+            this.panel1.Controls.Add(this.txt_art_provistos);
+            this.panel1.Controls.Add(this.txt_prec_uni);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.Descripcion);
+            this.panel1.Controls.Add(this.txt_fab_altern);
+            this.panel1.Controls.Add(this.txt_cod_artic);
+            this.panel1.Controls.Add(this.txt_fabr);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.btn_guardar);
+            this.panel1.Controls.Add(this.txt_existe);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(311, 505);
+            this.panel1.TabIndex = 32;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btn_editar);
+            this.panel2.Controls.Add(this.btn_eliminar);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(311, 405);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(624, 100);
+            this.panel2.TabIndex = 33;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.dgv_articulos);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(311, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(624, 405);
+            this.panel3.TabIndex = 34;
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(935, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(49, 505);
+            this.panel4.TabIndex = 35;
+            // 
             // CP_NuevoArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(656, 505);
-            this.Controls.Add(this.btn_editar);
-            this.Controls.Add(this.btn_eliminar);
-            this.Controls.Add(this.txt_art_provistos);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.txt_fab_altern);
-            this.Controls.Add(this.txt_fabr);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.dgv_articulos);
-            this.Controls.Add(this.txt_existe);
-            this.Controls.Add(this.btn_guardar);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txt_cod_artic);
-            this.Controls.Add(this.Descripcion);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txt_prec_uni);
-            this.Controls.Add(this.txt_descrip);
-            this.Controls.Add(this.Existencias);
+            this.ClientSize = new System.Drawing.Size(984, 505);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel4);
             this.Name = "CP_NuevoArticulo";
             this.Text = "Articulos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CP_NuevoArticulo_FormClosed);
             this.Load += new System.EventHandler(this.CP_NuevoArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_articulos)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -307,5 +357,9 @@ namespace CP_Presentacion.Form_Articulos
         private System.Windows.Forms.Label label7;
         private FontAwesome.Sharp.IconButton btn_eliminar;
         private FontAwesome.Sharp.IconButton btn_editar;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
     }
 }
