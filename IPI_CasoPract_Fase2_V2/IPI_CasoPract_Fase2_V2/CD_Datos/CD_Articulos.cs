@@ -107,7 +107,7 @@ namespace CD_Datos
             cmd.Parameters.AddWithValue("@PrecioUnitario", PrecioUnitario);
             cmd.Parameters.AddWithValue("@IdFabrica", IdFabrica);
             cmd.Parameters.AddWithValue("@ArticulosProvistos", ArticulosProvistos);
-            cmd.Parameters.AddWithValue("@NoFabricasAlternativa", NoFabricasAlternativa);
+            cmd.Parameters.AddWithValue("@NoFabricasAlternativas", NoFabricasAlternativa);
             cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();
             Conexion.cerrarcadena();
