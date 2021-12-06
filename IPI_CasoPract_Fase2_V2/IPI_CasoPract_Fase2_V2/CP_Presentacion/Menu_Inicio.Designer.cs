@@ -77,7 +77,7 @@ namespace CP_Presentacion
             // 
             // pnl_izq
             // 
-            this.pnl_izq.BackColor = System.Drawing.Color.Black;
+            this.pnl_izq.BackColor = System.Drawing.Color.PaleTurquoise;
             this.pnl_izq.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnl_izq.Controls.Add(this.pnl_fun_btn_client);
             this.pnl_izq.Controls.Add(this.pnl_venta);

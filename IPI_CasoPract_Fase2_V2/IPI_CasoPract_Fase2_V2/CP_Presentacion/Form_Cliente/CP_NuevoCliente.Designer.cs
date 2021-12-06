@@ -43,7 +43,6 @@ namespace CP_Presentacion.Form_Cliente
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label6 = new System.Windows.Forms.Label();
-            this.cbx_fabrica = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,6 +111,7 @@ namespace CP_Presentacion.Form_Cliente
             // 
             // btn_nuevo_cliente
             // 
+            this.btn_nuevo_cliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_nuevo_cliente.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
             this.btn_nuevo_cliente.IconColor = System.Drawing.Color.DarkCyan;
             this.btn_nuevo_cliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -151,37 +151,29 @@ namespace CP_Presentacion.Form_Cliente
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(466, 181);
+            this.monthCalendar1.Location = new System.Drawing.Point(437, 138);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 14;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label6.Font = new System.Drawing.Font("Bodoni Bd BT", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkSlateBlue;
             this.label6.Location = new System.Drawing.Point(116, 35);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label6.Size = new System.Drawing.Size(404, 22);
+            this.label6.Size = new System.Drawing.Size(406, 24);
             this.label6.TabIndex = 16;
             this.label6.Text = "Ingrese Los Datos Personales Del Nuevo Cliente";
-            // 
-            // cbx_fabrica
-            // 
-            this.cbx_fabrica.FormattingEnabled = true;
-            this.cbx_fabrica.Location = new System.Drawing.Point(75, 342);
-            this.cbx_fabrica.Name = "cbx_fabrica";
-            this.cbx_fabrica.Size = new System.Drawing.Size(121, 21);
-            this.cbx_fabrica.TabIndex = 17;
             // 
             // CP_NuevoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(749, 425);
-            this.Controls.Add(this.cbx_fabrica);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.label1);
@@ -198,6 +190,9 @@ namespace CP_Presentacion.Form_Cliente
             this.Text = "CP_NuevoCliente";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CP_NuevoCliente_FormClosed);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -215,6 +210,5 @@ namespace CP_Presentacion.Form_Cliente
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.ComboBox cbx_fabrica;
     }
 }
