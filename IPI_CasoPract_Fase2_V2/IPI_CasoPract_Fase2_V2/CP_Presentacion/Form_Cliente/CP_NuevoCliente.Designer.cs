@@ -48,6 +48,7 @@ namespace CP_Presentacion.Form_Cliente
             // 
             // txt_Saldo
             // 
+            this.txt_Saldo.BackColor = System.Drawing.Color.PaleTurquoise;
             this.txt_Saldo.Location = new System.Drawing.Point(120, 160);
             this.txt_Saldo.Name = "txt_Saldo";
             this.txt_Saldo.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -56,6 +57,7 @@ namespace CP_Presentacion.Form_Cliente
             // 
             // txt_LimiteCredito
             // 
+            this.txt_LimiteCredito.BackColor = System.Drawing.Color.PaleTurquoise;
             this.txt_LimiteCredito.Location = new System.Drawing.Point(120, 203);
             this.txt_LimiteCredito.Name = "txt_LimiteCredito";
             this.txt_LimiteCredito.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -64,6 +66,7 @@ namespace CP_Presentacion.Form_Cliente
             // 
             // txt_Descuento
             // 
+            this.txt_Descuento.BackColor = System.Drawing.Color.PaleTurquoise;
             this.txt_Descuento.Location = new System.Drawing.Point(120, 248);
             this.txt_Descuento.Name = "txt_Descuento";
             this.txt_Descuento.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -75,7 +78,7 @@ namespace CP_Presentacion.Form_Cliente
             this.label2.AutoSize = true;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Bodoni Bd BT", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label2.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label2.Location = new System.Drawing.Point(120, 138);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -88,7 +91,7 @@ namespace CP_Presentacion.Form_Cliente
             this.label3.AutoSize = true;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Bodoni Bd BT", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label3.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label3.Location = new System.Drawing.Point(120, 181);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -101,7 +104,7 @@ namespace CP_Presentacion.Form_Cliente
             this.label4.AutoSize = true;
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label4.Font = new System.Drawing.Font("Bodoni Bd BT", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label4.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label4.Location = new System.Drawing.Point(120, 226);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -126,6 +129,7 @@ namespace CP_Presentacion.Form_Cliente
             // 
             // txt_cliente
             // 
+            this.txt_cliente.BackColor = System.Drawing.Color.PaleTurquoise;
             this.txt_cliente.Location = new System.Drawing.Point(120, 115);
             this.txt_cliente.Name = "txt_cliente";
             this.txt_cliente.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -137,7 +141,7 @@ namespace CP_Presentacion.Form_Cliente
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Bodoni Bd BT", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label1.Location = new System.Drawing.Point(120, 93);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -151,6 +155,8 @@ namespace CP_Presentacion.Form_Cliente
             // 
             // monthCalendar1
             // 
+            this.monthCalendar1.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.monthCalendar1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.monthCalendar1.Location = new System.Drawing.Point(437, 138);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 14;
@@ -161,7 +167,7 @@ namespace CP_Presentacion.Form_Cliente
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label6.Font = new System.Drawing.Font("Bodoni Bd BT", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label6.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label6.Location = new System.Drawing.Point(116, 35);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -173,6 +179,7 @@ namespace CP_Presentacion.Form_Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(749, 425);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.monthCalendar1);
