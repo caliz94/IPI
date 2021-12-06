@@ -32,15 +32,18 @@ namespace CD_Datos
 
         public int CargarExistencias(int IdArticulo)
         {
-            int existencia;
+            cmd.Parameters.Clear();
+            //int existencia;
             cmd.Connection = Conexion.abrircadena();
             cmd.CommandText = "sp_validarExistenciaArticulo";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@IdArticulo", IdArticulo);
-            existencia = cmd.ExecuteNonQuery();
-            cmd.Parameters.Clear();
+            //existencia = cmd.ExecuteNonQuery();
+            
+            return (int)cmd.ExecuteScalar();
+            
             Conexion.cerrarcadena();
-            return existencia;
+            
         }
 
         //SqlDataReader existencia;

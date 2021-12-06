@@ -419,15 +419,27 @@ END
 GO
 
 
---ALTER PROCEDURE sp_validarExistenciaArticulo
---(
---@IdArticulo INT
---)
---AS
---BEGIN
---	--SELECT A.Existencias FROM Articulo AS A INNER JOIN Fabrica AS F ON A.IdFabrica = F.IdFabrica WHERE IdArticulo = @IdArticulo
---	SELECT IdCliente FROM Cliente WHERE IdCliente = @IdArticulo
---END
+CREATE PROCEDURE sp_validarExistenciaArticulo
+(
+@IdArticulo INT
+)
+AS
+BEGIN
+	SELECT A.Existencias FROM Articulo AS A INNER JOIN Fabrica AS F ON A.IdFabrica = F.IdFabrica WHERE IdArticulo = @IdArticulo
+	--SELECT IdCliente FROM Cliente WHERE IdCliente = @IdArticulo
+END
+GO
+
+CREATE PROCEDURE sp_validarPrecioArticulo
+(
+@IdArticulo INT
+)
+AS
+BEGIN
+	SELECT A.PrecioUnitario FROM Articulo AS A INNER JOIN Fabrica AS F ON A.IdFabrica = F.IdFabrica WHERE IdArticulo = @IdArticulo
+	--SELECT IdCliente FROM Cliente WHERE IdCliente = @IdArticulo
+END
+
 
 --DECLARE @cantidad INT
 --EXEC sp_validarExistenciaArticulo 1, @cantidad OUTPUT

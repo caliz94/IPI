@@ -92,7 +92,7 @@
             this.cboxNombreProducto.Name = "cboxNombreProducto";
             this.cboxNombreProducto.Size = new System.Drawing.Size(288, 21);
             this.cboxNombreProducto.TabIndex = 14;
-            this.cboxNombreProducto.SelectionChangeCommitted += new System.EventHandler(this.cboxNombreProducto_SelectionChangeCommitted);
+            this.cboxNombreProducto.Leave += new System.EventHandler(this.cboxNombreProducto_Leave);
             // 
             // label3
             // 
@@ -103,7 +103,6 @@
             this.label3.Size = new System.Drawing.Size(105, 20);
             this.label3.TabIndex = 16;
             this.label3.Text = "Existencias:";
-            this.label3.Visible = false;
             // 
             // tboxExistencias
             // 
@@ -112,7 +111,6 @@
             this.tboxExistencias.ReadOnly = true;
             this.tboxExistencias.Size = new System.Drawing.Size(49, 20);
             this.tboxExistencias.TabIndex = 17;
-            this.tboxExistencias.Visible = false;
             // 
             // label4
             // 

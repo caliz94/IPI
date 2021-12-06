@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CL_Logica;
+using System.Data.SqlClient;
 
 namespace CP_Presentacion.Form_Ventas
 {
@@ -59,11 +60,8 @@ namespace CP_Presentacion.Form_Ventas
         }
 
 
-        
-
-        private void cboxNombreProducto_SelectionChangeCommitted(object sender, EventArgs e)
+        private void cboxNombreProducto_Leave(object sender, EventArgs e)
         {
-            
             ObtenerExistenciaArticulos();
         }
     }
