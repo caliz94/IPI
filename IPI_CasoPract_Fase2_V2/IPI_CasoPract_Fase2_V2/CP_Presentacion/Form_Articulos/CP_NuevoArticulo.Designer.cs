@@ -67,17 +67,24 @@ namespace CP_Presentacion.Form_Articulos
             // 
             // btn_guardar
             // 
-            this.btn_guardar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
-            this.btn_guardar.IconColor = System.Drawing.Color.DarkCyan;
+            this.btn_guardar.FlatAppearance.BorderSize = 0;
+            this.btn_guardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.btn_guardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_guardar.ForeColor = System.Drawing.Color.Cyan;
+            this.btn_guardar.IconChar = FontAwesome.Sharp.IconChar.Xbox;
+            this.btn_guardar.IconColor = System.Drawing.Color.SpringGreen;
             this.btn_guardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_guardar.IconSize = 60;
-            this.btn_guardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_guardar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_guardar.Location = new System.Drawing.Point(46, 404);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btn_guardar.Size = new System.Drawing.Size(182, 64);
+            this.btn_guardar.Size = new System.Drawing.Size(182, 69);
             this.btn_guardar.TabIndex = 22;
             this.btn_guardar.Text = "GUARDAR";
+            this.btn_guardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_guardar.UseVisualStyleBackColor = true;
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
@@ -166,7 +173,7 @@ namespace CP_Presentacion.Form_Articulos
             this.dgv_articulos.Name = "dgv_articulos";
             this.dgv_articulos.ReadOnly = true;
             this.dgv_articulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_articulos.Size = new System.Drawing.Size(1010, 649);
+            this.dgv_articulos.Size = new System.Drawing.Size(527, 649);
             this.dgv_articulos.TabIndex = 23;
             // 
             // txt_art_provistos
@@ -226,33 +233,47 @@ namespace CP_Presentacion.Form_Articulos
             // 
             // btn_eliminar
             // 
-            this.btn_eliminar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
-            this.btn_eliminar.IconColor = System.Drawing.Color.DarkCyan;
+            this.btn_eliminar.FlatAppearance.BorderSize = 0;
+            this.btn_eliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btn_eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_eliminar.ForeColor = System.Drawing.Color.Cyan;
+            this.btn_eliminar.IconChar = FontAwesome.Sharp.IconChar.MinusCircle;
+            this.btn_eliminar.IconColor = System.Drawing.Color.SpringGreen;
             this.btn_eliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_eliminar.IconSize = 60;
-            this.btn_eliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_eliminar.Location = new System.Drawing.Point(337, 24);
+            this.btn_eliminar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_eliminar.Location = new System.Drawing.Point(277, 24);
             this.btn_eliminar.Name = "btn_eliminar";
             this.btn_eliminar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btn_eliminar.Size = new System.Drawing.Size(182, 64);
             this.btn_eliminar.TabIndex = 30;
             this.btn_eliminar.Text = "ELIMINAR";
+            this.btn_eliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_eliminar.UseVisualStyleBackColor = true;
             this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
             // btn_editar
             // 
-            this.btn_editar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
-            this.btn_editar.IconColor = System.Drawing.Color.DarkCyan;
+            this.btn_editar.FlatAppearance.BorderSize = 0;
+            this.btn_editar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_editar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btn_editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_editar.ForeColor = System.Drawing.Color.Cyan;
+            this.btn_editar.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.btn_editar.IconColor = System.Drawing.Color.SpringGreen;
             this.btn_editar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_editar.IconSize = 60;
-            this.btn_editar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_editar.Location = new System.Drawing.Point(149, 24);
+            this.btn_editar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_editar.Location = new System.Drawing.Point(89, 24);
             this.btn_editar.Name = "btn_editar";
             this.btn_editar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btn_editar.Size = new System.Drawing.Size(182, 64);
             this.btn_editar.TabIndex = 31;
             this.btn_editar.Text = "EDITAR";
+            this.btn_editar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_editar.UseVisualStyleBackColor = true;
             this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
             // 
@@ -276,7 +297,7 @@ namespace CP_Presentacion.Form_Articulos
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(311, 749);
+            this.panel1.Size = new System.Drawing.Size(281, 749);
             this.panel1.TabIndex = 32;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -293,24 +314,24 @@ namespace CP_Presentacion.Form_Articulos
             this.panel2.Controls.Add(this.btn_editar);
             this.panel2.Controls.Add(this.btn_eliminar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(311, 649);
+            this.panel2.Location = new System.Drawing.Point(281, 649);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1010, 100);
+            this.panel2.Size = new System.Drawing.Size(527, 100);
             this.panel2.TabIndex = 33;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.dgv_articulos);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(311, 0);
+            this.panel3.Location = new System.Drawing.Point(281, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1010, 649);
+            this.panel3.Size = new System.Drawing.Size(527, 649);
             this.panel3.TabIndex = 34;
             // 
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(1321, 0);
+            this.panel4.Location = new System.Drawing.Point(808, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(49, 749);
             this.panel4.TabIndex = 35;
@@ -320,7 +341,7 @@ namespace CP_Presentacion.Form_Articulos
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(857, 749);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
