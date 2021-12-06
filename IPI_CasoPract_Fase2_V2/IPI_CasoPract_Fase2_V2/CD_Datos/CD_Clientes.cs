@@ -12,7 +12,7 @@ namespace CD_Datos
     {
         private CD_Conexion Conexion = new CD_Conexion();
 
-        SqlDataReader read;
+        //SqlDataReader leer;
         SqlCommand cmd = new SqlCommand();
         DataTable table = new DataTable();
 

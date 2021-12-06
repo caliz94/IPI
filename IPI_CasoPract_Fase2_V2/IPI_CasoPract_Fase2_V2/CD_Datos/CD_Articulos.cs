@@ -14,6 +14,7 @@ namespace CD_Datos
         private CD_Conexion Conexion = new CD_Conexion();
 
         SqlDataReader leer;
+        SqlDataReader leerCBX;
         DataTable tabla = new DataTable();
         SqlCommand cmd = new SqlCommand();
 
@@ -67,9 +68,9 @@ namespace CD_Datos
             cmd.CommandText = "sp_mostrar_artic";
             cmd.CommandType = CommandType.StoredProcedure;
             leer = cmd.ExecuteReader();
-            tabla.Load(leer);            
+            tabla.Load(leer);
             Conexion.cerrarcadena();
-            return tabla; 
+            return tabla;
         }
 
 
@@ -132,8 +133,8 @@ namespace CD_Datos
             cmd.Connection = Conexion.abrircadena();
             cmd.CommandText = "sp_cargarComboFabrica";
             cmd.CommandType = CommandType.StoredProcedure;
-            leer = cmd.ExecuteReader();
-            tabla.Load(leer);
+            leerCBX = cmd.ExecuteReader();
+            tabla.Load(leerCBX);
             Conexion.cerrarcadena();
             return tabla;
         }

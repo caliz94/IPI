@@ -43,15 +43,14 @@ namespace CP_Presentacion.Form_Articulos
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_fab_altern = new System.Windows.Forms.TextBox();
-            this.txt_fabr = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btn_eliminar = new FontAwesome.Sharp.IconButton();
             this.btn_editar = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbx_fabrica = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.cbx_fabrica = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_articulos)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -212,14 +211,6 @@ namespace CP_Presentacion.Form_Articulos
             this.txt_fab_altern.Size = new System.Drawing.Size(182, 20);
             this.txt_fab_altern.TabIndex = 26;
             // 
-            // txt_fabr
-            // 
-            this.txt_fabr.Location = new System.Drawing.Point(46, 267);
-            this.txt_fabr.Name = "txt_fabr";
-            this.txt_fabr.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_fabr.Size = new System.Drawing.Size(182, 20);
-            this.txt_fabr.TabIndex = 24;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -278,7 +269,6 @@ namespace CP_Presentacion.Form_Articulos
             this.panel1.Controls.Add(this.Descripcion);
             this.panel1.Controls.Add(this.txt_fab_altern);
             this.panel1.Controls.Add(this.txt_cod_artic);
-            this.panel1.Controls.Add(this.txt_fabr);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.btn_guardar);
@@ -289,6 +279,14 @@ namespace CP_Presentacion.Form_Articulos
             this.panel1.Size = new System.Drawing.Size(311, 749);
             this.panel1.TabIndex = 32;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // cbx_fabrica
+            // 
+            this.cbx_fabrica.FormattingEnabled = true;
+            this.cbx_fabrica.Location = new System.Drawing.Point(46, 266);
+            this.cbx_fabrica.Name = "cbx_fabrica";
+            this.cbx_fabrica.Size = new System.Drawing.Size(182, 21);
+            this.cbx_fabrica.TabIndex = 30;
             // 
             // panel2
             // 
@@ -316,14 +314,6 @@ namespace CP_Presentacion.Form_Articulos
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(49, 749);
             this.panel4.TabIndex = 35;
-            // 
-            // cbx_fabrica
-            // 
-            this.cbx_fabrica.FormattingEnabled = true;
-            this.cbx_fabrica.Location = new System.Drawing.Point(50, 24);
-            this.cbx_fabrica.Name = "cbx_fabrica";
-            this.cbx_fabrica.Size = new System.Drawing.Size(121, 21);
-            this.cbx_fabrica.TabIndex = 30;
             // 
             // CP_NuevoArticulo
             // 
@@ -365,7 +355,6 @@ namespace CP_Presentacion.Form_Articulos
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txt_fab_altern;
-        private System.Windows.Forms.TextBox txt_fabr;
         private System.Windows.Forms.Label label7;
         private FontAwesome.Sharp.IconButton btn_eliminar;
         private FontAwesome.Sharp.IconButton btn_editar;
