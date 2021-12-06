@@ -56,16 +56,7 @@ namespace CP_Presentacion
             abrirform.Show();
         }
 
-        private void btn_elimin_cliente_Click(object sender, EventArgs e)
-        {
-            Form_Cliente.CP_Elim_Client abrirform = Form_Cliente.CP_Elim_Client.Abrir;
-            abrirform.TopLevel = false;
-            this.pnl_cont.Controls.Add(abrirform);
-          
-      
-            this.pnl_cont.Tag = abrirform;
-            abrirform.Show();
-        }
+
 
         private void btn_mostrar_clientes_Click(object sender, EventArgs e)
         {
