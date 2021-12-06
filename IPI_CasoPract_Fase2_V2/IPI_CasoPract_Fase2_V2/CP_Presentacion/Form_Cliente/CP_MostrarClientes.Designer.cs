@@ -37,6 +37,7 @@ namespace CP_Presentacion.Form_Cliente
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_mostar_clientes)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -44,11 +45,15 @@ namespace CP_Presentacion.Form_Cliente
             // 
             // dgv_mostar_clientes
             // 
+            this.dgv_mostar_clientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_mostar_clientes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_mostar_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_mostar_clientes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_mostar_clientes.Location = new System.Drawing.Point(119, 96);
             this.dgv_mostar_clientes.Name = "dgv_mostar_clientes";
-            this.dgv_mostar_clientes.Size = new System.Drawing.Size(545, 260);
+            this.dgv_mostar_clientes.ReadOnly = true;
+            this.dgv_mostar_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_mostar_clientes.Size = new System.Drawing.Size(504, 260);
             this.dgv_mostar_clientes.TabIndex = 0;
             // 
             // label_grid
@@ -118,18 +123,29 @@ namespace CP_Presentacion.Form_Cliente
             this.panel3.Size = new System.Drawing.Size(119, 260);
             this.panel3.TabIndex = 7;
             // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(623, 96);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(41, 260);
+            this.panel4.TabIndex = 8;
+            // 
             // CP_MostrarClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(664, 384);
             this.Controls.Add(this.dgv_mostar_clientes);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "CP_MostrarClientes";
             this.Text = "CP_MostrarClientes";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CP_MostrarClientes_FormClosed);
+            this.Load += new System.EventHandler(this.CP_MostrarClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_mostar_clientes)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -148,5 +164,6 @@ namespace CP_Presentacion.Form_Cliente
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
     }
 }

@@ -54,5 +54,11 @@ namespace CP_Presentacion.Form_Cliente
             label_grid.Text = "Clientes Activos e Inactivos";
             dgv_mostar_clientes.DataSource = clientes_cl.mostrarclientes();
         }
+
+        private void CP_MostrarClientes_Load(object sender, EventArgs e)
+        {
+            label_grid.Text = "Clientes Activos e Inactivos";
+            dgv_mostar_clientes.DataSource = clientes_cl.mostrarclientes();
+        }
     }
 }

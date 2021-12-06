@@ -85,17 +85,38 @@ namespace CP_Presentacion.Form_Cliente
             }
             else
             {
-                errorProvider1.SetError(txt_Descuento, " ");
+                errorProvider1.SetError(txt_Descuento, "");
                 actualizar();              
                 MessageBox.Show("el cliente ha sido actualizado exitosamente");
-         
+
+                txt_Descuento.Clear();
+                txt_idcliente.Clear();
+                txt_LimiteCredito.Clear();
+                txt_nombrecliente.Clear();
+                txt_Saldo.Clear();
+                grid();
+                dgv_mostar_clientes.Columns["Activo"].Visible = false;
+
+                txt_nombrecliente.Enabled = false;
+                txt_Saldo.Enabled = false;
+                txt_LimiteCredito.Enabled = false;
+                txt_Descuento.Enabled = false;
+                iconButton1.Enabled = false;
+                chk_Estado.Enabled = false;
+
             }
 
         }
 
+        public void grid()
+        {
+           dgv_mostar_clientes.DataSource = clientes_cl.clientes_activos();
+        }
         private void Actualizar_cliente_Load(object sender, EventArgs e)
         {
-            dgv_mostar_clientes.DataSource = clientes_cl.clientes_activos(); 
+            chk_Estado.Checked = true;
+            grid();
+            dgv_mostar_clientes.Columns["Activo"].Visible = false;
         }
 
         private void dgv_mostar_clientes_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -107,6 +128,19 @@ namespace CP_Presentacion.Form_Cliente
             txt_Descuento.Enabled = true;
             chk_Estado.Enabled = true;
             iconButton1.Enabled = true;
+
+            //cargar campos en los textbox
+
+            txt_nombrecliente.Text = dgv_mostar_clientes.CurrentRow.Cells["NombreCliente"].Value.ToString();
+            txt_Saldo.Text= dgv_mostar_clientes.CurrentRow.Cells["Saldo"].Value.ToString();
+            txt_LimiteCredito.Text= dgv_mostar_clientes.CurrentRow.Cells["LimiteCredito"].Value.ToString();
+            txt_Descuento.Text = dgv_mostar_clientes.CurrentRow.Cells["Descuento"].Value.ToString();           
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

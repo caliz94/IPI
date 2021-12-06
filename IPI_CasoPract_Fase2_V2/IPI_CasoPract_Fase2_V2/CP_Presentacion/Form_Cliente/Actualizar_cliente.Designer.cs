@@ -45,14 +45,17 @@ namespace CP_Presentacion.Form_Cliente
             this.dgv_mostar_clientes = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_mostar_clientes)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_Descuento
@@ -199,9 +202,11 @@ namespace CP_Presentacion.Form_Cliente
             this.dgv_mostar_clientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
             this.dgv_mostar_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_mostar_clientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_mostar_clientes.Location = new System.Drawing.Point(0, 68);
+            this.dgv_mostar_clientes.Location = new System.Drawing.Point(0, 0);
             this.dgv_mostar_clientes.Name = "dgv_mostar_clientes";
-            this.dgv_mostar_clientes.Size = new System.Drawing.Size(851, 575);
+            this.dgv_mostar_clientes.ReadOnly = true;
+            this.dgv_mostar_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_mostar_clientes.Size = new System.Drawing.Size(1116, 575);
             this.dgv_mostar_clientes.TabIndex = 40;
             this.dgv_mostar_clientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_mostar_clientes_CellClick);
             // 
@@ -224,20 +229,18 @@ namespace CP_Presentacion.Form_Cliente
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 655);
             this.panel1.TabIndex = 41;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dgv_mostar_clientes);
+            this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.panel4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(200, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(851, 643);
+            this.panel2.Size = new System.Drawing.Size(1170, 643);
             this.panel2.TabIndex = 42;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
             // 
             // panel3
             // 
@@ -245,37 +248,60 @@ namespace CP_Presentacion.Form_Cliente
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(851, 68);
+            this.panel3.Size = new System.Drawing.Size(1116, 68);
             this.panel3.TabIndex = 41;
             // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Nirmala UI Semilight", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label5.Location = new System.Drawing.Point(227, 23);
+            this.label5.Location = new System.Drawing.Point(227, 11);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(396, 23);
+            this.label5.Size = new System.Drawing.Size(396, 43);
             this.label5.TabIndex = 0;
             this.label5.Text = "Selecione El Cliente Que Desea Modificar";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(1116, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(54, 643);
+            this.panel4.TabIndex = 42;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.dgv_mostar_clientes);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(0, 68);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1116, 575);
+            this.panel5.TabIndex = 43;
             // 
             // Actualizar_cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1051, 655);
+            this.ClientSize = new System.Drawing.Size(1370, 655);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Actualizar_cliente";
             this.Text = "Actualizar_cliente";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Actualizar_cliente_FormClosed);
             this.Load += new System.EventHandler(this.Actualizar_cliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_mostar_clientes)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -300,5 +326,7 @@ namespace CP_Presentacion.Form_Cliente
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
     }
 }
