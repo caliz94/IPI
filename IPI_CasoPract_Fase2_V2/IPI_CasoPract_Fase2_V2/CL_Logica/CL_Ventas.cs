@@ -28,6 +28,13 @@ namespace CL_Logica
             return tabla;
         }
 
+        public DataTable CargarComboDirecciones(int IdCliente)
+        {
+            DataTable tabla = new DataTable();
+            tabla = OVentas.CargarComboDirecciones(IdCliente);
+            return tabla;
+        }
+
         public void GuardarVenta(int IdCliente, int IdDireccion, byte Activo)
         {
             OVentas.GuardarVenta(IdCliente, IdDireccion, Activo);

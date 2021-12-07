@@ -43,6 +43,14 @@ namespace CP_Presentacion.Form_Ventas
         }
         #endregion
 
+        private void CargarComboDirecciones()
+        {
+            cboxDirecciones.DataSource = OVentas.CargarComboDirecciones(Convert.ToInt32(cboxNombreCliente.SelectedValue.ToString()));
+            cboxDirecciones.DisplayMember = "Dirección";
+            cboxDirecciones.SelectedIndex = -1;
+            cboxDirecciones.ValueMember = "IdCliente";
+        }
+
         int idarticulo;
         private void ObtenerExistenciaArticulos()
         {
@@ -108,6 +116,11 @@ namespace CP_Presentacion.Form_Ventas
         {
             ObtenerExistenciaArticulos();
             ObtenerPrecioArticulos();
+        }
+
+        private void cboxNombreCliente_DropDownClosed(object sender, EventArgs e)
+        {
+            CargarComboDirecciones();
         }
 
         private void btn_AgregarCarrito_Click(object sender, EventArgs e)
