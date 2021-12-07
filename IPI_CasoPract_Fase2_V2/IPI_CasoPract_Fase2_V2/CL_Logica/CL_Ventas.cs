@@ -10,6 +10,7 @@ namespace CL_Logica
 {
     public class CL_Ventas
     {
+        CD_Ventas OVentas = new CD_Ventas();
         CD_Clientes OClientes = new CD_Clientes();
         CD_Articulos OArticulo = new CD_Articulos();
 
@@ -27,12 +28,10 @@ namespace CL_Logica
             return tabla;
         }
 
-        //public DataTable ObtenerExistenciaArticulos(int IdArticulo)
-        //{
-        //    DataTable existencia = new DataTable();
-        //    existencia = OArticulo.CargarExistencias(IdArticulo);
-        //    return existencia;
-        //}
+        public void GuardarVenta(int IdCliente, int IdDireccion, byte Activo)
+        {
+            OVentas.GuardarVenta(IdCliente, IdDireccion, Activo);
+        }
 
 
         public int ObtenerExistenciaArticulos(int IdArticulo)

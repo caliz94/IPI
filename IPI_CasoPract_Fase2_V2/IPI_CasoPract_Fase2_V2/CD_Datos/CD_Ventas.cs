@@ -11,9 +11,21 @@ namespace CD_Datos
     public class CD_Ventas
     {
         CD_Conexion Conexion = new CD_Conexion();
+        SqlCommand cmd = new SqlCommand();
 
-        SqlCommand Comando = new SqlCommand();
+        //SqlCommand cmd = new SqlCommand("sp_GuardarVenta",Conexion.abrircadena);
 
-        
+        public void GuardarVenta(int IdCliente, int IdDireccion, byte Activo)
+        {
+            
+            cmd.Connection = Conexion.abrircadena();
+            cmd.CommandText = "sp_GuardarVenta";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@IdCliente", IdCliente);
+            cmd.Parameters.AddWithValue("@IdDireccion", IdDireccion);
+            cmd.Parameters.AddWithValue("@Activo", Activo);
+            cmd.ExecuteNonQuery();
+            cmd.Connection = Conexion.cerrarcadena();
+        }
     }
 }

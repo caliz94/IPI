@@ -159,7 +159,7 @@ GO
 CREATE PROCEDURE sp_cargarComboFabrica
 AS
 BEGIN
-	SELECT IdFabrica, 'Id - '+str(IdFabrica) + '- ' + NombreFabrica AS [NombreFabrica] FROM Fabrica WHERE Activo = 1
+	SELECT IdFabrica, ltrim(rtrim('Id - '))+ltrim(rtrim(str(IdFabrica))) + '- ' + NombreFabrica AS [NombreFabrica] FROM Fabrica WHERE Activo = 1
 END
 GO
 
@@ -405,16 +405,16 @@ go
 CREATE PROCEDURE sp_cargarComboCliente
 AS
 BEGIN
-	SELECT IdCliente, str(IdCliente) + ' - ' + NombreCliente AS [NombreCliente] 
+	SELECT IdCliente, ltrim(rtrim(str(IdCliente))) + ltrim(' - ') + ltrim(rtrim(NombreCliente)) AS [NombreCliente] 
 	FROM Cliente WHERE Activo = 1
 END
 
 go
 
-create PROCEDURE sp_cargarComboArticulo
+CREATE PROCEDURE sp_cargarComboArticulo
 AS
 BEGIN
-	SELECT IdArticulo, str(IdArticulo) + ' - ' + Descripción_Articulo AS [NombreArticulo] 
+	SELECT IdArticulo, ltrim(rtrim(str(IdArticulo))) + ' - ' + ltrim(rtrim(Descripción_Articulo)) AS [NombreArticulo] 
 	FROM Articulo WHERE Existencias > 0
 END
 GO
@@ -448,12 +448,12 @@ GO
 
 /*************************  VENTAS  ********************************/
 
-ALTER PROCEDURE sp_GuardarVenta
+CREATE PROCEDURE sp_GuardarVenta
 (
 @IdCliente INT,
 @IdDireccion INT,
-@Activo BIT,
-@Detalle detalleVenta READONLY
+@Activo BIT
+--@Detalle detalleVenta READONLY
 )
 AS
 BEGIN 
