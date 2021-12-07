@@ -448,16 +448,31 @@ GO
 
 /*************************  VENTAS  ********************************/
 
-CREATE PROCEDURE sp_GuardarVenta
+ALTER PROCEDURE sp_GuardarVenta
 (
 @IdCliente INT,
 @IdDireccion INT,
-@Activo BIT
+@Activo BIT,
+@Detalle detalleVenta READONLY
 )
 AS
 BEGIN 
 	DECLARE @IdPedido INT
 	SELECT @IdPedido = ISNULL(MAX(IdPedido),0)+1 FROM Pedido
-	INSERT INTO Pedido(IdPedido, IdCliente, IdDireccion, FechaPedido, Activo) 
-	VALUES (@IdPedido, @IdCliente,@IdDireccion ,GETDATE() ,@Activo);
+	
+	INSERT INTO Pedido (IdPedido, IdCliente, IdDireccion, FechaPedido, Activo) 
+	VALUES (@IdPedido, @IdCliente,@IdDireccion ,GETDATE() ,@Activo)
+
+	--INSERT --https://youtu.be/X_MpkJpsilw?t=1512
+
 END
+GO
+
+CREATE TYPE detalleVenta AS TABLE
+(
+	Id INT,
+	Nombre VARCHAR(100),
+	Precio MONEY,
+	Cantidad INT
+	PRIMARY KEY(Id)
+)

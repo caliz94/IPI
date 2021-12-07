@@ -40,11 +40,21 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tboxPrecio = new System.Windows.Forms.TextBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvVentas = new System.Windows.Forms.DataGridView();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnActualizarCliente = new FontAwesome.Sharp.IconButton();
+            this.IdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NoArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescripcionArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Op = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -160,13 +170,27 @@
             this.iconButton1.TabIndex = 22;
             this.iconButton1.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // dgvVentas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 134);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(850, 275);
-            this.dataGridView1.TabIndex = 23;
+            this.dgvVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdCliente,
+            this.NombreCliente,
+            this.NoArticulo,
+            this.DescripcionArticulo,
+            this.Cantidad,
+            this.PrecioUnitario,
+            this.Total,
+            this.FechaPedido,
+            this.IdDireccion,
+            this.Op});
+            this.dgvVentas.Location = new System.Drawing.Point(12, 134);
+            this.dgvVentas.Name = "dgvVentas";
+            this.dgvVentas.ReadOnly = true;
+            this.dgvVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvVentas.Size = new System.Drawing.Size(850, 275);
+            this.dgvVentas.TabIndex = 23;
             // 
             // btnCancelar
             // 
@@ -211,6 +235,66 @@
             this.btnActualizarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnActualizarCliente.UseVisualStyleBackColor = false;
             // 
+            // IdCliente
+            // 
+            this.IdCliente.HeaderText = "IdCliente";
+            this.IdCliente.Name = "IdCliente";
+            this.IdCliente.ReadOnly = true;
+            // 
+            // NombreCliente
+            // 
+            this.NombreCliente.HeaderText = "Nombre del Cliente";
+            this.NombreCliente.Name = "NombreCliente";
+            this.NombreCliente.ReadOnly = true;
+            // 
+            // NoArticulo
+            // 
+            this.NoArticulo.HeaderText = "NoArticulo";
+            this.NoArticulo.Name = "NoArticulo";
+            this.NoArticulo.ReadOnly = true;
+            // 
+            // DescripcionArticulo
+            // 
+            this.DescripcionArticulo.HeaderText = "Descripción";
+            this.DescripcionArticulo.Name = "DescripcionArticulo";
+            this.DescripcionArticulo.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // PrecioUnitario
+            // 
+            this.PrecioUnitario.HeaderText = "Precio Unitario";
+            this.PrecioUnitario.Name = "PrecioUnitario";
+            this.PrecioUnitario.ReadOnly = true;
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            // 
+            // FechaPedido
+            // 
+            this.FechaPedido.HeaderText = "Fecha";
+            this.FechaPedido.Name = "FechaPedido";
+            this.FechaPedido.ReadOnly = true;
+            // 
+            // IdDireccion
+            // 
+            this.IdDireccion.HeaderText = "IdDirección";
+            this.IdDireccion.Name = "IdDireccion";
+            this.IdDireccion.ReadOnly = true;
+            // 
+            // Op
+            // 
+            this.Op.HeaderText = "Op";
+            this.Op.Name = "Op";
+            this.Op.ReadOnly = true;
+            // 
             // CP_NuevaVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -218,7 +302,7 @@
             this.ClientSize = new System.Drawing.Size(873, 504);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnActualizarCliente);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvVentas);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.tboxPrecio);
             this.Controls.Add(this.label5);
@@ -236,7 +320,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CP_NuevaVenta_FormClosed);
             this.Load += new System.EventHandler(this.CP_NuevaVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,8 +340,18 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tboxPrecio;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvVentas;
         private FontAwesome.Sharp.IconButton btnCancelar;
         private FontAwesome.Sharp.IconButton btnActualizarCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NoArticulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionArticulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioUnitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaPedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdDireccion;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Op;
     }
 }
