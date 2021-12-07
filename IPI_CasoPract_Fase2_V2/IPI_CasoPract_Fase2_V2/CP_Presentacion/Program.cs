@@ -16,7 +16,7 @@ namespace CP_Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_Ventas.CP_NuevaVenta());
+            Application.Run(new Menu_Inicio());
         }
     }
 }

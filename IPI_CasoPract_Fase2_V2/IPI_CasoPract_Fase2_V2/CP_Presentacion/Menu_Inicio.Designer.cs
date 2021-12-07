@@ -35,7 +35,6 @@ namespace CP_Presentacion
             this.btn_nuevo_cliente = new FontAwesome.Sharp.IconButton();
             this.btn_act_cliente = new FontAwesome.Sharp.IconButton();
             this.btn_mostrar_clientes = new FontAwesome.Sharp.IconButton();
-            this.pnl_izq = new System.Windows.Forms.Panel();
             this.pnl_fun_btn_Provedor = new System.Windows.Forms.Panel();
             this.btn_nuev_prov = new FontAwesome.Sharp.IconButton();
             this.btn_act_pro = new FontAwesome.Sharp.IconButton();
@@ -57,24 +56,41 @@ namespace CP_Presentacion
             this.btn_AministrarClientes = new FontAwesome.Sharp.IconButton();
             this.pnl_inf = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
+            this.nuevoClienteToolStripMenuItem = new FontAwesome.Sharp.IconMenuItem();
+            this.actualizarCliienteToolStripMenuItem = new FontAwesome.Sharp.IconMenuItem();
+            this.mostrarClientesToolStripMenuItem = new FontAwesome.Sharp.IconMenuItem();
+            this.adminDireccionesToolStripMenuItem = new FontAwesome.Sharp.IconMenuItem();
+            this.administrarArticulosToolStripMenuItem = new FontAwesome.Sharp.IconMenuItem();
+            this.administrarProvedoresToolStripMenuItem = new FontAwesome.Sharp.IconMenuItem();
+            this.ventasToolStripMenuItem = new FontAwesome.Sharp.IconMenuItem();
             this.pnl_cont.SuspendLayout();
             this.pnl_fun_btn_client.SuspendLayout();
-            this.pnl_izq.SuspendLayout();
             this.pnl_fun_btn_Provedor.SuspendLayout();
             this.pnl_venta.SuspendLayout();
             this.pnl_fun_btn_Artic.SuspendLayout();
             this.pnl_inf.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_cont
             // 
             this.pnl_cont.BackColor = System.Drawing.SystemColors.ControlDark;
             this.pnl_cont.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnl_cont.Controls.Add(this.menuStrip1);
+            this.pnl_cont.Controls.Add(this.btnMenuVentas);
+            this.pnl_cont.Controls.Add(this.pnl_venta);
+            this.pnl_cont.Controls.Add(this.btnProveedores);
+            this.pnl_cont.Controls.Add(this.btnAdministrarArticulos);
+            this.pnl_cont.Controls.Add(this.btn_AministrarClientes);
+            this.pnl_cont.Controls.Add(this.pnl_fun_btn_Artic);
+            this.pnl_cont.Controls.Add(this.pnl_fun_btn_Provedor);
             this.pnl_cont.Controls.Add(this.pnl_fun_btn_client);
             this.pnl_cont.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_cont.Location = new System.Drawing.Point(482, 0);
+            this.pnl_cont.Location = new System.Drawing.Point(0, 0);
             this.pnl_cont.Name = "pnl_cont";
-            this.pnl_cont.Size = new System.Drawing.Size(672, 551);
+            this.pnl_cont.Size = new System.Drawing.Size(1154, 722);
             this.pnl_cont.TabIndex = 5;
             // 
             // pnl_fun_btn_client
@@ -83,9 +99,9 @@ namespace CP_Presentacion
             this.pnl_fun_btn_client.Controls.Add(this.btn_nuevo_cliente);
             this.pnl_fun_btn_client.Controls.Add(this.btn_act_cliente);
             this.pnl_fun_btn_client.Controls.Add(this.btn_mostrar_clientes);
-            this.pnl_fun_btn_client.Location = new System.Drawing.Point(186, 131);
+            this.pnl_fun_btn_client.Location = new System.Drawing.Point(251, 30);
             this.pnl_fun_btn_client.Name = "pnl_fun_btn_client";
-            this.pnl_fun_btn_client.Size = new System.Drawing.Size(184, 299);
+            this.pnl_fun_btn_client.Size = new System.Drawing.Size(184, 223);
             this.pnl_fun_btn_client.TabIndex = 5;
             // 
             // iconButton1
@@ -100,9 +116,9 @@ namespace CP_Presentacion
             this.iconButton1.IconColor = System.Drawing.Color.RoyalBlue;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(15, 223);
+            this.iconButton1.Location = new System.Drawing.Point(20, 167);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(158, 65);
+            this.iconButton1.Size = new System.Drawing.Size(158, 50);
             this.iconButton1.TabIndex = 4;
             this.iconButton1.Text = "Admin Direciones";
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -121,9 +137,9 @@ namespace CP_Presentacion
             this.btn_nuevo_cliente.IconColor = System.Drawing.Color.RoyalBlue;
             this.btn_nuevo_cliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_nuevo_cliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_nuevo_cliente.Location = new System.Drawing.Point(12, 13);
+            this.btn_nuevo_cliente.Location = new System.Drawing.Point(20, 5);
             this.btn_nuevo_cliente.Name = "btn_nuevo_cliente";
-            this.btn_nuevo_cliente.Size = new System.Drawing.Size(158, 56);
+            this.btn_nuevo_cliente.Size = new System.Drawing.Size(158, 41);
             this.btn_nuevo_cliente.TabIndex = 0;
             this.btn_nuevo_cliente.Text = "Nuevo Cliente";
             this.btn_nuevo_cliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -142,9 +158,9 @@ namespace CP_Presentacion
             this.btn_act_cliente.IconColor = System.Drawing.Color.RoyalBlue;
             this.btn_act_cliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_act_cliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_act_cliente.Location = new System.Drawing.Point(12, 75);
+            this.btn_act_cliente.Location = new System.Drawing.Point(20, 52);
             this.btn_act_cliente.Name = "btn_act_cliente";
-            this.btn_act_cliente.Size = new System.Drawing.Size(158, 68);
+            this.btn_act_cliente.Size = new System.Drawing.Size(158, 53);
             this.btn_act_cliente.TabIndex = 1;
             this.btn_act_cliente.Text = "Actualizar Cliente";
             this.btn_act_cliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -163,31 +179,14 @@ namespace CP_Presentacion
             this.btn_mostrar_clientes.IconColor = System.Drawing.Color.RoyalBlue;
             this.btn_mostrar_clientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_mostrar_clientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_mostrar_clientes.Location = new System.Drawing.Point(15, 149);
+            this.btn_mostrar_clientes.Location = new System.Drawing.Point(20, 111);
             this.btn_mostrar_clientes.Name = "btn_mostrar_clientes";
-            this.btn_mostrar_clientes.Size = new System.Drawing.Size(158, 65);
+            this.btn_mostrar_clientes.Size = new System.Drawing.Size(158, 50);
             this.btn_mostrar_clientes.TabIndex = 3;
             this.btn_mostrar_clientes.Text = "Mostrar Clientes";
             this.btn_mostrar_clientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_mostrar_clientes.UseVisualStyleBackColor = true;
             this.btn_mostrar_clientes.Click += new System.EventHandler(this.btn_mostrar_clientes_Click);
-            // 
-            // pnl_izq
-            // 
-            this.pnl_izq.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.pnl_izq.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnl_izq.Controls.Add(this.pnl_fun_btn_Provedor);
-            this.pnl_izq.Controls.Add(this.pnl_venta);
-            this.pnl_izq.Controls.Add(this.btnMenuVentas);
-            this.pnl_izq.Controls.Add(this.pnl_fun_btn_Artic);
-            this.pnl_izq.Controls.Add(this.btnProveedores);
-            this.pnl_izq.Controls.Add(this.btnAdministrarArticulos);
-            this.pnl_izq.Controls.Add(this.btn_AministrarClientes);
-            this.pnl_izq.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnl_izq.Location = new System.Drawing.Point(0, 0);
-            this.pnl_izq.Name = "pnl_izq";
-            this.pnl_izq.Size = new System.Drawing.Size(482, 551);
-            this.pnl_izq.TabIndex = 3;
             // 
             // pnl_fun_btn_Provedor
             // 
@@ -195,7 +194,7 @@ namespace CP_Presentacion
             this.pnl_fun_btn_Provedor.Controls.Add(this.btn_act_pro);
             this.pnl_fun_btn_Provedor.Controls.Add(this.btnMostrarFabrica);
             this.pnl_fun_btn_Provedor.Controls.Add(this.bnt_elim_prov);
-            this.pnl_fun_btn_Provedor.Location = new System.Drawing.Point(375, 131);
+            this.pnl_fun_btn_Provedor.Location = new System.Drawing.Point(249, 262);
             this.pnl_fun_btn_Provedor.Name = "pnl_fun_btn_Provedor";
             this.pnl_fun_btn_Provedor.Size = new System.Drawing.Size(197, 282);
             this.pnl_fun_btn_Provedor.TabIndex = 7;
@@ -292,7 +291,7 @@ namespace CP_Presentacion
             this.pnl_venta.Controls.Add(this.btn_NuevaVenta);
             this.pnl_venta.Controls.Add(this.btn_Mof_Venta);
             this.pnl_venta.Controls.Add(this.iconButton5);
-            this.pnl_venta.Location = new System.Drawing.Point(152, 153);
+            this.pnl_venta.Location = new System.Drawing.Point(453, 275);
             this.pnl_venta.Name = "pnl_venta";
             this.pnl_venta.Size = new System.Drawing.Size(184, 299);
             this.pnl_venta.TabIndex = 6;
@@ -390,7 +389,7 @@ namespace CP_Presentacion
             this.btnMenuVentas.IconColor = System.Drawing.Color.RoyalBlue;
             this.btnMenuVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMenuVentas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnMenuVentas.Location = new System.Drawing.Point(19, 398);
+            this.btnMenuVentas.Location = new System.Drawing.Point(854, 267);
             this.btnMenuVentas.Name = "btnMenuVentas";
             this.btnMenuVentas.Size = new System.Drawing.Size(129, 73);
             this.btnMenuVentas.TabIndex = 8;
@@ -405,7 +404,7 @@ namespace CP_Presentacion
             this.pnl_fun_btn_Artic.Controls.Add(this.btn_actu_Articulo);
             this.pnl_fun_btn_Artic.Controls.Add(this.btn_mostr_Articulo);
             this.pnl_fun_btn_Artic.Controls.Add(this.btn_elim_Articulo);
-            this.pnl_fun_btn_Artic.Location = new System.Drawing.Point(154, 160);
+            this.pnl_fun_btn_Artic.Location = new System.Drawing.Point(661, 154);
             this.pnl_fun_btn_Artic.Name = "pnl_fun_btn_Artic";
             this.pnl_fun_btn_Artic.Size = new System.Drawing.Size(184, 282);
             this.pnl_fun_btn_Artic.TabIndex = 6;
@@ -506,7 +505,7 @@ namespace CP_Presentacion
             this.btnProveedores.IconColor = System.Drawing.Color.RoyalBlue;
             this.btnProveedores.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnProveedores.Location = new System.Drawing.Point(19, 306);
+            this.btnProveedores.Location = new System.Drawing.Point(854, 188);
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.Size = new System.Drawing.Size(129, 73);
             this.btnProveedores.TabIndex = 7;
@@ -527,7 +526,7 @@ namespace CP_Presentacion
             this.btnAdministrarArticulos.IconColor = System.Drawing.Color.RoyalBlue;
             this.btnAdministrarArticulos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAdministrarArticulos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAdministrarArticulos.Location = new System.Drawing.Point(19, 208);
+            this.btnAdministrarArticulos.Location = new System.Drawing.Point(854, 109);
             this.btnAdministrarArticulos.Name = "btnAdministrarArticulos";
             this.btnAdministrarArticulos.Size = new System.Drawing.Size(129, 73);
             this.btnAdministrarArticulos.TabIndex = 6;
@@ -548,7 +547,7 @@ namespace CP_Presentacion
             this.btn_AministrarClientes.IconColor = System.Drawing.Color.RoyalBlue;
             this.btn_AministrarClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_AministrarClientes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_AministrarClientes.Location = new System.Drawing.Point(19, 120);
+            this.btn_AministrarClientes.Location = new System.Drawing.Point(854, 35);
             this.btn_AministrarClientes.Name = "btn_AministrarClientes";
             this.btn_AministrarClientes.Size = new System.Drawing.Size(129, 70);
             this.btn_AministrarClientes.TabIndex = 4;
@@ -563,7 +562,7 @@ namespace CP_Presentacion
             this.pnl_inf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_inf.Controls.Add(this.label1);
             this.pnl_inf.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl_inf.Location = new System.Drawing.Point(0, 551);
+            this.pnl_inf.Location = new System.Drawing.Point(0, 722);
             this.pnl_inf.Name = "pnl_inf";
             this.pnl_inf.Size = new System.Drawing.Size(1154, 27);
             this.pnl_inf.TabIndex = 4;
@@ -580,15 +579,150 @@ namespace CP_Presentacion
             this.label1.Text = "Elaborado por Alex Martinez y Danny Caliz";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.iconMenuItem1,
+            this.administrarArticulosToolStripMenuItem,
+            this.administrarProvedoresToolStripMenuItem,
+            this.ventasToolStripMenuItem});
+            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.menuStrip1.Size = new System.Drawing.Size(203, 718);
+            this.menuStrip1.TabIndex = 9;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // iconMenuItem1
+            // 
+            this.iconMenuItem1.AutoSize = false;
+            this.iconMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevoClienteToolStripMenuItem,
+            this.mostrarClientesToolStripMenuItem,
+            this.actualizarCliienteToolStripMenuItem,
+            this.adminDireccionesToolStripMenuItem});
+            this.iconMenuItem1.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
+            this.iconMenuItem1.IconColor = System.Drawing.Color.OrangeRed;
+            this.iconMenuItem1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMenuItem1.IconSize = 60;
+            this.iconMenuItem1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.iconMenuItem1.Name = "iconMenuItem1";
+            this.iconMenuItem1.Size = new System.Drawing.Size(200, 60);
+            this.iconMenuItem1.Text = "Administrar Clientes";
+            this.iconMenuItem1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconMenuItem1.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            // 
+            // nuevoClienteToolStripMenuItem
+            // 
+            this.nuevoClienteToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.UserCog;
+            this.nuevoClienteToolStripMenuItem.IconColor = System.Drawing.Color.OrangeRed;
+            this.nuevoClienteToolStripMenuItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.nuevoClienteToolStripMenuItem.IconSize = 60;
+            this.nuevoClienteToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.nuevoClienteToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.nuevoClienteToolStripMenuItem.Name = "nuevoClienteToolStripMenuItem";
+            this.nuevoClienteToolStripMenuItem.Size = new System.Drawing.Size(221, 66);
+            this.nuevoClienteToolStripMenuItem.Text = "Nuevo Cliente";
+            this.nuevoClienteToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.nuevoClienteToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            // 
+            // actualizarCliienteToolStripMenuItem
+            // 
+            this.actualizarCliienteToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.Retweet;
+            this.actualizarCliienteToolStripMenuItem.IconColor = System.Drawing.Color.OrangeRed;
+            this.actualizarCliienteToolStripMenuItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.actualizarCliienteToolStripMenuItem.IconSize = 60;
+            this.actualizarCliienteToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.actualizarCliienteToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.actualizarCliienteToolStripMenuItem.Name = "actualizarCliienteToolStripMenuItem";
+            this.actualizarCliienteToolStripMenuItem.Size = new System.Drawing.Size(221, 66);
+            this.actualizarCliienteToolStripMenuItem.Text = "Actualizar Cliientes";
+            this.actualizarCliienteToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.actualizarCliienteToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            // 
+            // mostrarClientesToolStripMenuItem
+            // 
+            this.mostrarClientesToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.ObjectGroup;
+            this.mostrarClientesToolStripMenuItem.IconColor = System.Drawing.Color.OrangeRed;
+            this.mostrarClientesToolStripMenuItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.mostrarClientesToolStripMenuItem.IconSize = 60;
+            this.mostrarClientesToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.mostrarClientesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.mostrarClientesToolStripMenuItem.Name = "mostrarClientesToolStripMenuItem";
+            this.mostrarClientesToolStripMenuItem.Size = new System.Drawing.Size(221, 66);
+            this.mostrarClientesToolStripMenuItem.Text = "Mostrar Clientes";
+            this.mostrarClientesToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.mostrarClientesToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            // 
+            // adminDireccionesToolStripMenuItem
+            // 
+            this.adminDireccionesToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.adminDireccionesToolStripMenuItem.IconColor = System.Drawing.Color.OrangeRed;
+            this.adminDireccionesToolStripMenuItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.adminDireccionesToolStripMenuItem.IconSize = 60;
+            this.adminDireccionesToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.adminDireccionesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.adminDireccionesToolStripMenuItem.Name = "adminDireccionesToolStripMenuItem";
+            this.adminDireccionesToolStripMenuItem.Size = new System.Drawing.Size(221, 66);
+            this.adminDireccionesToolStripMenuItem.Text = "Admin. Direcciones";
+            this.adminDireccionesToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.adminDireccionesToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            // 
+            // administrarArticulosToolStripMenuItem
+            // 
+            this.administrarArticulosToolStripMenuItem.AutoSize = false;
+            this.administrarArticulosToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.administrarArticulosToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.Otter;
+            this.administrarArticulosToolStripMenuItem.IconColor = System.Drawing.Color.OrangeRed;
+            this.administrarArticulosToolStripMenuItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.administrarArticulosToolStripMenuItem.IconSize = 60;
+            this.administrarArticulosToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.administrarArticulosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.administrarArticulosToolStripMenuItem.Name = "administrarArticulosToolStripMenuItem";
+            this.administrarArticulosToolStripMenuItem.Size = new System.Drawing.Size(200, 60);
+            this.administrarArticulosToolStripMenuItem.Text = "Administrar Articulos";
+            // 
+            // administrarProvedoresToolStripMenuItem
+            // 
+            this.administrarProvedoresToolStripMenuItem.AutoSize = false;
+            this.administrarProvedoresToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.administrarProvedoresToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.Otter;
+            this.administrarProvedoresToolStripMenuItem.IconColor = System.Drawing.Color.OrangeRed;
+            this.administrarProvedoresToolStripMenuItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.administrarProvedoresToolStripMenuItem.IconSize = 60;
+            this.administrarProvedoresToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.administrarProvedoresToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.administrarProvedoresToolStripMenuItem.Name = "administrarProvedoresToolStripMenuItem";
+            this.administrarProvedoresToolStripMenuItem.Size = new System.Drawing.Size(200, 60);
+            this.administrarProvedoresToolStripMenuItem.Text = "Administrar Provedores";
+            // 
+            // ventasToolStripMenuItem
+            // 
+            this.ventasToolStripMenuItem.AutoSize = false;
+            this.ventasToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.ventasToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.Otter;
+            this.ventasToolStripMenuItem.IconColor = System.Drawing.Color.OrangeRed;
+            this.ventasToolStripMenuItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ventasToolStripMenuItem.IconSize = 60;
+            this.ventasToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ventasToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(200, 60);
+            this.ventasToolStripMenuItem.Text = "Ventas";
+            // 
             // Menu_Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkCyan;
-            this.ClientSize = new System.Drawing.Size(1154, 578);
+            this.ClientSize = new System.Drawing.Size(1154, 749);
             this.Controls.Add(this.pnl_cont);
-            this.Controls.Add(this.pnl_izq);
             this.Controls.Add(this.pnl_inf);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Menu_Inicio";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -597,12 +731,14 @@ namespace CP_Presentacion
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Menu_Inicio_Load);
             this.pnl_cont.ResumeLayout(false);
+            this.pnl_cont.PerformLayout();
             this.pnl_fun_btn_client.ResumeLayout(false);
-            this.pnl_izq.ResumeLayout(false);
             this.pnl_fun_btn_Provedor.ResumeLayout(false);
             this.pnl_venta.ResumeLayout(false);
             this.pnl_fun_btn_Artic.ResumeLayout(false);
             this.pnl_inf.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -610,7 +746,6 @@ namespace CP_Presentacion
         #endregion
 
         private System.Windows.Forms.Panel pnl_cont;
-        private System.Windows.Forms.Panel pnl_izq;
         private FontAwesome.Sharp.IconButton btn_mostrar_clientes;
         private FontAwesome.Sharp.IconButton btn_act_cliente;
         private System.Windows.Forms.Panel pnl_inf;
@@ -637,5 +772,14 @@ namespace CP_Presentacion
         private FontAwesome.Sharp.IconButton btn_NuevaVenta;
         private FontAwesome.Sharp.IconButton btn_Mof_Venta;
         private FontAwesome.Sharp.IconButton iconButton5;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private FontAwesome.Sharp.IconMenuItem iconMenuItem1;
+        private FontAwesome.Sharp.IconMenuItem nuevoClienteToolStripMenuItem;
+        private FontAwesome.Sharp.IconMenuItem actualizarCliienteToolStripMenuItem;
+        private FontAwesome.Sharp.IconMenuItem mostrarClientesToolStripMenuItem;
+        private FontAwesome.Sharp.IconMenuItem adminDireccionesToolStripMenuItem;
+        private FontAwesome.Sharp.IconMenuItem administrarArticulosToolStripMenuItem;
+        private FontAwesome.Sharp.IconMenuItem administrarProvedoresToolStripMenuItem;
+        private FontAwesome.Sharp.IconMenuItem ventasToolStripMenuItem;
     }
 }
