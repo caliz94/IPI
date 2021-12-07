@@ -20,7 +20,7 @@ namespace CP_Presentacion
         private void Menu_Inicio_Load(object sender, EventArgs e)
         {
             //this.pnl_izq.Size = new System.Drawing.Size(158, 551);
-            pnl_fun_btn_client.Visible = false;
+            //pnl_fun_btn_client.Visible = false;
             pnl_fun_btn_Provedor.Visible = false;
             pnl_fun_btn_Artic.Visible = false;
             pnl_venta.Visible = false;
@@ -35,39 +35,19 @@ namespace CP_Presentacion
         //botones del panel de cliente
         private void btn_nuevo_cliente_Click(object sender, EventArgs e)
         {
-            Form_Cliente.CP_NuevoCliente abrirform = Form_Cliente.CP_NuevoCliente.Abrir;
-            abrirform.TopLevel = false;
-            this.pnl_cont.Controls.Add(abrirform);
-
-            //this.pnl_izq.Size = new System.Drawing.Size(158, 551);
-            this.pnl_cont.Tag = abrirform;
-            abrirform.Show();
+            
         }
 
         private void btn_act_cliente_Click(object sender, EventArgs e)
         {
-            Form_Cliente.Actualizar_cliente abrirform = Form_Cliente.Actualizar_cliente.Abrir;
-            abrirform.TopLevel = false;
-            this.pnl_cont.Controls.Add(abrirform);
-            //this.pnl_izq.Size = new System.Drawing.Size(158, 551);
-
-
-            this.pnl_cont.Tag = abrirform;
-            abrirform.Show();
+           
         }
 
 
 
         private void btn_mostrar_clientes_Click(object sender, EventArgs e)
         {
-            Form_Cliente.CP_MostrarClientes abrirform = Form_Cliente.CP_MostrarClientes.Abrir;
-            abrirform.TopLevel = false;
-            this.pnl_cont.Controls.Add(abrirform);
-            
-            abrirform.StartPosition = FormStartPosition.CenterScreen;
-            this.pnl_cont.Tag = abrirform;
-            abrirform.Show();
-            //this.pnl_izq.Size = new System.Drawing.Size(158, 551);
+          
         }
 
         
@@ -80,7 +60,7 @@ namespace CP_Presentacion
             if (stateProvider == false)
             {
                 pnl_fun_btn_Provedor.Visible = true;
-                pnl_fun_btn_client.Visible = false;
+                //pnl_fun_btn_client.Visible = false;
                 pnl_fun_btn_Artic.Visible = false;
                 pnl_venta.Visible = false;
 
@@ -107,7 +87,7 @@ namespace CP_Presentacion
                 pnl_fun_btn_Artic.Visible = true;
                 pnl_fun_btn_Provedor.Visible = false;
                 pnl_venta.Visible = false;
-                pnl_fun_btn_client.Visible = false;
+                //pnl_fun_btn_client.Visible = false;
 
                 stateclient = false;
                 stateArticle = true;
@@ -130,7 +110,7 @@ namespace CP_Presentacion
             if (stateclient == false)
             {
                 pnl_fun_btn_Provedor.Visible = false;
-                pnl_fun_btn_client.Visible = true;
+                //pnl_fun_btn_client.Visible = true;
                 pnl_fun_btn_Artic.Visible = false;
                 pnl_venta.Visible = false;
 
@@ -143,7 +123,7 @@ namespace CP_Presentacion
             }
             else
             {
-                pnl_fun_btn_client.Visible = false;
+                //pnl_fun_btn_client.Visible = false;
                 stateclient = false;
 
                 //this.pnl_izq.Size = new System.Drawing.Size(158, 551);
@@ -238,14 +218,7 @@ namespace CP_Presentacion
         private void iconButton1_Click(object sender, EventArgs e)
         {
 
-            Form_Direcciones.Admin_Direcion abrirform = Form_Direcciones.Admin_Direcion.Abrir;
-            abrirform.TopLevel = false;
-            this.pnl_cont.Controls.Add(abrirform);
-
-            abrirform.StartPosition = FormStartPosition.CenterScreen;
-            this.pnl_cont.Tag = abrirform;
-            abrirform.Show();
-            //this.pnl_izq.Size = new System.Drawing.Size(158, 551);
+            
             
         }
 
@@ -268,7 +241,7 @@ namespace CP_Presentacion
                 pnl_venta.Visible = true;
                 pnl_fun_btn_Provedor.Visible = false;
                 pnl_fun_btn_Artic.Visible = false;
-                pnl_fun_btn_client.Visible = false;
+                //pnl_fun_btn_client.Visible = false;
                 
                 stateVentas = true;
                 stateArticle = false;
@@ -295,6 +268,58 @@ namespace CP_Presentacion
             this.pnl_cont.Tag = abrirform;
             abrirform.Show();
 
+            //this.pnl_izq.Size = new System.Drawing.Size(158, 551);
+        }
+
+        private void iconButton4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void nuevoClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Cliente.CP_NuevoCliente abrirform = Form_Cliente.CP_NuevoCliente.Abrir;
+            abrirform.TopLevel = false;
+            this.pnl_cont.Controls.Add(abrirform);
+
+            //this.pnl_izq.Size = new System.Drawing.Size(158, 551);
+            this.pnl_cont.Tag = abrirform;
+            abrirform.Show();
+        }
+
+        private void mostrarClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Cliente.CP_MostrarClientes abrirform = Form_Cliente.CP_MostrarClientes.Abrir;
+            abrirform.TopLevel = false;
+            this.pnl_cont.Controls.Add(abrirform);
+
+            abrirform.StartPosition = FormStartPosition.CenterScreen;
+            this.pnl_cont.Tag = abrirform;
+            abrirform.Show();
+            //this.pnl_izq.Size = new System.Drawing.Size(158, 551);
+        }
+
+        private void actualizarCliienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Cliente.Actualizar_cliente abrirform = Form_Cliente.Actualizar_cliente.Abrir;
+            abrirform.TopLevel = false;
+            this.pnl_cont.Controls.Add(abrirform);
+            //this.pnl_izq.Size = new System.Drawing.Size(158, 551);
+
+
+            this.pnl_cont.Tag = abrirform;
+            abrirform.Show();
+        }
+
+        private void adminDireccionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Direcciones.Admin_Direcion abrirform = Form_Direcciones.Admin_Direcion.Abrir;
+            abrirform.TopLevel = false;
+            this.pnl_cont.Controls.Add(abrirform);
+
+            abrirform.StartPosition = FormStartPosition.CenterScreen;
+            this.pnl_cont.Tag = abrirform;
+            abrirform.Show();
             //this.pnl_izq.Size = new System.Drawing.Size(158, 551);
         }
     }
