@@ -17,7 +17,7 @@ namespace CP_Presentacion.Form_Ventas
     {
        
         CL_Ventas OVentas = new CL_Ventas();
-        int idcliente = 0, idventa = 0, iddireccion = 0;
+        //int idcliente = 0, idventa = 0, iddireccion = 0;
         byte Activo;
 
         public CP_NuevaVenta()
@@ -152,8 +152,8 @@ namespace CP_Presentacion.Form_Ventas
                 "Eliminar"
             });
 
-            idcliente = Convert.ToInt32(NombreCliente.Substring(0, buscar1));
-            iddireccion = 1;
+            //idcliente = Convert.ToInt32(NombreCliente.Substring(0, buscar1));
+            //iddireccion = 1;
             Activo = 1;
 
             //cboxNombreCliente.SelectedIndex = -1;
@@ -167,7 +167,7 @@ namespace CP_Presentacion.Form_Ventas
         {
             foreach (var item in dgvVentas.Rows)
             {
-                OVentas.GuardarVenta(idcliente, iddireccion, Activo);
+                //OVentas.GuardarVenta(idcliente, iddireccion, Activo);
                 MessageBox.Show("Venta Grabada exitosamente.");
             }
             

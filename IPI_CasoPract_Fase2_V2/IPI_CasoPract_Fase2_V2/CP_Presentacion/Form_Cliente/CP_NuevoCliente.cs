@@ -76,7 +76,7 @@ namespace CP_Presentacion.Form_Cliente
 
         private void CP_NuevoCliente_Load(object sender, EventArgs e)
         {
-
+          
         }
     }
 }
