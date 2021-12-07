@@ -41,8 +41,6 @@
             this.tboxPrecio = new System.Windows.Forms.TextBox();
             this.btn_AgregarCarrito = new FontAwesome.Sharp.IconButton();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
-            this.btnCancelar = new FontAwesome.Sharp.IconButton();
-            this.btnGenerarVenta = new FontAwesome.Sharp.IconButton();
             this.NombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NoArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescripcionArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,8 +49,10 @@
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnCancelar = new FontAwesome.Sharp.IconButton();
+            this.btnGenerarVenta = new FontAwesome.Sharp.IconButton();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboxDirecciones = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.SuspendLayout();
@@ -84,6 +84,7 @@
             this.cboxNombreCliente.Name = "cboxNombreCliente";
             this.cboxNombreCliente.Size = new System.Drawing.Size(235, 21);
             this.cboxNombreCliente.TabIndex = 12;
+            this.cboxNombreCliente.DropDownClosed += new System.EventHandler(this.cboxNombreCliente_DropDownClosed);
             // 
             // label1
             // 
@@ -192,49 +193,6 @@
             this.dgvVentas.Size = new System.Drawing.Size(850, 275);
             this.dgvVentas.TabIndex = 23;
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.Navy;
-            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Times;
-            this.btnCancelar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(724, 424);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(135, 68);
-            this.btnCancelar.TabIndex = 26;
-            this.btnCancelar.Text = "CANCELAR";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            // 
-            // btnGenerarVenta
-            // 
-            this.btnGenerarVenta.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnGenerarVenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnGenerarVenta.FlatAppearance.BorderSize = 0;
-            this.btnGenerarVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnGenerarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerarVenta.ForeColor = System.Drawing.Color.Navy;
-            this.btnGenerarVenta.IconChar = FontAwesome.Sharp.IconChar.Dolly;
-            this.btnGenerarVenta.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnGenerarVenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGenerarVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGenerarVenta.Location = new System.Drawing.Point(583, 424);
-            this.btnGenerarVenta.Name = "btnGenerarVenta";
-            this.btnGenerarVenta.Size = new System.Drawing.Size(135, 68);
-            this.btnGenerarVenta.TabIndex = 24;
-            this.btnGenerarVenta.Text = "GENERAR VENTA";
-            this.btnGenerarVenta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGenerarVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGenerarVenta.UseVisualStyleBackColor = false;
-            this.btnGenerarVenta.Click += new System.EventHandler(this.btnGenerarVenta_Click);
-            // 
             // NombreCliente
             // 
             this.NombreCliente.HeaderText = "Nombre del Cliente";
@@ -283,6 +241,49 @@
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.ReadOnly = true;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.Navy;
+            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.btnCancelar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(724, 424);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(135, 68);
+            this.btnCancelar.TabIndex = 26;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            // 
+            // btnGenerarVenta
+            // 
+            this.btnGenerarVenta.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnGenerarVenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnGenerarVenta.FlatAppearance.BorderSize = 0;
+            this.btnGenerarVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnGenerarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarVenta.ForeColor = System.Drawing.Color.Navy;
+            this.btnGenerarVenta.IconChar = FontAwesome.Sharp.IconChar.Dolly;
+            this.btnGenerarVenta.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnGenerarVenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGenerarVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGenerarVenta.Location = new System.Drawing.Point(583, 424);
+            this.btnGenerarVenta.Name = "btnGenerarVenta";
+            this.btnGenerarVenta.Size = new System.Drawing.Size(135, 68);
+            this.btnGenerarVenta.TabIndex = 24;
+            this.btnGenerarVenta.Text = "GENERAR VENTA";
+            this.btnGenerarVenta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGenerarVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGenerarVenta.UseVisualStyleBackColor = false;
+            this.btnGenerarVenta.Click += new System.EventHandler(this.btnGenerarVenta_Click);
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -293,13 +294,13 @@
             this.label7.TabIndex = 28;
             this.label7.Text = "Dirección Entrega:";
             // 
-            // comboBox1
+            // cboxDirecciones
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(528, 101);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(288, 21);
-            this.comboBox1.TabIndex = 27;
+            this.cboxDirecciones.FormattingEnabled = true;
+            this.cboxDirecciones.Location = new System.Drawing.Point(528, 101);
+            this.cboxDirecciones.Name = "cboxDirecciones";
+            this.cboxDirecciones.Size = new System.Drawing.Size(288, 21);
+            this.cboxDirecciones.TabIndex = 27;
             // 
             // CP_NuevaVenta
             // 
@@ -307,7 +308,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(873, 504);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboxDirecciones);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGenerarVenta);
             this.Controls.Add(this.dgvVentas);
@@ -360,6 +361,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaPedido;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboxDirecciones;
     }
 }

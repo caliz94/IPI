@@ -12,8 +12,8 @@ namespace CD_Datos
     {
         CD_Conexion Conexion = new CD_Conexion();
         SqlCommand cmd = new SqlCommand();
-
-        //SqlCommand cmd = new SqlCommand("sp_GuardarVenta",Conexion.abrircadena);
+        SqlDataReader leerdata;
+        DataTable tabla = new DataTable();
 
         public void GuardarVenta(int IdCliente, int IdDireccion, byte Activo)
         {
@@ -26,6 +26,21 @@ namespace CD_Datos
             cmd.Parameters.AddWithValue("@Activo", Activo);
             cmd.ExecuteNonQuery();
             cmd.Connection = Conexion.cerrarcadena();
+        }
+
+
+        public DataTable CargarComboDirecciones(int IdCliente)
+        {
+            tabla.Clear();
+            cmd.Connection = Conexion.abrircadena();
+            cmd.CommandText = "sp_cargarComboDirecciones";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@IdCliente", Convert.ToInt32(IdCliente));
+            leerdata = cmd.ExecuteReader();
+            tabla.Load(leerdata);
+            cmd.Parameters.Clear();
+            Conexion.cerrarcadena();
+            return tabla;
         }
     }
 }

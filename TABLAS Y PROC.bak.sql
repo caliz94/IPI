@@ -77,6 +77,7 @@ CREATE TABLE Detalle_Pedido
 GO
 
 
+
 --PROCEDIMIENTOS ALMACENADOS
 --***************************************** FABRICAS**********************************************************************
 CREATE PROCEDURE sp_mostrarCamposFabricas
@@ -284,15 +285,26 @@ AS
 BEGIN
 	DECLARE @iddireccion INT
 	
+	
 	SET @iddireccion = (select isnull(max(IdDireccion),0)+1 from Direcciones)
 	
 	INSERT INTO dbo.Direcciones (IdDireccion,IdCliente, Calle, Barrio, Distrito, Activo)
 	VALUES (@iddireccion, @idcliente, @calle, @barrio, @distrito, 1)
 
+	--DECLARE @Contador INT
+	--INSERT INTO ConsecutivoDirecciones VALUES ()
+
 
 END
 GO
 
+--CREATE TABLE ConsecutivoDirecciones
+--(
+--Id int primary key,
+--IdCliente int,
+--IdDirección int
+--)
+--GO
 
 --mostrar clientes para agregar dire4cciones----
 CREATE PROCEDURE sp_clientesActivos_direcio
@@ -480,10 +492,13 @@ CREATE TYPE detalleVenta AS TABLE
 )
 GO
 
-CREATE PROCEDURE sp_cargarComboDirecciones
+ALTER PROCEDURE sp_cargarComboDirecciones
+(
+@IdCliente INT
+)
 AS
 BEGIN
-	SELECT IdDireccion, ltrim(rtrim('Id: '))+ltrim(rtrim(str(IdDireccion))) + ' - ' + ltrim(rtrim('Calle: '+ Calle+', Barrio: '+ Barrio+', Distrito: '+ Distrito)) AS [Dirección] 
-	FROM Direcciones WHERE IdCliente = 1
+	SELECT IdDireccion, ltrim(rtrim(str(IdDireccion))) + ' - ' + ltrim(rtrim('Calle: '+ Calle+', Barrio: '+ Barrio+', Distrito: '+ Distrito)) AS [Dirección] 
+	FROM Direcciones WHERE IdCliente = @IdCliente
 END
 GO
