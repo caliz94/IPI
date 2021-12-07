@@ -163,7 +163,7 @@ BEGIN
 END
 GO
 
-	QUE ERROR TE DA?
+	
 
 CREATE PROCEDURE sp_buscaFabricaxId
 (

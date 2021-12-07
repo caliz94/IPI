@@ -50,10 +50,10 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Lucida Calligraphy", 22F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(336, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(135, 39);
+            this.label6.Size = new System.Drawing.Size(114, 36);
             this.label6.TabIndex = 11;
             this.label6.Text = "Ventas";
             // 
@@ -233,6 +233,7 @@
             this.Controls.Add(this.label6);
             this.Name = "CP_NuevaVenta";
             this.Text = "CP_NuevaVenta";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CP_NuevaVenta_FormClosed);
             this.Load += new System.EventHandler(this.CP_NuevaVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

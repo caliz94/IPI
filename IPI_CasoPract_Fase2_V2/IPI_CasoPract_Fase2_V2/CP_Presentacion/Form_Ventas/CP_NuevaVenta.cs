@@ -67,6 +67,18 @@ namespace CP_Presentacion.Form_Ventas
         }
         #endregion
 
+        private static CP_NuevaVenta _Abrir;
+
+        public static CP_NuevaVenta Abrir
+        {
+            get
+            {
+                if (_Abrir == null)
+                    _Abrir = new CP_NuevaVenta();
+                return _Abrir;
+            }
+        }
+
         private void CP_NuevaVenta_Load(object sender, EventArgs e)
         {
             CargarComboCliente();
@@ -78,6 +90,11 @@ namespace CP_Presentacion.Form_Ventas
         {
             ObtenerExistenciaArticulos();
             ObtenerPrecioArticulos();
+        }
+
+        private void CP_NuevaVenta_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _Abrir = null;
         }
     }
 }

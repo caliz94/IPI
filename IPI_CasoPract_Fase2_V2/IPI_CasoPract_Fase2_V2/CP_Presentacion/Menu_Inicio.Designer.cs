@@ -30,23 +30,23 @@ namespace CP_Presentacion
         private void InitializeComponent()
         {
             this.pnl_cont = new System.Windows.Forms.Panel();
-            this.pnl_izq = new System.Windows.Forms.Panel();
             this.pnl_fun_btn_client = new System.Windows.Forms.Panel();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btn_nuevo_cliente = new FontAwesome.Sharp.IconButton();
             this.btn_act_cliente = new FontAwesome.Sharp.IconButton();
             this.btn_mostrar_clientes = new FontAwesome.Sharp.IconButton();
-            this.pnl_venta = new System.Windows.Forms.Panel();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.btnMenuVentas = new FontAwesome.Sharp.IconButton();
+            this.pnl_izq = new System.Windows.Forms.Panel();
             this.pnl_fun_btn_Provedor = new System.Windows.Forms.Panel();
             this.btn_nuev_prov = new FontAwesome.Sharp.IconButton();
             this.btn_act_pro = new FontAwesome.Sharp.IconButton();
             this.btnMostrarFabrica = new FontAwesome.Sharp.IconButton();
             this.bnt_elim_prov = new FontAwesome.Sharp.IconButton();
+            this.pnl_venta = new System.Windows.Forms.Panel();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.btn_NuevaVenta = new FontAwesome.Sharp.IconButton();
+            this.btn_Mof_Venta = new FontAwesome.Sharp.IconButton();
+            this.iconButton5 = new FontAwesome.Sharp.IconButton();
+            this.btnMenuVentas = new FontAwesome.Sharp.IconButton();
             this.pnl_fun_btn_Artic = new System.Windows.Forms.Panel();
             this.btn_nuev_artic = new FontAwesome.Sharp.IconButton();
             this.btn_actu_Articulo = new FontAwesome.Sharp.IconButton();
@@ -57,10 +57,11 @@ namespace CP_Presentacion
             this.btn_AministrarClientes = new FontAwesome.Sharp.IconButton();
             this.pnl_inf = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pnl_izq.SuspendLayout();
+            this.pnl_cont.SuspendLayout();
             this.pnl_fun_btn_client.SuspendLayout();
-            this.pnl_venta.SuspendLayout();
+            this.pnl_izq.SuspendLayout();
             this.pnl_fun_btn_Provedor.SuspendLayout();
+            this.pnl_venta.SuspendLayout();
             this.pnl_fun_btn_Artic.SuspendLayout();
             this.pnl_inf.SuspendLayout();
             this.SuspendLayout();
@@ -69,29 +70,12 @@ namespace CP_Presentacion
             // 
             this.pnl_cont.BackColor = System.Drawing.SystemColors.ControlDark;
             this.pnl_cont.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnl_cont.Controls.Add(this.pnl_fun_btn_client);
             this.pnl_cont.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_cont.Location = new System.Drawing.Point(482, 0);
             this.pnl_cont.Name = "pnl_cont";
             this.pnl_cont.Size = new System.Drawing.Size(672, 551);
             this.pnl_cont.TabIndex = 5;
-            // 
-            // pnl_izq
-            // 
-            this.pnl_izq.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.pnl_izq.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnl_izq.Controls.Add(this.pnl_fun_btn_Provedor);
-            this.pnl_izq.Controls.Add(this.pnl_fun_btn_client);
-            this.pnl_izq.Controls.Add(this.pnl_venta);
-            this.pnl_izq.Controls.Add(this.btnMenuVentas);
-            this.pnl_izq.Controls.Add(this.pnl_fun_btn_Artic);
-            this.pnl_izq.Controls.Add(this.btnProveedores);
-            this.pnl_izq.Controls.Add(this.btnAdministrarArticulos);
-            this.pnl_izq.Controls.Add(this.btn_AministrarClientes);
-            this.pnl_izq.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnl_izq.Location = new System.Drawing.Point(0, 0);
-            this.pnl_izq.Name = "pnl_izq";
-            this.pnl_izq.Size = new System.Drawing.Size(482, 551);
-            this.pnl_izq.TabIndex = 3;
             // 
             // pnl_fun_btn_client
             // 
@@ -99,7 +83,7 @@ namespace CP_Presentacion
             this.pnl_fun_btn_client.Controls.Add(this.btn_nuevo_cliente);
             this.pnl_fun_btn_client.Controls.Add(this.btn_act_cliente);
             this.pnl_fun_btn_client.Controls.Add(this.btn_mostrar_clientes);
-            this.pnl_fun_btn_client.Location = new System.Drawing.Point(154, 152);
+            this.pnl_fun_btn_client.Location = new System.Drawing.Point(186, 131);
             this.pnl_fun_btn_client.Name = "pnl_fun_btn_client";
             this.pnl_fun_btn_client.Size = new System.Drawing.Size(184, 299);
             this.pnl_fun_btn_client.TabIndex = 5;
@@ -188,117 +172,22 @@ namespace CP_Presentacion
             this.btn_mostrar_clientes.UseVisualStyleBackColor = true;
             this.btn_mostrar_clientes.Click += new System.EventHandler(this.btn_mostrar_clientes_Click);
             // 
-            // pnl_venta
+            // pnl_izq
             // 
-            this.pnl_venta.Controls.Add(this.iconButton2);
-            this.pnl_venta.Controls.Add(this.iconButton3);
-            this.pnl_venta.Controls.Add(this.iconButton4);
-            this.pnl_venta.Controls.Add(this.iconButton5);
-            this.pnl_venta.Location = new System.Drawing.Point(152, 153);
-            this.pnl_venta.Name = "pnl_venta";
-            this.pnl_venta.Size = new System.Drawing.Size(184, 299);
-            this.pnl_venta.TabIndex = 6;
-            // 
-            // iconButton2
-            // 
-            this.iconButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton2.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Waze;
-            this.iconButton2.IconColor = System.Drawing.Color.RoyalBlue;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(12, 223);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(158, 65);
-            this.iconButton2.TabIndex = 4;
-            this.iconButton2.Text = "Admin Direciones";
-            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton2.UseVisualStyleBackColor = true;
-            // 
-            // iconButton3
-            // 
-            this.iconButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton3.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.iconButton3.IconColor = System.Drawing.Color.RoyalBlue;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.Location = new System.Drawing.Point(12, 13);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(158, 56);
-            this.iconButton3.TabIndex = 0;
-            this.iconButton3.Text = "Nueva Venta";
-            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton3.UseVisualStyleBackColor = true;
-            // 
-            // iconButton4
-            // 
-            this.iconButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.iconButton4.FlatAppearance.BorderSize = 0;
-            this.iconButton4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton4.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Retweet;
-            this.iconButton4.IconColor = System.Drawing.Color.RoyalBlue;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.Location = new System.Drawing.Point(12, 75);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(158, 68);
-            this.iconButton4.TabIndex = 1;
-            this.iconButton4.Text = "Actualizar Cliente";
-            this.iconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton4.UseVisualStyleBackColor = true;
-            // 
-            // iconButton5
-            // 
-            this.iconButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.iconButton5.FlatAppearance.BorderSize = 0;
-            this.iconButton5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton5.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.UserClock;
-            this.iconButton5.IconColor = System.Drawing.Color.RoyalBlue;
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.Location = new System.Drawing.Point(12, 149);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(158, 65);
-            this.iconButton5.TabIndex = 3;
-            this.iconButton5.Text = "Mostrar Clientes";
-            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton5.UseVisualStyleBackColor = true;
-            // 
-            // btnMenuVentas
-            // 
-            this.btnMenuVentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnMenuVentas.FlatAppearance.BorderSize = 0;
-            this.btnMenuVentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnMenuVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuVentas.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.btnMenuVentas.IconChar = FontAwesome.Sharp.IconChar.Shopify;
-            this.btnMenuVentas.IconColor = System.Drawing.Color.RoyalBlue;
-            this.btnMenuVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMenuVentas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnMenuVentas.Location = new System.Drawing.Point(19, 398);
-            this.btnMenuVentas.Name = "btnMenuVentas";
-            this.btnMenuVentas.Size = new System.Drawing.Size(129, 73);
-            this.btnMenuVentas.TabIndex = 8;
-            this.btnMenuVentas.Text = "Ventas";
-            this.btnMenuVentas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnMenuVentas.UseVisualStyleBackColor = true;
-            this.btnMenuVentas.Click += new System.EventHandler(this.btnMenuVentas_Click);
+            this.pnl_izq.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.pnl_izq.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnl_izq.Controls.Add(this.pnl_fun_btn_Provedor);
+            this.pnl_izq.Controls.Add(this.pnl_venta);
+            this.pnl_izq.Controls.Add(this.btnMenuVentas);
+            this.pnl_izq.Controls.Add(this.pnl_fun_btn_Artic);
+            this.pnl_izq.Controls.Add(this.btnProveedores);
+            this.pnl_izq.Controls.Add(this.btnAdministrarArticulos);
+            this.pnl_izq.Controls.Add(this.btn_AministrarClientes);
+            this.pnl_izq.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnl_izq.Location = new System.Drawing.Point(0, 0);
+            this.pnl_izq.Name = "pnl_izq";
+            this.pnl_izq.Size = new System.Drawing.Size(482, 551);
+            this.pnl_izq.TabIndex = 3;
             // 
             // pnl_fun_btn_Provedor
             // 
@@ -306,7 +195,7 @@ namespace CP_Presentacion
             this.pnl_fun_btn_Provedor.Controls.Add(this.btn_act_pro);
             this.pnl_fun_btn_Provedor.Controls.Add(this.btnMostrarFabrica);
             this.pnl_fun_btn_Provedor.Controls.Add(this.bnt_elim_prov);
-            this.pnl_fun_btn_Provedor.Location = new System.Drawing.Point(154, 159);
+            this.pnl_fun_btn_Provedor.Location = new System.Drawing.Point(375, 131);
             this.pnl_fun_btn_Provedor.Name = "pnl_fun_btn_Provedor";
             this.pnl_fun_btn_Provedor.Size = new System.Drawing.Size(197, 282);
             this.pnl_fun_btn_Provedor.TabIndex = 7;
@@ -396,6 +285,119 @@ namespace CP_Presentacion
             this.bnt_elim_prov.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bnt_elim_prov.UseVisualStyleBackColor = true;
             this.bnt_elim_prov.Click += new System.EventHandler(this.bnt_elim_prov_Click);
+            // 
+            // pnl_venta
+            // 
+            this.pnl_venta.Controls.Add(this.iconButton2);
+            this.pnl_venta.Controls.Add(this.btn_NuevaVenta);
+            this.pnl_venta.Controls.Add(this.btn_Mof_Venta);
+            this.pnl_venta.Controls.Add(this.iconButton5);
+            this.pnl_venta.Location = new System.Drawing.Point(152, 153);
+            this.pnl_venta.Name = "pnl_venta";
+            this.pnl_venta.Size = new System.Drawing.Size(184, 299);
+            this.pnl_venta.TabIndex = 6;
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.iconButton2.FlatAppearance.BorderSize = 0;
+            this.iconButton2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton2.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Waze;
+            this.iconButton2.IconColor = System.Drawing.Color.RoyalBlue;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton2.Location = new System.Drawing.Point(12, 223);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(158, 65);
+            this.iconButton2.TabIndex = 4;
+            this.iconButton2.Text = "Admin Direciones";
+            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton2.UseVisualStyleBackColor = true;
+            // 
+            // btn_NuevaVenta
+            // 
+            this.btn_NuevaVenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_NuevaVenta.FlatAppearance.BorderSize = 0;
+            this.btn_NuevaVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btn_NuevaVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_NuevaVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_NuevaVenta.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.btn_NuevaVenta.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btn_NuevaVenta.IconColor = System.Drawing.Color.RoyalBlue;
+            this.btn_NuevaVenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_NuevaVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_NuevaVenta.Location = new System.Drawing.Point(12, 13);
+            this.btn_NuevaVenta.Name = "btn_NuevaVenta";
+            this.btn_NuevaVenta.Size = new System.Drawing.Size(158, 56);
+            this.btn_NuevaVenta.TabIndex = 0;
+            this.btn_NuevaVenta.Text = "Nueva Venta";
+            this.btn_NuevaVenta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_NuevaVenta.UseVisualStyleBackColor = true;
+            this.btn_NuevaVenta.Click += new System.EventHandler(this.btn_NuevaVenta_Click);
+            // 
+            // btn_Mof_Venta
+            // 
+            this.btn_Mof_Venta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_Mof_Venta.FlatAppearance.BorderSize = 0;
+            this.btn_Mof_Venta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btn_Mof_Venta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Mof_Venta.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Mof_Venta.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.btn_Mof_Venta.IconChar = FontAwesome.Sharp.IconChar.Retweet;
+            this.btn_Mof_Venta.IconColor = System.Drawing.Color.RoyalBlue;
+            this.btn_Mof_Venta.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_Mof_Venta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Mof_Venta.Location = new System.Drawing.Point(12, 75);
+            this.btn_Mof_Venta.Name = "btn_Mof_Venta";
+            this.btn_Mof_Venta.Size = new System.Drawing.Size(158, 68);
+            this.btn_Mof_Venta.TabIndex = 1;
+            this.btn_Mof_Venta.Text = "Actualizar Cliente";
+            this.btn_Mof_Venta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Mof_Venta.UseVisualStyleBackColor = true;
+            // 
+            // iconButton5
+            // 
+            this.iconButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.iconButton5.FlatAppearance.BorderSize = 0;
+            this.iconButton5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton5.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.UserClock;
+            this.iconButton5.IconColor = System.Drawing.Color.RoyalBlue;
+            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton5.Location = new System.Drawing.Point(12, 149);
+            this.iconButton5.Name = "iconButton5";
+            this.iconButton5.Size = new System.Drawing.Size(158, 65);
+            this.iconButton5.TabIndex = 3;
+            this.iconButton5.Text = "Mostrar Clientes";
+            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton5.UseVisualStyleBackColor = true;
+            // 
+            // btnMenuVentas
+            // 
+            this.btnMenuVentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnMenuVentas.FlatAppearance.BorderSize = 0;
+            this.btnMenuVentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnMenuVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuVentas.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.btnMenuVentas.IconChar = FontAwesome.Sharp.IconChar.Shopify;
+            this.btnMenuVentas.IconColor = System.Drawing.Color.RoyalBlue;
+            this.btnMenuVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMenuVentas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMenuVentas.Location = new System.Drawing.Point(19, 398);
+            this.btnMenuVentas.Name = "btnMenuVentas";
+            this.btnMenuVentas.Size = new System.Drawing.Size(129, 73);
+            this.btnMenuVentas.TabIndex = 8;
+            this.btnMenuVentas.Text = "Ventas";
+            this.btnMenuVentas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnMenuVentas.UseVisualStyleBackColor = true;
+            this.btnMenuVentas.Click += new System.EventHandler(this.btnMenuVentas_Click);
             // 
             // pnl_fun_btn_Artic
             // 
@@ -594,10 +596,11 @@ namespace CP_Presentacion
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Menu_Inicio_Load);
-            this.pnl_izq.ResumeLayout(false);
+            this.pnl_cont.ResumeLayout(false);
             this.pnl_fun_btn_client.ResumeLayout(false);
-            this.pnl_venta.ResumeLayout(false);
+            this.pnl_izq.ResumeLayout(false);
             this.pnl_fun_btn_Provedor.ResumeLayout(false);
+            this.pnl_venta.ResumeLayout(false);
             this.pnl_fun_btn_Artic.ResumeLayout(false);
             this.pnl_inf.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -631,8 +634,8 @@ namespace CP_Presentacion
         private FontAwesome.Sharp.IconButton btnMenuVentas;
         private System.Windows.Forms.Panel pnl_venta;
         private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton4;
+        private FontAwesome.Sharp.IconButton btn_NuevaVenta;
+        private FontAwesome.Sharp.IconButton btn_Mof_Venta;
         private FontAwesome.Sharp.IconButton iconButton5;
     }
 }

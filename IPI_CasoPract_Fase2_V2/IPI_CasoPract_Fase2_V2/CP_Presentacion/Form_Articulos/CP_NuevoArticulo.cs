@@ -43,6 +43,7 @@ namespace CP_Presentacion.Form_Articulos
         private void MostrarArticulos()
         {           
             dgv_articulos.DataSource = articulos_cl.Mostrar_articulos();
+            dgv_articulos.Columns["IdArticulo"].Visible = false;
         }
         private void MostrarComboFabrica()
         {            
@@ -56,6 +57,7 @@ namespace CP_Presentacion.Form_Articulos
         {
             MostrarComboFabrica();
             MostrarArticulos();
+            
         }
 
         private void limpiarcontroles()

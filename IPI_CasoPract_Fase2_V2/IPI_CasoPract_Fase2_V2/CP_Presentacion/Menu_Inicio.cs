@@ -285,5 +285,17 @@ namespace CP_Presentacion
                 this.pnl_izq.Size = new System.Drawing.Size(158, 551);               
             }
         }
+
+        private void btn_NuevaVenta_Click(object sender, EventArgs e)
+        {
+            Form_Ventas.CP_NuevaVenta abrirform = Form_Ventas.CP_NuevaVenta.Abrir;
+            abrirform.TopLevel = false;
+            this.pnl_cont.Controls.Add(abrirform);
+
+            this.pnl_cont.Tag = abrirform;
+            abrirform.Show();
+
+            this.pnl_izq.Size = new System.Drawing.Size(158, 551);
+        }
     }
 }
