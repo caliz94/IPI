@@ -95,7 +95,7 @@ namespace CP_Presentacion
             this.mostrarClientesToolStripMenuItem,
             this.adminDireccionesToolStripMenuItem});
             this.iconMenuItem1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.iconMenuItem1.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
+            this.iconMenuItem1.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
             this.iconMenuItem1.IconColor = System.Drawing.Color.RoyalBlue;
             this.iconMenuItem1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconMenuItem1.IconSize = 60;
@@ -112,7 +112,7 @@ namespace CP_Presentacion
             this.nuevoClienteToolStripMenuItem.AutoSize = false;
             this.nuevoClienteToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.nuevoClienteToolStripMenuItem.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.nuevoClienteToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.UserCog;
+            this.nuevoClienteToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
             this.nuevoClienteToolStripMenuItem.IconColor = System.Drawing.Color.RoyalBlue;
             this.nuevoClienteToolStripMenuItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.nuevoClienteToolStripMenuItem.IconSize = 60;
@@ -130,7 +130,7 @@ namespace CP_Presentacion
             this.actualizarCliienteToolStripMenuItem.AutoSize = false;
             this.actualizarCliienteToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.actualizarCliienteToolStripMenuItem.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.actualizarCliienteToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.Retweet;
+            this.actualizarCliienteToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.UsersCog;
             this.actualizarCliienteToolStripMenuItem.IconColor = System.Drawing.Color.RoyalBlue;
             this.actualizarCliienteToolStripMenuItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.actualizarCliienteToolStripMenuItem.IconSize = 60;
@@ -148,7 +148,7 @@ namespace CP_Presentacion
             this.mostrarClientesToolStripMenuItem.AutoSize = false;
             this.mostrarClientesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.mostrarClientesToolStripMenuItem.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.mostrarClientesToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.ObjectGroup;
+            this.mostrarClientesToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.Users;
             this.mostrarClientesToolStripMenuItem.IconColor = System.Drawing.Color.RoyalBlue;
             this.mostrarClientesToolStripMenuItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.mostrarClientesToolStripMenuItem.IconSize = 60;
@@ -166,7 +166,7 @@ namespace CP_Presentacion
             this.adminDireccionesToolStripMenuItem.AutoSize = false;
             this.adminDireccionesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.adminDireccionesToolStripMenuItem.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.adminDireccionesToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.adminDireccionesToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.Safari;
             this.adminDireccionesToolStripMenuItem.IconColor = System.Drawing.Color.RoyalBlue;
             this.adminDireccionesToolStripMenuItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.adminDireccionesToolStripMenuItem.IconSize = 60;
@@ -183,7 +183,7 @@ namespace CP_Presentacion
             // 
             this.administrarArticulosToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.administrarArticulosToolStripMenuItem.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.administrarArticulosToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.Otter;
+            this.administrarArticulosToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.Tasks;
             this.administrarArticulosToolStripMenuItem.IconColor = System.Drawing.Color.RoyalBlue;
             this.administrarArticulosToolStripMenuItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.administrarArticulosToolStripMenuItem.IconSize = 60;
@@ -203,7 +203,7 @@ namespace CP_Presentacion
             this.actualizarProveedorToolStripMenuItem,
             this.mostrarProveedoresToolStripMenuItem});
             this.administrarProvedoresToolStripMenuItem.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.administrarProvedoresToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.Otter;
+            this.administrarProvedoresToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.Building;
             this.administrarProvedoresToolStripMenuItem.IconColor = System.Drawing.Color.RoyalBlue;
             this.administrarProvedoresToolStripMenuItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.administrarProvedoresToolStripMenuItem.IconSize = 60;
@@ -217,7 +217,7 @@ namespace CP_Presentacion
             // 
             this.agregarProvedorToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.agregarProvedorToolStripMenuItem.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.agregarProvedorToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.Algolia;
+            this.agregarProvedorToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
             this.agregarProvedorToolStripMenuItem.IconColor = System.Drawing.Color.RoyalBlue;
             this.agregarProvedorToolStripMenuItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.agregarProvedorToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -232,7 +232,7 @@ namespace CP_Presentacion
             // 
             this.eliminarProveedorToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.eliminarProveedorToolStripMenuItem.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.eliminarProveedorToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.Algolia;
+            this.eliminarProveedorToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
             this.eliminarProveedorToolStripMenuItem.IconColor = System.Drawing.Color.RoyalBlue;
             this.eliminarProveedorToolStripMenuItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.eliminarProveedorToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -277,7 +277,7 @@ namespace CP_Presentacion
             // 
             this.ventasToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.ventasToolStripMenuItem.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.ventasToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.Otter;
+            this.ventasToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.Shopify;
             this.ventasToolStripMenuItem.IconColor = System.Drawing.Color.RoyalBlue;
             this.ventasToolStripMenuItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ventasToolStripMenuItem.IconSize = 60;
