@@ -283,11 +283,13 @@ CREATE PROCEDURE sp_direcciones
 AS
 BEGIN
 	DECLARE @iddireccion INT
-
+	
 	SET @iddireccion = (select isnull(max(IdDireccion),0)+1 from Direcciones)
-
+	
 	INSERT INTO dbo.Direcciones (IdDireccion,IdCliente, Calle, Barrio, Distrito, Activo)
 	VALUES (@iddireccion, @idcliente, @calle, @barrio, @distrito, 1)
+
+
 END
 GO
 
@@ -476,3 +478,12 @@ CREATE TYPE detalleVenta AS TABLE
 	Cantidad INT
 	PRIMARY KEY(Id)
 )
+GO
+
+CREATE PROCEDURE sp_cargarComboDirecciones
+AS
+BEGIN
+	SELECT IdDireccion, ltrim(rtrim('Id: '))+ltrim(rtrim(str(IdDireccion))) + ' - ' + ltrim(rtrim('Calle: '+ Calle+', Barrio: '+ Barrio+', Distrito: '+ Distrito)) AS [Dirección] 
+	FROM Direcciones WHERE IdCliente = 1
+END
+GO
