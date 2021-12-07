@@ -440,9 +440,24 @@ BEGIN
 	SELECT A.PrecioUnitario FROM Articulo AS A INNER JOIN Fabrica AS F ON A.IdFabrica = F.IdFabrica WHERE IdArticulo = @IdArticulo
 	--SELECT IdCliente FROM Cliente WHERE IdCliente = @IdArticulo
 END
-
+GO
 
 --DECLARE @cantidad INT
 --EXEC sp_validarExistenciaArticulo 1, @cantidad OUTPUT
 --SELECT @cantidad
 
+/*************************  VENTAS  ********************************/
+
+CREATE PROCEDURE sp_GuardarVenta
+(
+@IdCliente INT,
+@IdDireccion INT,
+@Activo BIT
+)
+AS
+BEGIN 
+	DECLARE @IdPedido INT
+	SELECT @IdPedido = ISNULL(MAX(IdPedido),0)+1 FROM Pedido
+	INSERT INTO Pedido(IdPedido, IdCliente, IdDireccion, FechaPedido, Activo) 
+	VALUES (@IdPedido, @IdCliente,@IdDireccion ,GETDATE() ,@Activo);
+END
