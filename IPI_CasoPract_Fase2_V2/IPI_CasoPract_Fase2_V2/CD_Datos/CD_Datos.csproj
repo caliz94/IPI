@@ -47,6 +47,7 @@
     <Compile Include="CD_Direcciones.cs" />
     <Compile Include="CD_Fabrica.cs" />
     <Compile Include="CD_Ventas.cs" />
+    <Compile Include="CD_VentasDetalle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

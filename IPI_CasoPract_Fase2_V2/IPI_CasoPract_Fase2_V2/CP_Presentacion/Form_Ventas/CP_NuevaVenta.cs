@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using CD_Datos;
 using CL_Logica;
 using System.Data.SqlClient;
 
@@ -15,7 +15,8 @@ namespace CP_Presentacion.Form_Ventas
 {
     public partial class CP_NuevaVenta : Form
     {
-       
+
+        
         CL_Ventas OVentas = new CL_Ventas();
         int idcliente = 0, idventa = 0, iddireccion = 0;
         byte Activo;
@@ -139,7 +140,7 @@ namespace CP_Presentacion.Form_Ventas
         #region PROGRAMACIÓN AGREGAR AL CARRITO
         private void btn_AgregarCarrito_Click(object sender, EventArgs e)
         {
-            int buscar1 = 0, buscar2 = 0;
+            int buscar1 = 0, buscar2 = 0, buscar3 = 0;
             
 
             string NombreCliente = cboxNombreCliente.Text.ToString();
@@ -149,6 +150,8 @@ namespace CP_Presentacion.Form_Ventas
             buscar2 = Descripcion.IndexOf("- ");
             string Cantidad = numCantidad.Value.ToString();
             string PrecioUnitario = tboxPrecio.Text;
+            string Direccion = cboxDirecciones.Text;
+            buscar3 = Direccion.IndexOf("- ");
             string Total = Convert.ToString(Convert.ToInt32(Cantidad) * Convert.ToDouble(PrecioUnitario));
             string Fecha = DateTime.Now.ToString();
 
@@ -163,7 +166,8 @@ namespace CP_Presentacion.Form_Ventas
                 PrecioUnitario,
                 Total,
                 Fecha,
-                "Eliminar"
+                "Eliminar",
+                Direccion.Substring(0,buscar3)
             });
 
             idcliente = Convert.ToInt32(NombreCliente.Substring(0, buscar1));
@@ -181,11 +185,52 @@ namespace CP_Presentacion.Form_Ventas
         #region BOTON GENERAR VENTAS
         private void btnGenerarVenta_Click(object sender, EventArgs e)
         {
-            foreach (var item in dgvVentas.Rows)
+            List<CD_VentasDetalle> LstDetalle = new List<CD_VentasDetalle>();
+
+            try
             {
-                OVentas.GuardarVenta(idcliente, iddireccion, Activo);
+                foreach (DataGridViewRow row in dgvVentas.Rows)
+                {
+                    CD_VentasDetalle Detalle = new CD_VentasDetalle();
+                    Detalle.IdArticulo = Convert.ToInt32(row.Cells[1].Value.ToString());
+                    Detalle.Cantidad = Convert.ToInt32(row.Cells[3].Value.ToString());
+                    Detalle.IdFabrica = Convert.ToInt32(row.Cells[8].Value.ToString());
+                    LstDetalle.Add(Detalle);
+                }
+
+                OVentas.GuardarVenta(idcliente, iddireccion, Activo, LstDetalle);
                 MessageBox.Show("Venta Grabada exitosamente.");
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message); 
+            }
+            
+
+
+            //foreach (var item in dgvVentas.Rows)
+            //{
+            //    try
+            //    {
+                    
+            //        foreach (DataGridViewRow row in dgvVentas.Rows)
+            //        {
+            //            CD_VentasDetalle Detalle = new CD_VentasDetalle();
+            //            Detalle.IdArticulo = Convert.ToInt32(row.Cells[1].Value.ToString());
+            //            Detalle.Cantidad = Convert.ToInt32(row.Cells[3].Value.ToString());
+            //            Detalle.IdFabrica = Convert.ToInt32(row.Cells[8].Value.ToString());
+            //            LstDetalle.Add(Detalle);
+            //        }
+
+            //        OVentas.GuardarVenta(idcliente, iddireccion, Activo, LstDetalle);
+            //        MessageBox.Show("Venta Grabada exitosamente.");
+            //    }
+            //    catch(Exception ex)
+            //    {
+            //        MessageBox.Show("Error: " + ex.Message); 
+            //    }
+                
+            //}
         }
         #endregion
     }

@@ -14,6 +14,7 @@ namespace CL_Logica
         CD_Clientes OClientes = new CD_Clientes();
         CD_Articulos OArticulo = new CD_Articulos();
 
+
         public DataTable CargarComboClientes()
         {
             DataTable tabla = new DataTable();
@@ -35,9 +36,9 @@ namespace CL_Logica
             return tabla;
         }
 
-        public void GuardarVenta(int IdCliente, int IdDireccion, byte Activo)
+        public void GuardarVenta(int IdCliente, int IdDireccion, byte Activo, List<CD_VentasDetalle> lstDetalle)
         {
-            OVentas.GuardarVenta(IdCliente, IdDireccion, Activo);
+            OVentas.GuardarVenta(IdCliente, IdDireccion, Activo, lstDetalle);
         }
 
 

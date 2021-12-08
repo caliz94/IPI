@@ -179,6 +179,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CD_Datos\CD_Datos.csproj">
+      <Project>{2457d429-a4a3-41cc-8eb8-aad419878c2e}</Project>
+      <Name>CD_Datos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CL_Logica\CL_Logica.csproj">
       <Project>{f8e549e0-7e66-48d0-afb3-9e9f49508719}</Project>
       <Name>CL_Logica</Name>

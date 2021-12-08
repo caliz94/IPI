@@ -15,15 +15,33 @@ namespace CD_Datos
         SqlDataReader leerdata;
         DataTable tabla = new DataTable();
 
-        public void GuardarVenta(int IdCliente, int IdDireccion, byte Activo)
+        public void GuardarVenta(int IdCliente, int IdDireccion, byte Activo, List<CD_VentasDetalle> LstDetalleVenta)
         {
+            tabla.Clear();
             cmd.Parameters.Clear();
+            tabla.Columns.Add("IdArticulo");
+            tabla.Columns.Add("Cantidad");
+            tabla.Columns.Add("Fabrica");
+
+            foreach (var elemento in LstDetalleVenta)
+            {
+                tabla.Rows.Add(elemento.IdArticulo, elemento.Cantidad, elemento.IdFabrica);
+            }
+
+            
             cmd.Connection = Conexion.abrircadena();
             cmd.CommandText = "sp_GuardarVenta";
+            var parametroLista = new SqlParameter("@LstDetalles", SqlDbType.Structured);
+            parametroLista.TypeName = "dbo.detalleVenta";
+            parametroLista.Value = tabla;
+
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@IdCliente", IdCliente);
             cmd.Parameters.AddWithValue("@IdDireccion", IdDireccion);
             cmd.Parameters.AddWithValue("@Activo", Activo);
+
+            cmd.Parameters.Add(parametroLista);
+
             cmd.ExecuteNonQuery();
             cmd.Connection = Conexion.cerrarcadena();
         }

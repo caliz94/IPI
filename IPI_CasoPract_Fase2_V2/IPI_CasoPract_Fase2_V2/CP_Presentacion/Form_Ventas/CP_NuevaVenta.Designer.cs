@@ -37,14 +37,6 @@
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnGenerarVenta = new FontAwesome.Sharp.IconButton();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
-            this.NombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NoArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescripcionArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btn_AgregarCarrito = new FontAwesome.Sharp.IconButton();
             this.tboxPrecio = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -57,6 +49,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cboxNombreCliente = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.NombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NoArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescripcionArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -203,61 +204,14 @@
             this.PrecioUnitario,
             this.Total,
             this.FechaPedido,
-            this.Eliminar});
+            this.Eliminar,
+            this.Direccion});
             this.dgvVentas.Location = new System.Drawing.Point(19, 136);
             this.dgvVentas.Name = "dgvVentas";
             this.dgvVentas.ReadOnly = true;
             this.dgvVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVentas.Size = new System.Drawing.Size(850, 275);
             this.dgvVentas.TabIndex = 41;
-            // 
-            // NombreCliente
-            // 
-            this.NombreCliente.HeaderText = "Nombre del Cliente";
-            this.NombreCliente.Name = "NombreCliente";
-            this.NombreCliente.ReadOnly = true;
-            // 
-            // NoArticulo
-            // 
-            this.NoArticulo.HeaderText = "NoArticulo";
-            this.NoArticulo.Name = "NoArticulo";
-            this.NoArticulo.ReadOnly = true;
-            // 
-            // DescripcionArticulo
-            // 
-            this.DescripcionArticulo.HeaderText = "Descripción";
-            this.DescripcionArticulo.Name = "DescripcionArticulo";
-            this.DescripcionArticulo.ReadOnly = true;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            // 
-            // PrecioUnitario
-            // 
-            this.PrecioUnitario.HeaderText = "Precio Unitario";
-            this.PrecioUnitario.Name = "PrecioUnitario";
-            this.PrecioUnitario.ReadOnly = true;
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
-            // 
-            // FechaPedido
-            // 
-            this.FechaPedido.HeaderText = "Fecha";
-            this.FechaPedido.Name = "FechaPedido";
-            this.FechaPedido.ReadOnly = true;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
             // 
             // btn_AgregarCarrito
             // 
@@ -382,6 +336,60 @@
             this.label6.TabIndex = 29;
             this.label6.Text = "Ventas";
             // 
+            // NombreCliente
+            // 
+            this.NombreCliente.HeaderText = "Nombre del Cliente";
+            this.NombreCliente.Name = "NombreCliente";
+            this.NombreCliente.ReadOnly = true;
+            // 
+            // NoArticulo
+            // 
+            this.NoArticulo.HeaderText = "NoArticulo";
+            this.NoArticulo.Name = "NoArticulo";
+            this.NoArticulo.ReadOnly = true;
+            // 
+            // DescripcionArticulo
+            // 
+            this.DescripcionArticulo.HeaderText = "Descripción";
+            this.DescripcionArticulo.Name = "DescripcionArticulo";
+            this.DescripcionArticulo.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // PrecioUnitario
+            // 
+            this.PrecioUnitario.HeaderText = "Precio Unitario";
+            this.PrecioUnitario.Name = "PrecioUnitario";
+            this.PrecioUnitario.ReadOnly = true;
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            // 
+            // FechaPedido
+            // 
+            this.FechaPedido.HeaderText = "Fecha";
+            this.FechaPedido.Name = "FechaPedido";
+            this.FechaPedido.ReadOnly = true;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            // 
+            // Direccion
+            // 
+            this.Direccion.HeaderText = "Direccion";
+            this.Direccion.Name = "Direccion";
+            this.Direccion.ReadOnly = true;
+            // 
             // CP_NuevaVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -416,14 +424,6 @@
         private FontAwesome.Sharp.IconButton btnCancelar;
         private FontAwesome.Sharp.IconButton btnGenerarVenta;
         private System.Windows.Forms.DataGridView dgvVentas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NoArticulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionArticulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioUnitario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaPedido;
-        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
         private FontAwesome.Sharp.IconButton btn_AgregarCarrito;
         private System.Windows.Forms.TextBox tboxPrecio;
         private System.Windows.Forms.Label label5;
@@ -436,5 +436,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cboxNombreCliente;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NoArticulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionArticulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioUnitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaPedido;
+        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
     }
 }

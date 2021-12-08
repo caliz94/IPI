@@ -527,7 +527,7 @@ CREATE PROCEDURE sp_cargarComboDirecciones
 )
 AS
 BEGIN
-	SELECT IdCliente, ltrim(rtrim('Calle: '+ Calle+', Barrio: '+ Barrio+', Distrito: '+ Distrito)) AS [Dirección] 
+	SELECT IdCliente, ltrim(rtrim(str(IdDireccion)))+' - '+ltrim(rtrim('Calle: '+ Calle+', Barrio: '+ Barrio+', Distrito: '+ Distrito)) AS [Dirección] 
 	FROM Direcciones WHERE IdCliente = @IdCliente
 END
 GO
