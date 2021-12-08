@@ -32,6 +32,7 @@ namespace CP_Presentacion.Form_Direcciones
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -60,7 +61,6 @@ namespace CP_Presentacion.Form_Direcciones
             this.label8 = new System.Windows.Forms.Label();
             this.btn_editar = new FontAwesome.Sharp.IconButton();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.pnl_Ctrls.SuspendLayout();
@@ -90,6 +90,28 @@ namespace CP_Presentacion.Form_Direcciones
             this.panel2.Size = new System.Drawing.Size(74, 592);
             this.panel2.TabIndex = 1;
             // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.Black;
+            this.iconButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.Color.Crimson;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ReplyAll;
+            this.iconButton1.IconColor = System.Drawing.Color.OrangeRed;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 60;
+            this.iconButton1.Location = new System.Drawing.Point(19, 0);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(55, 592);
+            this.iconButton1.TabIndex = 38;
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
@@ -110,6 +132,7 @@ namespace CP_Presentacion.Form_Direcciones
             // 
             // panel5
             // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
             this.panel5.Controls.Add(this.pnl_Ctrls);
             this.panel5.Controls.Add(this.btn_NuevDire);
             this.panel5.Controls.Add(this.label9);
@@ -138,7 +161,7 @@ namespace CP_Presentacion.Form_Direcciones
             this.pnl_Ctrls.Controls.Add(this.label4);
             this.pnl_Ctrls.Controls.Add(this.label2);
             this.pnl_Ctrls.Controls.Add(this.label3);
-            this.pnl_Ctrls.Location = new System.Drawing.Point(426, 119);
+            this.pnl_Ctrls.Location = new System.Drawing.Point(433, 138);
             this.pnl_Ctrls.Name = "pnl_Ctrls";
             this.pnl_Ctrls.Size = new System.Drawing.Size(205, 318);
             this.pnl_Ctrls.TabIndex = 27;
@@ -155,10 +178,12 @@ namespace CP_Presentacion.Form_Direcciones
             this.btn_cancelar.TabIndex = 18;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(16, 89);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 13);
@@ -170,7 +195,7 @@ namespace CP_Presentacion.Form_Direcciones
             this.txt_numero_direccion.Enabled = false;
             this.txt_numero_direccion.Location = new System.Drawing.Point(19, 105);
             this.txt_numero_direccion.Name = "txt_numero_direccion";
-            this.txt_numero_direccion.Size = new System.Drawing.Size(100, 20);
+            this.txt_numero_direccion.Size = new System.Drawing.Size(168, 20);
             this.txt_numero_direccion.TabIndex = 3;
             // 
             // txt_nombre_cliente
@@ -178,7 +203,7 @@ namespace CP_Presentacion.Form_Direcciones
             this.txt_nombre_cliente.Enabled = false;
             this.txt_nombre_cliente.Location = new System.Drawing.Point(19, 67);
             this.txt_nombre_cliente.Name = "txt_nombre_cliente";
-            this.txt_nombre_cliente.Size = new System.Drawing.Size(100, 20);
+            this.txt_nombre_cliente.Size = new System.Drawing.Size(168, 20);
             this.txt_nombre_cliente.TabIndex = 4;
             // 
             // txt_NumeroCliente
@@ -186,7 +211,7 @@ namespace CP_Presentacion.Form_Direcciones
             this.txt_NumeroCliente.Enabled = false;
             this.txt_NumeroCliente.Location = new System.Drawing.Point(19, 26);
             this.txt_NumeroCliente.Name = "txt_NumeroCliente";
-            this.txt_NumeroCliente.Size = new System.Drawing.Size(100, 20);
+            this.txt_NumeroCliente.Size = new System.Drawing.Size(168, 20);
             this.txt_NumeroCliente.TabIndex = 5;
             // 
             // btn_guardar
@@ -201,18 +226,20 @@ namespace CP_Presentacion.Form_Direcciones
             this.btn_guardar.TabIndex = 17;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = true;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // txt_Calle
             // 
             this.txt_Calle.Enabled = false;
             this.txt_Calle.Location = new System.Drawing.Point(19, 145);
             this.txt_Calle.Name = "txt_Calle";
-            this.txt_Calle.Size = new System.Drawing.Size(100, 20);
+            this.txt_Calle.Size = new System.Drawing.Size(168, 20);
             this.txt_Calle.TabIndex = 6;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label6.Location = new System.Drawing.Point(16, 210);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(39, 13);
@@ -224,12 +251,13 @@ namespace CP_Presentacion.Form_Direcciones
             this.txt_Barrio.Enabled = false;
             this.txt_Barrio.Location = new System.Drawing.Point(19, 187);
             this.txt_Barrio.Name = "txt_Barrio";
-            this.txt_Barrio.Size = new System.Drawing.Size(100, 20);
+            this.txt_Barrio.Size = new System.Drawing.Size(168, 20);
             this.txt_Barrio.TabIndex = 7;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label5.Location = new System.Drawing.Point(16, 171);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(34, 13);
@@ -241,12 +269,13 @@ namespace CP_Presentacion.Form_Direcciones
             this.txt_Distrito.Enabled = false;
             this.txt_Distrito.Location = new System.Drawing.Point(19, 226);
             this.txt_Distrito.Name = "txt_Distrito";
-            this.txt_Distrito.Size = new System.Drawing.Size(100, 20);
+            this.txt_Distrito.Size = new System.Drawing.Size(168, 20);
             this.txt_Distrito.TabIndex = 8;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label4.Location = new System.Drawing.Point(16, 129);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(30, 13);
@@ -256,6 +285,7 @@ namespace CP_Presentacion.Form_Direcciones
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.Location = new System.Drawing.Point(16, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 13);
@@ -265,6 +295,7 @@ namespace CP_Presentacion.Form_Direcciones
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label3.Location = new System.Drawing.Point(16, 10);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
@@ -273,22 +304,27 @@ namespace CP_Presentacion.Form_Direcciones
             // 
             // btn_NuevDire
             // 
-            this.btn_NuevDire.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btn_NuevDire.IconColor = System.Drawing.Color.Black;
+            this.btn_NuevDire.FlatAppearance.BorderSize = 0;
+            this.btn_NuevDire.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_NuevDire.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_NuevDire.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btn_NuevDire.IconColor = System.Drawing.Color.White;
             this.btn_NuevDire.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_NuevDire.Location = new System.Drawing.Point(286, 119);
+            this.btn_NuevDire.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_NuevDire.Location = new System.Drawing.Point(308, 138);
             this.btn_NuevDire.Name = "btn_NuevDire";
-            this.btn_NuevDire.Size = new System.Drawing.Size(118, 23);
+            this.btn_NuevDire.Size = new System.Drawing.Size(64, 52);
             this.btn_NuevDire.TabIndex = 26;
-            this.btn_NuevDire.Text = "Nueva Direccion";
+            this.btn_NuevDire.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_NuevDire.UseVisualStyleBackColor = true;
+            this.btn_NuevDire.Click += new System.EventHandler(this.btn_NuevDire_Click);
             // 
             // label9
             // 
-            this.label9.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
             this.label9.Dock = System.Windows.Forms.DockStyle.Top;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Purple;
+            this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(200, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(541, 69);
@@ -320,7 +356,7 @@ namespace CP_Presentacion.Form_Direcciones
             // 
             // label7
             // 
-            this.label7.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
             this.label7.Dock = System.Windows.Forms.DockStyle.Top;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Transparent;
@@ -355,7 +391,7 @@ namespace CP_Presentacion.Form_Direcciones
             // 
             // label8
             // 
-            this.label8.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
             this.label8.Dock = System.Windows.Forms.DockStyle.Top;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Transparent;
@@ -368,40 +404,24 @@ namespace CP_Presentacion.Form_Direcciones
             // 
             // btn_editar
             // 
-            this.btn_editar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btn_editar.IconColor = System.Drawing.Color.Black;
+            this.btn_editar.FlatAppearance.BorderSize = 0;
+            this.btn_editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_editar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_editar.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.btn_editar.IconColor = System.Drawing.Color.White;
             this.btn_editar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_editar.Location = new System.Drawing.Point(286, 150);
+            this.btn_editar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_editar.Location = new System.Drawing.Point(308, 208);
             this.btn_editar.Name = "btn_editar";
-            this.btn_editar.Size = new System.Drawing.Size(118, 23);
+            this.btn_editar.Size = new System.Drawing.Size(64, 56);
             this.btn_editar.TabIndex = 25;
-            this.btn_editar.Text = "Editar";
+            this.btn_editar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_editar.UseVisualStyleBackColor = true;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.BackColor = System.Drawing.Color.Black;
-            this.iconButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.Crimson;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ReplyAll;
-            this.iconButton1.IconColor = System.Drawing.Color.OrangeRed;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 60;
-            this.iconButton1.Location = new System.Drawing.Point(19, 0);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(55, 592);
-            this.iconButton1.TabIndex = 38;
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton1.UseVisualStyleBackColor = false;
             // 
             // Admin_Direcion
             // 
@@ -414,6 +434,7 @@ namespace CP_Presentacion.Form_Direcciones
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Admin_Direcion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Admin_Direcion";
