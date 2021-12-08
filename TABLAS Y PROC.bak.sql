@@ -391,7 +391,7 @@ END
 GO
 
 --mostrar articulos
-CREATE proc sp_mostrar_artic
+create proc sp_mostrar_artic
 as
 BEGIN
 	select	a.IdArticulo,
@@ -414,8 +414,18 @@ BEGIN
 END
 go
 
+--sp para cargar articulos provistos
+CREATE PROCEDURE sp_ArticulosProvistosxIdFabrica
+(
+	@IdFabrica INT
+)
+AS
+BEGIN
+	SELECT COUNT(IdArticulo) as Articulos_Provistos FROM Articulo WHERE IdFabrica = @IdFabrica
+END
+go
 
--- PROCEDIMIENTO VENTAS
+--***************************************** PROCEDIMIENTO VENTAS****************************************************
 
 CREATE PROCEDURE sp_cargarComboCliente
 AS
@@ -483,7 +493,11 @@ BEGIN
 	SELECT @IdPedido = ISNULL(MAX(Id),0)+1 FROM Detalle_Pedido
 	SET @IdVenta = @@IDENTITY
 	INSERT INTO Detalle_Pedido (Id, IdPedido, IdArticulo, Cantidad, Fabrica)
+<<<<<<< HEAD
 	SELECT @IdPedido, @IdPedido, IdArticulo, Cantidad, Fabrica FROM @LstDetalles
+=======
+	SELECT @IdPedido, @IdVenta, IdArticulo, Cantidad, Fabrica FROM @LstDetalles
+>>>>>>> 81ebb49eab9e66b69c1ae7b816fdec73f871591e
 
 END
 GO
@@ -522,12 +536,12 @@ BEGIN
 END
 GO
 
-
-CREATE PROCEDURE sp_ArticulosProvistosxIdFabrica
+CREATE PROCEDURE sp_FabricasAlternartivas
 (
-	@IdFabrica INT
+@Descripcion VARCHAR(250)
 )
 AS
 BEGIN
-	SELECT COUNT(IdArticulo) as Articulos_Provistos FROM Articulo WHERE IdFabrica = @IdFabrica
+	select count(f.NombreFabrica) as fabricas_alternativas from Fabrica as f inner join Articulo as a on a.IdFabrica = f.IdFabrica
+	where a.Descripción_Articulo = @Descripcion
 END

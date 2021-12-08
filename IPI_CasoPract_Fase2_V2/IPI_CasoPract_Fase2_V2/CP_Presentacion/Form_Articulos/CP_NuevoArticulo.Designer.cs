@@ -51,9 +51,9 @@ namespace CP_Presentacion.Form_Articulos
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_articulos)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -112,8 +112,10 @@ namespace CP_Presentacion.Form_Articulos
             // 
             this.txt_cod_artic.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.txt_cod_artic.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_cod_artic.Enabled = false;
             this.txt_cod_artic.Location = new System.Drawing.Point(46, 89);
             this.txt_cod_artic.Name = "txt_cod_artic";
+            this.txt_cod_artic.ReadOnly = true;
             this.txt_cod_artic.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_cod_artic.Size = new System.Drawing.Size(182, 20);
             this.txt_cod_artic.TabIndex = 14;
@@ -330,6 +332,7 @@ namespace CP_Presentacion.Form_Articulos
             this.cbx_fabrica.Name = "cbx_fabrica";
             this.cbx_fabrica.Size = new System.Drawing.Size(182, 21);
             this.cbx_fabrica.TabIndex = 30;
+            this.cbx_fabrica.DropDownClosed += new System.EventHandler(this.cbx_fabrica_DropDownClosed);
             // 
             // panel2
             // 
@@ -365,6 +368,27 @@ namespace CP_Presentacion.Form_Articulos
             this.panel4.Size = new System.Drawing.Size(62, 697);
             this.panel4.TabIndex = 35;
             // 
+            // iconButton1
+            // 
+            this.iconButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.Color.Crimson;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ReplyAll;
+            this.iconButton1.IconColor = System.Drawing.Color.OrangeRed;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 60;
+            this.iconButton1.Location = new System.Drawing.Point(14, 0);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(48, 697);
+            this.iconButton1.TabIndex = 36;
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Black;
@@ -388,27 +412,6 @@ namespace CP_Presentacion.Form_Articulos
             this.label3.TabIndex = 0;
             this.label3.Text = "Lista de Articulos En Excistencia";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.Crimson;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ReplyAll;
-            this.iconButton1.IconColor = System.Drawing.Color.OrangeRed;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 60;
-            this.iconButton1.Location = new System.Drawing.Point(14, 0);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(48, 697);
-            this.iconButton1.TabIndex = 36;
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // CP_NuevoArticulo
             // 

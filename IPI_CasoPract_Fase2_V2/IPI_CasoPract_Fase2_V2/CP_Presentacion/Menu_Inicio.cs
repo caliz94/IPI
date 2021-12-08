@@ -67,32 +67,7 @@ namespace CP_Presentacion
             }
         }
         #endregion
-        private void btn_actu_Articulo_Click(object sender, EventArgs e)
-        {
-            Form_Articulos.CP_ActualizarArticulo abrirform = Form_Articulos.CP_ActualizarArticulo.Abrir;
-            abrirform.TopLevel = false;
-            this.pnl_cont.Controls.Add(abrirform);
-
-            this.pnl_cont.Tag = abrirform;
-            abrirform.Show();
-        }
-
-        private void btn_elim_Articulo_Click(object sender, EventArgs e)
-        {
-            Form_Articulos.CP_EliminarArticulo abrirform = Form_Articulos.CP_EliminarArticulo.Abrir;
-            abrirform.TopLevel = false;
-            this.pnl_cont.Controls.Add(abrirform);
-
-            this.pnl_cont.Tag = abrirform;
-            abrirform.Show();         
-        }
-
-        private void btn_mostr_Articulo_Click(object sender, EventArgs e)
-        {
-            Form_Articulos.CP_MostrarArticulos abrirform = Form_Articulos.CP_MostrarArticulos.Abrir;
-            abrirform.TopLevel = false;
-            abrirform.Show();
-        }
+     
         private void btnMenuVentas_Click(object sender, EventArgs e)
         {
             if (stateVentas == false)
@@ -107,8 +82,6 @@ namespace CP_Presentacion
                 stateVentas = false;               
             }
         }
-
-
         private void nuevoClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form_Cliente.CP_NuevoCliente abrirform = Form_Cliente.CP_NuevoCliente.Abrir;
@@ -204,20 +177,9 @@ namespace CP_Presentacion
             this.pnl_cont.Tag = abrirform;
             abrirform.Show();
         }
-
-        private void Menu_Inicio_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btn_Cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

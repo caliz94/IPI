@@ -43,5 +43,13 @@ namespace CL_Logica
             tabla = articulos_cd.CargarComboFabrica();
             return tabla;
         }
+
+        //cargar articulos provistos
+        public int articulosProvistos(int idFabrica )
+        {
+            int provisto;
+            provisto = articulos_cd.Art_Provistos(idFabrica);
+            return provisto;
+        }
     }
 }
