@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -37,6 +38,15 @@
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnGenerarVenta = new FontAwesome.Sharp.IconButton();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
+            this.NombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NoArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescripcionArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_AgregarCarrito = new FontAwesome.Sharp.IconButton();
             this.tboxPrecio = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,15 +59,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cboxNombreCliente = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.NombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NoArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescripcionArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -93,6 +95,7 @@
             this.btnSalir.Size = new System.Drawing.Size(61, 630);
             this.btnSalir.TabIndex = 40;
             this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnSalir, "Cerrar Ventana De Ventas");
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
@@ -150,14 +153,16 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
             this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.Navy;
+            this.btnCancelar.ForeColor = System.Drawing.Color.AliceBlue;
             this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Times;
-            this.btnCancelar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnCancelar.IconColor = System.Drawing.Color.White;
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.Location = new System.Drawing.Point(731, 417);
@@ -171,14 +176,16 @@
             // 
             // btnGenerarVenta
             // 
-            this.btnGenerarVenta.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnGenerarVenta.BackColor = System.Drawing.Color.Transparent;
             this.btnGenerarVenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnGenerarVenta.FlatAppearance.BorderSize = 0;
-            this.btnGenerarVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnGenerarVenta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGreen;
+            this.btnGenerarVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
+            this.btnGenerarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerarVenta.ForeColor = System.Drawing.Color.Navy;
+            this.btnGenerarVenta.ForeColor = System.Drawing.Color.AliceBlue;
             this.btnGenerarVenta.IconChar = FontAwesome.Sharp.IconChar.Dolly;
-            this.btnGenerarVenta.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnGenerarVenta.IconColor = System.Drawing.Color.White;
             this.btnGenerarVenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGenerarVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGenerarVenta.Location = new System.Drawing.Point(590, 417);
@@ -213,17 +220,76 @@
             this.dgvVentas.Size = new System.Drawing.Size(850, 275);
             this.dgvVentas.TabIndex = 41;
             // 
+            // NombreCliente
+            // 
+            this.NombreCliente.HeaderText = "Nombre del Cliente";
+            this.NombreCliente.Name = "NombreCliente";
+            this.NombreCliente.ReadOnly = true;
+            // 
+            // NoArticulo
+            // 
+            this.NoArticulo.HeaderText = "NoArticulo";
+            this.NoArticulo.Name = "NoArticulo";
+            this.NoArticulo.ReadOnly = true;
+            // 
+            // DescripcionArticulo
+            // 
+            this.DescripcionArticulo.HeaderText = "Descripción";
+            this.DescripcionArticulo.Name = "DescripcionArticulo";
+            this.DescripcionArticulo.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // PrecioUnitario
+            // 
+            this.PrecioUnitario.HeaderText = "Precio Unitario";
+            this.PrecioUnitario.Name = "PrecioUnitario";
+            this.PrecioUnitario.ReadOnly = true;
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            // 
+            // FechaPedido
+            // 
+            this.FechaPedido.HeaderText = "Fecha";
+            this.FechaPedido.Name = "FechaPedido";
+            this.FechaPedido.ReadOnly = true;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            // 
+            // Direccion
+            // 
+            this.Direccion.HeaderText = "Direccion";
+            this.Direccion.Name = "Direccion";
+            this.Direccion.ReadOnly = true;
+            // 
             // btn_AgregarCarrito
             // 
-            this.btn_AgregarCarrito.BackColor = System.Drawing.Color.Chartreuse;
+            this.btn_AgregarCarrito.BackColor = System.Drawing.Color.Transparent;
+            this.btn_AgregarCarrito.FlatAppearance.BorderSize = 0;
+            this.btn_AgregarCarrito.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
+            this.btn_AgregarCarrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AgregarCarrito.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_AgregarCarrito.IconChar = FontAwesome.Sharp.IconChar.CartPlus;
-            this.btn_AgregarCarrito.IconColor = System.Drawing.Color.Black;
+            this.btn_AgregarCarrito.IconColor = System.Drawing.Color.White;
             this.btn_AgregarCarrito.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_AgregarCarrito.IconSize = 16;
+            this.btn_AgregarCarrito.IconSize = 35;
             this.btn_AgregarCarrito.Location = new System.Drawing.Point(832, 97);
             this.btn_AgregarCarrito.Name = "btn_AgregarCarrito";
             this.btn_AgregarCarrito.Size = new System.Drawing.Size(34, 33);
             this.btn_AgregarCarrito.TabIndex = 40;
+            this.toolTip1.SetToolTip(this.btn_AgregarCarrito, "Agregar Producto al Carrito");
             this.btn_AgregarCarrito.UseVisualStyleBackColor = false;
             this.btn_AgregarCarrito.Click += new System.EventHandler(this.btn_AgregarCarrito_Click);
             // 
@@ -330,65 +396,11 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(343, 11);
+            this.label6.Location = new System.Drawing.Point(382, 11);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(114, 36);
             this.label6.TabIndex = 29;
             this.label6.Text = "Ventas";
-            // 
-            // NombreCliente
-            // 
-            this.NombreCliente.HeaderText = "Nombre del Cliente";
-            this.NombreCliente.Name = "NombreCliente";
-            this.NombreCliente.ReadOnly = true;
-            // 
-            // NoArticulo
-            // 
-            this.NoArticulo.HeaderText = "NoArticulo";
-            this.NoArticulo.Name = "NoArticulo";
-            this.NoArticulo.ReadOnly = true;
-            // 
-            // DescripcionArticulo
-            // 
-            this.DescripcionArticulo.HeaderText = "Descripción";
-            this.DescripcionArticulo.Name = "DescripcionArticulo";
-            this.DescripcionArticulo.ReadOnly = true;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            // 
-            // PrecioUnitario
-            // 
-            this.PrecioUnitario.HeaderText = "Precio Unitario";
-            this.PrecioUnitario.Name = "PrecioUnitario";
-            this.PrecioUnitario.ReadOnly = true;
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
-            // 
-            // FechaPedido
-            // 
-            this.FechaPedido.HeaderText = "Fecha";
-            this.FechaPedido.Name = "FechaPedido";
-            this.FechaPedido.ReadOnly = true;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            // 
-            // Direccion
-            // 
-            this.Direccion.HeaderText = "Direccion";
-            this.Direccion.Name = "Direccion";
-            this.Direccion.ReadOnly = true;
             // 
             // CP_NuevaVenta
             // 
@@ -445,5 +457,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaPedido;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
