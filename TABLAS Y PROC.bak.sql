@@ -413,8 +413,17 @@ BEGIN
 END
 go
 
+CREATE PROCEDURE sp_ArticulosProvistosxIdFabrica
+(
+	@IdFabrica INT
+)
+AS
+BEGIN
+	SELECT COUNT(IdArticulo) as Articulos_Provistos FROM Articulo WHERE IdFabrica = @IdFabrica
+END
+go
 
--- PROCEDIMIENTO VENTAS
+--***************************************** PROCEDIMIENTO VENTAS****************************************************
 
 CREATE PROCEDURE sp_cargarComboCliente
 AS
@@ -506,11 +515,3 @@ END
 GO
 
 
-CREATE PROCEDURE sp_ArticulosProvistosxIdFabrica
-(
-	@IdFabrica INT
-)
-AS
-BEGIN
-	SELECT COUNT(IdArticulo) as Articulos_Provistos FROM Articulo WHERE IdFabrica = @IdFabrica
-END
