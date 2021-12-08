@@ -74,5 +74,10 @@ namespace CP_Presentacion.Form_Fabrica
         {
             MostrarFabricasInac();
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

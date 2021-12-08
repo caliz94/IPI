@@ -62,5 +62,10 @@ namespace CP_Presentacion.Form_Fabrica
                 MessageBox.Show("No se pudo crear NUEVO PROVEEDOR. Error: " + ex);
             }
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

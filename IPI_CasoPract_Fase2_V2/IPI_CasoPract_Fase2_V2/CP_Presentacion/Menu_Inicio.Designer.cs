@@ -49,8 +49,8 @@ namespace CP_Presentacion
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             this.pnl_inf.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -69,21 +69,22 @@ namespace CP_Presentacion
             // 
             // btn_Cerrar
             // 
+            this.btn_Cerrar.AutoSize = true;
             this.btn_Cerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_Cerrar.FlatAppearance.BorderSize = 0;
-            this.btn_Cerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btn_Cerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
             this.btn_Cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cerrar.ForeColor = System.Drawing.Color.Crimson;
             this.btn_Cerrar.IconChar = FontAwesome.Sharp.IconChar.PowerOff;
             this.btn_Cerrar.IconColor = System.Drawing.Color.OrangeRed;
             this.btn_Cerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_Cerrar.IconSize = 35;
-            this.btn_Cerrar.Location = new System.Drawing.Point(9, 656);
+            this.btn_Cerrar.IconSize = 45;
+            this.btn_Cerrar.Location = new System.Drawing.Point(0, 619);
             this.btn_Cerrar.Name = "btn_Cerrar";
-            this.btn_Cerrar.Size = new System.Drawing.Size(31, 31);
+            this.btn_Cerrar.Size = new System.Drawing.Size(64, 65);
             this.btn_Cerrar.TabIndex = 5;
-            this.btn_Cerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Cerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolTip1.SetToolTip(this.btn_Cerrar, "Salir Del Programa");
             this.btn_Cerrar.UseVisualStyleBackColor = true;
             this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
@@ -374,7 +375,6 @@ namespace CP_Presentacion
             this.iconButton1.TabIndex = 10;
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButton1.UseVisualStyleBackColor = true;
-           
             // 
             // Menu_Inicio
             // 
@@ -395,11 +395,11 @@ namespace CP_Presentacion
             this.Text = "Menu_Inicio";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-          
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.pnl_inf.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
