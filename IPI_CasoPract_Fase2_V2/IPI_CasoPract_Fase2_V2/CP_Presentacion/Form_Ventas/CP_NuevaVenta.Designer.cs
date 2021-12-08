@@ -93,7 +93,6 @@
             this.iconButton2.TabIndex = 40;
             this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButton2.UseVisualStyleBackColor = false;
-            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
             // panel2
             // 
@@ -188,6 +187,7 @@
             this.btnGenerarVenta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGenerarVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGenerarVenta.UseVisualStyleBackColor = false;
+            this.btnGenerarVenta.Click += new System.EventHandler(this.btnGenerarVenta_Click);
             // 
             // dgvVentas
             // 
@@ -270,9 +270,11 @@
             this.btn_AgregarCarrito.Size = new System.Drawing.Size(34, 33);
             this.btn_AgregarCarrito.TabIndex = 40;
             this.btn_AgregarCarrito.UseVisualStyleBackColor = false;
+            this.btn_AgregarCarrito.Click += new System.EventHandler(this.btn_AgregarCarrito_Click);
             // 
             // tboxPrecio
             // 
+            this.tboxPrecio.Enabled = false;
             this.tboxPrecio.Location = new System.Drawing.Point(251, 103);
             this.tboxPrecio.Name = "tboxPrecio";
             this.tboxPrecio.ReadOnly = true;
@@ -310,6 +312,7 @@
             // 
             // tboxExistencias
             // 
+            this.tboxExistencias.Enabled = false;
             this.tboxExistencias.Location = new System.Drawing.Point(816, 65);
             this.tboxExistencias.Name = "tboxExistencias";
             this.tboxExistencias.ReadOnly = true;
@@ -345,6 +348,7 @@
             this.cboxNombreProducto.Name = "cboxNombreProducto";
             this.cboxNombreProducto.Size = new System.Drawing.Size(206, 21);
             this.cboxNombreProducto.TabIndex = 32;
+            this.cboxNombreProducto.DropDownClosed += new System.EventHandler(this.cboxNombreProducto_DropDownClosed);
             // 
             // label2
             // 
@@ -364,6 +368,7 @@
             this.cboxNombreCliente.Name = "cboxNombreCliente";
             this.cboxNombreCliente.Size = new System.Drawing.Size(235, 21);
             this.cboxNombreCliente.TabIndex = 30;
+            this.cboxNombreCliente.DropDownClosed += new System.EventHandler(this.cboxNombreCliente_DropDownClosed);
             // 
             // label6
             // 
