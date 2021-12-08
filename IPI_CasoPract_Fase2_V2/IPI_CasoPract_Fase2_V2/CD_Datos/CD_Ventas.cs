@@ -15,7 +15,7 @@ namespace CD_Datos
         SqlDataReader leerdata;
         DataTable tabla = new DataTable();
 
-        public void GuardarVenta(int IdCliente, int IdDireccion, byte Activo, List<CD_VentasDetalle> LstDetalleVenta)
+        public void GuardarVenta(int IdCliente,int Cantidad, int IdDireccion, byte Activo, List<CD_VentasDetalle> LstDetalleVenta)
         {
             tabla.Clear();
             cmd.Parameters.Clear();
@@ -38,6 +38,8 @@ namespace CD_Datos
 
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@IdCliente", IdCliente);
+            //danny
+            cmd.Parameters.AddWithValue("@Cantidad", Cantidad);
             cmd.Parameters.AddWithValue("@IdDireccion", IdDireccion);
             cmd.Parameters.AddWithValue("@Activo", Activo);
 

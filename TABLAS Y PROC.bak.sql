@@ -475,7 +475,7 @@ GO
 
 CREATE TYPE detalleVenta AS TABLE
 (
-	Id INT IDENTITY PRIMARY KEY,
+	Id INT /*IDENTITY PRIMARY KEY*/,
 	IdPedido INT,
 	IdArticulo INT,
 	Cantidad INT, 
@@ -484,7 +484,7 @@ CREATE TYPE detalleVenta AS TABLE
 GO
 
 
-ALTER PROCEDURE sp_GuardarVenta
+create PROCEDURE sp_GuardarVenta
 (
 @IdCliente INT,
 @IdDireccion INT,
@@ -519,9 +519,9 @@ INSERT INTO @LstDetalles (/*Id,*/IdArticulo, IdPedido, Cantidad, Fabrica)
 		VALUES (/*1,*/1,5,12,1)
 INSERT INTO @LstDetalles (/*Id,*/IdArticulo, IdPedido, Cantidad, Fabrica)
 		VALUES (/*2,*/2,10,24,1)
-EXEC dbo.sp_GuardarVenta 1,1,1,@LstDetalles
+--EXEC dbo.sp_GuardarVenta 1,1,1,@LstDetalles
 
-
+go
 
 
 CREATE PROCEDURE sp_cargarComboDirecciones
