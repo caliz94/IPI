@@ -142,5 +142,10 @@ namespace CP_Presentacion.Form_Cliente
         {
 
         }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

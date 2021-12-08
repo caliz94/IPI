@@ -73,10 +73,9 @@ namespace CP_Presentacion.Form_Cliente
                 this.Close();
             }
         }
-
-        private void CP_NuevoCliente_Load(object sender, EventArgs e)
+        private void iconButton1_Click(object sender, EventArgs e)
         {
-          
+            this.Close();
         }
     }
 }

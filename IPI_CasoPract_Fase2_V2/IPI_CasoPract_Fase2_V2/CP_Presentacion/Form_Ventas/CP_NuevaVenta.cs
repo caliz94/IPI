@@ -17,7 +17,7 @@ namespace CP_Presentacion.Form_Ventas
     {
        
         CL_Ventas OVentas = new CL_Ventas();
-        //int idcliente = 0, idventa = 0, iddireccion = 0;
+        int idcliente = 0, idventa = 0, iddireccion = 0;
         byte Activo;
 
         public CP_NuevaVenta()
@@ -121,6 +121,16 @@ namespace CP_Presentacion.Form_Ventas
         private void cboxNombreCliente_DropDownClosed(object sender, EventArgs e)
         {
             CargarComboDirecciones();
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void btn_AgregarCarrito_Click(object sender, EventArgs e)

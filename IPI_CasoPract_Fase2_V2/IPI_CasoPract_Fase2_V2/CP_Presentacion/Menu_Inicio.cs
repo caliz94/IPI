@@ -107,10 +107,7 @@ namespace CP_Presentacion
                 stateVentas = false;               
             }
         }
-        private void iconButton4_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+
 
         private void nuevoClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -206,6 +203,21 @@ namespace CP_Presentacion
             this.pnl_cont.Controls.Add(abrirform);
             this.pnl_cont.Tag = abrirform;
             abrirform.Show();
+        }
+
+        private void Menu_Inicio_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btn_Cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

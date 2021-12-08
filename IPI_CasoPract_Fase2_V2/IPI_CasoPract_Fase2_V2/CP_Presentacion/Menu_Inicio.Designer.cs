@@ -29,7 +29,9 @@ namespace CP_Presentacion
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnl_cont = new System.Windows.Forms.Panel();
+            this.btn_Cerrar = new FontAwesome.Sharp.IconButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
             this.nuevoClienteToolStripMenuItem = new FontAwesome.Sharp.IconMenuItem();
@@ -46,11 +48,11 @@ namespace CP_Presentacion
             this.pnl_inf = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.menuStrip1.SuspendLayout();
             this.pnl_inf.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,8 +64,29 @@ namespace CP_Presentacion
             this.pnl_cont.ForeColor = System.Drawing.SystemColors.InfoText;
             this.pnl_cont.Location = new System.Drawing.Point(240, 34);
             this.pnl_cont.Name = "pnl_cont";
-            this.pnl_cont.Size = new System.Drawing.Size(914, 688);
+            this.pnl_cont.Size = new System.Drawing.Size(914, 681);
             this.pnl_cont.TabIndex = 5;
+            // 
+            // btn_Cerrar
+            // 
+            this.btn_Cerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_Cerrar.FlatAppearance.BorderSize = 0;
+            this.btn_Cerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btn_Cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cerrar.ForeColor = System.Drawing.Color.Crimson;
+            this.btn_Cerrar.IconChar = FontAwesome.Sharp.IconChar.PowerOff;
+            this.btn_Cerrar.IconColor = System.Drawing.Color.OrangeRed;
+            this.btn_Cerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_Cerrar.IconSize = 35;
+            this.btn_Cerrar.Location = new System.Drawing.Point(9, 656);
+            this.btn_Cerrar.Name = "btn_Cerrar";
+            this.btn_Cerrar.Size = new System.Drawing.Size(31, 31);
+            this.btn_Cerrar.TabIndex = 5;
+            this.btn_Cerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btn_Cerrar, "Salir Del Programa");
+            this.btn_Cerrar.UseVisualStyleBackColor = true;
+            this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
             // 
             // menuStrip1
             // 
@@ -294,63 +317,64 @@ namespace CP_Presentacion
             this.pnl_inf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_inf.Controls.Add(this.label1);
             this.pnl_inf.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl_inf.Location = new System.Drawing.Point(0, 722);
+            this.pnl_inf.Location = new System.Drawing.Point(0, 715);
             this.pnl_inf.Name = "pnl_inf";
-            this.pnl_inf.Size = new System.Drawing.Size(1154, 27);
+            this.pnl_inf.Size = new System.Drawing.Size(1154, 34);
             this.pnl_inf.TabIndex = 4;
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.BackColor = System.Drawing.Color.RoyalBlue;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1152, 25);
+            this.label1.Size = new System.Drawing.Size(1152, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Elaborado por Alex Martinez y Danny Caliz";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panel1.Controls.Add(this.iconButton4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1154, 34);
             this.panel1.TabIndex = 6;
             // 
-            // iconButton4
-            // 
-            this.iconButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.iconButton4.FlatAppearance.BorderSize = 0;
-            this.iconButton4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton4.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.iconButton4.IconColor = System.Drawing.Color.RoyalBlue;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.Location = new System.Drawing.Point(1000, 3);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(122, 24);
-            this.iconButton4.TabIndex = 5;
-            this.iconButton4.Text = "Nuevo Cliente";
-            this.iconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton4.UseVisualStyleBackColor = true;
-            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
-            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.iconButton1);
+            this.panel2.Controls.Add(this.btn_Cerrar);
             this.panel2.Controls.Add(this.menuStrip1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 34);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(240, 688);
+            this.panel2.Size = new System.Drawing.Size(240, 681);
             this.panel2.TabIndex = 10;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.Color.Crimson;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Linux;
+            this.iconButton1.IconColor = System.Drawing.Color.RoyalBlue;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 200;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.iconButton1.Location = new System.Drawing.Point(12, 26);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(200, 185);
+            this.iconButton1.TabIndex = 10;
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // Menu_Inicio
             // 
@@ -371,10 +395,10 @@ namespace CP_Presentacion
             this.Text = "Menu_Inicio";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Menu_Inicio_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.pnl_inf.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -394,12 +418,14 @@ namespace CP_Presentacion
         private FontAwesome.Sharp.IconMenuItem administrarProvedoresToolStripMenuItem;
         private FontAwesome.Sharp.IconMenuItem ventasToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
-        private FontAwesome.Sharp.IconButton iconButton4;
+        private FontAwesome.Sharp.IconButton btn_Cerrar;
         private FontAwesome.Sharp.IconMenuItem iconMenuItem1;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconMenuItem agregarProvedorToolStripMenuItem;
         private FontAwesome.Sharp.IconMenuItem actualizarProveedorToolStripMenuItem;
         private FontAwesome.Sharp.IconMenuItem eliminarProveedorToolStripMenuItem;
         private FontAwesome.Sharp.IconMenuItem mostrarProveedoresToolStripMenuItem;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

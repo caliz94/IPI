@@ -139,9 +139,9 @@ namespace CP_Presentacion.Form_Articulos
                 MessageBox.Show("Seleccione un articulo");
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void iconButton1_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }
