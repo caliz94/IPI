@@ -257,5 +257,11 @@ namespace CP_Presentacion.Form_Direcciones
             }
 
         }
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
     }
 }

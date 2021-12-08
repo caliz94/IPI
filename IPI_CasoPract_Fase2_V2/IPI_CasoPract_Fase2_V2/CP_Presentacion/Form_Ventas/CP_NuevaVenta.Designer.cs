@@ -159,7 +159,7 @@
             this.btnCancelar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(731, 426);
+            this.btnCancelar.Location = new System.Drawing.Point(731, 417);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(135, 68);
             this.btnCancelar.TabIndex = 43;
@@ -180,7 +180,7 @@
             this.btnGenerarVenta.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnGenerarVenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGenerarVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGenerarVenta.Location = new System.Drawing.Point(590, 426);
+            this.btnGenerarVenta.Location = new System.Drawing.Point(590, 417);
             this.btnGenerarVenta.Name = "btnGenerarVenta";
             this.btnGenerarVenta.Size = new System.Drawing.Size(135, 68);
             this.btnGenerarVenta.TabIndex = 42;
