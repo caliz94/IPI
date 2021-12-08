@@ -35,7 +35,7 @@ namespace CL_Logica
             tabla = OVentas.CargarComboDirecciones(IdCliente);
             return tabla;
         }
-        //agrege cantidad
+        //**********************************************************agrege cantidad
         public void GuardarVenta(int IdCliente,int Cantidad, int IdDireccion, byte Activo, List<CD_VentasDetalle> lstDetalle)
         {
             OVentas.GuardarVenta(IdCliente, Cantidad, IdDireccion, Activo, lstDetalle);

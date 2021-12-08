@@ -197,7 +197,7 @@ namespace CP_Presentacion.Form_Ventas
                     Detalle.IdFabrica = Convert.ToInt32(row.Cells[8].Value.ToString());
                     LstDetalle.Add(Detalle);
                 }
-                //danny agrege cantidad
+                //****************************************************danny agrege cantidad
                 OVentas.GuardarVenta(idcliente,Convert.ToInt32(Cantidad), iddireccion, Activo, LstDetalle);
                 MessageBox.Show("Venta Grabada exitosamente.");
             }

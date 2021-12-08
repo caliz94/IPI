@@ -15,6 +15,7 @@ namespace CD_Datos
         SqlDataReader leerdata;
         DataTable tabla = new DataTable();
 
+        //********************************* aqui tambien agrege cantidad
         public void GuardarVenta(int IdCliente,int Cantidad, int IdDireccion, byte Activo, List<CD_VentasDetalle> LstDetalleVenta)
         {
             tabla.Clear();
