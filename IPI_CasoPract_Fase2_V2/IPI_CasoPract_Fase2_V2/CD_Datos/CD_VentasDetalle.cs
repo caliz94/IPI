@@ -10,6 +10,7 @@ namespace CD_Datos
     {
         public int IdArticulo { get; set; }
         public int Cantidad { get; set; }
+        /*public int IdPedido { get; set; }*/
         public int IdFabrica { get; set; }
     }
 }

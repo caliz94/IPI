@@ -19,16 +19,17 @@ namespace CD_Datos
         {
             tabla.Clear();
             cmd.Parameters.Clear();
+
             tabla.Columns.Add("IdArticulo");
+            //tabla.Columns.Add("IdPedido");
             tabla.Columns.Add("Cantidad");
             tabla.Columns.Add("Fabrica");
 
             foreach (var elemento in LstDetalleVenta)
             {
-                tabla.Rows.Add(elemento.IdArticulo, elemento.Cantidad, elemento.IdFabrica);
+                tabla.Rows.Add(elemento.IdArticulo, /*elemento.IdPedido,*/ elemento.Cantidad, elemento.IdFabrica);
             }
 
-            
             cmd.Connection = Conexion.abrircadena();
             cmd.CommandText = "sp_GuardarVenta";
             var parametroLista = new SqlParameter("@LstDetalles", SqlDbType.Structured);

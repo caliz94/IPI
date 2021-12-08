@@ -484,7 +484,7 @@ CREATE TYPE detalleVenta AS TABLE
 GO
 
 
-create PROCEDURE sp_GuardarVenta
+ALTER PROCEDURE sp_GuardarVenta
 (
 @IdCliente INT,
 @IdDireccion INT,
@@ -503,9 +503,9 @@ BEGIN
 
 	SELECT @IdPedido = ISNULL(MAX(Id),0)+1 FROM Detalle_Pedido
 	SET @IdVenta = @@IDENTITY
-	INSERT INTO Detalle_Pedido (Id, IdPedido, IdArticulo, Cantidad, Fabrica)
-	SELECT @IdPedido, @IdPedido, IdArticulo, Cantidad, Fabrica FROM @LstDetalles
-
+	INSERT INTO Detalle_Pedido (/*Id,*/ IdPedido, IdArticulo, Cantidad, Fabrica)
+	SELECT /*@IdPedido,*/ @IdPedido, IdArticulo, Cantidad, Fabrica FROM @LstDetalles
+	
 END
 GO
 
