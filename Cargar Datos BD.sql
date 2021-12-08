@@ -15,7 +15,7 @@ GO
 EXEC dbo.sp_nuevo_articulo	@Descripción_Articulo	=	'COLGATE PALMOLIVE', --VARCHAR(250),
 							@Existencias			=	100,	--INT,
 							@PrecioUnitario			=	30,	--MONEY,
-							@IdFabrica				=	1,	--INT,
+							@IdFabrica				=	2,	--INT,
 							@ArticulosProvistos		=	100,--INT,
 							@NoFabricasAlternativas =	0	--INT
 						GO
@@ -23,7 +23,7 @@ EXEC dbo.sp_nuevo_articulo	@Descripción_Articulo	=	'COLGATE PALMOLIVE', --VARCHA
 EXEC dbo.sp_nuevo_articulo	@Descripción_Articulo	=	'PLAYSTATION V', --VARCHAR(250),
 							@Existencias			=	0,	--INT,
 							@PrecioUnitario			=	300,	--MONEY,
-							@IdFabrica				=	1,	--INT,
+							@IdFabrica				=	3,	--INT,
 							@ArticulosProvistos		=	100,--INT,
 							@NoFabricasAlternativas =	0	--INT
 						GO
@@ -98,3 +98,10 @@ EXEC dbo.sp_direcciones @idcliente	= 1,
 
 -- SELECT * FROM Articulo
 --select * from Fabrica
+
+
+select * from Articulo WHERE IdFabrica = 1 
+
+
+
+SELECT COUNT(IdArticulo) as Articulos_Provistos FROM Articulo WHERE IdFabrica = 1 

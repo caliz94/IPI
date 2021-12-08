@@ -24,6 +24,7 @@ namespace CP_Presentacion.Form_Ventas
         {
             InitializeComponent();
         }
+
         #region CARGAR COMBO CLIENTE
         private void CargarComboCliente()
         {
@@ -128,7 +129,14 @@ namespace CP_Presentacion.Form_Ventas
         }
         #endregion
 
+        #region PROGRAMACIÓN BOTON LATERAL SALIR
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
 
+        #region PROGRAMACIÓN AGREGAR AL CARRITO
         private void btn_AgregarCarrito_Click(object sender, EventArgs e)
         {
             int buscar1 = 0, buscar2 = 0;
@@ -168,15 +176,17 @@ namespace CP_Presentacion.Form_Ventas
             tboxPrecio.Text = string.Empty;
             cboxNombreProducto.Focus();
         }
+        #endregion
 
+        #region BOTON GENERAR VENTAS
         private void btnGenerarVenta_Click(object sender, EventArgs e)
         {
             foreach (var item in dgvVentas.Rows)
             {
-                //OVentas.GuardarVenta(idcliente, iddireccion, Activo);
+                OVentas.GuardarVenta(idcliente, iddireccion, Activo);
                 MessageBox.Show("Venta Grabada exitosamente.");
             }
-            
         }
+        #endregion
     }
 }

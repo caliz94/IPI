@@ -472,11 +472,13 @@ CREATE PROCEDURE sp_GuardarVenta
 AS
 BEGIN 
 	DECLARE @IdPedido INT
+	DECLARE @IdVenta INT
 	SELECT @IdPedido = ISNULL(MAX(IdPedido),0)+1 FROM Pedido
 	
 	INSERT INTO Pedido (IdPedido, IdCliente, IdDireccion, FechaPedido, Activo) 
 	VALUES (@IdPedido, @IdCliente,@IdDireccion ,GETDATE() ,@Activo)
 
+	SET @IdVenta = @@IDENTITY
 	--INSERT --https://youtu.be/X_MpkJpsilw?t=1512
 
 END
@@ -484,15 +486,15 @@ GO
 
 CREATE TYPE detalleVenta AS TABLE
 (
-	Id INT,
-	Nombre VARCHAR(100),
-	Precio MONEY,
-	Cantidad INT
-	PRIMARY KEY(Id)
+	Id INT PRIMARY KEY,
+	IdPedido INT,
+	IdArticulo INT,
+	Cantidad INT, 
+	Fabrica INT
 )
 GO
 
-ALTER PROCEDURE sp_cargarComboDirecciones
+CREATE PROCEDURE sp_cargarComboDirecciones
 (
 @IdCliente INT
 )
@@ -502,3 +504,13 @@ BEGIN
 	FROM Direcciones WHERE IdCliente = @IdCliente
 END
 GO
+
+
+CREATE PROCEDURE sp_ArticulosProvistosxIdFabrica
+(
+	@IdFabrica INT
+)
+AS
+BEGIN
+	SELECT COUNT(IdArticulo) as Articulos_Provistos FROM Articulo WHERE IdFabrica = @IdFabrica
+END

@@ -17,7 +17,7 @@ namespace CD_Datos
 
         public void GuardarVenta(int IdCliente, int IdDireccion, byte Activo)
         {
-            
+            cmd.Parameters.Clear();
             cmd.Connection = Conexion.abrircadena();
             cmd.CommandText = "sp_GuardarVenta";
             cmd.CommandType = CommandType.StoredProcedure;
