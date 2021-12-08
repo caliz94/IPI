@@ -24,7 +24,7 @@ namespace CP_Presentacion.Form_Ventas
         {
             InitializeComponent();
         }
-        #region PROGRAMACIÓN MÉTODOS
+        #region CARGAR COMBO CLIENTE
         private void CargarComboCliente()
         {
             cboxNombreCliente.DataSource = OVentas.CargarComboClientes();
@@ -32,8 +32,9 @@ namespace CP_Presentacion.Form_Ventas
             cboxNombreCliente.SelectedIndex = -1;
             cboxNombreCliente.ValueMember = "IdCliente";
         }
+        #endregion
 
-        #region CargarComboProducto
+        #region CARGAR COMPRO PRODUCTO
         private void CargarComboProducto()
         {
             cboxNombreProducto.DataSource = OVentas.CargarComboProductos();
@@ -43,6 +44,7 @@ namespace CP_Presentacion.Form_Ventas
         }
         #endregion
 
+        #region CARGAR COMBO DIRECCIONES
         private void CargarComboDirecciones()
         {
             cboxDirecciones.DataSource = OVentas.CargarComboDirecciones(Convert.ToInt32(cboxNombreCliente.SelectedValue.ToString()));
@@ -50,7 +52,9 @@ namespace CP_Presentacion.Form_Ventas
             cboxDirecciones.SelectedIndex = -1;
             cboxDirecciones.ValueMember = "IdCliente";
         }
+        #endregion
 
+        #region OBTENER EXISTENCIAS DE PRODUCTOS
         int idarticulo;
         private void ObtenerExistenciaArticulos()
         {
@@ -66,6 +70,9 @@ namespace CP_Presentacion.Form_Ventas
                 MessageBox.Show("No se pudo Obtener la Existencias de los Articulos. Error: " + ex.Message);
             }
         }
+        #endregion
+
+        #region OBTENER PRECIOS DE ARTICULOS
         private void ObtenerPrecioArticulos()
         {
             try
@@ -82,8 +89,8 @@ namespace CP_Presentacion.Form_Ventas
         }
         #endregion
 
+        #region IMPLEMENTACIÓN SINGLENTON
         private static CP_NuevaVenta _Abrir;
-
         public static CP_NuevaVenta Abrir
         {
             get
@@ -94,24 +101,21 @@ namespace CP_Presentacion.Form_Ventas
             }
         }
 
+        private void CP_NuevaVenta_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _Abrir = null;
+        }
+        #endregion
+
+        #region METODO LOAD FORMULARIO
         private void CP_NuevaVenta_Load(object sender, EventArgs e)
         {
             CargarComboCliente();
             CargarComboProducto();
         }
+        #endregion
 
-        
-        private void CP_NuevaVenta_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            _Abrir = null;
-        }
-
-        private void cboxNombreProducto_KeyUp(object sender, KeyEventArgs e)
-        {
-            ObtenerExistenciaArticulos();
-            ObtenerPrecioArticulos();
-        }
-
+        #region METODO DROPDOWN COMBO NOMBRE CLIENTE Y NOMBRE PRODUCTO
         private void cboxNombreProducto_DropDownClosed(object sender, EventArgs e)
         {
             ObtenerExistenciaArticulos();
@@ -122,16 +126,8 @@ namespace CP_Presentacion.Form_Ventas
         {
             CargarComboDirecciones();
         }
+        #endregion
 
-        private void iconButton2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btn_AgregarCarrito_Click(object sender, EventArgs e)
         {
@@ -162,8 +158,8 @@ namespace CP_Presentacion.Form_Ventas
                 "Eliminar"
             });
 
-            //idcliente = Convert.ToInt32(NombreCliente.Substring(0, buscar1));
-            //iddireccion = 1;
+            idcliente = Convert.ToInt32(NombreCliente.Substring(0, buscar1));
+            iddireccion = 1;
             Activo = 1;
 
             //cboxNombreCliente.SelectedIndex = -1;
