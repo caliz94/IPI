@@ -55,6 +55,7 @@ namespace CD_Datos
             cmd.CommandText = "sp_actual_direcc";
             cmd.CommandType = CommandType.StoredProcedure;
 
+            cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@IdDireccion", IdDireccion);
             cmd.Parameters.AddWithValue("@Calle", Calle);
             cmd.Parameters.AddWithValue("@Barrio", Barrio);
