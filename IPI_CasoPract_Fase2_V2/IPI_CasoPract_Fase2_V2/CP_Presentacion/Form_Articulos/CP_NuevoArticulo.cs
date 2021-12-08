@@ -57,11 +57,12 @@ namespace CP_Presentacion.Form_Articulos
         {
             MostrarComboFabrica();
             MostrarArticulos();
-            
+           
         }
 
         private void limpiarcontroles()
         {
+            MostrarArticulos();
             txt_art_provistos.Clear();
             txt_cod_artic.Clear();
             txt_descrip.Clear();
@@ -82,7 +83,7 @@ namespace CP_Presentacion.Form_Articulos
                          Convert.ToInt32(cbx_fabrica.SelectedValue),Convert.ToInt32( txt_art_provistos.Text),
                         Convert.ToInt32(txt_fab_altern.Text));
                     MessageBox.Show("El articulo Se Agrego Correctamente");
-                    MostrarArticulos();
+                    
                     limpiarcontroles();
                 }
                 catch (Exception ex)
@@ -142,6 +143,26 @@ namespace CP_Presentacion.Form_Articulos
         private void iconButton1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private string idfabrica = null;
+        private void ObtenerArticulosProvistos()
+        {
+            try
+            {
+                //int indice = Convert.ToInt32(cboxNombreProducto.SelectedValue.ToString());
+                idfabrica = (cbx_fabrica.SelectedValue.ToString());
+                txt_art_provistos.Text = Convert.ToString(articulos_cl.articulosProvistos(Convert.ToInt32(idfabrica)));
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void cbx_fabrica_DropDownClosed(object sender, EventArgs e)
+        {
+            ObtenerArticulosProvistos();
         }
     }
 }

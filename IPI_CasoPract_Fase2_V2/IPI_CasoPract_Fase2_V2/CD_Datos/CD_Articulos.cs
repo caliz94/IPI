@@ -53,8 +53,7 @@ namespace CD_Datos
             cmd.Connection = Conexion.abrircadena();
             cmd.CommandText = "sp_validarPrecioArticulo";
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@IdArticulo", IdArticulo);
-            //existencia = cmd.ExecuteNonQuery();
+            cmd.Parameters.AddWithValue("@IdArticulo", IdArticulo);          
 
             return (int)(decimal)cmd.ExecuteScalar();
 
@@ -62,33 +61,35 @@ namespace CD_Datos
 
         }
 
-        //SqlDataReader existencia;
-        //public DataTable CargarExistencias(int IdArticulo)
-        //{
-        //    //int existencia;
-        //    tabla.Clear();
-        //    cmd.Connection = Conexion.abrircadena();
-        //    cmd.CommandText = "sp_validarExistenciaArticulo";
-        //    cmd.CommandType = CommandType.StoredProcedure;
-        //    cmd.Parameters.AddWithValue("@IdArticulo", IdArticulo);
-        //    existencia = cmd.ExecuteReader();
-        //    tabla.Load(existencia);
-        //    //cmd.Parameters.Clear();
-        //    Conexion.cerrarcadena();
-        //    return tabla;
-        //}
+        
+        public int Art_Provistos(int IdFabrica)
+        {
+            cmd.Parameters.Clear();
+            //int existencia;
+            cmd.Connection = Conexion.abrircadena();
+            cmd.CommandText = "sp_ArticulosProvistosxIdFabrica";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@IdFabrica", IdFabrica);
+            return (int)cmd.ExecuteScalar();           
+        }
 
         //cargar grid de articulos
         public DataTable Mostrar_articulos()
         {
-            tabla.Clear();
+            
             cmd.Connection = Conexion.abrircadena();
+            tabla.Clear();
             cmd.CommandText = "sp_mostrar_artic";
             cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Clear();
             leer = cmd.ExecuteReader();
+            //tabla.Clear();
+            
             tabla.Load(leer);
-            Conexion.cerrarcadena();
+
             return tabla;
+            Conexion.cerrarcadena();
+
         }
 
 
@@ -99,7 +100,7 @@ namespace CD_Datos
             cmd.Connection = Conexion.abrircadena();
             cmd.CommandText = "sp_nuevo_articulo";
             cmd.CommandType = CommandType.StoredProcedure;
-
+            cmd.Parameters.Clear();
             //cmd.Parameters.AddWithValue("@IdArticulo", @IdArticulo);
             cmd.Parameters.AddWithValue("@Descripción_Articulo", Descripción_Articulo);
             cmd.Parameters.AddWithValue("@Existencias", Existencias);
@@ -109,7 +110,7 @@ namespace CD_Datos
             cmd.Parameters.AddWithValue("@NoFabricasAlternativas", NoFabricasAlternativa);
          
             cmd.ExecuteNonQuery();
-            cmd.Parameters.Clear();
+            
             Conexion.cerrarcadena();
         }
 
@@ -119,6 +120,7 @@ namespace CD_Datos
             cmd.Connection = Conexion.abrircadena();
             cmd.CommandText = "sp_actualizar_articulo";
             cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@IdArticulo", IdArticulo);
             cmd.Parameters.AddWithValue("@Descripción_Articulo", Descripción_Articulo);
             cmd.Parameters.AddWithValue("@Existencias", Existencias);
@@ -127,7 +129,7 @@ namespace CD_Datos
             cmd.Parameters.AddWithValue("@ArticulosProvistos", ArticulosProvistos);
             cmd.Parameters.AddWithValue("@NoFabricasAlternativas", NoFabricasAlternativa);
             cmd.ExecuteNonQuery();
-            cmd.Parameters.Clear();
+            
             Conexion.cerrarcadena();
         }
 
@@ -137,11 +139,11 @@ namespace CD_Datos
             cmd.Connection = Conexion.abrircadena();
             cmd.CommandText = "sp_eliminar_articulo";
             cmd.CommandType = CommandType.StoredProcedure;
-
+            cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@IdArticulo", IdArticulo);
           
             cmd.ExecuteNonQuery();
-            cmd.Parameters.Clear();
+            
             Conexion.cerrarcadena();
         }
 

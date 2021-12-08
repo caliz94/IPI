@@ -390,7 +390,7 @@ END
 GO
 
 --mostrar articulos
-CREATE proc sp_mostrar_artic
+create proc sp_mostrar_artic
 as
 BEGIN
 	select	a.IdArticulo,
@@ -413,6 +413,7 @@ BEGIN
 END
 go
 
+--sp para cargar articulos provistos
 CREATE PROCEDURE sp_ArticulosProvistosxIdFabrica
 (
 	@IdFabrica INT
@@ -475,8 +476,8 @@ CREATE PROCEDURE sp_GuardarVenta
 (
 @IdCliente INT,
 @IdDireccion INT,
-@Activo BIT
---@Detalle detalleVenta READONLY
+@Activo BIT,
+@LstDetalles detalleVenta READONLY
 )
 AS
 BEGIN 
@@ -487,15 +488,18 @@ BEGIN
 	INSERT INTO Pedido (IdPedido, IdCliente, IdDireccion, FechaPedido, Activo) 
 	VALUES (@IdPedido, @IdCliente,@IdDireccion ,GETDATE() ,@Activo)
 
+
+	SELECT @IdPedido = ISNULL(MAX(Id),0)+1 FROM Detalle_Pedido
 	SET @IdVenta = @@IDENTITY
-	--INSERT --https://youtu.be/X_MpkJpsilw?t=1512
+	INSERT INTO Detalle_Pedido (Id, IdPedido, IdArticulo, Cantidad, Fabrica)
+	SELECT @IdPedido, @IdVenta, IdArticulo, Cantidad, Fabrica FROM @LstDetalles
 
 END
 GO
 
 CREATE TYPE detalleVenta AS TABLE
 (
-	Id INT PRIMARY KEY,
+	Id INT IDENTITY PRIMARY KEY,
 	IdPedido INT,
 	IdArticulo INT,
 	Cantidad INT, 
@@ -514,4 +518,12 @@ BEGIN
 END
 GO
 
-
+CREATE PROCEDURE sp_FabricasAlternartivas
+(
+@Descripcion VARCHAR(250)
+)
+AS
+BEGIN
+	select count(f.NombreFabrica) as fabricas_alternativas from Fabrica as f inner join Articulo as a on a.IdFabrica = f.IdFabrica
+	where a.Descripción_Articulo = @Descripcion
+END

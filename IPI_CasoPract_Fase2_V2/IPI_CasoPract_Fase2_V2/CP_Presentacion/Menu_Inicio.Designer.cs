@@ -374,7 +374,7 @@ namespace CP_Presentacion
             this.iconButton1.TabIndex = 10;
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+           
             // 
             // Menu_Inicio
             // 
@@ -395,7 +395,7 @@ namespace CP_Presentacion
             this.Text = "Menu_Inicio";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Menu_Inicio_Load);
+          
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.pnl_inf.ResumeLayout(false);

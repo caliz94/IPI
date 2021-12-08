@@ -57,24 +57,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form_Articulos\CP_ActualizarArticulo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_Articulos\CP_ActualizarArticulo.Designer.cs">
-      <DependentUpon>CP_ActualizarArticulo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form_Articulos\CP_EliminarArticulo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_Articulos\CP_EliminarArticulo.Designer.cs">
-      <DependentUpon>CP_EliminarArticulo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form_Articulos\CP_MostrarArticulos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_Articulos\CP_MostrarArticulos.Designer.cs">
-      <DependentUpon>CP_MostrarArticulos.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form_Articulos\CP_NuevoArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,15 +125,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form_Articulos\CP_ActualizarArticulo.resx">
-      <DependentUpon>CP_ActualizarArticulo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_Articulos\CP_EliminarArticulo.resx">
-      <DependentUpon>CP_EliminarArticulo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_Articulos\CP_MostrarArticulos.resx">
-      <DependentUpon>CP_MostrarArticulos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form_Articulos\CP_NuevoArticulo.resx">
       <DependentUpon>CP_NuevoArticulo.cs</DependentUpon>
     </EmbeddedResource>
