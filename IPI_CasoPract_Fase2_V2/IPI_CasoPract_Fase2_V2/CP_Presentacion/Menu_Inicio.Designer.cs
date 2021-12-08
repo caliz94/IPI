@@ -333,7 +333,7 @@ namespace CP_Presentacion
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1152, 32);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Elaborado por Alex Martinez y Danny Caliz";
+            this.label1.Text = "Elaborado por Alex Martines y Danny Caliz";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
