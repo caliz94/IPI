@@ -68,6 +68,7 @@ GO
 
 CREATE TABLE Detalle_Pedido
 (
+	Id INT NOT NULL,
 	IdArticulo INT FOREIGN KEY REFERENCES dbo.Articulo(IdArticulo),
     IdPedido INT FOREIGN KEY REFERENCES dbo.Pedido(IdPedido),
 	Cantidad INT NOT NULL,
@@ -462,12 +463,12 @@ GO
 
 /*************************  VENTAS  ********************************/
 
-CREATE PROCEDURE sp_GuardarVenta
+ALTER PROCEDURE sp_GuardarVenta
 (
 @IdCliente INT,
 @IdDireccion INT,
-@Activo BIT
---@Detalle detalleVenta READONLY
+@Activo BIT,
+@LstDetalles detalleVenta READONLY
 )
 AS
 BEGIN 
@@ -478,15 +479,31 @@ BEGIN
 	INSERT INTO Pedido (IdPedido, IdCliente, IdDireccion, FechaPedido, Activo) 
 	VALUES (@IdPedido, @IdCliente,@IdDireccion ,GETDATE() ,@Activo)
 
+
+	SELECT @IdPedido = ISNULL(MAX(Id),0)+1 FROM Detalle_Pedido
 	SET @IdVenta = @@IDENTITY
-	--INSERT --https://youtu.be/X_MpkJpsilw?t=1512
+	INSERT INTO Detalle_Pedido (Id, IdPedido, IdArticulo, Cantidad, Fabrica)
+	SELECT @IdPedido, @IdPedido, IdArticulo, Cantidad, Fabrica FROM @LstDetalles
 
 END
 GO
 
+/*
+----SELECT * FROM Pedido
+----SELECT * FROM Detalle_Pedido
+----SELECT * FROM @LstDetalles
+
+--DECLARE @LstDetalles detalleVenta
+--INSERT INTO @LstDetalles (Id,IdArticulo, IdPedido, Cantidad, Fabrica)
+--		VALUES (1,1,5,12,1)
+--INSERT INTO @LstDetalles (Id,IdArticulo, IdPedido, Cantidad, Fabrica)
+--		VALUES (2,2,10,24,1)
+--EXEC dbo.sp_GuardarVenta 1,1,1,@LstDetall
+*/
+
 CREATE TYPE detalleVenta AS TABLE
 (
-	Id INT PRIMARY KEY,
+	Id INT IDENTITY PRIMARY KEY,
 	IdPedido INT,
 	IdArticulo INT,
 	Cantidad INT, 
