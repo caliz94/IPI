@@ -493,11 +493,7 @@ BEGIN
 	SELECT @IdPedido = ISNULL(MAX(Id),0)+1 FROM Detalle_Pedido
 	SET @IdVenta = @@IDENTITY
 	INSERT INTO Detalle_Pedido (Id, IdPedido, IdArticulo, Cantidad, Fabrica)
-<<<<<<< HEAD
 	SELECT @IdPedido, @IdPedido, IdArticulo, Cantidad, Fabrica FROM @LstDetalles
-=======
-	SELECT @IdPedido, @IdVenta, IdArticulo, Cantidad, Fabrica FROM @LstDetalles
->>>>>>> 81ebb49eab9e66b69c1ae7b816fdec73f871591e
 
 END
 GO
