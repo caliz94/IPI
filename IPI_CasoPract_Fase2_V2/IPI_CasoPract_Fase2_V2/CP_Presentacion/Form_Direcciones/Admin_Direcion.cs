@@ -48,14 +48,14 @@ namespace CP_Presentacion.Form_Direcciones
         {
             try
             {
-                cargar_direc();
-                dgv_direciones.Columns["@IdDireccion"].Visible = false;
+                
                 if (txt_numero_direccion.Text == string.Empty)
                 {
                     errorProvider1.SetError(txt_numero_direccion, " selecione la direccion que desea actualizar");
                 }
                 else
                 {
+                    
                     errorProvider1.SetError(txt_numero_direccion, "");
                     btn_cancelar.Enabled = true;
                     btn_guardar.Enabled = true;
@@ -166,25 +166,53 @@ namespace CP_Presentacion.Form_Direcciones
                     }
                     else if (txt_Barrio.Text == string.Empty)
                     {
+                        errorProvider1.SetError(txt_Calle, "");
                         errorProvider1.SetError(txt_Barrio, "Campo Obligatorio");
                     }
                     else if (txt_Distrito.Text == string.Empty)
                     {
+                        errorProvider1.SetError(txt_Barrio, "");
                         errorProvider1.SetError(txt_Distrito, "Campo Obligatorio");
                     }
 
                     else
                     {
+                        errorProvider1.SetError(txt_Distrito, "");
                         nuevadireci();
                         MessageBox.Show("Se Agrego Nueva Direccion Al Cliente " + txt_nombre_cliente.Text);
-                        LimpiarControles();                                                            
+                        LimpiarControles();
+                        MostrarClientes();
+                        cargar_direc();
+                        
                     }
                 }
                 else
                 {
-                    actualizar();
-                    MostrarClientes();
-                    dgv_clientes.Columns["IdCliente"].Visible = false;                    
+                    if (txt_Calle.Text == string.Empty)
+                    {
+                        errorProvider1.SetError(txt_Calle, "Campo Obligatorio");
+                    }
+                    else if (txt_Barrio.Text == string.Empty)
+                    {
+                        errorProvider1.SetError(txt_Calle, "");
+                        errorProvider1.SetError(txt_Barrio, "Campo Obligatorio");
+                    }
+                    else if (txt_Distrito.Text == string.Empty)
+                    {
+                        errorProvider1.SetError(txt_Barrio, "");
+                        errorProvider1.SetError(txt_Distrito, "Campo Obligatorio");
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(txt_Distrito, "");
+                        actualizar();
+                        MessageBox.Show("Se Actualizo Direccion Al Cliente " + txt_nombre_cliente.Text);
+                        MostrarClientes();
+                        cargar_direc();
+                        dgv_clientes.Columns["IdCliente"].Visible = false;                        
+                        LimpiarControles();
+                    }
+                                        
                 }
             }
             catch (Exception ex)
@@ -208,6 +236,9 @@ namespace CP_Presentacion.Form_Direcciones
 
             txt_NumeroCliente.Text = dgv_clientes.CurrentRow.Cells["IdCliente"].Value.ToString();
             txt_nombre_cliente.Text = dgv_clientes.CurrentRow.Cells["NombreCliente"].Value.ToString();
+
+            cargar_direc();
+            //dgv_direciones.Columns["@IdDireccion"].Visible = false;
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
@@ -262,6 +293,9 @@ namespace CP_Presentacion.Form_Direcciones
             this.Close();
         }
 
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }
