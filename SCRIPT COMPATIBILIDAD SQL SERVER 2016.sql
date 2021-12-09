@@ -3,6 +3,14 @@ GO
 
 IF DB_ID('IPICASOPRACTICO') IS NOT NULL
 BEGIN
+		-- Take the Database Offline
+	ALTER DATABASE [myDB] SET OFFLINE WITH
+	ROLLBACK IMMEDIATE
+	
+	-- Take the Database Online
+	ALTER DATABASE [myDB] SET ONLINE
+	
+
 	DROP DATABASE IPICASOPRACTICO
 END
 
@@ -11,7 +19,8 @@ GO
 
 USE IPICASOPRACTICO
 GO
-/****** Object:  Table [dbo].[Articulo]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+
+/****** Object:  Table [dbo].[Articulo]    Script Date: 9/12/2021 10:35:54 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -27,10 +36,38 @@ CREATE TABLE [dbo].[Articulo](
 PRIMARY KEY CLUSTERED 
 (
 	[IdArticulo] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Cliente]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  Table [dbo].[Detalle_Pedido]    Script Date: 9/12/2021 10:35:55 a. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Detalle_Pedido](
+	[Id] [int] NOT NULL,
+	[IdArticulo] [int] NULL,
+	[IdPedido] [int] NULL,
+	[Cantidad] [int] NOT NULL,
+	[Fabrica] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  View [dbo].[vw_descripcionDetalle]    Script Date: 9/12/2021 10:35:55 a. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE VIEW [dbo].[vw_descripcionDetalle] 
+AS
+SELECT DP.Id, DP.IdPedido, DP.IdArticulo, A.Descripción_Articulo, DP.Cantidad, A.PrecioUnitario, DP.Fabrica, (DP.Cantidad * A.PrecioUnitario) AS [Total]
+FROM [dbo].[Detalle_Pedido] AS DP 
+INNER JOIN Articulo AS A ON DP.IdArticulo = A.IdArticulo
+GO
+/****** Object:  Table [dbo].[Cliente]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -45,27 +82,10 @@ CREATE TABLE [dbo].[Cliente](
 PRIMARY KEY CLUSTERED 
 (
 	[IdCliente] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Detalle_Pedido]    Script Date: 9/12/2021 12:25:06 a. m. ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Detalle_Pedido](
-	[Id] [int] NOT NULL,
-	[IdArticulo] [int] NULL,
-	[IdPedido] [int] NULL,
-	[Cantidad] [int] NOT NULL,
-	[Fabrica] [int] NOT NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[Direcciones]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  Table [dbo].[Direcciones]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -80,10 +100,10 @@ CREATE TABLE [dbo].[Direcciones](
 PRIMARY KEY CLUSTERED 
 (
 	[IdDireccion] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Fabrica]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  Table [dbo].[Fabrica]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -96,10 +116,10 @@ CREATE TABLE [dbo].[Fabrica](
 PRIMARY KEY CLUSTERED 
 (
 	[IdFabrica] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Pedido]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  Table [dbo].[Pedido]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -113,7 +133,7 @@ CREATE TABLE [dbo].[Pedido](
 PRIMARY KEY CLUSTERED 
 (
 	[IdPedido] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [dbo].[Articulo]  WITH CHECK ADD FOREIGN KEY([IdFabrica])
@@ -136,7 +156,7 @@ REFERENCES [dbo].[Direcciones] ([IdDireccion])
 GO
 ALTER TABLE [dbo].[Cliente]  WITH CHECK ADD CHECK  (([LimiteCredito]<=(3000000)))
 GO
-/****** Object:  StoredProcedure [dbo].[sp_actual_direcc]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_actual_direcc]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -159,7 +179,7 @@ BEGIN
 	WHERE IdDireccion = @IdDireccion
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_actualizar_articulo]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_actualizar_articulo]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -190,7 +210,7 @@ BEGIN
 	WHERE IdArticulo = @IdArticulo
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_ActualizarCliente]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_ActualizarCliente]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -213,7 +233,7 @@ BEGIN
 	WHERE IdCliente = @IdCliente
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_actualizarFabrica]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_actualizarFabrica]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -233,7 +253,7 @@ BEGIN
 	WHERE IdFabrica = @IdFabrica
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_ArticulosProvistosxIdFabrica]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_ArticulosProvistosxIdFabrica]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -249,7 +269,7 @@ BEGIN
 	SELECT COUNT(IdArticulo) as Articulos_Provistos FROM Articulo WHERE IdFabrica = @IdFabrica
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_buscaFabricaxId]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_buscaFabricaxId]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -266,7 +286,7 @@ BEGIN
 	SELECT * FROM Fabrica WHERE IdFabrica LIKE ((CAST(@IdFabrica AS VARCHAR(20)))+'%')
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_buscaFabricaxNombre]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_buscaFabricaxNombre]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -284,7 +304,7 @@ BEGIN
 	SELECT * FROM Fabrica WHERE NombreFabrica LIKE ('%'+@Nombre+'%')
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_cargarComboArticulo]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_cargarComboArticulo]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -297,7 +317,7 @@ BEGIN
 	FROM Articulo WHERE Existencias > 0
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_cargarComboCliente]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_cargarComboCliente]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -313,7 +333,7 @@ BEGIN
 END
 
 GO
-/****** Object:  StoredProcedure [dbo].[sp_cargarComboDirecciones]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_cargarComboDirecciones]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -388,7 +408,7 @@ BEGIN
 	FROM Direcciones WHERE IdCliente = @IdCliente
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_cargarComboFabrica]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_cargarComboFabrica]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -401,7 +421,7 @@ BEGIN
 	SELECT IdFabrica, ltrim(rtrim('Id - '))+ltrim(rtrim(str(IdFabrica))) + '- ' + NombreFabrica AS [NombreFabrica] FROM Fabrica WHERE Activo = 1
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_cargarmasarticulos]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_cargarmasarticulos]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -432,7 +452,7 @@ BEGIN
 	END
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_clientesActivos_direcio]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_clientesActivos_direcio]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -453,7 +473,7 @@ BEGIN
 	SELECT IdCliente, NombreCliente FROM Cliente WHERE Activo = 1
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_direcciones]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_direcciones]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -485,7 +505,7 @@ BEGIN
 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_direciones_cliente]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_direciones_cliente]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -502,7 +522,7 @@ BEGIN
 	select IdDireccion,Calle,Barrio,Distrito from Direcciones where IdCliente=@idcliente and  Activo = 1
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_eliminar_articulo]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_eliminar_articulo]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -516,7 +536,7 @@ BEGIN
 	delete from Articulo where IdArticulo = @idArticulo
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_eliminarCliente]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_eliminarCliente]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -534,7 +554,7 @@ BEGIN
 	WHERE IdCliente = @IdCliente
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_eliminarFabrica]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_eliminarFabrica]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -551,7 +571,7 @@ BEGIN
 	WHERE IdFabrica = @IdFabrica
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_FabricasAlternartivas]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_FabricasAlternartivas]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -567,11 +587,23 @@ BEGIN
 	where a.Descripción_Articulo = @Descripcion
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_GuardarVenta]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_GuardarVenta]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+
+CREATE PROCEDURE [dbo].[usp_GetErrorInfo]  
+AS  
+SELECT  
+    ERROR_NUMBER() AS ErrorNumber  
+    ,ERROR_SEVERITY() AS ErrorSeverity  
+    ,ERROR_STATE() AS ErrorState  
+    ,ERROR_PROCEDURE() AS ErrorProcedure  
+    ,ERROR_LINE() AS ErrorLine  
+    ,ERROR_MESSAGE() AS ErrorMessage;  
+GO
+
 
 CREATE PROCEDURE [dbo].[sp_GuardarVenta]
 (
@@ -613,7 +645,7 @@ BEGIN
 	END CATCH; 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_mostrar_artic]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_mostrar_artic]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -633,7 +665,7 @@ BEGIN
 	from Articulo as a inner join Fabrica as f on a.IdFabrica = f.IdFabrica
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_mostrarCamposFabricas]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_mostrarCamposFabricas]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -649,7 +681,7 @@ BEGIN
     SELECT IdFabrica, NombreFabrica, Telefono, Activo FROM dbo.Fabrica 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_mostrarClientes]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_mostrarClientes]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -663,7 +695,7 @@ BEGIN
 	SELECT * FROM Cliente --WHERE Activo = 1
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_mostrarClientesActivos]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_mostrarClientesActivos]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -676,7 +708,7 @@ BEGIN
 	SELECT * FROM Cliente WHERE Activo = 1
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_mostrarClientesInactivos]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_mostrarClientesInactivos]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -689,7 +721,7 @@ BEGIN
 	SELECT * FROM Cliente WHERE Activo = 0
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_mostrarFabricas]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_mostrarFabricas]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -701,7 +733,7 @@ BEGIN
     SELECT IdFabrica, NombreFabrica, Telefono FROM dbo.Fabrica 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_mostrarFabricasActivas]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_mostrarFabricasActivas]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -713,7 +745,7 @@ BEGIN
 	SELECT IdFabrica, NombreFabrica, Telefono FROM Fabrica WHERE Activo = 1
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_mostrarFabricasInactivos]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_mostrarFabricasInactivos]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -725,7 +757,7 @@ BEGIN
 	SELECT IdFabrica, NombreFabrica, Telefono FROM Fabrica WHERE Activo = 0
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_nuevaFabrica]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_nuevaFabrica]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -751,7 +783,7 @@ BEGIN
 	)
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_nuevo_articulo]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_nuevo_articulo]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -775,7 +807,7 @@ BEGIN
 	INSERT INTO Articulo VALUES(@IdArticulo,@Descripción_Articulo,@Existencias,@PrecioUnitario,@IdFabrica,@ArticulosProvistos,@NoFabricasAlternativas)
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_nuevoCliente]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_nuevoCliente]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -806,71 +838,30 @@ BEGIN
 	)
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_validarExistenciaArticulo]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_ObtieneDetallePedido]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-
-CREATE PROCEDURE [dbo].[sp_validarExistenciaArticulo]
+/****** OBTIENE EL DETALLE DEL PEDIDO POR IDPEDIDO ******/
+CREATE PROCEDURE [dbo].[sp_ObtieneDetallePedido]
 (
-@IdArticulo INT
+@IdPedido INT
 )
 AS
 BEGIN
-	SELECT A.Existencias FROM Articulo AS A INNER JOIN Fabrica AS F ON A.IdFabrica = F.IdFabrica WHERE IdArticulo = @IdArticulo
-	--SELECT IdCliente FROM Cliente WHERE IdCliente = @IdArticulo
+	SELECT IdPedido, IdArticulo, Descripción_Articulo, Cantidad, PrecioUnitario, Fabrica AS [IdFabrica], Total FROM vw_descripcionDetalle WHERE IdPedido = @IdPedido
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_validarPrecioArticulo]    Script Date: 9/12/2021 12:25:06 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_ObtienePedido]    Script Date: 9/12/2021 10:35:55 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-
-CREATE PROCEDURE [dbo].[sp_validarPrecioArticulo]
-(
-@IdArticulo INT
-)
-AS
-BEGIN
-	SELECT A.PrecioUnitario FROM Articulo AS A INNER JOIN Fabrica AS F ON A.IdFabrica = F.IdFabrica WHERE IdArticulo = @IdArticulo
-	--SELECT IdCliente FROM Cliente WHERE IdCliente = @IdArticulo
-END
-GO
-/****** Object:  StoredProcedure [dbo].[usp_GetErrorInfo]    Script Date: 9/12/2021 12:25:06 a. m. ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-
-	
-
-
-	
-CREATE PROCEDURE [dbo].[usp_GetErrorInfo]  
-AS  
-SELECT  
-    ERROR_NUMBER() AS ErrorNumber  
-    ,ERROR_SEVERITY() AS ErrorSeverity  
-    ,ERROR_STATE() AS ErrorState  
-    ,ERROR_PROCEDURE() AS ErrorProcedure  
-    ,ERROR_LINE() AS ErrorLine  
-    ,ERROR_MESSAGE() AS ErrorMessage;  
-GO
-
-
-/****** CREACIÓN DE VISTAS PARA CALCULO DE MONTOS ******/
-CREATE VIEW vw_descripcionDetalle 
-AS
-SELECT DP.Id, DP.IdPedido, DP.IdArticulo, A.Descripción_Articulo, DP.Cantidad, A.PrecioUnitario, DP.Fabrica, (DP.Cantidad * A.PrecioUnitario) AS [Total]
-FROM [dbo].[Detalle_Pedido] AS DP 
-INNER JOIN Articulo AS A ON DP.IdArticulo = A.IdArticulo
 GO
 
 /****** OBTIENE INFORMACIÓN DEL PEDIDO POR IDPEDIDO ******/
-CREATE PROCEDURE sp_ObtienePedido
+CREATE PROCEDURE [dbo].[sp_ObtienePedido]
 (
 @IdPedido INT
 )
@@ -898,14 +889,47 @@ BEGIN
 	HAVING P.IdPedido =@IdPedido
 END
 GO
+/****** Object:  StoredProcedure [dbo].[sp_validarExistenciaArticulo]    Script Date: 9/12/2021 10:35:55 a. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
 
-/****** OBTIENE EL DETALLE DEL PEDIDO POR IDPEDIDO ******/
-CREATE PROCEDURE sp_ObtieneDetallePedido
+
+CREATE PROCEDURE [dbo].[sp_validarExistenciaArticulo]
 (
-@IdPedido INT
+@IdArticulo INT
 )
 AS
 BEGIN
-	SELECT IdPedido, IdArticulo, Descripción_Articulo, Cantidad, PrecioUnitario, Fabrica AS [IdFabrica], Total FROM vw_descripcionDetalle WHERE IdPedido = @IdPedido
+	SELECT A.Existencias FROM Articulo AS A INNER JOIN Fabrica AS F ON A.IdFabrica = F.IdFabrica WHERE IdArticulo = @IdArticulo
+	--SELECT IdCliente FROM Cliente WHERE IdCliente = @IdArticulo
 END
 GO
+/****** Object:  StoredProcedure [dbo].[sp_validarPrecioArticulo]    Script Date: 9/12/2021 10:35:55 a. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[sp_validarPrecioArticulo]
+(
+@IdArticulo INT
+)
+AS
+BEGIN
+	SELECT A.PrecioUnitario FROM Articulo AS A INNER JOIN Fabrica AS F ON A.IdFabrica = F.IdFabrica WHERE IdArticulo = @IdArticulo
+	--SELECT IdCliente FROM Cliente WHERE IdCliente = @IdArticulo
+END
+GO
+/****** Object:  StoredProcedure [dbo].[usp_GetErrorInfo]    Script Date: 9/12/2021 10:35:55 a. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+	
+
+
+	
+
