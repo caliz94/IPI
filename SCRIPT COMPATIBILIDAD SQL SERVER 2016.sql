@@ -928,6 +928,32 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+/****** mostrar todos los pedidos ******/
+create PROCEDURE sp_Mostrar_Todos_Pedidos
+AS
+BEGIN
+	SELECT	P.IdPedido, 
+			P.IdCliente, 
+			C.NombreCliente AS [Nombre del Cliente], 
+			P.IdDireccion, 
+			('Calle: '+D.Calle + ', ' + 'Barrio: '+D.Barrio + ', ' + 'Distrito: '+D.Distrito) AS [Dirección],
+			(
+				SELECT SUM(Total) FROM vw_descripcionDetalle
+				
+			) AS [Total Pedido]
+	FROM Pedido AS P 
+		INNER JOIN vw_descripcionDetalle AS V ON P.IdPedido = V.Id
+		INNER JOIN Cliente AS C ON P.IdCliente = C.IdCliente
+		INNER JOIN Direcciones AS D ON P.IdDireccion = D.IdDireccion
+	GROUP BY 
+			P.IdPedido, 
+			P.IdCliente, 
+			('Calle: '+D.Calle + ', ' + 'Barrio: '+D.Barrio + ', ' + 'Distrito: '+D.Distrito),
+			C.NombreCliente, 
+			P.IdDireccion
+	
+END
+GO
 	
 
 
