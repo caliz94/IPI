@@ -18,7 +18,7 @@ namespace CP_Presentacion.Form_Ventas
 
         
         CL_Ventas OVentas = new CL_Ventas();
-        int idcliente = 0, idventa = 0, iddireccion = 0;
+        int idcliente = 0, idventa = 0, iddireccion = 0, cantidad = 0, IdArticulo = 0, IdFabrica = 0;
         byte Activo;
 
         public CP_NuevaVenta()
@@ -171,11 +171,12 @@ namespace CP_Presentacion.Form_Ventas
             });
 
             idcliente = Convert.ToInt32(NombreCliente.Substring(0, buscar1));
-            iddireccion = 1;
+            iddireccion = Convert.ToInt32(Direccion.Substring(0, buscar1)); 
             Activo = 1;
 
             //cboxNombreCliente.SelectedIndex = -1;
             cboxNombreProducto.SelectedIndex = -1;
+            cboxDirecciones.Enabled = false;
             numCantidad.Value = 0;
             tboxPrecio.Text = string.Empty;
             cboxNombreProducto.Focus();
@@ -185,21 +186,49 @@ namespace CP_Presentacion.Form_Ventas
         #region BOTON GENERAR VENTAS
         private void btnGenerarVenta_Click(object sender, EventArgs e)
         {
-            List<CD_VentasDetalle> LstDetalle = new List<CD_VentasDetalle>();
+           // List<CD_VentasDetalle> LstDetalle = new List<CD_VentasDetalle>();
 
             try
             {
+                //foreach (DataGridViewRow row in dgvVentas.Rows)
+                //{
+                //    CD_VentasDetalle Detalle = new CD_VentasDetalle();
+                //    Detalle.IdArticulo = Convert.ToInt32(row.Cells[1].Value.ToString());
+                //    Detalle.Cantidad = Convert.ToInt32(row.Cells[3].Value.ToString());
+                //    Detalle.IdFabrica = Convert.ToInt32(row.Cells[8].Value.ToString());
+                //    LstDetalle.Add(Detalle);
+
+                //}
+
+                int contador = 0;
                 foreach (DataGridViewRow row in dgvVentas.Rows)
                 {
-                    CD_VentasDetalle Detalle = new CD_VentasDetalle();
-                    Detalle.IdArticulo = Convert.ToInt32(row.Cells[1].Value.ToString());
-                    Detalle.Cantidad = Convert.ToInt32(row.Cells[3].Value.ToString());
-                    Detalle.IdFabrica = Convert.ToInt32(row.Cells[8].Value.ToString());
-                    LstDetalle.Add(Detalle);
+                    cantidad = Convert.ToInt32(row.Cells[3].Value.ToString().Trim());
+                    IdArticulo = Convert.ToInt32(row.Cells[1].Value.ToString().Trim());
+                    IdFabrica = Convert.ToInt32(row.Cells[8].Value.ToString().Trim());
+
+                    if (contador == 1)
+                    {
+                        OVentas.AgregarProductoVenta(idcliente, iddireccion, cantidad, IdArticulo, IdFabrica);
+                       
+                    }
+                    if (contador == 0)
+                    {
+                        OVentas.GuardarVenta(idcliente, cantidad, iddireccion, Activo, IdArticulo, IdFabrica);
+                        MessageBox.Show("Venta Unico Producto Grabada exitosamente.");
+                        contador = 1;
+                    }
+                    MessageBox.Show("Venta Multiples Productos Grabada exitosamente.");
+
                 }
+                
+                contador = 0;
+                
+
+
                 //****************************************************danny agrege cantidad
-                OVentas.GuardarVenta(idcliente,Convert.ToInt32(Cantidad), iddireccion, Activo, LstDetalle);
-                MessageBox.Show("Venta Grabada exitosamente.");
+                //OVentas.GuardarVenta(idcliente,Convert.ToInt32(Cantidad), iddireccion, Activo, LstDetalle);
+
             }
             catch(Exception ex)
             {

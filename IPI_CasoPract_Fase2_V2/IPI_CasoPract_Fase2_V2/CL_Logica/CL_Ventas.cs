@@ -36,9 +36,14 @@ namespace CL_Logica
             return tabla;
         }
         //**********************************************************agrege cantidad
-        public void GuardarVenta(int IdCliente,int Cantidad, int IdDireccion, byte Activo, List<CD_VentasDetalle> lstDetalle)
+        public void GuardarVenta(int IdCliente, int Cantidad, int IdDireccion, byte Activo, int IdArticulo, int IdFabrica)
         {
-            OVentas.GuardarVenta(IdCliente, Cantidad, IdDireccion, Activo, lstDetalle);
+            OVentas.GuardarVenta(IdCliente, Cantidad, IdDireccion, Activo, IdArticulo, IdFabrica);
+        }
+
+        public void AgregarProductoVenta(int IdCliente, int IdDireccion, int IdArticulo, int Cantidad, int IdFabrica)
+        {
+            OVentas.AgregarProductoVenta(IdCliente, IdDireccion, IdArticulo, Cantidad, IdFabrica);
         }
 
 

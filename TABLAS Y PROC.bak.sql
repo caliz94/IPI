@@ -68,12 +68,11 @@ GO
 
 CREATE TABLE Detalle_Pedido
 (
-	Id INT NOT NULL,
+	Id INT PRIMARY KEY,
 	IdArticulo INT FOREIGN KEY REFERENCES dbo.Articulo(IdArticulo),
     IdPedido INT FOREIGN KEY REFERENCES dbo.Pedido(IdPedido),
 	Cantidad INT NOT NULL,
 	Fabrica INT FOREIGN KEY REFERENCES dbo.Fabrica(IdFabrica) NOT NULL
-	PRIMARY KEY(IdArticulo,IdPedido)
 )
 GO
 
@@ -473,55 +472,57 @@ GO
 
 /*************************  VENTAS  ********************************/
 
-CREATE TYPE detalleVenta AS TABLE
-(
-	Id INT /*IDENTITY PRIMARY KEY*/,
-	IdPedido INT,
-	IdArticulo INT,
-	Cantidad INT, 
-	Fabrica INT
-)
-GO
+--CREATE TYPE detalleVenta AS TABLE
+--(
+--	Id INT /*IDENTITY PRIMARY KEY*/,
+--	IdPedido INT,
+--	IdArticulo INT,
+--	Cantidad INT, 
+--	Fabrica INT
+--)
+--GO
 
 
-create PROCEDURE sp_GuardarVenta
-(
-@IdCliente INT,
-@IdDireccion INT,
-@Activo BIT,
-@LstDetalles detalleVenta READONLY
-)
-AS
-BEGIN 
-	DECLARE @IdPedido INT
-	DECLARE @IdVenta INT
-	SELECT @IdPedido = ISNULL(MAX(IdPedido),0)+1 FROM Pedido
+--CREATE PROCEDURE sp_GuardarVenta
+--(
+--@IdCliente INT,
+--@IdDireccion INT,
+--@Cantidad INT,
+--@Activo BIT,
+--@LstDetalles detalleVenta READONLY
+--)
+--AS
+--BEGIN 
+--	DECLARE @IdPedido INT
+--	DECLARE @IdVenta INT
+--	SELECT @IdPedido = ISNULL(MAX(IdPedido),0)+1 FROM Pedido
 	
-	INSERT INTO Pedido (IdPedido, IdCliente, IdDireccion, FechaPedido, Activo) 
-	VALUES (@IdPedido, @IdCliente,@IdDireccion ,GETDATE() ,@Activo)
+--	INSERT INTO Pedido (IdPedido, IdCliente, IdDireccion, FechaPedido, Activo) 
+--	VALUES (@IdPedido, @IdCliente,@IdDireccion ,GETDATE() ,@Activo)
 
 
-	SELECT @IdPedido = ISNULL(MAX(Id),0)+1 FROM Detalle_Pedido
-	SET @IdVenta = @@IDENTITY
-	INSERT INTO Detalle_Pedido (/*Id,*/ IdPedido, IdArticulo, Cantidad, Fabrica)
-	SELECT /*@IdPedido,*/ @IdPedido, IdArticulo, Cantidad, Fabrica FROM @LstDetalles
+--	SELECT @IdPedido = ISNULL(MAX(Id),0)+1 FROM Detalle_Pedido
+--	SET @IdVenta = @@IDENTITY
+--	INSERT INTO Detalle_Pedido (/*Id,*/ IdPedido, IdArticulo, Cantidad, Fabrica)
+--	VALUES ()
+--	SELECT /*@IdPedido,*/ @IdPedido, IdArticulo, @Cantidad, Fabrica FROM @LstDetalles
 	
-END
-GO
+--END
+--GO
 
-/*
-SELECT * FROM Pedido
-SELECT * FROM Detalle_Pedido
-SELECT * FROM @LstDetalles
-*/
-DECLARE @LstDetalles detalleVenta
-INSERT INTO @LstDetalles (/*Id,*/IdArticulo, IdPedido, Cantidad, Fabrica)
-		VALUES (/*1,*/1,5,12,1)
-INSERT INTO @LstDetalles (/*Id,*/IdArticulo, IdPedido, Cantidad, Fabrica)
-		VALUES (/*2,*/2,10,24,1)
---EXEC dbo.sp_GuardarVenta 1,1,1,@LstDetalles
+--/*
+--SELECT * FROM Pedido
+--SELECT * FROM Detalle_Pedido
+--SELECT * FROM @LstDetalles
+--*/
+----DECLARE @LstDetalles detalleVenta
+----INSERT INTO @LstDetalles (/*Id,*/IdArticulo, IdPedido, Cantidad, Fabrica)
+----		VALUES (/*1,*/1,5,12,1)
+----INSERT INTO @LstDetalles (/*Id,*/IdArticulo, IdPedido, Cantidad, Fabrica)
+----		VALUES (/*2,*/2,10,24,1)
+----EXEC dbo.sp_GuardarVenta 1,1,1,@LstDetalles
 
-go
+--go
 
 
 CREATE PROCEDURE sp_cargarComboDirecciones
