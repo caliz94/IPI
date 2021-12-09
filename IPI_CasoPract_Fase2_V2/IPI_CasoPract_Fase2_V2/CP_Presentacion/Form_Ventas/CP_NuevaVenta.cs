@@ -62,10 +62,8 @@ namespace CP_Presentacion.Form_Ventas
         {
             try
             {
-                //int indice = Convert.ToInt32(cboxNombreProducto.SelectedValue.ToString());
                 idarticulo = Convert.ToInt32(cboxNombreProducto.SelectedValue.ToString());
                 tboxExistencias.Text = Convert.ToString(OVentas.ObtenerExistenciaArticulos(idarticulo));
-
             }
             catch (Exception ex)
             {
@@ -79,10 +77,8 @@ namespace CP_Presentacion.Form_Ventas
         {
             try
             {
-                //int indice = Convert.ToInt32(cboxNombreProducto.SelectedValue.ToString());
                 idarticulo = Convert.ToInt32(cboxNombreProducto.SelectedValue.ToString());
                 tboxPrecio.Text = Convert.ToString(OVentas.ObtenerPrecioArticulos(idarticulo));
-
             }
             catch (Exception ex)
             {
@@ -102,7 +98,6 @@ namespace CP_Presentacion.Form_Ventas
                 return _Abrir;
             }
         }
-
         private void CP_NuevaVenta_FormClosed(object sender, FormClosedEventArgs e)
         {
             _Abrir = null;
@@ -117,13 +112,21 @@ namespace CP_Presentacion.Form_Ventas
         }
         #endregion
 
+        #region PROGRAMACIÓN ELIMINAR DENTRO DEL GRID
+        private void dgvVentas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex != dgvVentas.Columns["Eliminar"].Index)
+                return;
+            dgvVentas.Rows.RemoveAt(e.RowIndex);
+        }
+        #endregion
+
         #region METODO DROPDOWN COMBO NOMBRE CLIENTE Y NOMBRE PRODUCTO
         private void cboxNombreProducto_DropDownClosed(object sender, EventArgs e)
         {
             ObtenerExistenciaArticulos();
             ObtenerPrecioArticulos();
         }
-
         private void cboxNombreCliente_DropDownClosed(object sender, EventArgs e)
         {
             CargarComboDirecciones();
@@ -141,8 +144,6 @@ namespace CP_Presentacion.Form_Ventas
         private void btn_AgregarCarrito_Click(object sender, EventArgs e)
         {
             int buscar1 = 0, buscar2 = 0, buscar3 = 0;
-            
-
             string NombreCliente = cboxNombreCliente.Text.ToString();
             buscar1 = NombreCliente.IndexOf("- ");
             string NoArticulo = cboxNombreProducto.Text.ToString();
@@ -154,11 +155,8 @@ namespace CP_Presentacion.Form_Ventas
             buscar3 = Direccion.IndexOf("- ");
             string Total = Convert.ToString(Convert.ToInt32(Cantidad) * Convert.ToDouble(PrecioUnitario));
             string Fecha = DateTime.Now.ToString();
-
             dgvVentas.Rows.Add(new object[]
             {
-                
-
                 NombreCliente.Substring(buscar1+2),
                 NoArticulo.Substring(0,buscar2),
                 Descripcion.Substring(buscar2+2),
@@ -169,12 +167,9 @@ namespace CP_Presentacion.Form_Ventas
                 "Eliminar",
                 Direccion.Substring(0,buscar3)
             });
-
             idcliente = Convert.ToInt32(NombreCliente.Substring(0, buscar1));
             iddireccion = Convert.ToInt32(Direccion.Substring(0, buscar1)); 
             Activo = 1;
-
-            //cboxNombreCliente.SelectedIndex = -1;
             cboxNombreProducto.SelectedIndex = -1;
             cboxDirecciones.Enabled = false;
             numCantidad.Value = 0;
@@ -183,30 +178,17 @@ namespace CP_Presentacion.Form_Ventas
         }
         #endregion
 
-        #region BOTON GENERAR VENTAS
+        #region BOTON GRABAR VENTAS
         private void btnGenerarVenta_Click(object sender, EventArgs e)
         {
-           // List<CD_VentasDetalle> LstDetalle = new List<CD_VentasDetalle>();
-
             try
             {
-                //foreach (DataGridViewRow row in dgvVentas.Rows)
-                //{
-                //    CD_VentasDetalle Detalle = new CD_VentasDetalle();
-                //    Detalle.IdArticulo = Convert.ToInt32(row.Cells[1].Value.ToString());
-                //    Detalle.Cantidad = Convert.ToInt32(row.Cells[3].Value.ToString());
-                //    Detalle.IdFabrica = Convert.ToInt32(row.Cells[8].Value.ToString());
-                //    LstDetalle.Add(Detalle);
-
-                //}
-
                 int contador = 0;
                 foreach (DataGridViewRow row in dgvVentas.Rows)
                 {
                     cantidad = Convert.ToInt32(row.Cells[3].Value.ToString().Trim());
                     IdArticulo = Convert.ToInt32(row.Cells[1].Value.ToString().Trim());
                     IdFabrica = Convert.ToInt32(row.Cells[8].Value.ToString().Trim());
-
                     if (contador == 1)
                     {
                         OVentas.AgregarProductoVenta(idcliente, iddireccion, cantidad, IdArticulo, IdFabrica);
@@ -215,51 +197,16 @@ namespace CP_Presentacion.Form_Ventas
                     if (contador == 0)
                     {
                         OVentas.GuardarVenta(idcliente, cantidad, iddireccion, Activo, IdArticulo, IdFabrica);
-                        MessageBox.Show("Venta Unico Producto Grabada exitosamente.");
                         contador = 1;
                     }
-                    MessageBox.Show("Venta Multiples Productos Grabada exitosamente.");
-
+                    MessageBox.Show("Venta Grabada Satisfactoriamente.");
                 }
-                
                 contador = 0;
-                
-
-
-                //****************************************************danny agrege cantidad
-                //OVentas.GuardarVenta(idcliente,Convert.ToInt32(Cantidad), iddireccion, Activo, LstDetalle);
-
             }
             catch(Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message); 
             }
-            
-
-
-            //foreach (var item in dgvVentas.Rows)
-            //{
-            //    try
-            //    {
-                    
-            //        foreach (DataGridViewRow row in dgvVentas.Rows)
-            //        {
-            //            CD_VentasDetalle Detalle = new CD_VentasDetalle();
-            //            Detalle.IdArticulo = Convert.ToInt32(row.Cells[1].Value.ToString());
-            //            Detalle.Cantidad = Convert.ToInt32(row.Cells[3].Value.ToString());
-            //            Detalle.IdFabrica = Convert.ToInt32(row.Cells[8].Value.ToString());
-            //            LstDetalle.Add(Detalle);
-            //        }
-
-            //        OVentas.GuardarVenta(idcliente, iddireccion, Activo, LstDetalle);
-            //        MessageBox.Show("Venta Grabada exitosamente.");
-            //    }
-            //    catch(Exception ex)
-            //    {
-            //        MessageBox.Show("Error: " + ex.Message); 
-            //    }
-                
-            //}
         }
         #endregion
     }

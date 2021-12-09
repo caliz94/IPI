@@ -15,35 +15,11 @@ namespace CD_Datos
         SqlDataReader leerdata;
         DataTable tabla = new DataTable();
 
-//        @IdCliente INT,
-//@IdDireccion INT,
-//@Cantidad INT,
-//@Activo BIT,
-//@IdArticulo INT,
-//@IdFabrica INT
-
-        //********************************* aqui tambien agrege cantidad
+        #region GUARDAR VENTA
         public void GuardarVenta(int IdCliente,int Cantidad, int IdDireccion, byte Activo, int IdArticulo, int IdFabrica)
         {
-            //tabla.Clear();
-            //cmd.Parameters.Clear();
-
-            //tabla.Columns.Add("IdArticulo");
-            ////tabla.Columns.Add("IdPedido");
-            //tabla.Columns.Add("Cantidad");
-            //tabla.Columns.Add("Fabrica");
-
-            //foreach (var elemento in LstDetalleVenta)
-            //{
-            //    tabla.Rows.Add(elemento.IdArticulo, /*elemento.IdPedido,*/ elemento.Cantidad, elemento.IdFabrica);
-            //}
-
             cmd.Connection = Conexion.abrircadena();
             cmd.CommandText = "sp_GuardarVenta";
-            //var parametroLista = new SqlParameter("@LstDetalles", SqlDbType.Structured);
-            //parametroLista.TypeName = "dbo.detalleVenta";
-            //parametroLista.Value = tabla;
-
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@IdCliente", IdCliente);
@@ -52,14 +28,12 @@ namespace CD_Datos
             cmd.Parameters.AddWithValue("@Activo", Activo);
             cmd.Parameters.AddWithValue("@IdArticulo", IdArticulo);
             cmd.Parameters.AddWithValue("@IdFabrica", IdFabrica);
-
-            //cmd.Parameters.Add(parametroLista);
-
             cmd.ExecuteNonQuery();
             cmd.Connection = Conexion.cerrarcadena();
         }
+        #endregion
 
-
+        #region AGREGAR PRODUCTOS A UNA VENTA
         public void AgregarProductoVenta(int IdCliente, int IdDireccion, int IdArticulo, int Cantidad, int IdFabrica)
         {
             cmd.Connection = Conexion.abrircadena();
@@ -74,10 +48,9 @@ namespace CD_Datos
             cmd.ExecuteNonQuery();
             cmd.Connection = Conexion.cerrarcadena();
         }
+        #endregion
 
-
-
-        #region COMBO DIRECCIONES
+        #region CARGA COMBO DIRECCIONES
         public DataTable CargarComboDirecciones(int IdCliente)
         {
             tabla.Clear();
@@ -88,6 +61,38 @@ namespace CD_Datos
             leerdata = cmd.ExecuteReader();
             tabla.Load(leerdata);
             cmd.Parameters.Clear();
+            Conexion.cerrarcadena();
+            return tabla;
+        }
+        #endregion
+
+        #region CARGA INFORMACIÓN DEL PEDIDO
+        public DataTable ObtieneInformacionPedido(int IdPedido)
+        {
+            tabla.Clear();
+            cmd.Connection = Conexion.abrircadena();
+            cmd.CommandText = "sp_ObtienePedido";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@IdPedido", IdPedido);
+            leerdata = cmd.ExecuteReader();
+            tabla.Load(leerdata);
+            Conexion.cerrarcadena();
+            return tabla;
+        }
+        #endregion
+
+        #region CARGA DETALLE DEL PEDIDO
+        public DataTable ObtieneDetallePedido(int IdPedido)
+        {
+            tabla.Clear();
+            cmd.Connection = Conexion.abrircadena();
+            cmd.CommandText = "sp_ObtieneDetallePedido";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@IdPedido", IdPedido);
+            leerdata = cmd.ExecuteReader();
+            tabla.Load(leerdata);
             Conexion.cerrarcadena();
             return tabla;
         }
