@@ -859,3 +859,53 @@ SELECT
     ,ERROR_LINE() AS ErrorLine  
     ,ERROR_MESSAGE() AS ErrorMessage;  
 GO
+
+
+/****** CREACIÓN DE VISTAS PARA CALCULO DE MONTOS ******/
+CREATE VIEW vw_descripcionDetalle 
+AS
+SELECT DP.Id, DP.IdPedido, DP.IdArticulo, A.Descripción_Articulo, DP.Cantidad, A.PrecioUnitario, DP.Fabrica, (DP.Cantidad * A.PrecioUnitario) AS [Total]
+FROM [dbo].[Detalle_Pedido] AS DP 
+INNER JOIN Articulo AS A ON DP.IdArticulo = A.IdArticulo
+GO
+
+/****** OBTIENE INFORMACIÓN DEL PEDIDO POR IDPEDIDO ******/
+CREATE PROCEDURE sp_ObtienePedido
+(
+@IdPedido INT
+)
+AS
+BEGIN
+	SELECT	P.IdPedido, 
+			P.IdCliente, 
+			C.NombreCliente AS [Nombre del Cliente], 
+			P.IdDireccion, 
+			('Calle: '+D.Calle + ', ' + 'Barrio: '+D.Barrio + ', ' + 'Distrito: '+D.Distrito) AS [Dirección],
+			(
+				SELECT SUM(Total) FROM vw_descripcionDetalle
+				WHERE IdPedido = @IdPedido
+			) AS [Total Pedido]
+	FROM Pedido AS P 
+		INNER JOIN vw_descripcionDetalle AS V ON P.IdPedido = V.Id
+		INNER JOIN Cliente AS C ON P.IdCliente = C.IdCliente
+		INNER JOIN Direcciones AS D ON P.IdDireccion = D.IdDireccion
+	GROUP BY 
+			P.IdPedido, 
+			P.IdCliente, 
+			('Calle: '+D.Calle + ', ' + 'Barrio: '+D.Barrio + ', ' + 'Distrito: '+D.Distrito),
+			C.NombreCliente, 
+			P.IdDireccion
+	HAVING P.IdPedido =@IdPedido
+END
+GO
+
+/****** OBTIENE EL DETALLE DEL PEDIDO POR IDPEDIDO ******/
+CREATE PROCEDURE sp_ObtieneDetallePedido
+(
+@IdPedido INT
+)
+AS
+BEGIN
+	SELECT IdPedido, IdArticulo, Descripción_Articulo, Cantidad, PrecioUnitario, Fabrica AS [IdFabrica], Total FROM vw_descripcionDetalle WHERE IdPedido = @IdPedido
+END
+GO
