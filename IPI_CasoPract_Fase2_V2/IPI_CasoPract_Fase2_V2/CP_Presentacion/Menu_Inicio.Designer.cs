@@ -45,6 +45,8 @@ namespace CP_Presentacion
             this.actualizarProveedorToolStripMenuItem = new FontAwesome.Sharp.IconMenuItem();
             this.mostrarProveedoresToolStripMenuItem = new FontAwesome.Sharp.IconMenuItem();
             this.ventasToolStripMenuItem = new FontAwesome.Sharp.IconMenuItem();
+            this.nuevaVentaToolStripMenuItem = new FontAwesome.Sharp.IconMenuItem();
+            this.mostarVentaToolStripMenuItem = new FontAwesome.Sharp.IconMenuItem();
             this.pnl_inf = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -299,7 +301,11 @@ namespace CP_Presentacion
             // 
             // ventasToolStripMenuItem
             // 
-            this.ventasToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.ventasToolStripMenuItem.AutoSize = false;
+            this.ventasToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ventasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevaVentaToolStripMenuItem,
+            this.mostarVentaToolStripMenuItem});
             this.ventasToolStripMenuItem.ForeColor = System.Drawing.Color.RoyalBlue;
             this.ventasToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.Shopify;
             this.ventasToolStripMenuItem.IconColor = System.Drawing.Color.RoyalBlue;
@@ -311,6 +317,35 @@ namespace CP_Presentacion
             this.ventasToolStripMenuItem.Size = new System.Drawing.Size(209, 64);
             this.ventasToolStripMenuItem.Text = "Ventas";
             this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
+            // 
+            // nuevaVentaToolStripMenuItem
+            // 
+            this.nuevaVentaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.nuevaVentaToolStripMenuItem.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.nuevaVentaToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.NotEqual;
+            this.nuevaVentaToolStripMenuItem.IconColor = System.Drawing.Color.RoyalBlue;
+            this.nuevaVentaToolStripMenuItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.nuevaVentaToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.nuevaVentaToolStripMenuItem.Name = "nuevaVentaToolStripMenuItem";
+            this.nuevaVentaToolStripMenuItem.Size = new System.Drawing.Size(184, 54);
+            this.nuevaVentaToolStripMenuItem.Text = "Nueva Venta";
+            this.nuevaVentaToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.nuevaVentaToolStripMenuItem.Click += new System.EventHandler(this.nuevaVentaToolStripMenuItem_Click);
+            // 
+            // mostarVentaToolStripMenuItem
+            // 
+            this.mostarVentaToolStripMenuItem.AutoToolTip = true;
+            this.mostarVentaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.mostarVentaToolStripMenuItem.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.mostarVentaToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.NotEqual;
+            this.mostarVentaToolStripMenuItem.IconColor = System.Drawing.Color.RoyalBlue;
+            this.mostarVentaToolStripMenuItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.mostarVentaToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.mostarVentaToolStripMenuItem.Name = "mostarVentaToolStripMenuItem";
+            this.mostarVentaToolStripMenuItem.Size = new System.Drawing.Size(184, 54);
+            this.mostarVentaToolStripMenuItem.Text = "Mostar Venta";
+            this.mostarVentaToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.mostarVentaToolStripMenuItem.Click += new System.EventHandler(this.mostarVentaToolStripMenuItem_Click);
             // 
             // pnl_inf
             // 
@@ -427,5 +462,7 @@ namespace CP_Presentacion
         private FontAwesome.Sharp.IconMenuItem mostrarProveedoresToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip1;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconMenuItem nuevaVentaToolStripMenuItem;
+        private FontAwesome.Sharp.IconMenuItem mostarVentaToolStripMenuItem;
     }
 }

@@ -171,15 +171,29 @@ namespace CP_Presentacion
 
         private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+        }
+        private void btn_Cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void nuevaVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             Form_Ventas.CP_NuevaVenta abrirform = Form_Ventas.CP_NuevaVenta.Abrir;
             abrirform.TopLevel = false;
             this.pnl_cont.Controls.Add(abrirform);
             this.pnl_cont.Tag = abrirform;
             abrirform.Show();
         }
-        private void btn_Cerrar_Click(object sender, EventArgs e)
+
+        private void mostarVentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Form_Ventas.CP_Ver_Ventas abrirform = Form_Ventas.CP_Ver_Ventas.Abrir;
+            abrirform.TopLevel = false;
+            this.pnl_cont.Controls.Add(abrirform);
+            this.pnl_cont.Tag = abrirform;
+            abrirform.Show();
         }
     }
 }

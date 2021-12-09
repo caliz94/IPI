@@ -67,18 +67,22 @@ namespace CD_Datos
         #endregion
 
         #region CARGA INFORMACIÓN DEL PEDIDO
+
+        SqlDataReader leerdata_pedido;
+        DataTable tabla_pedido = new DataTable();
+
         public DataTable ObtieneInformacionPedido(int IdPedido)
         {
-            tabla.Clear();
+            tabla_pedido.Clear();
             cmd.Connection = Conexion.abrircadena();
             cmd.CommandText = "sp_ObtienePedido";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@IdPedido", IdPedido);
-            leerdata = cmd.ExecuteReader();
-            tabla.Load(leerdata);
+            leerdata_pedido = cmd.ExecuteReader();
+            tabla_pedido.Load(leerdata_pedido);
             Conexion.cerrarcadena();
-            return tabla;
+            return tabla_pedido;
         }
         #endregion
 
@@ -95,6 +99,25 @@ namespace CD_Datos
             tabla.Load(leerdata);
             Conexion.cerrarcadena();
             return tabla;
+        }
+        #endregion
+
+
+        #region CARGA todos los PEDIDOs
+        SqlDataReader leer_todos_data_pedido;
+        DataTable tabla_todos_pedido = new DataTable();
+        public DataTable ObtienetodosPedido()
+        {
+            tabla_todos_pedido.Clear();
+            cmd.Connection = Conexion.abrircadena();
+            cmd.CommandText = "sp_Mostrar_Todos_Pedidos";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Clear();
+
+            leer_todos_data_pedido = cmd.ExecuteReader();
+            tabla_todos_pedido.Load(leer_todos_data_pedido);
+            Conexion.cerrarcadena();
+            return tabla_todos_pedido;
         }
         #endregion
     }

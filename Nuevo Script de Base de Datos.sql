@@ -23,12 +23,12 @@ CREATE TABLE [dbo].[Articulo](
 	[PrecioUnitario] [money] NOT NULL,
 	[IdFabrica] [int] NOT NULL,
 	[ArticulosProvistos] [int] NOT NULL,
-	[NoFabricasAlternativas] [int] NOT NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[IdArticulo] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
+	[NoFabricasAlternativas] [int] NOT NULL)
+--PRIMARY KEY CLUSTERED 
+--(
+--	[IdArticulo] ASC
+--)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+--) ON [PRIMARY]
 GO
 /****** Object:  Table [dbo].[Cliente]    Script Date: 9/12/2021 12:25:06 a. m. ******/
 SET ANSI_NULLS ON
@@ -41,12 +41,12 @@ CREATE TABLE [dbo].[Cliente](
 	[Saldo] [money] NOT NULL,
 	[LimiteCredito] [money] NOT NULL,
 	[Descuento] [money] NOT NULL,
-	[Activo] [bit] NOT NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[IdCliente] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
+	[Activo] [bit] NOT NULL)
+--PRIMARY KEY CLUSTERED 
+--(
+--	[IdCliente] ASC
+--)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+--) ON [PRIMARY]
 GO
 /****** Object:  Table [dbo].[Detalle_Pedido]    Script Date: 9/12/2021 12:25:06 a. m. ******/
 SET ANSI_NULLS ON
@@ -58,12 +58,12 @@ CREATE TABLE [dbo].[Detalle_Pedido](
 	[IdArticulo] [int] NULL,
 	[IdPedido] [int] NULL,
 	[Cantidad] [int] NOT NULL,
-	[Fabrica] [int] NOT NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
+	[Fabrica] [int] NOT NULL)
+--PRIMARY KEY CLUSTERED 
+--(
+--	[Id] ASC
+--)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+--) ON [PRIMARY]
 GO
 /****** Object:  Table [dbo].[Direcciones]    Script Date: 9/12/2021 12:25:06 a. m. ******/
 SET ANSI_NULLS ON
@@ -76,12 +76,12 @@ CREATE TABLE [dbo].[Direcciones](
 	[Calle] [varchar](25) NOT NULL,
 	[Barrio] [varchar](80) NOT NULL,
 	[Distrito] [varchar](250) NOT NULL,
-	[Activo] [bit] NOT NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[IdDireccion] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
+	[Activo] [bit] NOT NULL)
+--PRIMARY KEY CLUSTERED 
+--(
+--	[IdDireccion] ASC
+--)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+--) ON [PRIMARY]
 GO
 /****** Object:  Table [dbo].[Fabrica]    Script Date: 9/12/2021 12:25:06 a. m. ******/
 SET ANSI_NULLS ON
@@ -92,12 +92,12 @@ CREATE TABLE [dbo].[Fabrica](
 	[IdFabrica] [int] NOT NULL,
 	[NombreFabrica] [varchar](50) NOT NULL,
 	[Telefono] [varchar](13) NOT NULL,
-	[Activo] [bit] NOT NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[IdFabrica] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
+	[Activo] [bit] NOT NULL)
+--PRIMARY KEY CLUSTERED 
+--(
+--	[IdFabrica] ASC
+--)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+--) ON [PRIMARY]
 GO
 /****** Object:  Table [dbo].[Pedido]    Script Date: 9/12/2021 12:25:06 a. m. ******/
 SET ANSI_NULLS ON
@@ -109,33 +109,33 @@ CREATE TABLE [dbo].[Pedido](
 	[IdCliente] [int] NOT NULL,
 	[IdDireccion] [int] NOT NULL,
 	[FechaPedido] [datetime] NOT NULL,
-	[Activo] [bit] NOT NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[IdPedido] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
+	[Activo] [bit] NOT NULL)
+--PRIMARY KEY CLUSTERED 
+--(
+--	[IdPedido] ASC
+--)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+--) ON [PRIMARY]
 GO
-ALTER TABLE [dbo].[Articulo]  WITH CHECK ADD FOREIGN KEY([IdFabrica])
-REFERENCES [dbo].[Fabrica] ([IdFabrica])
-GO
-ALTER TABLE [dbo].[Detalle_Pedido]  WITH CHECK ADD FOREIGN KEY([Fabrica])
-REFERENCES [dbo].[Fabrica] ([IdFabrica])
-GO
-ALTER TABLE [dbo].[Detalle_Pedido]  WITH CHECK ADD FOREIGN KEY([IdPedido])
-REFERENCES [dbo].[Pedido] ([IdPedido])
-GO
-ALTER TABLE [dbo].[Direcciones]  WITH CHECK ADD FOREIGN KEY([IdCliente])
-REFERENCES [dbo].[Cliente] ([IdCliente])
-GO
-ALTER TABLE [dbo].[Pedido]  WITH CHECK ADD FOREIGN KEY([IdCliente])
-REFERENCES [dbo].[Cliente] ([IdCliente])
-GO
-ALTER TABLE [dbo].[Pedido]  WITH CHECK ADD FOREIGN KEY([IdDireccion])
-REFERENCES [dbo].[Direcciones] ([IdDireccion])
-GO
-ALTER TABLE [dbo].[Cliente]  WITH CHECK ADD CHECK  (([LimiteCredito]<=(3000000)))
-GO
+--ALTER TABLE [dbo].[Articulo]  WITH CHECK ADD FOREIGN KEY([IdFabrica])
+--REFERENCES [dbo].[Fabrica] ([IdFabrica])
+--GO
+--ALTER TABLE [dbo].[Detalle_Pedido]  WITH CHECK ADD FOREIGN KEY([Fabrica])
+--REFERENCES [dbo].[Fabrica] ([IdFabrica])
+--GO
+--ALTER TABLE [dbo].[Detalle_Pedido]  WITH CHECK ADD FOREIGN KEY([IdPedido])
+--REFERENCES [dbo].[Pedido] ([IdPedido])
+--GO
+--ALTER TABLE [dbo].[Direcciones]  WITH CHECK ADD FOREIGN KEY([IdCliente])
+--REFERENCES [dbo].[Cliente] ([IdCliente])
+--GO
+--ALTER TABLE [dbo].[Pedido]  WITH CHECK ADD FOREIGN KEY([IdCliente])
+--REFERENCES [dbo].[Cliente] ([IdCliente])
+--GO
+--ALTER TABLE [dbo].[Pedido]  WITH CHECK ADD FOREIGN KEY([IdDireccion])
+--REFERENCES [dbo].[Direcciones] ([IdDireccion])
+--GO
+--ALTER TABLE [dbo].[Cliente]  WITH CHECK ADD CHECK  (([LimiteCredito]<=(3000000)))
+--GO
 /****** Object:  StoredProcedure [dbo].[sp_actual_direcc]    Script Date: 9/12/2021 12:25:06 a. m. ******/
 SET ANSI_NULLS ON
 GO
@@ -895,17 +895,43 @@ BEGIN
 			('Calle: '+D.Calle + ', ' + 'Barrio: '+D.Barrio + ', ' + 'Distrito: '+D.Distrito),
 			C.NombreCliente, 
 			P.IdDireccion
-	HAVING P.IdPedido =@IdPedido
+	HAVING P.IdPedido = @IdPedido
 END
 GO
 
 /****** OBTIENE EL DETALLE DEL PEDIDO POR IDPEDIDO ******/
-CREATE PROCEDURE sp_ObtieneDetallePedido
+create PROCEDURE sp_ObtieneDetallePedido
 (
 @IdPedido INT
 )
 AS
 BEGIN
 	SELECT IdPedido, IdArticulo, Descripción_Articulo, Cantidad, PrecioUnitario, Fabrica AS [IdFabrica], Total FROM vw_descripcionDetalle WHERE IdPedido = @IdPedido
+END
+GO
+
+alter PROCEDURE sp_Mostrar_Todos_Pedidos
+AS
+BEGIN
+	SELECT	P.IdPedido, 
+			P.IdCliente, 
+			C.NombreCliente AS [Nombre del Cliente], 
+			P.IdDireccion, 
+			('Calle: '+D.Calle + ', ' + 'Barrio: '+D.Barrio + ', ' + 'Distrito: '+D.Distrito) AS [Dirección],
+			(
+				SELECT SUM(Total) FROM vw_descripcionDetalle
+				--WHERE IdPedido = @IdPedido
+			) AS [Total Pedido]
+	FROM Pedido AS P 
+		INNER JOIN vw_descripcionDetalle AS V ON P.IdPedido = V.Id
+		INNER JOIN Cliente AS C ON P.IdCliente = C.IdCliente
+		INNER JOIN Direcciones AS D ON P.IdDireccion = D.IdDireccion
+	GROUP BY 
+			P.IdPedido, 
+			P.IdCliente, 
+			('Calle: '+D.Calle + ', ' + 'Barrio: '+D.Barrio + ', ' + 'Distrito: '+D.Distrito),
+			C.NombreCliente, 
+			P.IdDireccion
+	--HAVING P.IdPedido = @IdPedido
 END
 GO

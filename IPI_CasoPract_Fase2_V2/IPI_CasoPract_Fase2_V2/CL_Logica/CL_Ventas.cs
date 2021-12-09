@@ -92,5 +92,26 @@ namespace CL_Logica
             return existencia;
         }
         #endregion
+        public DataTable optenerPedido(int IdPedido)
+        {
+            DataTable tabla_p = new DataTable();
+            tabla_p = OVentas.ObtieneInformacionPedido(IdPedido);
+            return tabla_p;
+        }
+
+        public DataTable OptenerDetallePedido(int IdPedido)
+        {
+            DataTable tabla_p = new DataTable();
+            tabla_p = OVentas.ObtieneDetallePedido(IdPedido);
+            return tabla_p;
+        }
+
+        public DataTable OptenertodosPedido()
+        {
+            DataTable tabla_p = new DataTable();
+            tabla_p = OVentas.ObtienetodosPedido();
+            return tabla_p;
+        }
+
     }
 }
