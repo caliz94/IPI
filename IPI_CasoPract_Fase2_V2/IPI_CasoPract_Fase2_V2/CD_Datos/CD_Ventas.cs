@@ -18,6 +18,7 @@ namespace CD_Datos
         #region GUARDAR VENTA
         public void GuardarVenta(int IdCliente, int IdDireccion, int Cantidad,  byte Activo, int IdArticulo, int IdFabrica)
         {
+            
             cmd.Connection = Conexion.abrircadena();
             cmd.CommandText = "sp_GuardarVenta";
             cmd.CommandType = CommandType.StoredProcedure;
@@ -35,7 +36,8 @@ namespace CD_Datos
 
         #region AGREGAR PRODUCTOS A UNA VENTA
         public void AgregarProductoVenta(int IdCliente, int IdDireccion, int IdArticulo, int Cantidad, int Fabrica)
-        {
+        {   
+
             cmd.Connection = Conexion.abrircadena();
             cmd.CommandText = "sp_cargarmasarticulos";
             cmd.CommandType = CommandType.StoredProcedure;

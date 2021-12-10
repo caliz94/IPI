@@ -136,6 +136,9 @@ namespace CP_Presentacion.Form_Ventas
             ObtenerExistenciaArticulos();
             ObtenerPrecioArticulos();
         }
+
+       
+
         private void cboxNombreCliente_DropDownClosed(object sender, EventArgs e)
         {
             CargarComboDirecciones();
@@ -231,7 +234,7 @@ namespace CP_Presentacion.Form_Ventas
                 }
                 MessageBox.Show("Venta Grabada Satisfactoriamente.");
                 contador = 0;
-
+                
 
             }
             catch(Exception ex)
@@ -239,9 +242,22 @@ namespace CP_Presentacion.Form_Ventas
                 MessageBox.Show("Error: " + ex.Message); 
             }
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            limpiar_controles();
+        }
         private void limpiar_controles()
         {
+            cboxDirecciones.SelectedValue = -1;
+            cboxNombreCliente.SelectedValue = -1;
+            cboxNombreProducto.SelectedValue = -1;
 
+            numCantidad.Value = 0;
+
+            tboxPrecio.Text = string.Empty;
+            tboxExistencias.Text = string.Empty;
+                
         }
         #endregion
     }
