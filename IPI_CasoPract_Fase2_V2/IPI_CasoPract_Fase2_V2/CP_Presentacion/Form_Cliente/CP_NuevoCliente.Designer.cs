@@ -41,15 +41,16 @@ namespace CP_Presentacion.Form_Cliente
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label6 = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_Saldo
             // 
             this.txt_Saldo.BackColor = System.Drawing.Color.MintCream;
+            this.txt_Saldo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_Saldo.Location = new System.Drawing.Point(128, 197);
             this.txt_Saldo.Name = "txt_Saldo";
             this.txt_Saldo.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -59,6 +60,7 @@ namespace CP_Presentacion.Form_Cliente
             // txt_LimiteCredito
             // 
             this.txt_LimiteCredito.BackColor = System.Drawing.Color.MintCream;
+            this.txt_LimiteCredito.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_LimiteCredito.Location = new System.Drawing.Point(128, 249);
             this.txt_LimiteCredito.Name = "txt_LimiteCredito";
             this.txt_LimiteCredito.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -68,6 +70,7 @@ namespace CP_Presentacion.Form_Cliente
             // txt_Descuento
             // 
             this.txt_Descuento.BackColor = System.Drawing.Color.MintCream;
+            this.txt_Descuento.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_Descuento.Location = new System.Drawing.Point(128, 302);
             this.txt_Descuento.Name = "txt_Descuento";
             this.txt_Descuento.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -137,6 +140,7 @@ namespace CP_Presentacion.Form_Cliente
             // txt_cliente
             // 
             this.txt_cliente.BackColor = System.Drawing.Color.MintCream;
+            this.txt_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.errorProvider1.SetIconAlignment(this.txt_cliente, System.Windows.Forms.ErrorIconAlignment.TopLeft);
             this.txt_cliente.ImeMode = System.Windows.Forms.ImeMode.Alpha;
             this.txt_cliente.Location = new System.Drawing.Point(128, 141);
@@ -162,26 +166,6 @@ namespace CP_Presentacion.Form_Cliente
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.monthCalendar1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.monthCalendar1.Location = new System.Drawing.Point(556, 141);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 14;
-            // 
-            // label6
-            // 
-            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label6.Font = new System.Drawing.Font("Bodoni Bd BT", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.AliceBlue;
-            this.label6.Location = new System.Drawing.Point(264, 28);
-            this.label6.Name = "label6";
-            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label6.Size = new System.Drawing.Size(406, 24);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Ingrese Los Datos Personales Del Nuevo Cliente";
-            // 
             // iconButton1
             // 
             this.iconButton1.BackColor = System.Drawing.Color.Black;
@@ -204,6 +188,26 @@ namespace CP_Presentacion.Form_Cliente
             this.toolTip1.SetToolTip(this.iconButton1, "Atras");
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.monthCalendar1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.monthCalendar1.Location = new System.Drawing.Point(556, 141);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label6.Font = new System.Drawing.Font("Bodoni Bd BT", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.AliceBlue;
+            this.label6.Location = new System.Drawing.Point(264, 28);
+            this.label6.Name = "label6";
+            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label6.Size = new System.Drawing.Size(406, 24);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Ingrese Los Datos Personales Del Nuevo Cliente";
             // 
             // CP_NuevoCliente
             // 

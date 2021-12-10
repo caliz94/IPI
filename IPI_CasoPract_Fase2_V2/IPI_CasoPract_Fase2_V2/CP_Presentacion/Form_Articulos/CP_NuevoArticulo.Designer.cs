@@ -29,6 +29,7 @@ namespace CP_Presentacion.Form_Articulos
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txt_existe = new System.Windows.Forms.TextBox();
             this.btn_guardar = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,12 +55,14 @@ namespace CP_Presentacion.Form_Articulos
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_articulos)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_existe
@@ -414,6 +417,10 @@ namespace CP_Presentacion.Form_Articulos
             this.label3.Text = "Lista de Articulos En Excistencia";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // CP_NuevoArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -435,6 +442,7 @@ namespace CP_Presentacion.Form_Articulos
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -465,5 +473,6 @@ namespace CP_Presentacion.Form_Articulos
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label3;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

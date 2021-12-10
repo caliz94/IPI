@@ -254,10 +254,11 @@ namespace CP_Presentacion.Form_Ventas
             cboxNombreProducto.SelectedValue = -1;
 
             numCantidad.Value = 0;
-
+            
             tboxPrecio.Text = string.Empty;
-            tboxExistencias.Text = string.Empty;
-                
+            tboxExistencias.Text = string.Empty;           
+           
+                        
         }
         #endregion
     }

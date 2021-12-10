@@ -75,7 +75,7 @@
             // dgv_pedido
             // 
             this.dgv_pedido.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_pedido.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dgv_pedido.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dgv_pedido.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_pedido.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgv_pedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -91,7 +91,7 @@
             // dgv_DetallePedido
             // 
             this.dgv_DetallePedido.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_DetallePedido.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dgv_DetallePedido.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dgv_DetallePedido.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_DetallePedido.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgv_DetallePedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;

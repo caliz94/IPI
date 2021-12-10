@@ -73,7 +73,7 @@ namespace CP_Presentacion.Form_Articulos
         }
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            //nuevo
+            //nuevo            
             if (editar == false)
             {
                 try
