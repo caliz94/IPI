@@ -286,27 +286,43 @@
             // 
             // chart3
             // 
+            this.chart3.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Bottom;
+            this.chart3.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled;
             this.chart3.BorderSkin.BackColor = System.Drawing.Color.RoyalBlue;
             this.chart3.BorderSkin.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalLeft;
             this.chart3.BorderSkin.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.DashedDownwardDiagonal;
+            this.chart3.BorderSkin.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
             chartArea1.Name = "ChartArea1";
             this.chart3.ChartAreas.Add(chartArea1);
             this.chart3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.chart3.ImeMode = System.Windows.Forms.ImeMode.Katakana;
             legend1.Name = "Legend1";
             this.chart3.Legends.Add(legend1);
-            this.chart3.Location = new System.Drawing.Point(15, 398);
+            this.chart3.Location = new System.Drawing.Point(15, 357);
+            this.chart3.Margin = new System.Windows.Forms.Padding(0);
             this.chart3.Name = "chart3";
             series1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
             series1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
             series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.CustomProperties = "PieDrawingStyle=SoftEdge";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series1.CustomProperties = "DrawingStyle=Wedge, PieDrawingStyle=SoftEdge";
             series1.IsValueShownAsLabel = true;
+            series1.IsVisibleInLegend = false;
             series1.IsXValueIndexed = true;
+            series1.LabelAngle = 1;
+            series1.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
             series1.Legend = "Legend1";
+            series1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Star6;
             series1.Name = "Series2";
+            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel;
+            series1.SmartLabelStyle.AllowOutsidePlotArea = System.Windows.Forms.DataVisualization.Charting.LabelOutsidePlotAreaStyle.Yes;
+            series1.SmartLabelStyle.CalloutLineAnchorCapStyle = System.Windows.Forms.DataVisualization.Charting.LineAnchorCapStyle.Square;
+            series1.SmartLabelStyle.CalloutLineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            series1.SmartLabelStyle.CalloutStyle = System.Windows.Forms.DataVisualization.Charting.LabelCalloutStyle.Box;
+            series1.SmartLabelStyle.Enabled = false;
+            series1.SmartLabelStyle.IsMarkerOverlappingAllowed = true;
             this.chart3.Series.Add(series1);
-            this.chart3.Size = new System.Drawing.Size(343, 267);
+            this.chart3.Size = new System.Drawing.Size(343, 308);
             this.chart3.TabIndex = 2;
             this.chart3.Text = "chart3";
             // 

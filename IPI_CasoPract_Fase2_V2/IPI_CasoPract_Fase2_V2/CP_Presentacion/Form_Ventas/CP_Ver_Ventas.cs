@@ -56,7 +56,15 @@ namespace CP_Presentacion.Form_Ventas
         }
         private void MostrarDetallePedido()
         {
-            dgv_DetallePedido.DataSource = ventas_cl.OptenerDetallePedido(Convert.ToInt32(txt_pedido.Text));
+            try
+            {
+                dgv_DetallePedido.DataSource = ventas_cl.OptenerDetallePedido(Convert.ToInt32(txt_pedido.Text));
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("TIENE QUE SELECIONAR UN PEDIDO PARA CARGAR EL DETALLE DEL PEDIDO");
+            }
+            
         }
         private void btn_filtar_pedido_Click(object sender, EventArgs e)
         {
@@ -65,8 +73,16 @@ namespace CP_Presentacion.Form_Ventas
 
         private void dgv_pedido_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txt_pedido.Text = dgv_pedido.CurrentRow.Cells["IdPedido"].Value.ToString();
-            MostrarDetallePedido();
+            if (dgv_pedido.SelectedRows.Count > 0)
+            {
+                txt_pedido.Text = dgv_pedido.CurrentRow.Cells["IdPedido"].Value.ToString();
+                MostrarDetallePedido();
+            }
+            else
+            {
+                MessageBox.Show("TIENE QUE SELECIONAR UN PEDIDO PARA CARGAR EL DETALLE DEL PEDIDO");
+            }
+               
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
