@@ -286,12 +286,16 @@
             // 
             // chart3
             // 
+            this.chart3.BackColor = System.Drawing.Color.CornflowerBlue;
             this.chart3.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Bottom;
             this.chart3.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled;
+            this.chart3.BorderlineColor = System.Drawing.Color.Transparent;
             this.chart3.BorderSkin.BackColor = System.Drawing.Color.RoyalBlue;
             this.chart3.BorderSkin.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalLeft;
             this.chart3.BorderSkin.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.DashedDownwardDiagonal;
             this.chart3.BorderSkin.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
+            this.chart3.BorderSkin.BorderColor = System.Drawing.Color.Transparent;
+            this.chart3.BorderSkin.PageColor = System.Drawing.Color.Transparent;
             chartArea1.Name = "ChartArea1";
             this.chart3.ChartAreas.Add(chartArea1);
             this.chart3.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -344,13 +348,24 @@
             // 
             // chart1
             // 
+            this.chart1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.chart1.BorderlineColor = System.Drawing.Color.Transparent;
             this.chart1.BorderSkin.BackColor = System.Drawing.Color.RoyalBlue;
             this.chart1.BorderSkin.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalLeft;
             this.chart1.BorderSkin.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal;
+            this.chart1.BorderSkin.BorderColor = System.Drawing.Color.Transparent;
+            this.chart1.BorderSkin.PageColor = System.Drawing.Color.Transparent;
             chartArea3.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea3);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Top;
+            legend3.ForeColor = System.Drawing.Color.White;
+            legend3.HeaderSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.Line;
+            legend3.HeaderSeparatorColor = System.Drawing.Color.White;
+            legend3.ItemColumnSeparatorColor = System.Drawing.Color.White;
             legend3.Name = "Legend1";
+            legend3.ShadowColor = System.Drawing.Color.White;
+            legend3.TitleForeColor = System.Drawing.Color.White;
+            legend3.TitleSeparatorColor = System.Drawing.Color.WhiteSmoke;
             this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(15, 15);
             this.chart1.Name = "chart1";
@@ -358,16 +373,22 @@
             series3.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
             series3.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
             series3.ChartArea = "ChartArea1";
+            series3.Color = System.Drawing.Color.Red;
             series3.CustomProperties = "DrawingStyle=Cylinder";
             series3.IsValueShownAsLabel = true;
             series3.IsVisibleInLegend = false;
             series3.IsXValueIndexed = true;
+            series3.LabelBackColor = System.Drawing.Color.Black;
+            series3.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDot;
+            series3.LabelBorderWidth = 0;
+            series3.LabelForeColor = System.Drawing.Color.White;
             series3.Legend = "Legend1";
             series3.MarkerBorderColor = System.Drawing.Color.Blue;
             series3.MarkerColor = System.Drawing.Color.Red;
             series3.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Star5;
             series3.Name = "Series1";
             series3.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
+            series3.SmartLabelStyle.CalloutLineColor = System.Drawing.Color.White;
             this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(343, 339);
             this.chart1.TabIndex = 0;

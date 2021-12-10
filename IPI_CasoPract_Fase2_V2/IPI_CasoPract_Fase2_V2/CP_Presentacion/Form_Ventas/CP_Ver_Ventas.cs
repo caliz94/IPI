@@ -118,7 +118,7 @@ namespace CP_Presentacion.Form_Ventas
 
         private void DatosGraf()
         {
-            string sql = "select top 5  c.NombreCliente,SUM(d.Cantidad * a.PrecioUnitario)as sub_total from cliente as c inner join Pedido as p on c.IdCliente = p.IdCliente inner join Detalle_Pedido as d on d.IdPedido = p.IdPedido inner join Articulo as a on d.IdArticulo = a.IdArticulo group by c.NombreCliente";
+            string sql = "select top 5  c.NombreCliente,SUM(d.Cantidad * a.PrecioUnitario)as sub_total from cliente as c inner join Pedido as p on c.IdCliente = p.IdCliente inner join Detalle_Pedido as d on d.IdPedido = p.IdPedido inner join Articulo as a on d.IdArticulo = a.IdArticulo group by c.NombreCliente ORDER BY sub_total DESC";
             SqlCommand cmd = new SqlCommand(sql, conexion);
             SqlDataReader leer;
             abrirconexion();
@@ -137,7 +137,7 @@ namespace CP_Presentacion.Form_Ventas
         ArrayList cantidad = new ArrayList();
         private void DatosGraf_Articulos()
         {
-            string sql = "select top 5  a.Descripción_Articulo,count(d.Cantidad)as sub_total from cliente as c inner join Pedido as p on c.IdCliente = p.IdCliente inner join Detalle_Pedido as d on d.IdPedido = p.IdPedido inner join Articulo as a on d.IdArticulo = a.IdArticulo group by a.Descripción_Articulo";
+            string sql = "select top 5  a.Descripción_Articulo,count(d.Cantidad)as sub_total from cliente as c inner join Pedido as p on c.IdCliente = p.IdCliente inner join Detalle_Pedido as d on d.IdPedido = p.IdPedido inner join Articulo as a on d.IdArticulo = a.IdArticulo group by a.Descripción_Articulo ORDER BY sub_total DESC";
             SqlCommand cmd = new SqlCommand(sql, conexion);
             SqlDataReader leer2;
             abrirconexion();
