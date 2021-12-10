@@ -289,7 +289,7 @@
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.Name = "Series2";
             this.chart3.Series.Add(series1);
             this.chart3.Size = new System.Drawing.Size(213, 238);
             this.chart3.TabIndex = 2;

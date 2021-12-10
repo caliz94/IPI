@@ -40,6 +40,7 @@ namespace CP_Presentacion.Form_Ventas
         {
             DatosGraf();
             MostrartodosPedido();
+            DatosGraf_Articulos();
         }
 
 
@@ -114,6 +115,25 @@ namespace CP_Presentacion.Form_Ventas
             chart1.Series[0].Points.DataBindXY(Cliente,Compras);
             leer.Close();
             cerrarrconexion();                    
+        }
+
+        ArrayList articulo = new ArrayList();
+        ArrayList cantidad = new ArrayList();
+        private void DatosGraf_Articulos()
+        {
+            string sql = "select top 5  a.Descripción_Articulo,count(d.Cantidad)as sub_total from cliente as c inner join Pedido as p on c.IdCliente = p.IdCliente inner join Detalle_Pedido as d on d.IdPedido = p.IdPedido inner join Articulo as a on d.IdArticulo = a.IdArticulo group by a.Descripción_Articulo";
+            SqlCommand cmd = new SqlCommand(sql, conexion);
+            SqlDataReader leer2;
+            abrirconexion();
+            leer2 = cmd.ExecuteReader();
+            while (leer2.Read())
+            {
+                articulo.Add(leer2.GetString(0));
+                cantidad.Add(leer2.GetInt32(1));
+            }
+            chart3.Series[0].Points.DataBindXY(articulo, cantidad);
+            leer2.Close();
+            cerrarrconexion();
         }
     }
 }
