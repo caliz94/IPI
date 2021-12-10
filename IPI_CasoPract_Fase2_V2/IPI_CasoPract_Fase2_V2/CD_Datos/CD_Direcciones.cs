@@ -21,8 +21,7 @@ namespace CD_Datos
             cmd.CommandText = "sp_clientesActivos_direcio";
             cmd.CommandType = CommandType.StoredProcedure;
             leer = cmd.ExecuteReader();
-            table.Load(leer);
-            
+            table.Load(leer);            
             conex_cd.cerrarcadena();
             return table;
         }
@@ -36,7 +35,7 @@ namespace CD_Datos
             cmd.Connection = conex_cd.abrircadena();
             cmd.CommandText = "sp_direcciones";
             cmd.CommandType = CommandType.StoredProcedure;
-       
+            cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@IdCliente", IdCliente);
             cmd.Parameters.AddWithValue("@Calle", Calle);
             cmd.Parameters.AddWithValue("@Barrio", Barrio);
@@ -54,7 +53,6 @@ namespace CD_Datos
             cmd.Connection = conex_cd.abrircadena();
             cmd.CommandText = "sp_actual_direcc";
             cmd.CommandType = CommandType.StoredProcedure;
-
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@IdDireccion", IdDireccion);
             cmd.Parameters.AddWithValue("@Calle", Calle);
