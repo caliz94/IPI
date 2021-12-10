@@ -59,7 +59,7 @@ namespace CP_Presentacion.Form_Fabrica
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se pudo crear NUEVO PROVEEDOR. Error: " + ex);
+                MessageBox.Show("No se pudo crear NUEVO PROVEEDOR. Error: " + ex.Message);
             }
         }
 

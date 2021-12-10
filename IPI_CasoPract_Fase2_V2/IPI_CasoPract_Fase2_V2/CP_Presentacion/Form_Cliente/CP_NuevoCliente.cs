@@ -69,8 +69,7 @@ namespace CP_Presentacion.Form_Cliente
             }
             catch (Exception ex)
             {
-                MessageBox.Show("OCURRIO UN ERROR: " + ex.Message);
-                this.Close();
+                MessageBox.Show("OCURRIO UN ERROR: " + ex.Message);                
             }
         }
         private void iconButton1_Click(object sender, EventArgs e)

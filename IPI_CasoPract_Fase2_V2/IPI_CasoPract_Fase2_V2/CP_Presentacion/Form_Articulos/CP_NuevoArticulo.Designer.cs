@@ -327,6 +327,7 @@ namespace CP_Presentacion.Form_Articulos
             // cbx_fabrica
             // 
             this.cbx_fabrica.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.cbx_fabrica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbx_fabrica.FormattingEnabled = true;
             this.cbx_fabrica.Location = new System.Drawing.Point(46, 266);
             this.cbx_fabrica.Name = "cbx_fabrica";

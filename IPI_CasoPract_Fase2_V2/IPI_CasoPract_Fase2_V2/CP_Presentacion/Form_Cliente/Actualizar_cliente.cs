@@ -48,62 +48,69 @@ namespace CP_Presentacion.Form_Cliente
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            if (chk_Estado.CheckState == CheckState.Checked)
+            try
             {
-                chk_Estado.Tag = "1";
-            }
-            else
-            {
-                chk_Estado.Tag = "0";
-            }
+                if (chk_Estado.CheckState == CheckState.Checked)
+                {
+                    chk_Estado.Tag = "1";
+                }
+                else
+                {
+                    chk_Estado.Tag = "0";
+                }
 
-            if (txt_idcliente.Text==string.Empty)
-            {
-                errorProvider1.SetError(txt_idcliente,"Selecione un clinte del DataGrid");
-            }
-            else if (txt_nombrecliente.Text==string.Empty)
-            {
-                errorProvider1.SetError(txt_idcliente, "");
-                errorProvider1.SetError(txt_nombrecliente, "CAMPO OBLIGATORIO");
-            }
-            else if (txt_Saldo.Text == string.Empty)
-            {
-          
-                errorProvider1.SetError(txt_Saldo, "CAMPO OBLIGATORIO");
-                errorProvider1.SetError(txt_nombrecliente, "");
-            }
-            else if (txt_LimiteCredito.Text == string.Empty)
-            {
-                errorProvider1.SetError(txt_LimiteCredito, "CAMPO OBLIGATORIO");
-                errorProvider1.SetError(txt_Saldo, "");
-               
-            }
-            else if (txt_Descuento.Text == string.Empty)
-            {
-                errorProvider1.SetError(txt_LimiteCredito, "");
-                errorProvider1.SetError(txt_Descuento, "CAMPO OBLIGATORIO");
-            }
-            else
-            {
-                errorProvider1.SetError(txt_Descuento, "");
-                actualizar();              
-                MessageBox.Show("el cliente ha sido actualizado exitosamente");
+                if (txt_idcliente.Text == string.Empty)
+                {
+                    errorProvider1.SetError(txt_idcliente, "Selecione un clinte del DataGrid");
+                }
+                else if (txt_nombrecliente.Text == string.Empty)
+                {
+                    errorProvider1.SetError(txt_idcliente, "");
+                    errorProvider1.SetError(txt_nombrecliente, "CAMPO OBLIGATORIO");
+                }
+                else if (txt_Saldo.Text == string.Empty)
+                {
 
-                txt_Descuento.Clear();
-                txt_idcliente.Clear();
-                txt_LimiteCredito.Clear();
-                txt_nombrecliente.Clear();
-                txt_Saldo.Clear();
-                grid();
-                dgv_mostar_clientes.Columns["Activo"].Visible = false;
+                    errorProvider1.SetError(txt_Saldo, "CAMPO OBLIGATORIO");
+                    errorProvider1.SetError(txt_nombrecliente, "");
+                }
+                else if (txt_LimiteCredito.Text == string.Empty)
+                {
+                    errorProvider1.SetError(txt_LimiteCredito, "CAMPO OBLIGATORIO");
+                    errorProvider1.SetError(txt_Saldo, "");
 
-                txt_nombrecliente.Enabled = false;
-                txt_Saldo.Enabled = false;
-                txt_LimiteCredito.Enabled = false;
-                txt_Descuento.Enabled = false;
-                iconButton1.Enabled = false;
-                chk_Estado.Enabled = false;
+                }
+                else if (txt_Descuento.Text == string.Empty)
+                {
+                    errorProvider1.SetError(txt_LimiteCredito, "");
+                    errorProvider1.SetError(txt_Descuento, "CAMPO OBLIGATORIO");
+                }
+                else
+                {
+                    errorProvider1.SetError(txt_Descuento, "");
+                    actualizar();
+                    MessageBox.Show("el cliente ha sido actualizado exitosamente");
 
+                    txt_Descuento.Clear();
+                    txt_idcliente.Clear();
+                    txt_LimiteCredito.Clear();
+                    txt_nombrecliente.Clear();
+                    txt_Saldo.Clear();
+                    grid();
+                    dgv_mostar_clientes.Columns["Activo"].Visible = false;
+
+                    txt_nombrecliente.Enabled = false;
+                    txt_Saldo.Enabled = false;
+                    txt_LimiteCredito.Enabled = false;
+                    txt_Descuento.Enabled = false;
+                    iconButton1.Enabled = false;
+                    chk_Estado.Enabled = false;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No Se Actualizo Cliente Ocurrio Un Error ==> "+ex.Message);
             }
 
         }

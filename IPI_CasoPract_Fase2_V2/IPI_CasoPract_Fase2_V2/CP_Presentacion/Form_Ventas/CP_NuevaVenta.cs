@@ -49,10 +49,19 @@ namespace CP_Presentacion.Form_Ventas
         #region CARGAR COMBO DIRECCIONES
         private void CargarComboDirecciones()
         {
+            try
+            {
                 cboxDirecciones.DataSource = OVentas.CargarComboDirecciones(Convert.ToInt32(cboxNombreCliente.SelectedValue.ToString()));
                 cboxDirecciones.DisplayMember = "Dirección";
                 cboxDirecciones.SelectedIndex = -1;
                 cboxDirecciones.ValueMember = "IdCliente";
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Selecione un Cliente Valido (" +ex.Message +" ).");
+            }
+                
         }
         #endregion
 
@@ -67,7 +76,7 @@ namespace CP_Presentacion.Form_Ventas
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se pudo Obtener la Existencias de los Articulos. Error: " + ex.Message);
+                MessageBox.Show("Selecione un articulo, sino escistes agrege uno desde articulos. Error: " + ex.Message);
             }
         }
         #endregion
@@ -143,20 +152,30 @@ namespace CP_Presentacion.Form_Ventas
         #region PROGRAMACIÓN AGREGAR AL CARRITO
         private void btn_AgregarCarrito_Click(object sender, EventArgs e)
         {
-            int buscar1 = 0, buscar2 = 0, buscar3 = 0;
-            string NombreCliente = cboxNombreCliente.Text.ToString();
-            buscar1 = NombreCliente.IndexOf("- ");
-            string NoArticulo = cboxNombreProducto.Text.ToString();
-            string Descripcion = cboxNombreProducto.Text.ToString();
-            buscar2 = Descripcion.IndexOf("- ");
-            string Cantidad = numCantidad.Value.ToString();
-            string PrecioUnitario = tboxPrecio.Text;
-            string Direccion = cboxDirecciones.Text;
-            buscar3 = Direccion.IndexOf("- ");
-            string Total = Convert.ToString(Convert.ToInt32(Cantidad) * Convert.ToDouble(PrecioUnitario));
-            string Fecha = DateTime.Now.ToString();
-            dgvVentas.Rows.Add(new object[]
+            try
             {
+                
+                    int buscar1 = 0, buscar2 = 0, buscar3 = 0;
+                    string NombreCliente = cboxNombreCliente.Text.ToString();
+                    buscar1 = NombreCliente.IndexOf("- ");
+                    string NoArticulo = cboxNombreProducto.Text.ToString();
+                    string Descripcion = cboxNombreProducto.Text.ToString();
+                    buscar2 = Descripcion.IndexOf("- ");
+                    string Cantidad = numCantidad.Value.ToString();
+                if (Cantidad=="0")
+                {
+                    errorProvider1.SetError(numCantidad,"Cantidad Tiene que ser mayor a 0");
+                }
+                else
+                {
+                    errorProvider1.SetError(numCantidad, "");
+                    string PrecioUnitario = tboxPrecio.Text;
+                    string Direccion = cboxDirecciones.Text;
+                    buscar3 = Direccion.IndexOf("- ");
+                    string Total = Convert.ToString(Convert.ToInt32(Cantidad) * Convert.ToDouble(PrecioUnitario));
+                    string Fecha = DateTime.Now.ToString();
+                    dgvVentas.Rows.Add(new object[]
+                    {
                 NombreCliente.Substring(buscar1+2),
                 NoArticulo.Substring(0,buscar2),
                 Descripcion.Substring(buscar2+2),
@@ -166,15 +185,24 @@ namespace CP_Presentacion.Form_Ventas
                 Fecha,
                 "Eliminar",
                 Direccion.Substring(0,buscar3)
-            });
-            idcliente = Convert.ToInt32(NombreCliente.Substring(0, buscar1));
-            iddireccion = Convert.ToInt32(Direccion.Substring(0, buscar1)); 
-            Activo = 1;
-            cboxNombreProducto.SelectedIndex = -1;
-            cboxDirecciones.Enabled = false;
-            numCantidad.Value = 0;
-            tboxPrecio.Text = string.Empty;
-            cboxNombreProducto.Focus();
+                    });
+                    idcliente = Convert.ToInt32(NombreCliente.Substring(0, buscar1));
+                    iddireccion = Convert.ToInt32(Direccion.Substring(0, buscar1));
+                    Activo = 1;
+                    cboxNombreProducto.SelectedIndex = -1;
+                    cboxDirecciones.Enabled = false;
+                    numCantidad.Value = 0;
+                    tboxPrecio.Text = string.Empty;
+                    cboxNombreProducto.Focus();
+                }
+                   
+                
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Seleccione una direccion validad ==> "+ ex.Message);
+            }
         }
         #endregion
 
@@ -199,14 +227,21 @@ namespace CP_Presentacion.Form_Ventas
                         OVentas.GuardarVenta(idcliente, iddireccion, cantidad,  Activo, IdArticulo, IdFabrica);
                         contador = 1;
                     }
-                    MessageBox.Show("Venta Grabada Satisfactoriamente.");
+                    
                 }
+                MessageBox.Show("Venta Grabada Satisfactoriamente.");
                 contador = 0;
+
+
             }
             catch(Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message); 
             }
+        }
+        private void limpiar_controles()
+        {
+
         }
         #endregion
     }
