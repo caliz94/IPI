@@ -136,24 +136,8 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-ALTER TABLE [dbo].[Articulo]  WITH CHECK ADD FOREIGN KEY([IdFabrica])
-REFERENCES [dbo].[Fabrica] ([IdFabrica])
-GO
-ALTER TABLE [dbo].[Detalle_Pedido]  WITH CHECK ADD FOREIGN KEY([Fabrica])
-REFERENCES [dbo].[Fabrica] ([IdFabrica])
-GO
-ALTER TABLE [dbo].[Detalle_Pedido]  WITH CHECK ADD FOREIGN KEY([IdPedido])
-REFERENCES [dbo].[Pedido] ([IdPedido])
-GO
-ALTER TABLE [dbo].[Direcciones]  WITH CHECK ADD FOREIGN KEY([IdCliente])
-REFERENCES [dbo].[Cliente] ([IdCliente])
-GO
-ALTER TABLE [dbo].[Pedido]  WITH CHECK ADD FOREIGN KEY([IdCliente])
-REFERENCES [dbo].[Cliente] ([IdCliente])
-GO
-ALTER TABLE [dbo].[Pedido]  WITH CHECK ADD FOREIGN KEY([IdDireccion])
-REFERENCES [dbo].[Direcciones] ([IdDireccion])
-GO
+
+--GO
 ALTER TABLE [dbo].[Cliente]  WITH CHECK ADD CHECK  (([LimiteCredito]<=(3000000)))
 GO
 /****** Object:  StoredProcedure [dbo].[sp_actual_direcc]    Script Date: 9/12/2021 10:35:55 a. m. ******/
@@ -299,8 +283,6 @@ CREATE PROCEDURE [dbo].[sp_buscaFabricaxNombre]
 )
 AS
 BEGIN
---DECLARE @IdFabrica INT
---SET @IdFabrica = 1
 	SELECT * FROM Fabrica WHERE NombreFabrica LIKE ('%'+@Nombre+'%')
 END
 GO
@@ -338,65 +320,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-
---DECLARE @cantidad INT
---EXEC sp_validarExistenciaArticulo 1, @cantidad OUTPUT
---SELECT @cantidad
-
-/*************************  VENTAS  ********************************/
-
---CREATE TYPE detalleVenta AS TABLE
---(
---	Id INT /*IDENTITY PRIMARY KEY*/,
---	IdPedido INT,
---	IdArticulo INT,
---	Cantidad INT, 
---	Fabrica INT
---)
---GO
-
-
---CREATE PROCEDURE sp_GuardarVenta
---(
---@IdCliente INT,
---@IdDireccion INT,
---@Cantidad INT,
---@Activo BIT,
---@LstDetalles detalleVenta READONLY
---)
---AS
---BEGIN 
---	DECLARE @IdPedido INT
---	DECLARE @IdVenta INT
---	SELECT @IdPedido = ISNULL(MAX(IdPedido),0)+1 FROM Pedido
-	
---	INSERT INTO Pedido (IdPedido, IdCliente, IdDireccion, FechaPedido, Activo) 
---	VALUES (@IdPedido, @IdCliente,@IdDireccion ,GETDATE() ,@Activo)
-
-
---	SELECT @IdPedido = ISNULL(MAX(Id),0)+1 FROM Detalle_Pedido
---	SET @IdVenta = @@IDENTITY
---	INSERT INTO Detalle_Pedido (/*Id,*/ IdPedido, IdArticulo, Cantidad, Fabrica)
---	VALUES ()
---	SELECT /*@IdPedido,*/ @IdPedido, IdArticulo, @Cantidad, Fabrica FROM @LstDetalles
-	
---END
---GO
-
---/*
---SELECT * FROM Pedido
---SELECT * FROM Detalle_Pedido
---SELECT * FROM @LstDetalles
---*/
-----DECLARE @LstDetalles detalleVenta
-----INSERT INTO @LstDetalles (/*Id,*/IdArticulo, IdPedido, Cantidad, Fabrica)
-----		VALUES (/*1,*/1,5,12,1)
-----INSERT INTO @LstDetalles (/*Id,*/IdArticulo, IdPedido, Cantidad, Fabrica)
-----		VALUES (/*2,*/2,10,24,1)
-----EXEC dbo.sp_GuardarVenta 1,1,1,@LstDetalles
-
---go
-
 
 CREATE PROCEDURE [dbo].[sp_cargarComboDirecciones]
 (
@@ -458,13 +381,6 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
---CREATE TABLE ConsecutivoDirecciones
---(
---Id int primary key,
---IdCliente int,
---IdDirección int
---)
---GO
 
 --mostrar clientes para agregar dire4cciones----
 CREATE PROCEDURE [dbo].[sp_clientesActivos_direcio]
@@ -498,10 +414,6 @@ BEGIN
 	
 	INSERT INTO dbo.Direcciones (IdDireccion,IdCliente, Calle, Barrio, Distrito, Activo)
 	VALUES (@iddireccion, @idcliente, @calle, @barrio, @distrito, 1)
-
-	--DECLARE @Contador INT
-	--INSERT INTO ConsecutivoDirecciones VALUES ()
-
 
 END
 GO
@@ -613,7 +525,6 @@ CREATE PROCEDURE [dbo].[sp_GuardarVenta]
 @Activo BIT,
 @IdArticulo INT,
 @IdFabrica INT
---@LstDetalles detalleVenta READONLY
 )
 AS
 BEGIN 
@@ -631,7 +542,7 @@ BEGIN
 			IF @estado = 1
 			BEGIN
 				SELECT @Id = ISNULL(MAX(Id),0)+1 FROM Detalle_Pedido
-				SELECT @IdPedido = ISNULL(MAX(Id),0)+1 FROM Detalle_Pedido
+				SELECT @IdPedido = ISNULL(MAX(IdPedido),0) FROM Pedido
 				INSERT INTO Detalle_Pedido (Id, IdPedido, IdArticulo, Cantidad, Fabrica)
 				VALUES (@Id,@IdPedido, @IdArticulo, @Cantidad, @IdFabrica)
 				COMMIT TRAN
@@ -959,3 +870,98 @@ GO
 
 	
 
+USE IPICASOPRACTICO
+GO
+
+EXEC sp_nuevaFabrica 'CURACAO', '22685303'
+GO
+EXEC sp_nuevaFabrica 'DINANT', '22685303'
+GO
+EXEC sp_nuevaFabrica 'COCA COLA', '22685303'
+GO
+EXEC sp_nuevaFabrica 'PEPSI', '22685303'
+GO
+EXEC sp_nuevaFabrica 'DICEPSA', '22685303'
+GO
+
+EXEC dbo.sp_nuevo_articulo	@Descripción_Articulo	=	'COLGATE PALMOLIVE', --VARCHAR(250),
+							@Existencias			=	100,	--INT,
+							@PrecioUnitario			=	30,	--MONEY,
+							@IdFabrica				=	2,	--INT,
+							@ArticulosProvistos		=	100,--INT,
+							@NoFabricasAlternativas =	0	--INT
+						GO
+
+EXEC dbo.sp_nuevo_articulo	@Descripción_Articulo	=	'PLAYSTATION V', --VARCHAR(250),
+							@Existencias			=	0,	--INT,
+							@PrecioUnitario			=	300,	--MONEY,
+							@IdFabrica				=	3,	--INT,
+							@ArticulosProvistos		=	100,--INT,
+							@NoFabricasAlternativas =	0	--INT
+						GO
+
+EXEC dbo.sp_nuevo_articulo	@Descripción_Articulo	=	'MONITOR DELL STATUS 01', --VARCHAR(250),
+							@Existencias			=	100,	--INT,
+							@PrecioUnitario			=	30,	--MONEY,
+							@IdFabrica				=	1,	--INT,
+							@ArticulosProvistos		=	100,--INT,
+							@NoFabricasAlternativas =	0	--INT
+						GO
+
+
+EXEC dbo.SP_NuevoCliente @NombreCliente = 'Perla del Socorro Jiron Mendoza',    -- varchar(25)
+                        @Saldo = '10000',   -- varchar(80)
+                        @LimiteCredito = '30000',  -- varchar(250)
+						@Descuento = '300'  -- varchar(250)
+						GO
+
+EXEC dbo.SP_NuevoCliente @NombreCliente = 'Danny Enrique Caliz Treminio',    -- varchar(25)
+                        @Saldo = '10000',   -- varchar(80)
+                        @LimiteCredito = '30000',  -- varchar(250)
+						@Descuento = '300'  -- varchar(250)
+						GO
+
+EXEC dbo.SP_NuevoCliente @NombreCliente = 'José Alexander Martínez Briones',    -- varchar(25)
+                        @Saldo = '10000',   -- varchar(80)
+                        @LimiteCredito = '30000',  -- varchar(250)
+						@Descuento = '300'  -- varchar(250)
+						GO
+
+EXEC dbo.SP_NuevoCliente @NombreCliente = 'Isadiana del Socorro Perez Morales',    -- varchar(25)
+                        @Saldo = '10000',   -- varchar(80)
+                        @LimiteCredito = '30000',  -- varchar(250)
+						@Descuento = '300'  -- varchar(250)
+						GO
+
+EXEC dbo.SP_NuevoCliente @NombreCliente = 'Scannor Capital Sin',    -- varchar(25)
+                        @Saldo = '10000',   -- varchar(80)
+                        @LimiteCredito = '30000',  -- varchar(250)
+						@Descuento = '300'  -- varchar(250)
+						GO
+
+
+EXEC dbo.sp_direcciones @idcliente	= 1,
+						@calle		= '13',			--VARCHAR(25),
+						@barrio		= 'Residente',	--VARCHAR(80),
+						@distrito	= 'La Calle'	--VARCHAR(250)
+						GO
+EXEC dbo.sp_direcciones @idcliente	= 1,
+						@calle		= '13'		,	--VARCHAR(25),
+						@barrio		= 'Residente',	--VARCHAR(80),
+						@distrito	= 'La Calle'	--VARCHAR(250)
+						GO
+EXEC dbo.sp_direcciones @idcliente	= 1,
+						@calle		= '13'	,		--VARCHAR(25),
+						@barrio		= 'Residente',	--VARCHAR(80),
+						@distrito	= 'La Calle'	--VARCHAR(250)
+						GO
+EXEC dbo.sp_direcciones @idcliente	= 1,
+						@calle		= '13',			--VARCHAR(25),
+						@barrio		= 'Residente',	--VARCHAR(80),
+						@distrito	= 'La Calle'	--VARCHAR(250)
+						GO
+EXEC dbo.sp_direcciones @idcliente	= 1,
+						@calle		= '13',			--VARCHAR(25),
+						@barrio		= 'Residente',	--VARCHAR(80),
+						@distrito	= 'La Calle'	--VARCHAR(250)
+						GO

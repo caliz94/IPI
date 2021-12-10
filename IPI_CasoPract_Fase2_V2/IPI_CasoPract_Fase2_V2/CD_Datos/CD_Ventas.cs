@@ -16,15 +16,15 @@ namespace CD_Datos
         DataTable tabla = new DataTable();
 
         #region GUARDAR VENTA
-        public void GuardarVenta(int IdCliente,int Cantidad, int IdDireccion, byte Activo, int IdArticulo, int IdFabrica)
+        public void GuardarVenta(int IdCliente, int IdDireccion, int Cantidad,  byte Activo, int IdArticulo, int IdFabrica)
         {
             cmd.Connection = Conexion.abrircadena();
             cmd.CommandText = "sp_GuardarVenta";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@IdCliente", IdCliente);
-            cmd.Parameters.AddWithValue("@Cantidad", Cantidad);
             cmd.Parameters.AddWithValue("@IdDireccion", IdDireccion);
+            cmd.Parameters.AddWithValue("@Cantidad", Cantidad);
             cmd.Parameters.AddWithValue("@Activo", Activo);
             cmd.Parameters.AddWithValue("@IdArticulo", IdArticulo);
             cmd.Parameters.AddWithValue("@IdFabrica", IdFabrica);
@@ -34,7 +34,7 @@ namespace CD_Datos
         #endregion
 
         #region AGREGAR PRODUCTOS A UNA VENTA
-        public void AgregarProductoVenta(int IdCliente, int IdDireccion, int IdArticulo, int Cantidad, int IdFabrica)
+        public void AgregarProductoVenta(int IdCliente, int IdDireccion, int IdArticulo, int Cantidad, int Fabrica)
         {
             cmd.Connection = Conexion.abrircadena();
             cmd.CommandText = "sp_cargarmasarticulos";
@@ -44,7 +44,7 @@ namespace CD_Datos
             cmd.Parameters.AddWithValue("@IdDireccion", IdDireccion);
             cmd.Parameters.AddWithValue("@IdArticulo", IdArticulo);
             cmd.Parameters.AddWithValue("@Cantidad", Cantidad);
-            cmd.Parameters.AddWithValue("@IdFabrica", IdFabrica);
+            cmd.Parameters.AddWithValue("@IdFabrica", Fabrica);
             cmd.ExecuteNonQuery();
             cmd.Connection = Conexion.cerrarcadena();
         }
@@ -57,10 +57,10 @@ namespace CD_Datos
             cmd.Connection = Conexion.abrircadena();
             cmd.CommandText = "sp_cargarComboDirecciones";
             cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@IdCliente", Convert.ToInt32(IdCliente));
             leerdata = cmd.ExecuteReader();
             tabla.Load(leerdata);
-            cmd.Parameters.Clear();
             Conexion.cerrarcadena();
             return tabla;
         }

@@ -49,10 +49,10 @@ namespace CP_Presentacion.Form_Ventas
         #region CARGAR COMBO DIRECCIONES
         private void CargarComboDirecciones()
         {
-            cboxDirecciones.DataSource = OVentas.CargarComboDirecciones(Convert.ToInt32(cboxNombreCliente.SelectedValue.ToString()));
-            cboxDirecciones.DisplayMember = "Dirección";
-            cboxDirecciones.SelectedIndex = -1;
-            cboxDirecciones.ValueMember = "IdCliente";
+                cboxDirecciones.DataSource = OVentas.CargarComboDirecciones(Convert.ToInt32(cboxNombreCliente.SelectedValue.ToString()));
+                cboxDirecciones.DisplayMember = "Dirección";
+                cboxDirecciones.SelectedIndex = -1;
+                cboxDirecciones.ValueMember = "IdCliente";
         }
         #endregion
 
@@ -188,15 +188,15 @@ namespace CP_Presentacion.Form_Ventas
                 {
                     cantidad = Convert.ToInt32(row.Cells[3].Value.ToString().Trim());
                     IdArticulo = Convert.ToInt32(row.Cells[1].Value.ToString().Trim());
-                    IdFabrica = Convert.ToInt32(row.Cells[8].Value.ToString().Trim());
+                    IdFabrica = Convert.ToInt32(row.Cells["Direccion"].Value.ToString().Trim());
                     if (contador == 1)
                     {
-                        OVentas.AgregarProductoVenta(idcliente, iddireccion, cantidad, IdArticulo, IdFabrica);
+                        OVentas.AgregarProductoVenta(idcliente, iddireccion, IdArticulo, cantidad,  IdFabrica);
                        
                     }
                     if (contador == 0)
                     {
-                        OVentas.GuardarVenta(idcliente, cantidad, iddireccion, Activo, IdArticulo, IdFabrica);
+                        OVentas.GuardarVenta(idcliente, iddireccion, cantidad,  Activo, IdArticulo, IdFabrica);
                         contador = 1;
                     }
                     MessageBox.Show("Venta Grabada Satisfactoriamente.");

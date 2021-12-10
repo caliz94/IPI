@@ -62,9 +62,9 @@ namespace CL_Logica
         #endregion
 
         #region GUARDAR VENTA
-        public void GuardarVenta(int IdCliente, int Cantidad, int IdDireccion, byte Activo, int IdArticulo, int IdFabrica)
+        public void GuardarVenta(int IdCliente, int IdDireccion, int Cantidad, byte Activo, int IdArticulo, int IdFabrica)
         {
-            OVentas.GuardarVenta(IdCliente, Cantidad, IdDireccion, Activo, IdArticulo, IdFabrica);
+            OVentas.GuardarVenta(IdCliente, IdDireccion, Cantidad, Activo, IdArticulo, IdFabrica);
         }
         #endregion
 
