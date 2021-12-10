@@ -269,6 +269,7 @@
             // 
             // panel8
             // 
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel8.Controls.Add(this.chart3);
             this.panel8.Controls.Add(this.chart2);
             this.panel8.Controls.Add(this.chart1);
@@ -280,18 +281,25 @@
             // 
             // chart3
             // 
+            this.chart3.BorderSkin.BackColor = System.Drawing.Color.RoyalBlue;
+            this.chart3.BorderSkin.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalLeft;
+            this.chart3.BorderSkin.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.DashedDownwardDiagonal;
             chartArea1.Name = "ChartArea1";
             this.chart3.ChartAreas.Add(chartArea1);
+            this.chart3.Dock = System.Windows.Forms.DockStyle.Bottom;
             legend1.Name = "Legend1";
             this.chart3.Legends.Add(legend1);
-            this.chart3.Location = new System.Drawing.Point(22, 329);
+            this.chart3.Location = new System.Drawing.Point(0, 331);
             this.chart3.Name = "chart3";
+            series1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.IsVisibleInLegend = false;
+            series1.IsXValueIndexed = true;
             series1.Legend = "Legend1";
             series1.Name = "Series2";
             this.chart3.Series.Add(series1);
-            this.chart3.Size = new System.Drawing.Size(213, 238);
+            this.chart3.Size = new System.Drawing.Size(259, 238);
             this.chart3.TabIndex = 2;
             this.chart3.Text = "chart3";
             // 
@@ -313,20 +321,32 @@
             // 
             // chart1
             // 
+            this.chart1.BorderSkin.BackColor = System.Drawing.Color.RoyalBlue;
+            this.chart1.BorderSkin.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalLeft;
+            this.chart1.BorderSkin.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal;
             chartArea3.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea3);
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Top;
             legend3.Name = "Legend1";
             this.chart1.Legends.Add(legend3);
-            this.chart1.Location = new System.Drawing.Point(6, 6);
+            this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
+            series3.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
+            series3.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
             series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series3.IsValueShownAsLabel = true;
+            series3.IsVisibleInLegend = false;
+            series3.IsXValueIndexed = true;
             series3.Legend = "Legend1";
+            series3.MarkerBorderColor = System.Drawing.Color.Blue;
+            series3.MarkerColor = System.Drawing.Color.Red;
+            series3.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Star5;
             series3.Name = "Series1";
+            series3.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
             this.chart1.Series.Add(series3);
-            this.chart1.Size = new System.Drawing.Size(235, 238);
+            this.chart1.Size = new System.Drawing.Size(259, 280);
             this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
             // 
             // CP_Ver_Ventas
             // 
