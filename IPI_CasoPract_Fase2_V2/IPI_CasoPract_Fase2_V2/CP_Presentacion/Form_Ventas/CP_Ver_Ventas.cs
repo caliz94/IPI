@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -36,6 +38,7 @@ namespace CP_Presentacion.Form_Ventas
         #endregion
         private void CP_Ver_Ventas_Load(object sender, EventArgs e)
         {
+            DatosGraf();
             MostrartodosPedido();
         }
 
@@ -73,6 +76,44 @@ namespace CP_Presentacion.Form_Ventas
         private void iconButton2_Click(object sender, EventArgs e)
         {
             MostrartodosPedido();
+        }
+
+        private SqlConnection conexion = new SqlConnection
+            ("server=.;database=IPICASOPRACTICO;integrated security=true");
+
+        public SqlConnection abrirconexion()
+        {
+            if (conexion.State == ConnectionState.Closed)
+
+                conexion.Open();
+            return conexion;
+        }
+        public SqlConnection cerrarrconexion()
+        {
+            if (conexion.State == ConnectionState.Open)
+
+                conexion.Close();
+            return conexion;
+        }
+
+        ArrayList Cliente = new ArrayList();
+        ArrayList Compras = new ArrayList();
+
+        private void DatosGraf()
+        {
+            string sql = "select top 5  c.NombreCliente,SUM(d.Cantidad * a.PrecioUnitario)as sub_total from cliente as c inner join Pedido as p on c.IdCliente = p.IdCliente inner join Detalle_Pedido as d on d.IdPedido = p.IdPedido inner join Articulo as a on d.IdArticulo = a.IdArticulo group by c.NombreCliente";
+            SqlCommand cmd = new SqlCommand(sql, conexion);
+            SqlDataReader leer;
+            abrirconexion();
+            leer = cmd.ExecuteReader();
+            while (leer.Read())
+            {
+                Cliente.Add(leer.GetString(0));
+               Compras.Add(leer.GetDecimal(1));
+            }
+            chart1.Series[0].Points.DataBindXY(Cliente,Compras);
+            leer.Close();
+            cerrarrconexion();                    
         }
     }
 }
