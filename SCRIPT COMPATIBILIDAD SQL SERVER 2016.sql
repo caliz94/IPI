@@ -63,7 +63,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE VIEW [dbo].[vw_descripcionDetalle] 
 AS
-SELECT DP.Id, DP.IdPedido, DP.IdArticulo, A.Descripción_Articulo, DP.Cantidad, A.PrecioUnitario, DP.Fabrica, (DP.Cantidad * A.PrecioUnitario) AS [Total]
+SELECT DP.Id, DP.IdPedido, DP.IdArticulo,IdFabrica, A.Descripción_Articulo, DP.Cantidad, A.PrecioUnitario,(DP.Cantidad * A.PrecioUnitario) AS [Total]
 FROM [dbo].[Detalle_Pedido] AS DP 
 INNER JOIN Articulo AS A ON DP.IdArticulo = A.IdArticulo
 GO
@@ -762,7 +762,10 @@ CREATE PROCEDURE [dbo].[sp_ObtieneDetallePedido]
 )
 AS
 BEGIN
-	SELECT IdPedido, IdArticulo, Descripción_Articulo, Cantidad, PrecioUnitario, Fabrica AS [IdFabrica], Total FROM vw_descripcionDetalle WHERE IdPedido = @IdPedido
+SELECT IdPedido,NombreFabrica,IdArticulo, Descripción_Articulo, Cantidad, PrecioUnitario, Total 
+FROM vw_descripcionDetalle AS VW
+INNER JOIN Fabrica AS F ON VW.IdFabrica = F.IdFabrica
+WHERE IdPedido =  @IdPedido
 END
 GO
 /****** Object:  StoredProcedure [dbo].[sp_ObtienePedido]    Script Date: 9/12/2021 10:35:55 a. m. ******/
@@ -778,15 +781,16 @@ CREATE PROCEDURE [dbo].[sp_ObtienePedido]
 )
 AS
 BEGIN
+
 	SELECT	P.IdPedido, 
-			P.IdCliente, 
+			--P.IdCliente, 
 			C.NombreCliente AS [Nombre del Cliente], 
-			P.IdDireccion, 
-			('Calle: '+D.Calle + ', ' + 'Barrio: '+D.Barrio + ', ' + 'Distrito: '+D.Distrito) AS [Dirección],
+			--P.IdDireccion, 
+			--('Calle: '+D.Calle + ', ' + 'Barrio: '+D.Barrio + ', ' + 'Distrito: '+D.Distrito) AS [Dirección],
 			(
 				SELECT SUM(Total) FROM vw_descripcionDetalle
-				WHERE IdPedido = @IdPedido
-			) AS [Total Pedido]
+				WHERE IdPedido =  @IdPedido
+			) AS [Total]
 	FROM Pedido AS P 
 		INNER JOIN vw_descripcionDetalle AS V ON P.IdPedido = V.Id
 		INNER JOIN Cliente AS C ON P.IdCliente = C.IdCliente
@@ -797,7 +801,7 @@ BEGIN
 			('Calle: '+D.Calle + ', ' + 'Barrio: '+D.Barrio + ', ' + 'Distrito: '+D.Distrito),
 			C.NombreCliente, 
 			P.IdDireccion
-	HAVING P.IdPedido =@IdPedido
+	HAVING P.IdPedido =@IdPedido 
 END
 GO
 /****** Object:  StoredProcedure [dbo].[sp_validarExistenciaArticulo]    Script Date: 9/12/2021 10:35:55 a. m. ******/
@@ -840,29 +844,12 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 /****** mostrar todos los pedidos ******/
-create PROCEDURE sp_Mostrar_Todos_Pedidos
+CREATE PROCEDURE sp_Mostrar_Todos_Pedidos
 AS
 BEGIN
-	SELECT	P.IdPedido, 
-			P.IdCliente, 
-			C.NombreCliente AS [Nombre del Cliente], 
-			P.IdDireccion, 
-			('Calle: '+D.Calle + ', ' + 'Barrio: '+D.Barrio + ', ' + 'Distrito: '+D.Distrito) AS [Dirección],
-			(
-				SELECT SUM(Total) FROM vw_descripcionDetalle
-				
-			) AS [Total Pedido]
-	FROM Pedido AS P 
-		INNER JOIN vw_descripcionDetalle AS V ON P.IdPedido = V.Id
-		INNER JOIN Cliente AS C ON P.IdCliente = C.IdCliente
-		INNER JOIN Direcciones AS D ON P.IdDireccion = D.IdDireccion
-	GROUP BY 
-			P.IdPedido, 
-			P.IdCliente, 
-			('Calle: '+D.Calle + ', ' + 'Barrio: '+D.Barrio + ', ' + 'Distrito: '+D.Distrito),
-			C.NombreCliente, 
-			P.IdDireccion
-	
+SELECT IdPedido,NombreCliente,SUM(TOTAL)TOTAL FROM VW_TOTALXPEDIDO AS T
+INNER JOIN Cliente AS C ON C.IdCliente = T.IdCliente
+GROUP BY IdPedido,C.NombreCliente ORDER BY IdPedido
 END
 GO
 	
