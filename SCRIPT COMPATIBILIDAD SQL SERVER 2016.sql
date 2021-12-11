@@ -892,6 +892,20 @@ EXEC dbo.sp_nuevo_articulo	@Descripción_Articulo	=	'PLAYSTATION V', --VARCHAR(2
 							@ArticulosProvistos		=	100,--INT,
 							@NoFabricasAlternativas =	0	--INT
 						GO
+EXEC dbo.sp_nuevo_articulo	@Descripción_Articulo	=	'TELEVISOR TCL 32 PULGADAS', --VARCHAR(250),
+							@Existencias			=	100,	--INT,
+							@PrecioUnitario			=	30,	--MONEY,
+							@IdFabrica				=	2,	--INT,
+							@ArticulosProvistos		=	100,--INT,
+							@NoFabricasAlternativas =	0	--INT
+						GO
+
+EXEC dbo.sp_nuevo_articulo	@Descripción_Articulo	=	'REFRIGERADORA MABE 11 PIES', --VARCHAR(250),
+							@Existencias			=	0,	--INT,
+							@PrecioUnitario			=	300,	--MONEY,
+							@IdFabrica				=	3,	--INT,
+							@ArticulosProvistos		=	100,--INT,
+							@NoFabricasAlternativas =	0	--INT
 
 EXEC dbo.sp_nuevo_articulo	@Descripción_Articulo	=	'MONITOR DELL STATUS 01', --VARCHAR(250),
 							@Existencias			=	100,	--INT,
@@ -1003,7 +1017,7 @@ EXEC dbo.sp_direcciones @idcliente	= 5,
 						@barrio		= 'Residente',	--VARCHAR(80),
 						@distrito	= 'La Calle'	--VARCHAR(250)
 						GO
-EXEC dbo.sp_direcciones @idcliente	= 6,
+EXEC dbo.sp_direcciones @idcliente	= 5,
 						@calle		= '13',			--VARCHAR(25),
 						@barrio		= 'Residente',	--VARCHAR(80),
 						@distrito	= 'La Calle'	--VARCHAR(250)
@@ -1013,3 +1027,24 @@ EXEC dbo.sp_direcciones @idcliente	= 6,
 						@barrio		= 'Residente',	--VARCHAR(80),
 						@distrito	= 'La Calle'	--VARCHAR(250)
 						GO
+
+EXEC [dbo].[sp_GuardarVenta] 2, 1, 22, 1, 2, 1
+GO
+EXEC [dbo].[sp_cargarmasarticulos] 2, 1, 2, 10, 1
+GO
+EXEC [dbo].[sp_cargarmasarticulos] 2, 1, 3, 10, 1
+GO
+EXEC [dbo].[sp_cargarmasarticulos] 2, 1, 4, 10, 1
+GO
+EXEC [dbo].[sp_cargarmasarticulos] 2, 1, 1, 10, 1
+GO
+EXEC [dbo].[sp_GuardarVenta] 1, 5, 1, 1, 2, 1
+GO
+EXEC [dbo].[sp_GuardarVenta] 2, 1, 22, 1, 2, 1
+GO
+EXEC [dbo].[sp_GuardarVenta] 3, 1, 22, 1, 2, 1
+GO
+EXEC [dbo].[sp_GuardarVenta] 4, 5, 1, 1, 2, 1
+GO
+EXEC [dbo].[sp_GuardarVenta] 5, 1, 22, 1, 2, 1
+GO
