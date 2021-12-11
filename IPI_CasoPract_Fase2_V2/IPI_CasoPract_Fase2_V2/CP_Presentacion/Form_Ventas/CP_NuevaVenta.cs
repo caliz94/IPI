@@ -142,6 +142,7 @@ namespace CP_Presentacion.Form_Ventas
         private void cboxNombreCliente_DropDownClosed(object sender, EventArgs e)
         {
             CargarComboDirecciones();
+            cboxDirecciones.Enabled = true;
         }
         #endregion
 
@@ -233,6 +234,7 @@ namespace CP_Presentacion.Form_Ventas
                     
                 }
                 MessageBox.Show("Venta Grabada Satisfactoriamente.");
+                dgvVentas.Rows.Clear();
                 contador = 0;
                 
 
@@ -246,6 +248,7 @@ namespace CP_Presentacion.Form_Ventas
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             limpiar_controles();
+            dgvVentas.Rows.Clear();
         }
         private void limpiar_controles()
         {

@@ -925,6 +925,11 @@ EXEC dbo.SP_NuevoCliente @NombreCliente = 'Scannor Capital Sin',    -- varchar(2
                         @LimiteCredito = '30000',  -- varchar(250)
 						@Descuento = '300'  -- varchar(250)
 						GO
+EXEC dbo.SP_NuevoCliente @NombreCliente = 'Danny Trejos Machete',    -- varchar(25)
+                        @Saldo = '10000',   -- varchar(80)
+                        @LimiteCredito = '30000',  -- varchar(250)
+						@Descuento = '300'  -- varchar(250)
+						GO
 
 
 EXEC dbo.sp_direcciones @idcliente	= 1,
@@ -942,12 +947,62 @@ EXEC dbo.sp_direcciones @idcliente	= 1,
 						@barrio		= 'Residente',	--VARCHAR(80),
 						@distrito	= 'La Calle'	--VARCHAR(250)
 						GO
-EXEC dbo.sp_direcciones @idcliente	= 1,
+EXEC dbo.sp_direcciones @idcliente	= 2,
 						@calle		= '13',			--VARCHAR(25),
 						@barrio		= 'Residente',	--VARCHAR(80),
 						@distrito	= 'La Calle'	--VARCHAR(250)
 						GO
-EXEC dbo.sp_direcciones @idcliente	= 1,
+EXEC dbo.sp_direcciones @idcliente	= 2,
+						@calle		= '13',			--VARCHAR(25),
+						@barrio		= 'Residente',	--VARCHAR(80),
+						@distrito	= 'La Calle'	--VARCHAR(250)
+						GO
+EXEC dbo.sp_direcciones @idcliente	= 2,
+						@calle		= '13',			--VARCHAR(25),
+						@barrio		= 'Residente',	--VARCHAR(80),
+						@distrito	= 'La Calle'	--VARCHAR(250)
+						GO
+EXEC dbo.sp_direcciones @idcliente	= 3,
+						@calle		= '13'		,	--VARCHAR(25),
+						@barrio		= 'Residente',	--VARCHAR(80),
+						@distrito	= 'La Calle'	--VARCHAR(250)
+						GO
+EXEC dbo.sp_direcciones @idcliente	= 3,
+						@calle		= '13'	,		--VARCHAR(25),
+						@barrio		= 'Residente',	--VARCHAR(80),
+						@distrito	= 'La Calle'	--VARCHAR(250)
+						GO
+EXEC dbo.sp_direcciones @idcliente	= 3,
+						@calle		= '13',			--VARCHAR(25),
+						@barrio		= 'Residente',	--VARCHAR(80),
+						@distrito	= 'La Calle'	--VARCHAR(250)
+						GO
+EXEC dbo.sp_direcciones @idcliente	= 4,
+						@calle		= '13',			--VARCHAR(25),
+						@barrio		= 'Residente',	--VARCHAR(80),
+						@distrito	= 'La Calle'	--VARCHAR(250)
+						GO
+EXEC dbo.sp_direcciones @idcliente	= 5,
+						@calle		= '13',			--VARCHAR(25),
+						@barrio		= 'Residente',	--VARCHAR(80),
+						@distrito	= 'La Calle'	--VARCHAR(250)
+						GO
+EXEC dbo.sp_direcciones @idcliente	= 5,
+						@calle		= '13'		,	--VARCHAR(25),
+						@barrio		= 'Residente',	--VARCHAR(80),
+						@distrito	= 'La Calle'	--VARCHAR(250)
+						GO
+EXEC dbo.sp_direcciones @idcliente	= 5,
+						@calle		= '13'	,		--VARCHAR(25),
+						@barrio		= 'Residente',	--VARCHAR(80),
+						@distrito	= 'La Calle'	--VARCHAR(250)
+						GO
+EXEC dbo.sp_direcciones @idcliente	= 6,
+						@calle		= '13',			--VARCHAR(25),
+						@barrio		= 'Residente',	--VARCHAR(80),
+						@distrito	= 'La Calle'	--VARCHAR(250)
+						GO
+EXEC dbo.sp_direcciones @idcliente	= 6,
 						@calle		= '13',			--VARCHAR(25),
 						@barrio		= 'Residente',	--VARCHAR(80),
 						@distrito	= 'La Calle'	--VARCHAR(250)
