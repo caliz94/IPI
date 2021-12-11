@@ -327,7 +327,7 @@ namespace CP_Presentacion
             this.nuevaVentaToolStripMenuItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.nuevaVentaToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.nuevaVentaToolStripMenuItem.Name = "nuevaVentaToolStripMenuItem";
-            this.nuevaVentaToolStripMenuItem.Size = new System.Drawing.Size(184, 54);
+            this.nuevaVentaToolStripMenuItem.Size = new System.Drawing.Size(175, 54);
             this.nuevaVentaToolStripMenuItem.Text = "Nueva Venta";
             this.nuevaVentaToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.nuevaVentaToolStripMenuItem.Click += new System.EventHandler(this.nuevaVentaToolStripMenuItem_Click);
@@ -342,7 +342,7 @@ namespace CP_Presentacion
             this.mostarVentaToolStripMenuItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.mostarVentaToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.mostarVentaToolStripMenuItem.Name = "mostarVentaToolStripMenuItem";
-            this.mostarVentaToolStripMenuItem.Size = new System.Drawing.Size(184, 54);
+            this.mostarVentaToolStripMenuItem.Size = new System.Drawing.Size(175, 54);
             this.mostarVentaToolStripMenuItem.Text = "Mostar Venta";
             this.mostarVentaToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mostarVentaToolStripMenuItem.Click += new System.EventHandler(this.mostarVentaToolStripMenuItem_Click);
@@ -395,11 +395,11 @@ namespace CP_Presentacion
             // 
             this.iconButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton1.ForeColor = System.Drawing.Color.Crimson;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Linux;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Hubspot;
             this.iconButton1.IconColor = System.Drawing.Color.RoyalBlue;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 200;

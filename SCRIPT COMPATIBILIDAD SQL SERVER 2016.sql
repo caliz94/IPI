@@ -853,7 +853,13 @@ GROUP BY IdPedido,C.NombreCliente ORDER BY IdPedido
 END
 GO
 	
-
+CREATE VIEW VW_TOTALXPEDIDO
+AS
+SELECT        P.IdPedido, P.IdCliente, A.PrecioUnitario * DP.Cantidad AS TOTAL
+FROM            dbo.Pedido AS P INNER JOIN
+                         dbo.Detalle_Pedido AS DP ON P.IdPedido = DP.IdPedido INNER JOIN
+                         dbo.Articulo AS A ON A.IdArticulo = DP.IdArticulo
+						 GO
 
 	
 
