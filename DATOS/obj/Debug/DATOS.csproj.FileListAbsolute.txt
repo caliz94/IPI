@@ -1,0 +1,35 @@
+E:\Users\stickers\Desktop\4AMATEURS\DATOS\bin\Debug\DATOS.dll
+E:\Users\stickers\Desktop\4AMATEURS\DATOS\bin\Debug\DATOS.pdb
+E:\Users\stickers\Desktop\4AMATEURS\DATOS\bin\Debug\FontAwesome.Sharp.dll
+E:\Users\stickers\Desktop\4AMATEURS\DATOS\bin\Debug\Plugin.InputKit.dll
+E:\Users\stickers\Desktop\4AMATEURS\DATOS\bin\Debug\PulseButton.dll
+E:\Users\stickers\Desktop\4AMATEURS\DATOS\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\Users\stickers\Desktop\4AMATEURS\DATOS\bin\Debug\Plugin.InputKit.xml
+E:\Users\stickers\Desktop\4AMATEURS\DATOS\obj\Debug\DATOS.dll
+E:\Users\stickers\Desktop\4AMATEURS\DATOS\obj\Debug\DATOS.pdb
+D:\SOFTWARE DE 4AMATEURS\4AMATEURS\DATOS\bin\Debug\DATOS.dll
+D:\SOFTWARE DE 4AMATEURS\4AMATEURS\DATOS\bin\Debug\DATOS.pdb
+D:\SOFTWARE DE 4AMATEURS\4AMATEURS\DATOS\bin\Debug\FontAwesome.Sharp.dll
+D:\SOFTWARE DE 4AMATEURS\4AMATEURS\DATOS\bin\Debug\Plugin.InputKit.dll
+D:\SOFTWARE DE 4AMATEURS\4AMATEURS\DATOS\bin\Debug\PulseButton.dll
+D:\SOFTWARE DE 4AMATEURS\4AMATEURS\DATOS\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\SOFTWARE DE 4AMATEURS\4AMATEURS\DATOS\bin\Debug\Plugin.InputKit.xml
+D:\SOFTWARE DE 4AMATEURS\4AMATEURS\DATOS\obj\Debug\DATOS.csproj.AssemblyReference.cache
+D:\SOFTWARE DE 4AMATEURS\4AMATEURS\DATOS\obj\Debug\DATOS.csproj.CoreCompileInputs.cache
+D:\SOFTWARE DE 4AMATEURS\4AMATEURS\DATOS\obj\Debug\DATOS.csproj.CopyComplete
+D:\SOFTWARE DE 4AMATEURS\4AMATEURS\DATOS\obj\Debug\DATOS.dll
+D:\SOFTWARE DE 4AMATEURS\4AMATEURS\DATOS\obj\Debug\DATOS.pdb
+I:\SOFTWARE DE 4AMATEURS\4AMATEURS\DATOS\bin\Debug\DATOS.dll
+I:\SOFTWARE DE 4AMATEURS\4AMATEURS\DATOS\bin\Debug\DATOS.pdb
+I:\SOFTWARE DE 4AMATEURS\4AMATEURS\DATOS\bin\Debug\FontAwesome.Sharp.dll
+I:\SOFTWARE DE 4AMATEURS\4AMATEURS\DATOS\bin\Debug\Plugin.InputKit.dll
+I:\SOFTWARE DE 4AMATEURS\4AMATEURS\DATOS\bin\Debug\PulseButton.dll
+I:\SOFTWARE DE 4AMATEURS\4AMATEURS\DATOS\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+I:\SOFTWARE DE 4AMATEURS\4AMATEURS\DATOS\bin\Debug\Plugin.InputKit.xml
+I:\SOFTWARE DE 4AMATEURS\4AMATEURS\DATOS\obj\Debug\DATOS.csprojResolveAssemblyReference.cache
+I:\SOFTWARE DE 4AMATEURS\4AMATEURS\DATOS\obj\Debug\DATOS.dll
+I:\SOFTWARE DE 4AMATEURS\4AMATEURS\DATOS\obj\Debug\DATOS.pdb
+E:\Users\stickers\Desktop\SOFTWARE DE 4AMATEURS\4AMATEURS\DATOS\bin\Debug\DATOS.dll
+E:\Users\stickers\Desktop\SOFTWARE DE 4AMATEURS\4AMATEURS\DATOS\bin\Debug\DATOS.pdb
+E:\Users\stickers\Desktop\SOFTWARE DE 4AMATEURS\4AMATEURS\DATOS\obj\Debug\DATOS.dll
+E:\Users\stickers\Desktop\SOFTWARE DE 4AMATEURS\4AMATEURS\DATOS\obj\Debug\DATOS.pdb

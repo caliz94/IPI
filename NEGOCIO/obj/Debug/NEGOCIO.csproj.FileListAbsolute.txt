@@ -1,0 +1,45 @@
+E:\Users\stickers\Desktop\4AMATEURS\NEGOCIO\bin\Debug\NEGOCIO.dll
+E:\Users\stickers\Desktop\4AMATEURS\NEGOCIO\bin\Debug\NEGOCIO.pdb
+E:\Users\stickers\Desktop\4AMATEURS\NEGOCIO\bin\Debug\DATOS.dll
+E:\Users\stickers\Desktop\4AMATEURS\NEGOCIO\bin\Debug\FontAwesome.Sharp.dll
+E:\Users\stickers\Desktop\4AMATEURS\NEGOCIO\bin\Debug\Plugin.InputKit.dll
+E:\Users\stickers\Desktop\4AMATEURS\NEGOCIO\bin\Debug\PulseButton.dll
+E:\Users\stickers\Desktop\4AMATEURS\NEGOCIO\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\Users\stickers\Desktop\4AMATEURS\NEGOCIO\bin\Debug\DATOS.pdb
+E:\Users\stickers\Desktop\4AMATEURS\NEGOCIO\bin\Debug\Plugin.InputKit.xml
+E:\Users\stickers\Desktop\4AMATEURS\NEGOCIO\obj\Debug\NEGOCIO.dll
+E:\Users\stickers\Desktop\4AMATEURS\NEGOCIO\obj\Debug\NEGOCIO.pdb
+E:\Users\stickers\Desktop\4AMATEURS\NEGOCIO\obj\Debug\NEGOCIO.csprojResolveAssemblyReference.cache
+D:\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\bin\Debug\NEGOCIO.dll
+D:\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\bin\Debug\NEGOCIO.pdb
+D:\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\bin\Debug\DATOS.dll
+D:\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\bin\Debug\FontAwesome.Sharp.dll
+D:\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\bin\Debug\Plugin.InputKit.dll
+D:\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\bin\Debug\PulseButton.dll
+D:\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\bin\Debug\DATOS.pdb
+D:\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\bin\Debug\Plugin.InputKit.xml
+D:\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\obj\Debug\NEGOCIO.csproj.AssemblyReference.cache
+D:\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\obj\Debug\NEGOCIO.csproj.CoreCompileInputs.cache
+D:\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\obj\Debug\NEGOCIO.csproj.CopyComplete
+D:\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\obj\Debug\NEGOCIO.dll
+D:\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\obj\Debug\NEGOCIO.pdb
+I:\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\bin\Debug\NEGOCIO.dll
+I:\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\bin\Debug\NEGOCIO.pdb
+I:\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\bin\Debug\DATOS.dll
+I:\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\bin\Debug\FontAwesome.Sharp.dll
+I:\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\bin\Debug\Plugin.InputKit.dll
+I:\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\bin\Debug\PulseButton.dll
+I:\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+I:\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\bin\Debug\DATOS.pdb
+I:\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\bin\Debug\Plugin.InputKit.xml
+I:\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\obj\Debug\NEGOCIO.csprojResolveAssemblyReference.cache
+I:\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\obj\Debug\NEGOCIO.dll
+I:\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\obj\Debug\NEGOCIO.pdb
+E:\Users\stickers\Desktop\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\bin\Debug\NEGOCIO.dll
+E:\Users\stickers\Desktop\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\bin\Debug\NEGOCIO.pdb
+E:\Users\stickers\Desktop\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\bin\Debug\DATOS.dll
+E:\Users\stickers\Desktop\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\bin\Debug\DATOS.pdb
+E:\Users\stickers\Desktop\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\obj\Debug\NEGOCIO.csprojResolveAssemblyReference.cache
+E:\Users\stickers\Desktop\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\obj\Debug\NEGOCIO.dll
+E:\Users\stickers\Desktop\SOFTWARE DE 4AMATEURS\4AMATEURS\NEGOCIO\obj\Debug\NEGOCIO.pdb
